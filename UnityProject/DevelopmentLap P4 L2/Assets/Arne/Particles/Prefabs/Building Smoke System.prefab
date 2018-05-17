@@ -204,8 +204,8 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 5
-      minScalar: 4
+      scalar: 2
+      minScalar: 1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -320,8 +320,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 3
-      minScalar: 2
+      scalar: 5
+      minScalar: 4
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -720,11 +720,11 @@ ParticleSystem:
     m_TextureColorAffectsParticles: 1
     m_TextureAlphaAffectsParticles: 1
     m_TextureBilinearFiltering: 0
-    randomDirectionAmount: 1
+    randomDirectionAmount: 0
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 1
+      value: 2
       mode: 0
       spread: 0
       speed:
@@ -960,7 +960,7 @@ ParticleSystem:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 0.26966113
+          value: 0.16854113
           inSlope: 0.22427544
           outSlope: 0.22427544
           tangentMode: 0
@@ -968,8 +968,8 @@ ParticleSystem:
           inWeight: 0.33333334
           outWeight: 0.20544022
         - serializedVersion: 3
-          time: 0.45432955
-          value: 1
+          time: 0.3954001
+          value: 0.83146095
           inSlope: -0.516937
           outSlope: -0.516937
           tangentMode: 0
