@@ -43,6 +43,10 @@ public class BuildPlacement : MonoBehaviour {
             startedPlacing = true;
             isPlacing = Instantiate(testBuilding, mouse3DPos, Quaternion.identity);
             placing = isPlacing.GetComponent<Building>();
+            if(placing == null)
+            {
+                placing = isPlacing.GetComponentInChildren<Building>();
+            }
             placing.obstacles = obstacleLayer;
         }
         if(isPlacing != null && startedPlacing)

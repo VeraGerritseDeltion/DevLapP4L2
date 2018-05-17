@@ -9,12 +9,20 @@ public class Building : MonoBehaviour {
     public bool inOtherBuilding;
     public LayerMask obstacles;
     Color normalColor;
-	void Start () {
+
+    BoxCollider myCol;
+    Vector3 sizeCol;
+
+	void Start ()
+    {
         myMat = GetComponent<Renderer>().material;
         normalColor = myMat.color;
-	}
+        myCol = GetComponentInChildren<BoxCollider>();
+        sizeCol = new Vector3(myCol.size.x, myCol.size.z, myCol.size.y)/2;
+    }
 	
-	void Update () {
+	void Update ()
+    {
         if (!isPlaced)
         {
             CollisionStay();
@@ -30,7 +38,7 @@ public class Building : MonoBehaviour {
 
     void CollisionStay()
     {
-        Collider[] buildings = Physics.OverlapSphere(transform.position,1,obstacles);
+        Collider[] buildings = Physics.OverlapBox(transform.position,sizeCol,Quaternion.identity,obstacles);
         if (buildings.Length != 0)
         {
             myMat.color = Color.red;
