@@ -5,12 +5,14 @@ using UnityEngine;
 public class BuildPlacement : MonoBehaviour {
 
     [Header("testVar")]
-    public GameObject testBuilding;
+    //public GameObject testBuilding;
     public LayerMask obstacleLayer;
     public LayerMask groundLayer;
     bool startedPlacing;
     GameObject isPlacing;
     Building placing;
+    int index;
+    public List<GameObject> allBuildings = new List<GameObject>();
 
 	void Start () {
 		
@@ -18,14 +20,15 @@ public class BuildPlacement : MonoBehaviour {
 	
 
 	void Update () {
-        if (Input.GetKeyDown(KeyCode.P)|| startedPlacing)
+        if (startedPlacing)
         {
-            PlaceBuilding();
+            PlaceBuilding(null,index);
         }
 	}
 
-    void PlaceBuilding()
+    void PlaceBuilding(GameObject toBePlaced,int inndex)
     {
+        index = inndex;
         if (Input.GetButtonDown("Fire2"))
         {
             Destroy(isPlacing);
@@ -49,7 +52,7 @@ public class BuildPlacement : MonoBehaviour {
         if (!startedPlacing)
         {
             startedPlacing = true;
-            isPlacing = Instantiate(testBuilding, mouse3DPos, Quaternion.identity);
+            isPlacing = Instantiate(toBePlaced, mouse3DPos, Quaternion.identity);
             placing = isPlacing.GetComponent<Building>();
             if(placing == null)
             {
@@ -71,12 +74,19 @@ public class BuildPlacement : MonoBehaviour {
             if(Input.GetButtonDown("Fire1") && !placing.inOtherBuilding)
             {
                 placing.Place();
+
                 isPlacing = null;
                 startedPlacing = false;
                 placing = null;
+                PlaceBuilding(allBuildings[inndex],inndex);
             }
         }
     }
+    IEnumerator time (int indexi)
+    {
+        yield return new WaitForSeconds(0.1f);
+    }
+
 
     void SnapTo(Vector3 mousePos)
     {
@@ -155,6 +165,14 @@ public class BuildPlacement : MonoBehaviour {
         else
         {
             isPlacing.transform.position = mousePos;
+        }
+    }
+
+    public void NewBuilding(int whichBuilding)
+    {
+        if(whichBuilding < allBuildings.Count)
+        {
+            PlaceBuilding(allBuildings[whichBuilding],whichBuilding);
         }
     }
 }

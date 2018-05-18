@@ -31,6 +31,7 @@ public class Building : MonoBehaviour {
 
     public void Place()
     {
+        print(myMat.color);
         myMat.color = normalColor;
         gameObject.layer = 8;
         isPlaced = true;
