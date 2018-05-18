@@ -26,6 +26,14 @@ public class BuildPlacement : MonoBehaviour {
 
     void PlaceBuilding()
     {
+        if (Input.GetButtonDown("Fire2"))
+        {
+            Destroy(isPlacing);
+            isPlacing = null;
+            startedPlacing = false;
+            placing = null;
+            return;
+        }
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
         Vector3 mouse3DPos = new Vector3(0,0,0);
@@ -49,9 +57,17 @@ public class BuildPlacement : MonoBehaviour {
             }
             placing.obstacles = obstacleLayer;
         }
+        
         if(isPlacing != null && startedPlacing)
         {
-            isPlacing.transform.position = mouse3DPos;
+            if (Input.GetButton("LeftShift"))
+            {
+                SnapTo(mouse3DPos);
+            }
+            else
+            {
+                isPlacing.transform.position = mouse3DPos;
+            }
             if(Input.GetButtonDown("Fire1") && !placing.inOtherBuilding)
             {
                 placing.Place();
@@ -59,6 +75,86 @@ public class BuildPlacement : MonoBehaviour {
                 startedPlacing = false;
                 placing = null;
             }
+        }
+    }
+
+    void SnapTo(Vector3 mousePos)
+    {
+        Vector3 sizeCol = placing.GetColliderSize();
+        Vector3 sizeSearchBox = new Vector3(sizeCol.x + 0.5f, sizeCol.y, sizeCol.z + 0.5f);
+
+        Collider[] inRange = Physics.OverlapBox(mousePos, sizeSearchBox, Quaternion.identity, obstacleLayer);
+        GameObject closest = null;
+        if(inRange.Length != 0)
+        {
+            float lowestRange = 0;
+            int lowest = -1;
+            for (int i = 0; i < inRange.Length; i++)
+            {
+                if(Vector3.Distance(mousePos,inRange[i].gameObject.transform.position) < lowestRange || lowestRange == 0)
+                {
+                    lowestRange = Vector3.Distance(mousePos, inRange[i].gameObject.transform.position);
+                    lowest = i;
+                }
+            }
+            closest = inRange[lowest].gameObject;
+            Building closeBuild = closest.GetComponentInChildren<Building>();
+            //closeBuild = GetComponent<Building>();
+            Vector3 closeColSize = closeBuild.GetColliderSize();
+            Vector3 posClosest = closest.transform.position;
+            float disX = posClosest.x - mousePos.x;
+            float disZ = posClosest.z - mousePos.z;
+            Vector3 snappedPos = new Vector3 (0,0,0);
+            float disx = Mathf.Abs (disX);
+            float disz = Mathf.Abs (disZ);
+            bool trueSnap = false;
+            if (Input.GetButton("LeftControl"))
+            {
+                trueSnap = true;
+            }
+            if (disx > disz)
+            {
+                if(disX > 0)
+                {
+                    snappedPos = new Vector3(posClosest.x - sizeCol.x - closeColSize.x - 0.01f, mousePos.y, mousePos.z);
+                    if (trueSnap)
+                    {
+                        snappedPos.z = posClosest.z;
+                    }
+                }
+                else
+                {
+                    snappedPos = new Vector3(posClosest.x + sizeCol.x + closeColSize.x + 0.01f, mousePos.y, mousePos.z);
+                    if (trueSnap)
+                    {
+                        snappedPos.z = posClosest.z;
+                    }
+                }
+            }
+            else
+            {
+                if(disZ > 0)
+                {
+                    snappedPos = new Vector3(mousePos.x, mousePos.y, posClosest.z - sizeCol.z - closeColSize.z - 0.01f);
+                    if (trueSnap)
+                    {
+                        snappedPos.x = posClosest.x;
+                    }
+                }
+                else
+                {
+                    snappedPos = new Vector3(mousePos.x, mousePos.y, posClosest.z + sizeCol.z + closeColSize.z + 0.01f);
+                    if (trueSnap)
+                    {
+                        snappedPos.x = posClosest.x;
+                    }
+                }
+            }
+            isPlacing.transform.position = snappedPos;
+        }
+        else
+        {
+            isPlacing.transform.position = mousePos;
         }
     }
 }

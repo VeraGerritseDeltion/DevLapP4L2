@@ -50,4 +50,9 @@ public class Building : MonoBehaviour {
             inOtherBuilding = false;
         }
     }
+
+    public Vector3 GetColliderSize()
+    {
+        return sizeCol;
+    }
 }

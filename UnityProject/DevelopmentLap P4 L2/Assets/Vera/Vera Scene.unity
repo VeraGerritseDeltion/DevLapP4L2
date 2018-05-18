@@ -207,12 +207,12 @@ GameObject:
   - component: {fileID: 362078750}
   - component: {fileID: 362078754}
   m_Layer: 8
-  m_Name: Cube (1)
+  m_Name: Cube left high
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &362078750
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -274,7 +274,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 362078749}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.09, y: 0.41, z: 2.33}
+  m_LocalPosition: {x: -3.3, y: 0.41, z: -1.49}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -297,6 +297,52 @@ MonoBehaviour:
   obstacles:
     serializedVersion: 2
     m_Bits: 0
+--- !u!1001 &682503281
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4425515749524976, guid: b489d9900bcd11142902f8a70051961f, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -1.1874661
+      objectReference: {fileID: 0}
+    - target: {fileID: 4425515749524976, guid: b489d9900bcd11142902f8a70051961f, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -0.3654576
+      objectReference: {fileID: 0}
+    - target: {fileID: 4425515749524976, guid: b489d9900bcd11142902f8a70051961f, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 4.3164654
+      objectReference: {fileID: 0}
+    - target: {fileID: 4425515749524976, guid: b489d9900bcd11142902f8a70051961f, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4425515749524976, guid: b489d9900bcd11142902f8a70051961f, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4425515749524976, guid: b489d9900bcd11142902f8a70051961f, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4425515749524976, guid: b489d9900bcd11142902f8a70051961f, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4425515749524976, guid: b489d9900bcd11142902f8a70051961f, type: 2}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1188033035332688, guid: b489d9900bcd11142902f8a70051961f, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: b489d9900bcd11142902f8a70051961f, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &912442573
 GameObject:
   m_ObjectHideFlags: 0
@@ -456,6 +502,14 @@ Prefab:
       propertyPath: isPlaced
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1199401112240966, guid: eb8abe88276b80542ada24195b8a42d0, type: 2}
+      propertyPath: m_Name
+      value: Cube left low
+      objectReference: {fileID: 0}
+    - target: {fileID: 1199401112240966, guid: eb8abe88276b80542ada24195b8a42d0, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eb8abe88276b80542ada24195b8a42d0, type: 2}
   m_IsPrefabParent: 0
@@ -607,12 +661,12 @@ GameObject:
   - component: {fileID: 2076413838}
   - component: {fileID: 2076413842}
   m_Layer: 8
-  m_Name: Cube (2)
+  m_Name: Cube Right
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &2076413838
 BoxCollider:
   m_ObjectHideFlags: 0
