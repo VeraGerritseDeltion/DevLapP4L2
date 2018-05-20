@@ -1,0 +1,18 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Buildings : MonoBehaviour {
+
+    public BuildingTemplate building;
+
+
+
+	void Start () {
+	}
+	
+
+	void Update () {
+		
+	}
+}
