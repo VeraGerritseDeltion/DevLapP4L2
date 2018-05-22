@@ -18,6 +18,7 @@ public class Building : MonoBehaviour {
 
 	public void Start ()
     {
+
         myMat = GetComponent<Renderer>().material;
         normalColor = myMat.color;
         myCol = GetComponentInChildren<BoxCollider>();
@@ -46,6 +47,23 @@ public class Building : MonoBehaviour {
         myMat.color = normalColor;
         gameObject.layer = 8;
         isPlaced = true;
+        AddStats ();
+    }
+
+    void AddStats () 
+    {
+        StatisticManager.instance.addWood += myBuilding.wood;
+        StatisticManager.instance.addStone += myBuilding.stone;
+        StatisticManager.instance.addMoney += myBuilding.money;
+        StatisticManager.instance.addMinerals += myBuilding.minerals;
+    }
+
+    void MinStats () 
+    {
+        StatisticManager.instance.addWood -= myBuilding.wood;
+        StatisticManager.instance.addStone -= myBuilding.stone;
+        StatisticManager.instance.addMoney -= myBuilding.money;
+        StatisticManager.instance.addMinerals -= myBuilding.minerals;
     }
 
     void CollisionStay()

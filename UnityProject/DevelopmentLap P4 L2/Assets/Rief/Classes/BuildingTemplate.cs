@@ -14,6 +14,7 @@ public class BuildingTemplate : ScriptableObject{
     public int wood;
     public int stone;
     public int money;
+    public int minerals;
     public int happiness;
     public int co2;
     public int water;
