@@ -6,27 +6,17 @@ using UnityEngine.UI;
 [CreateAssetMenu(fileName = "New Building", menuName = "New Building/Building")]
 public class BuildingTemplate : ScriptableObject{
 
-    public string name;
+    public new string name;
     public string description;
 
     public Sprite buildingSprite;
-
-    [Header("Plus")]
-    public int plusWood;
-    public int plusStone;
-    public int plusMoney;
-    public int plusHappiness;
-    public int plusCo2;
-    public int plusWater;
-    public int plusEnergy;
-
-    [Header("Minus")]
-    public int minWood;
-    public int minStone;
-    public int minMoney;
-    public int minHappiness;
-    public int minCo2;
-    public int minWater;
-    public int minEnergy;
+    
+    public int wood;
+    public int stone;
+    public int money;
+    public int happiness;
+    public int co2;
+    public int water;
+    public int energy;
 
 }
