@@ -683,9 +683,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 757996b75aff68f43a49c70ae4f6a481, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myBuilding: {fileID: 0}
   isPlaced: 1
   myMat: {fileID: 0}
   inOtherBuilding: 0
+  startedPlacing: 0
   obstacles:
     serializedVersion: 2
     m_Bits: 0
@@ -1495,9 +1497,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 757996b75aff68f43a49c70ae4f6a481, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myBuilding: {fileID: 0}
   isPlaced: 1
   myMat: {fileID: 0}
   inOtherBuilding: 0
+  startedPlacing: 0
   obstacles:
     serializedVersion: 2
     m_Bits: 0

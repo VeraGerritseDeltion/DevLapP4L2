@@ -4,21 +4,31 @@ using UnityEngine;
 
 public class Building : MonoBehaviour {
 
+    public BuildingTemplate myBuilding;
+
     public bool isPlaced;
     public Material myMat;
     public bool inOtherBuilding;
+    public bool startedPlacing;
     public LayerMask obstacles;
     Color normalColor;
 
     BoxCollider myCol;
     Vector3 sizeCol;
 
-	void Start ()
+	public void Start ()
     {
         myMat = GetComponent<Renderer>().material;
         normalColor = myMat.color;
         myCol = GetComponentInChildren<BoxCollider>();
         sizeCol = new Vector3(myCol.size.x, myCol.size.z, myCol.size.y)/2;
+        StartCoroutine(EnablePlacement());
+    }
+
+    IEnumerator EnablePlacement()
+    {
+        yield return new WaitForSeconds(0.01f);
+        startedPlacing = true;       
     }
 	
 	void Update ()
@@ -31,6 +41,7 @@ public class Building : MonoBehaviour {
 
     public void Place()
     {
+        print(gameObject);
         print(myMat.color);
         myMat.color = normalColor;
         gameObject.layer = 8;

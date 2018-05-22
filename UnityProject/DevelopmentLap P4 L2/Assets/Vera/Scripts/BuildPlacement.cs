@@ -56,8 +56,10 @@ public class BuildPlacement : MonoBehaviour {
             placing = isPlacing.GetComponent<Building>();
             if(placing == null)
             {
+                
                 placing = isPlacing.GetComponentInChildren<Building>();
             }
+            //placing.MyStart();
             placing.obstacles = obstacleLayer;
         }
         
@@ -71,7 +73,7 @@ public class BuildPlacement : MonoBehaviour {
             {
                 isPlacing.transform.position = mouse3DPos;
             }
-            if(Input.GetButtonDown("Fire1") && !placing.inOtherBuilding)
+            if(Input.GetButtonDown("Fire1") && !placing.inOtherBuilding && placing.startedPlacing)
             {
                 placing.Place();
 
@@ -81,10 +83,6 @@ public class BuildPlacement : MonoBehaviour {
                 PlaceBuilding(allBuildings[inndex],inndex);
             }
         }
-    }
-    IEnumerator time (int indexi)
-    {
-        yield return new WaitForSeconds(0.1f);
     }
 
 
