@@ -56,6 +56,11 @@ public class Building : MonoBehaviour {
         StatisticManager.instance.addStone += myBuilding.stone;
         StatisticManager.instance.addMoney += myBuilding.money;
         StatisticManager.instance.addMinerals += myBuilding.minerals;
+        StatisticManager.instance.addFood += myBuilding.food;
+        StatisticManager.instance.addHappiness += myBuilding.happiness;
+        StatisticManager.instance.addWater += myBuilding.water;
+        StatisticManager.instance.addEnergy += myBuilding.energy;
+        StatisticManager.instance.addCo2 += myBuilding.co2;
     }
 
     void MinStats () 
@@ -64,6 +69,11 @@ public class Building : MonoBehaviour {
         StatisticManager.instance.addStone -= myBuilding.stone;
         StatisticManager.instance.addMoney -= myBuilding.money;
         StatisticManager.instance.addMinerals -= myBuilding.minerals;
+        StatisticManager.instance.addFood -= myBuilding.food;
+        StatisticManager.instance.addHappiness -= myBuilding.happiness;
+        StatisticManager.instance.addWater -= myBuilding.water;
+        StatisticManager.instance.addEnergy -= myBuilding.energy;
+        StatisticManager.instance.addCo2 -= myBuilding.co2;
     }
 
     void CollisionStay()

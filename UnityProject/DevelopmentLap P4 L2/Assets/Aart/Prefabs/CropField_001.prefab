@@ -137,9 +137,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 757996b75aff68f43a49c70ae4f6a481, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myBuilding: {fileID: 11400000, guid: 71a7dd2a1a9d07949b8621bfe4378f8c, type: 2}
   isPlaced: 0
   myMat: {fileID: 0}
   inOtherBuilding: 0
+  startedPlacing: 0
   obstacles:
     serializedVersion: 2
     m_Bits: 0
