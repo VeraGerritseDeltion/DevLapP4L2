@@ -2,15 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraMovement : MonoBehaviour {
+public class CameraMovement : MonoBehaviour
+{
+    public float rotSpeed;
+    public float movSpeed;
+    float horizontal;
+    float vertical;
+    float leftRot;
+    float rightRot;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    void Movement()
+    {
+        horizontal = Input.GetAxis("Horizontal") * movSpeed * Time.deltaTime;
+    }
+
 }
+

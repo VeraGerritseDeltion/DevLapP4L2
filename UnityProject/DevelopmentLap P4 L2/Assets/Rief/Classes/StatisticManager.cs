@@ -35,8 +35,12 @@ public class StatisticManager : MonoBehaviour {
 		if(instance == null) {
             instance = this;
         }
-        StartCo ();
 	}
+
+    public void MyStart()
+    {
+        StartCo();
+    }
     void StartCo () {
 
 
