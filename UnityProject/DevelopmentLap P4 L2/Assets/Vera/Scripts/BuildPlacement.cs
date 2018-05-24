@@ -43,10 +43,17 @@ public class BuildPlacement : MonoBehaviour {
         if (Physics.Raycast(ray, out hit,1000,groundLayer))
         {
             mouse3DPos = hit.point;
+            if (isPlacing != null)
+            {
+                isPlacing.SetActive(true);
+            }
         }
         else
         {
-            return;
+            if(isPlacing != null)
+            {
+                isPlacing.SetActive(false);
+            }
         }
 
         if (!startedPlacing)
@@ -168,6 +175,7 @@ public class BuildPlacement : MonoBehaviour {
 
     public void NewBuilding(int whichBuilding)
     {
+        print("y u no work");
         if(whichBuilding < allBuildings.Count)
         {
             PlaceBuilding(allBuildings[whichBuilding],whichBuilding);

@@ -8,12 +8,22 @@ public class CameraMovement : MonoBehaviour
     public float movSpeed;
     float horizontal;
     float vertical;
-    float leftRot;
-    float rightRot;
+    float rot;
+
+    private void Update()
+    {
+        Movement();
+    }
 
     void Movement()
     {
         horizontal = Input.GetAxis("Horizontal") * movSpeed * Time.deltaTime;
+        vertical = Input.GetAxis("Vertical") * movSpeed * Time.deltaTime;
+
+        transform.Translate(new Vector3(horizontal, 0, vertical));
+
+        rot = Input.GetAxis("HorizontalRotation") * rotSpeed * Time.deltaTime;
+        transform.Rotate(new Vector3(0, rot, 0));
     }
 
 }
