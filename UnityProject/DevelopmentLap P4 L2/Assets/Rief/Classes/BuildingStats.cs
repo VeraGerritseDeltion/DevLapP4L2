@@ -1,0 +1,40 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class BuildingStats : MonoBehaviour {
+
+    public LayerMask aura;
+    public float myRadius;
+
+    [Header("Required stats")]
+    public int reqHappiness;
+    public int reqWater;
+    public int reqEnergy;
+    public int reqCo2;
+
+    [Header("Current Stats")]
+    public int happiness;
+    public int water;
+    public int energy;
+    public int co2;
+
+    public Collider [] myAuras;
+
+    public void Start () {
+        myAuras = AuraEffect ();
+    }
+
+    public Collider [] AuraEffect () {
+        Collider [] auras = Physics.OverlapSphere (transform.position, myRadius, aura);
+
+        for (int i = 0; i < auras.Length; i++) {
+            AuraStats myAura = auras [i].GetComponent<AuraStats> ();
+            myAura.myHouses.Add (gameObject);
+        }
+        return auras;
+    }
+
+    void toDestroy () {
+    }
+}

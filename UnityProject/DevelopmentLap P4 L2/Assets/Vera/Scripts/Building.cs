@@ -16,9 +16,14 @@ public class Building : MonoBehaviour {
     BoxCollider myCol;
     Vector3 sizeCol;
 
+
+    public bool hasAura;
+
+    private BuildingStats myBuildingStats;
+
 	public void Start ()
     {
-
+        myBuildingStats = transform.GetComponent<BuildingStats> ();
         myMat = GetComponent<Renderer>().material;
         normalColor = myMat.color;
         myCol = GetComponentInChildren<BoxCollider>();
@@ -48,8 +53,14 @@ public class Building : MonoBehaviour {
         if(myBuilding != null)
         {
             AddStats();
+            GetComponent<BuildingStats> ().AuraEffect ();
+            if (hasAura) {
+                GetComponent<AuraStats> ().AddList (transform.position);
+                GetComponent<AuraStats>().AddStats();
+            }
         }
     }
+
 
     void AddStats () 
     {
@@ -58,10 +69,6 @@ public class Building : MonoBehaviour {
         StatisticManager.instance.addMoney += myBuilding.money;
         StatisticManager.instance.addMinerals += myBuilding.minerals;
         StatisticManager.instance.addFood += myBuilding.food;
-        StatisticManager.instance.addHappiness += myBuilding.happiness;
-        StatisticManager.instance.addWater += myBuilding.water;
-        StatisticManager.instance.addEnergy += myBuilding.energy;
-        StatisticManager.instance.addCo2 += myBuilding.co2;
     }
 
     void MinStats () 
@@ -71,10 +78,6 @@ public class Building : MonoBehaviour {
         StatisticManager.instance.addMoney -= myBuilding.money;
         StatisticManager.instance.addMinerals -= myBuilding.minerals;
         StatisticManager.instance.addFood -= myBuilding.food;
-        StatisticManager.instance.addHappiness -= myBuilding.happiness;
-        StatisticManager.instance.addWater -= myBuilding.water;
-        StatisticManager.instance.addEnergy -= myBuilding.energy;
-        StatisticManager.instance.addCo2 -= myBuilding.co2;
     }
 
     void CollisionStay()
