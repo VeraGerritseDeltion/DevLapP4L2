@@ -24,6 +24,7 @@ public class BuildPlacement : MonoBehaviour {
     public LineRenderer line;
     Material lineMat;
     bool notFirstFrame;
+    bool continuePlacing;
 
 
 
@@ -78,7 +79,9 @@ public class BuildPlacement : MonoBehaviour {
             startedPlacing = true;
             isPlacing = Instantiate(toBePlaced, mouse3DPos, Quaternion.identity);
             placing = isPlacing.GetComponent<Building>();
-            if(placing == null)
+            placing = isPlacing.GetComponentInChildren<Building>();
+            placing.MyStart();
+            if (placing == null)
             {              
                 placing = isPlacing.GetComponentInChildren<Building>();
             }
@@ -102,7 +105,7 @@ public class BuildPlacement : MonoBehaviour {
 
                 if (myRoad)
                 {
-                    startRoad = mouse3DPos;
+                    startRoad = isPlacing.transform.position;
                     roadToBePlaced = allBuildings[index];
                     road = true;
                     allRoadsToPlace.Add(isPlacing);
@@ -206,7 +209,6 @@ public class BuildPlacement : MonoBehaviour {
         newBuilding = allBuildings[whichBuilding].GetComponentInChildren<Building>();
         if(newBuilding.GetType() == typeof(Road))
         {
-            print("Road");
             newRoad = true;
         }
         placingRoad = newRoad;
@@ -218,6 +220,7 @@ public class BuildPlacement : MonoBehaviour {
 
     void PlaceRoad(GameObject toBePlaced, int inndex, Vector3 startPos)
     {
+        line.enabled = true;
         bool obstructed = false;
         BoxCollider myRoad = toBePlaced.GetComponent<BoxCollider>();
         Vector3 colSize = new Vector3(myRoad.size.x,myRoad.size.y,myRoad.size.z);
@@ -249,7 +252,7 @@ public class BuildPlacement : MonoBehaviour {
             amountBlocks = xBlock;
             float iets = line.GetPosition(1).x;
             float midpoint = (startPos.x + iets) / 2;
-            Vector3 lenght = new Vector3(colSize.x * xBlock, colSize.y, colSize.z) / 2;
+            Vector3 lenght = new Vector3(colSize.x * xBlock - 0.01f, colSize.y, colSize.z - 0.01f) / 2;
             Vector3 newPos = new Vector3(startPos.x - (colSize.x * xBlock) - colSize.x / 2, 0.01f, startPos.z);
             float hight = colSize.y / 2 + startPos.y;
             if (disX > 0)
@@ -296,7 +299,7 @@ public class BuildPlacement : MonoBehaviour {
             amountBlocks = zBlock;
             float iets = line.GetPosition(1).z;
             float midpoint = (startPos.z + iets) / 2;
-            Vector3 lenght = new Vector3(colSize.x, colSize.y, colSize.z * zBlock ) / 2;
+            Vector3 lenght = new Vector3(colSize.x - 0.01f, colSize.y, colSize.z * zBlock - 0.01f) / 2;
             Vector3 newPos = new Vector3(startPos.x, 0.01f, startPos.z - (colSize.z * zBlock) - (colSize.z / 2));
             float hight = colSize.y / 2 + startPos.y;
             if (disZ > 0)
@@ -336,6 +339,7 @@ public class BuildPlacement : MonoBehaviour {
         }
         if (!obstructed && Input.GetButtonDown("Fire1") && notFirstFrame)
         {
+
             Vector3 startPoint = new Vector3(0, 0, 0);
             float hori = 0;
             if (hor)
@@ -389,25 +393,41 @@ public class BuildPlacement : MonoBehaviour {
             }
             for (int i = 0; i < allRoadsToPlace.Count; i++)
             {
-                allRoadsToPlace[i].GetComponent<Building>().Place();
+                if(i != 0)
+                {
+                    allRoadsToPlace[i].GetComponent<Building>().MyStart();
+                }
+                if(i < allRoadsToPlace.Count - 1)
+                {
+                    allRoadsToPlace[i].GetComponent<Building>().Place();
+                }
             }
+            GameObject lastOne = allRoadsToPlace[allRoadsToPlace.Count - 1];
             allRoadsToPlace.Clear();
-
+            allRoadsToPlace.Add(lastOne);
+            continuePlacing = true;
         }
         notFirstFrame = true;
         if (Input.GetButtonDown("Fire2"))
         {
             placingRoad = false;
             road = false;
+
             for (int i = 0; i < allRoadsToPlace.Count; i++)
             {
-                if (allRoadsToPlace[i] != null)
+                if(continuePlacing && i == 0)
+                {
+                    allRoadsToPlace[i].GetComponent<Building>().Place();
+                }
+                else if (allRoadsToPlace[i] != null)
                 {
                     Destroy(allRoadsToPlace[i]);
                 }
             }
+            line.enabled = false;
             notFirstFrame = false;
             allRoadsToPlace.Clear();
+            continuePlacing = false;
         }
     }
 }

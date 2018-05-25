@@ -55,6 +55,7 @@ GameObject:
   - component: {fileID: 23448308709264822}
   - component: {fileID: 114961395297205306}
   - component: {fileID: 65040810428519718}
+  - component: {fileID: 114087142686058488}
   m_Layer: 0
   m_Name: Windmill
   m_TagString: Obstacle
@@ -199,6 +200,30 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.59999996, y: 0.6, z: 1.8111644}
   m_Center: {x: 0, y: 0.036642157, z: 0.9055822}
+--- !u!114 &114087142686058488
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1754630861120094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88f6735c727159848884e6c693a2d4a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aura:
+    serializedVersion: 2
+    m_Bits: 0
+  myRadius: 0
+  reqHappiness: 0
+  reqWater: 0
+  reqEnergy: 0
+  reqCo2: 0
+  happiness: 0
+  water: 0
+  energy: 0
+  co2: 0
+  myAuras: []
 --- !u!114 &114961395297205306
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -210,9 +235,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 757996b75aff68f43a49c70ae4f6a481, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myBuilding: {fileID: 0}
   isPlaced: 0
   myMat: {fileID: 0}
   inOtherBuilding: 0
+  startedPlacing: 0
   obstacles:
     serializedVersion: 2
     m_Bits: 0
+  hasAura: 0

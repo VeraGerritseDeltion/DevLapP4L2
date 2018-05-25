@@ -38,6 +38,7 @@ GameObject:
   - component: {fileID: 23974315936853382}
   - component: {fileID: 114937702764763078}
   - component: {fileID: 65722777584633108}
+  - component: {fileID: 114188002570359454}
   m_Layer: 0
   m_Name: 3D_CropField_001
   m_TagString: Obstacle
@@ -126,6 +127,30 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: 2.0000005, z: 0.22500005}
   m_Center: {x: 0, y: 0, z: 0.08000002}
+--- !u!114 &114188002570359454
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1912664280635196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88f6735c727159848884e6c693a2d4a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aura:
+    serializedVersion: 2
+    m_Bits: 0
+  myRadius: 0
+  reqHappiness: 0
+  reqWater: 0
+  reqEnergy: 0
+  reqCo2: 0
+  happiness: 0
+  water: 0
+  energy: 0
+  co2: 0
+  myAuras: []
 --- !u!114 &114937702764763078
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -145,3 +170,4 @@ MonoBehaviour:
   obstacles:
     serializedVersion: 2
     m_Bits: 0
+  hasAura: 0
