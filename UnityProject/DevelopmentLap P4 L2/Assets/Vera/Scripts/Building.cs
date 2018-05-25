@@ -45,7 +45,10 @@ public class Building : MonoBehaviour {
         myMat.color = normalColor;
         gameObject.layer = 8;
         isPlaced = true;
-        AddStats ();
+        if(myBuilding != null)
+        {
+            AddStats();
+        }
     }
 
     void AddStats () 
