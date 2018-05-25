@@ -568,7 +568,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Windmill Farm
+  m_Text: Road
 --- !u!222 &164535065
 CanvasRenderer:
   m_ObjectHideFlags: 0

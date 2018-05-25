@@ -91,7 +91,7 @@ public class BuildPlacement : MonoBehaviour {
         
         if(isPlacing != null && startedPlacing)
         {
-            if (Input.GetButton("LeftShift"))
+            if (Input.GetButton("LeftShift") || Input.GetButton("LeftControl"))
             {
                 SnapTo(mouse3DPos);
             }
@@ -160,7 +160,7 @@ public class BuildPlacement : MonoBehaviour {
             {
                 if(disX > 0)
                 {
-                    snappedPos = new Vector3(posClosest.x - sizeCol.x - closeColSize.x - 0.01f, mousePos.y, mousePos.z);
+                    snappedPos = new Vector3(posClosest.x - sizeCol.x - closeColSize.x, mousePos.y, mousePos.z);
                     if (trueSnap)
                     {
                         snappedPos.z = posClosest.z;
@@ -168,7 +168,7 @@ public class BuildPlacement : MonoBehaviour {
                 }
                 else
                 {
-                    snappedPos = new Vector3(posClosest.x + sizeCol.x + closeColSize.x + 0.01f, mousePos.y, mousePos.z);
+                    snappedPos = new Vector3(posClosest.x + sizeCol.x + closeColSize.x, mousePos.y, mousePos.z);
                     if (trueSnap)
                     {
                         snappedPos.z = posClosest.z;
@@ -179,7 +179,7 @@ public class BuildPlacement : MonoBehaviour {
             {
                 if(disZ > 0)
                 {
-                    snappedPos = new Vector3(mousePos.x, mousePos.y, posClosest.z - sizeCol.z - closeColSize.z - 0.01f);
+                    snappedPos = new Vector3(mousePos.x, mousePos.y, posClosest.z - sizeCol.z - closeColSize.z);
                     if (trueSnap)
                     {
                         snappedPos.x = posClosest.x;
@@ -187,7 +187,7 @@ public class BuildPlacement : MonoBehaviour {
                 }
                 else
                 {
-                    snappedPos = new Vector3(mousePos.x, mousePos.y, posClosest.z + sizeCol.z + closeColSize.z + 0.01f);
+                    snappedPos = new Vector3(mousePos.x, mousePos.y, posClosest.z + sizeCol.z + closeColSize.z);
                     if (trueSnap)
                     {
                         snappedPos.x = posClosest.x;
