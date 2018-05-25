@@ -21,7 +21,10 @@ public class Building : MonoBehaviour {
 
     private BuildingStats myBuildingStats;
 
-
+    void Start ()
+    {
+        Place ();
+    }
     public void MyStart ()
     {
         myBuildingStats = transform.GetComponent<BuildingStats> ();
@@ -50,7 +53,7 @@ public class Building : MonoBehaviour {
     public void Place()
     {
         myMat.color = normalColor;
-        gameObject.layer = 8;
+        //gameObject.layer = 8;
         isPlaced = true;
         if(myBuilding != null)
         {
@@ -60,10 +63,6 @@ public class Building : MonoBehaviour {
             {
                 GetComponent<AuraStats> ().AddList (transform.position);
                 GetComponent<AuraStats> ().AddStats ();
-            }
-            if (GetComponent<BuildingStats> () != null)
-            {
-                GetComponent<BuildingStats> ().AuraEffect ();
             }
         }
     }

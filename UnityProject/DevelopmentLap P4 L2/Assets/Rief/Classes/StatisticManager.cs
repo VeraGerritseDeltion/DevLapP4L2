@@ -30,7 +30,7 @@ public class StatisticManager : MonoBehaviour {
     public int energy;
     public int co2;
 
-	void Awake() 
+    void Awake() 
     {
 		if(instance == null) {
             instance = this;

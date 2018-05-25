@@ -6,7 +6,7 @@ public class AuraStats : MonoBehaviour {
 
     public LayerMask toCollideHouse;
     public float myRadius;
-    public List<GameObject> myHouses = new List<GameObject>();
+    public List<Collider> myHouses;
 
     [Header("Stats")]
     public int happyPoints;
@@ -14,21 +14,17 @@ public class AuraStats : MonoBehaviour {
     public int waterPoints;
     public int co2Points;
 
-
     public void AddList (Vector3 center)
     {
 
-        Collider [] houses = Physics.OverlapSphere (center, myRadius, toCollideHouse);
-
-        for(int i = 0; i < houses.Length; i++)
-        {
-            myHouses.Add (houses [i].gameObject);
-        }
+        Collider[] houses = Physics.OverlapSphere (center, myRadius, toCollideHouse);
+        print (houses.Length);
+        myHouses = new List<Collider> (houses);
     }
     
     public void AddStats ()
     {
-        print ("test add stats");
+        print ("execute");
         for(int j = 0; j < myHouses.Count; j++)
         {
             BuildingStats myBuilding = myHouses [j].GetComponent<BuildingStats> ();

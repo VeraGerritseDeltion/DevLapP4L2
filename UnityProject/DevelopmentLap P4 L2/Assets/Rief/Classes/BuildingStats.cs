@@ -23,7 +23,7 @@ public class BuildingStats : MonoBehaviour {
 
     public void Start ()
     {
-        myAuras = AuraEffect ();
+        //myAuras = AuraEffect ();
     }
 
     public Collider [] AuraEffect ()
@@ -33,7 +33,7 @@ public class BuildingStats : MonoBehaviour {
         for (int i = 0; i < auras.Length; i++)
         {
             AuraStats myAura = auras [i].GetComponent<AuraStats> ();
-            myAura.myHouses.Add (gameObject);
+            myAura.myHouses.Add (gameObject.GetComponent<Collider>());
         }
         return auras;
     }
@@ -43,7 +43,7 @@ public class BuildingStats : MonoBehaviour {
         for(int i = 0; i < myAuras.Length; i++)
         {
             AuraStats myAura = myAuras [i].GetComponent<AuraStats> ();
-            myAura.myHouses.Remove (gameObject);
+            myAura.myHouses.Remove (gameObject.GetComponent<Collider>());
         }
     }
 }
