@@ -220,7 +220,7 @@ RectTransform:
   - {fileID: 1966659766}
   - {fileID: 2001174804}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -435,7 +435,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &658894483
 GameObject:
@@ -470,7 +470,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aura:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 2048
+  myRadius: 5
   reqHappiness: 0
   reqWater: 0
   reqEnergy: 0
@@ -479,7 +480,6 @@ MonoBehaviour:
   water: 0
   energy: 0
   co2: 0
-  myHouse: {fileID: 0}
 --- !u!65 &658894485
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -545,7 +545,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &658894489
 MonoBehaviour:
@@ -558,9 +558,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 757996b75aff68f43a49c70ae4f6a481, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myBuilding: {fileID: 0}
+  myBuilding: {fileID: 11400000, guid: 09e2b29812f8abf47859482f7a4b072a, type: 2}
   isPlaced: 0
-  myMat: {fileID: 0}
+  myMat: {fileID: 2100000, guid: accda489f0678aa4fbf6ece097542d8d, type: 2}
   inOtherBuilding: 0
   startedPlacing: 0
   obstacles:
@@ -795,7 +795,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &898709054
 MonoBehaviour:
@@ -968,6 +968,7 @@ GameObject:
   - component: {fileID: 1514725455}
   - component: {fileID: 1514725454}
   - component: {fileID: 1514725453}
+  - component: {fileID: 1514725458}
   m_Layer: 11
   m_Name: Pub
   m_TagString: Untagged
@@ -1060,8 +1061,28 @@ Transform:
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1514725458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1514725452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 757996b75aff68f43a49c70ae4f6a481, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myBuilding: {fileID: 11400000, guid: 71a7dd2a1a9d07949b8621bfe4378f8c, type: 2}
+  isPlaced: 0
+  myMat: {fileID: 2100000, guid: accda489f0678aa4fbf6ece097542d8d, type: 2}
+  inOtherBuilding: 0
+  startedPlacing: 0
+  obstacles:
+    serializedVersion: 2
+    m_Bits: 0
+  hasAura: 1
 --- !u!1 &1603600080
 GameObject:
   m_ObjectHideFlags: 0
@@ -1199,8 +1220,66 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &1860768458
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1860768460}
+  - component: {fileID: 1860768459}
+  m_Layer: 0
+  m_Name: _Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1860768459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1860768458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 323723f90c5802a4aa6cedf44414e4ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  addWood: 0
+  addStone: 0
+  addMoney: 0
+  addFood: 0
+  addMinerals: 0
+  addHappiness: 0
+  addWater: 0
+  addEnergy: 0
+  addCo2: 0
+  wood: 0
+  stone: 0
+  money: 0
+  food: 0
+  minerals: 0
+  happiness: 0
+  water: 0
+  energy: 0
+  co2: 0
+--- !u!4 &1860768460
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1860768458}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.61, y: -0.9494724, z: 1.8600001}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1966659763
 GameObject:
   m_ObjectHideFlags: 0

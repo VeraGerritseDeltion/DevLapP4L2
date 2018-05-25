@@ -21,7 +21,8 @@ public class Building : MonoBehaviour {
 
     private BuildingStats myBuildingStats;
 
-	public void MyStart ()
+
+    public void MyStart ()
     {
         myBuildingStats = transform.GetComponent<BuildingStats> ();
         myMat = GetComponent<Renderer>().material;
@@ -29,6 +30,7 @@ public class Building : MonoBehaviour {
         myCol = GetComponentInChildren<BoxCollider>();
         sizeCol = new Vector3(myCol.size.x, myCol.size.z, myCol.size.y)/2;
         StartCoroutine(EnablePlacement());
+
     }
 
     IEnumerator EnablePlacement()
@@ -53,10 +55,15 @@ public class Building : MonoBehaviour {
         if(myBuilding != null)
         {
             AddStats();
-            GetComponent<BuildingStats> ().AuraEffect ();
-            if (hasAura) {
+
+            if (hasAura == true)
+            {
                 GetComponent<AuraStats> ().AddList (transform.position);
-                GetComponent<AuraStats>().AddStats();
+                GetComponent<AuraStats> ().AddStats ();
+            }
+            if (GetComponent<BuildingStats> () != null)
+            {
+                GetComponent<BuildingStats> ().AuraEffect ();
             }
         }
     }

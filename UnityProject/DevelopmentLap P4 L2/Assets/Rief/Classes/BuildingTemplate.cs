@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [CreateAssetMenu(fileName = "New Building", menuName = "New Building/Building")]
-public class BuildingTemplate : ScriptableObject{
+public class BuildingTemplate : ScriptableObject {
 
     public new string name;
     public string description;

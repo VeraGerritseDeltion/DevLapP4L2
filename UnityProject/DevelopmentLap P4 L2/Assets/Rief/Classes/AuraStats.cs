@@ -15,18 +15,22 @@ public class AuraStats : MonoBehaviour {
     public int co2Points;
 
 
-    public void AddList (Vector3 center) {
+    public void AddList (Vector3 center)
+    {
 
         Collider [] houses = Physics.OverlapSphere (center, myRadius, toCollideHouse);
 
-        for(int i = 0; i < houses.Length; i++) {
+        for(int i = 0; i < houses.Length; i++)
+        {
             myHouses.Add (houses [i].gameObject);
         }
     }
     
-    public void AddStats () {
-        
-        for(int j = 0; j < myHouses.Count; j++) {
+    public void AddStats ()
+    {
+        print ("test add stats");
+        for(int j = 0; j < myHouses.Count; j++)
+        {
             BuildingStats myBuilding = myHouses [j].GetComponent<BuildingStats> ();
             myBuilding.happiness += happyPoints;
             myBuilding.energy += energyPoints;

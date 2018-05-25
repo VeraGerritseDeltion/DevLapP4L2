@@ -19,22 +19,31 @@ public class BuildingStats : MonoBehaviour {
     public int energy;
     public int co2;
 
-    public Collider [] myAuras;
+    private Collider [] myAuras;
 
-    public void Start () {
+    public void Start ()
+    {
         myAuras = AuraEffect ();
     }
 
-    public Collider [] AuraEffect () {
+    public Collider [] AuraEffect ()
+    {
         Collider [] auras = Physics.OverlapSphere (transform.position, myRadius, aura);
 
-        for (int i = 0; i < auras.Length; i++) {
+        for (int i = 0; i < auras.Length; i++)
+        {
             AuraStats myAura = auras [i].GetComponent<AuraStats> ();
             myAura.myHouses.Add (gameObject);
         }
         return auras;
     }
 
-    void toDestroy () {
+    void ToDestroy ()
+    {
+        for(int i = 0; i < myAuras.Length; i++)
+        {
+            AuraStats myAura = myAuras [i].GetComponent<AuraStats> ();
+            myAura.myHouses.Remove (gameObject);
+        }
     }
 }

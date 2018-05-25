@@ -41,13 +41,15 @@ public class StatisticManager : MonoBehaviour {
     {
         StartCo();
     }
-    void StartCo () {
+    void StartCo ()
+    {
 
 
         StartCoroutine (AddStats ());
     }
 
-    IEnumerator AddStats () {
+    IEnumerator AddStats ()
+    {
 
         yield return new WaitForSeconds (statTimer);
         wood += addWood;
