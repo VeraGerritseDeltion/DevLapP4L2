@@ -9,12 +9,22 @@ public class BuildPlacement : MonoBehaviour {
     public LayerMask obstacleLayer;
     public LayerMask groundLayer;
     bool startedPlacing;
+
     GameObject isPlacing;
     Building placing;
     int index;
     public List<GameObject> allBuildings = new List<GameObject>();
 
-	void Start () {
+    [Header ("Road Var")]
+    List<GameObject> allRoadsToPlace = new List<GameObject>();
+    bool placingRoad;
+    bool road;
+    Vector3 startRoad;
+    GameObject roadToBePlaced;
+
+
+
+    void Start () {
 		
 	}
 	
@@ -22,11 +32,15 @@ public class BuildPlacement : MonoBehaviour {
 	void Update () {
         if (startedPlacing)
         {
-            PlaceBuilding(null,index);
+            PlaceBuilding(null,index,placingRoad);
+        }
+        if (road)
+        {
+            PlaceRoad(roadToBePlaced, index, startRoad);
         }
 	}
 
-    void PlaceBuilding(GameObject toBePlaced,int inndex)
+    void PlaceBuilding(GameObject toBePlaced,int inndex,bool myRoad)
     {
         index = inndex;
         if (Input.GetButtonDown("Fire2"))
@@ -82,12 +96,23 @@ public class BuildPlacement : MonoBehaviour {
             }
             if(Input.GetButtonDown("Fire1") && !placing.inOtherBuilding && placing.startedPlacing)
             {
-                placing.Place();
-
-                isPlacing = null;
                 startedPlacing = false;
+
+                if (myRoad)
+                {
+                    print("Ugh");
+                    startRoad = mouse3DPos;
+                    roadToBePlaced = toBePlaced;
+                    road = true;
+                    allRoadsToPlace.Add(isPlacing);
+                    isPlacing = null;
+                    placing = null;
+                    return;
+                }
+                placing.Place();
+                isPlacing = null;
                 placing = null;
-                PlaceBuilding(allBuildings[inndex],inndex);
+                PlaceBuilding(allBuildings[inndex],inndex,placingRoad);
             }
         }
     }
@@ -175,10 +200,22 @@ public class BuildPlacement : MonoBehaviour {
 
     public void NewBuilding(int whichBuilding)
     {
-        print("y u no work");
+        bool newRoad = false;
+        Building newBuilding = allBuildings[whichBuilding].GetComponent<Building>();
+        if(newBuilding.GetType() == typeof(Road))
+        {
+            print("Road");
+            newRoad = true;
+        }
+        placingRoad = newRoad;
         if(whichBuilding < allBuildings.Count)
         {
-            PlaceBuilding(allBuildings[whichBuilding],whichBuilding);
+            PlaceBuilding(allBuildings[whichBuilding],whichBuilding,newRoad);
         }
+    }
+
+    void PlaceRoad(GameObject toBePlaced, int inndex, Vector3 startPos)
+    {
+
     }
 }
