@@ -88,7 +88,9 @@ public class Building : MonoBehaviour {
 
     void CollisionStay()
     {
-        Collider[] buildings = Physics.OverlapBox(transform.position,sizeCol,Quaternion.identity,obstacles);
+        float offSet = 0.01f;
+        Vector3 size = new Vector3(sizeCol.x - offSet, sizeCol.y - offSet, sizeCol.z - offSet);
+        Collider[] buildings = Physics.OverlapBox(transform.position,size,Quaternion.identity,obstacles);
         if (buildings.Length != 0)
         {
             myMat.color = Color.red;
