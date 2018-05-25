@@ -21,7 +21,7 @@ public class Building : MonoBehaviour {
 
     private BuildingStats myBuildingStats;
 
-	public void Start ()
+	public void MyStart ()
     {
         myBuildingStats = transform.GetComponent<BuildingStats> ();
         myMat = GetComponent<Renderer>().material;
