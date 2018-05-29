@@ -1,0 +1,6 @@
+Building bar = 0
+building category = 1
+eventlog = 2
+statistics = 3
+settings = 4
+credits = 5

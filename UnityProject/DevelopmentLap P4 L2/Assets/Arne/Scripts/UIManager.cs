@@ -14,8 +14,9 @@ public class UIManager : MonoBehaviour {
 
 	//ui elements lists
 	public List <RectTransform> allMenuItems = new List<RectTransform>(); 
+	public List <RectTransform> subMenus = new List<RectTransform>();
 	public RectTransform mainMenu, ingame, settings, pauseMenu, buildingsbar, eventlog, statistics;
-	public bool paused, settingsActive;
+	public bool paused, settingsActive, creditsActive;
 	private bool cursorActive;
 
 
@@ -32,7 +33,7 @@ public class UIManager : MonoBehaviour {
 		}
 	}
 	// Use this for initialization
-	void Start () 
+	void MyStart () 
 	{
 		CheckState();
 	}
@@ -75,34 +76,40 @@ public class UIManager : MonoBehaviour {
     //gets a list that will in which the objects will get set true after everything is set false
     private void EnableMenuItems(List<RectTransform> items) {
 
-        foreach (RectTransform rT in allMenuItems)
+        foreach(RectTransform rT in allMenuItems)
 		{
             rT.gameObject.SetActive(false);
+			Debug.Log("deactivate");
 		}
-        foreach (RectTransform rT in items)
+        foreach(RectTransform rT in items)
 		{
             rT.gameObject.SetActive(true);
+			Debug.Log("true");
 		}
     }
-	private void Submenus (bool activate, RectTransform element)
-	{
-		//if filled in correctly settingsmenu function is not needed
-	}
-	//make you enable or disable the settings
-	public void SettingMenu () {
-
-		settingsActive = !settingsActive;
-		settings.gameObject.SetActive(settingsActive);
-		//enables settings rectTransform or disables it
-	}
-	
-	//enables and disables the control info panel
-	public void ControlInfo () {	//something else
-
-		//controlInfoActive = !controlInfoActive;
-		//controlInfo.gameObject.SetActive(controlInfoActive);
-	}
 	#region ButtonFunctions
+	//receives number from button, with correct rectTransform and switches between states of rectTransform
+	public void SubMenuConverter (int number) 
+	{
+		if(number == 4)
+		{
+			settingsActive = !settingsActive;
+		}
+		if(number == 5)
+		{
+			creditsActive = !creditsActive;
+		}
+		Submenus(subMenus[number]);
+		Debug.Log(number);
+	}
+	//Switches between the on and off of a RectTransform
+	private void Submenus (RectTransform element)
+	{
+		bool active = element.gameObject.activeSelf;
+		active = !active;
+		element.gameObject.SetActive(active);
+		Debug.Log(element.gameObject.activeSelf);
+	}
 	//button function
 	public void MainMenu () {
 
@@ -152,20 +159,24 @@ public class UIManager : MonoBehaviour {
 	//makes you pause ingame or unpause
 	private void PressEscape () {
 		
-		if(Input.GetKeyDown(esc) && _UIState == UIState.Ingame && paused == false) {
-
+		if(Input.GetKeyDown(esc) && _UIState == UIState.Ingame && paused == false) 
+		{
 			paused = true;
 			SetTimeScale(0f);
 			pauseMenu.gameObject.SetActive(true);
 
 			SwitchCursorState(false);
 		}		
-		else if(Input.GetKeyDown(esc) && settingsActive == true) {
-
-			SettingMenu();
+		else if(Input.GetKeyDown(esc) && settingsActive) 
+		{
+			SubMenuConverter(4);
 		}
-		else if(Input.GetKeyDown(esc) && _UIState == UIState.Ingame && paused == true) {
-
+		else if(Input.GetKeyDown(esc) && creditsActive)
+		{
+			SubMenuConverter(5);
+		}
+		else if(Input.GetKeyDown(esc) && _UIState == UIState.Ingame && paused) 
+		{
 			Resume();
 		}		
 	}
