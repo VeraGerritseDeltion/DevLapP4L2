@@ -93,6 +93,7 @@ public class BuildPlacement : MonoBehaviour {
         {
             if (Input.GetButton("LeftShift") || Input.GetButton("LeftControl"))
             {
+                print("test");  
                 SnapTo(mouse3DPos);
             }
             else
@@ -129,6 +130,7 @@ public class BuildPlacement : MonoBehaviour {
 
         Collider[] inRange = Physics.OverlapBox(mousePos, sizeSearchBox, Quaternion.identity, obstacleLayer);
         GameObject closest = null;
+        print(inRange.Length);
         if(inRange.Length != 0)
         {
             float lowestRange = 0;
@@ -143,7 +145,15 @@ public class BuildPlacement : MonoBehaviour {
             }
             closest = inRange[lowest].gameObject;
             Building closeBuild = closest.GetComponentInChildren<Building>();
-            //closeBuild = GetComponent<Building>();
+            if (closeBuild == null)
+            {
+                closeBuild = GetComponent<Building>();
+            }
+            if (closeBuild == null)
+            {
+                isPlacing.transform.position = mousePos;
+                return;
+            }
             Vector3 closeColSize = closeBuild.GetColliderSize();
             Vector3 posClosest = closest.transform.position;
             float disX = posClosest.x - mousePos.x;

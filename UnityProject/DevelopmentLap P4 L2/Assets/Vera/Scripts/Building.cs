@@ -21,10 +21,6 @@ public class Building : MonoBehaviour {
 
     private BuildingStats myBuildingStats;
 
-    void Start ()
-    {
-        Place ();
-    }
     public void MyStart ()
     {
         myBuildingStats = transform.GetComponent<BuildingStats> ();
@@ -53,8 +49,7 @@ public class Building : MonoBehaviour {
     public void Place()
     {
         myMat.color = normalColor;
-        //gameObject.layer = 8;
-        isPlaced = true;
+        gameObject.layer = 8;
         if(myBuilding != null)
         {
             AddStats();
@@ -65,6 +60,13 @@ public class Building : MonoBehaviour {
                 GetComponent<AuraStats> ().AddStats ();
             }
         }
+        isPlaced = true;
+    }
+    
+    public void DestroyBuilding()
+    {
+        MinStats();
+        Destroy(gameObject);
     }
 
 
@@ -88,7 +90,7 @@ public class Building : MonoBehaviour {
 
     void CollisionStay()
     {
-        float offSet = 0.01f;
+        float offSet = 0.05f;
         Vector3 size = new Vector3(sizeCol.x - offSet, sizeCol.y - offSet, sizeCol.z - offSet);
         Collider[] buildings = Physics.OverlapBox(transform.position,size,Quaternion.identity,obstacles);
         if (buildings.Length != 0)
