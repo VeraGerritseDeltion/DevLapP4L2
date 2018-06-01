@@ -4,26 +4,70 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
+    public float boundary;
     public float rotSpeed;
     public float movSpeed;
+
+    float screenX;
+    float screenZ;
+
     float horizontal;
     float vertical;
     float rot;
 
+    private void Start()
+    {
+        screenX = Screen.width;
+        screenZ = Screen.height;
+        Time.timeScale = 200;
+    }
     private void Update()
     {
+        Cursor.lockState = CursorLockMode.Confined;
         Movement();
     }
 
     void Movement()
     {
-        horizontal = Input.GetAxis("Horizontal") * movSpeed * Time.deltaTime;
-        vertical = Input.GetAxis("Vertical") * movSpeed * Time.deltaTime;
+        horizontal = Input.GetAxis("Horizontal");
+        vertical = Input.GetAxis("Vertical");
 
-        transform.Translate(new Vector3(horizontal, 0, vertical));
+        rot = Input.GetAxis("HorizontalRotation") * rotSpeed * Time.deltaTime / Time.timeScale;
+        if (Input.GetButton("Fire3"))
+        {
+            rot = Input.GetAxis("Mouse X") * rotSpeed * Time.deltaTime / Time.timeScale;
+        }
+        else
+        {
+           // if(Input.GetButton("Fire2"))
 
-        rot = Input.GetAxis("HorizontalRotation") * rotSpeed * Time.deltaTime;
+
+
+
+
+
+            if (Input.mousePosition.x < boundary)
+            {
+                horizontal = -1;
+            }
+            if (Input.mousePosition.x > screenX - boundary)
+            {
+                horizontal = 1;
+            }
+            if (Input.mousePosition.y < boundary)
+            {
+                vertical = -1;
+            }
+            if (Input.mousePosition.y > screenZ - boundary)
+            {
+                vertical = 1;
+            }
+        }
         transform.Rotate(new Vector3(0, rot, 0));
+        print(horizontal);
+        horizontal = horizontal * movSpeed * Time.deltaTime / Time.timeScale;
+        vertical = vertical * movSpeed * Time.deltaTime / Time.timeScale;
+        transform.Translate(new Vector3(horizontal, 0, vertical));
     }
 
 }
