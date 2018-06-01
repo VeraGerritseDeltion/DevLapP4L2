@@ -53,12 +53,8 @@ public class Building : MonoBehaviour {
         if(myBuilding != null)
         {
             AddStats();
+            GetComponent<BuildingStats>().AddToAura();
 
-            if (hasAura == true)
-            {
-                GetComponent<AuraStats> ().AddList (transform.position);
-                GetComponent<AuraStats> ().AddStats ();
-            }
         }
         isPlaced = true;
     }

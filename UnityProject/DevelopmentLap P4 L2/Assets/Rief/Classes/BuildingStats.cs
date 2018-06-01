@@ -18,32 +18,18 @@ public class BuildingStats : MonoBehaviour {
     public int water;
     public int energy;
     public int co2;
+    
 
-    private Collider [] myAuras;
+public void AddToAura(){
+    Collider[] auras = Physics.OverlapSphere(transform.position, myRadius, aura);
 
-    public void Start ()
-    {
-        //myAuras = AuraEffect ();
+    for (int i = 0; i < auras.Length; i++){
+        AuraStats auraStats= auras[i].GetComponent<AuraStats>();
+        auraStats.myHouses.Add(gameObject.GetComponent<Collider>());
+        happiness += auraStats.happyPoints;
+        water += auraStats.waterPoints;
+        energy += auraStats.energyPoints;
+        co2 += auraStats.co2Points;
     }
-
-    public Collider [] AuraEffect ()
-    {
-        Collider [] auras = Physics.OverlapSphere (transform.position, myRadius, aura);
-
-        for (int i = 0; i < auras.Length; i++)
-        {
-            AuraStats myAura = auras [i].GetComponent<AuraStats> ();
-            myAura.myHouses.Add (gameObject.GetComponent<Collider>());
-        }
-        return auras;
-    }
-
-    void ToDestroy ()
-    {
-        for(int i = 0; i < myAuras.Length; i++)
-        {
-            AuraStats myAura = myAuras [i].GetComponent<AuraStats> ();
-            myAura.myHouses.Remove (gameObject.GetComponent<Collider>());
-        }
-    }
+}
 }

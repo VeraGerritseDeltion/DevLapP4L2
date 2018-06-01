@@ -14,24 +14,37 @@ public class AuraStats : MonoBehaviour {
     public int waterPoints;
     public int co2Points;
 
-    public void AddList (Vector3 center)
-    {
 
-        Collider[] houses = Physics.OverlapSphere (center, myRadius, toCollideHouse);
-        print (houses.Length);
+    void Start(){
+        AddList();
+    }
+    public void AddList ()
+    {
+        Collider[] houses = Physics.OverlapSphere (transform.position, myRadius, toCollideHouse);
         myHouses = new List<Collider> (houses);
+
+        AddStats();
     }
     
     public void AddStats ()
     {
-        print ("execute");
         for(int j = 0; j < myHouses.Count; j++)
         {
             BuildingStats myBuilding = myHouses [j].GetComponent<BuildingStats> ();
             myBuilding.happiness += happyPoints;
             myBuilding.energy += energyPoints;
             myBuilding.water += waterPoints;
-            myBuilding.co2 += co2Points;
+            myBuilding.co2 -= co2Points;
         }
     }
+void RemoveBuilding(){
+    for (int i = 0; i < myHouses.Count; i++){
+        BuildingStats myBuilding = myHouses[i].GetComponent<BuildingStats>();
+        myBuilding.happiness -= happyPoints;
+        myBuilding.energy -= energyPoints;
+        myBuilding.water -= waterPoints;
+        myBuilding.co2 += co2Points;
+        myHouses.Remove(myHouses[i]);
+    }
+}
 }

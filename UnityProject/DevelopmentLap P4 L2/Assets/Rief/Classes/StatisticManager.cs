@@ -61,6 +61,7 @@ public class StatisticManager : MonoBehaviour {
         happiness += addHappiness;
         water += addWater;
         energy += addEnergy;
+        co2 += addCo2;
         StartCo ();
     }
 }
