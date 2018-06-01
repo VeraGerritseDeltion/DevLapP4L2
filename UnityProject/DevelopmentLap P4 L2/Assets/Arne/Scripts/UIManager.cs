@@ -19,6 +19,8 @@ public class UIManager : MonoBehaviour {
 	public bool paused, settingsActive, creditsActive;
 	private bool cursorActive;
 
+	private float currentTimeScale;
+
 
 
 	public KeyCode esc; //NEEDS TO BE CHANGED
@@ -41,7 +43,9 @@ public class UIManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		
+		PressEscape();
+
+		HotKeys();
 	}
 	void CheckState ()
 	{
@@ -113,7 +117,9 @@ public class UIManager : MonoBehaviour {
 	//button function
 	public void MainMenu () {
 
+		paused = false;
 		SetState(UIState.MainMenu);
+		SetTimeScale(1f);
 	}
 	//button function
 	public void Ingame () {
@@ -125,9 +131,9 @@ public class UIManager : MonoBehaviour {
 	public void Resume () {
 
 		paused = false;
-		SetTimeScale(1f);
 		pauseMenu.gameObject.SetActive(false);
-
+		SetTimeScale(currentTimeScale);
+		Debug.Log(currentTimeScale + "resume");
 		SwitchCursorState(true);
 	}
 	//button function
@@ -135,9 +141,15 @@ public class UIManager : MonoBehaviour {
 
 		Application.Quit();
 	}
-	private void SetTimeScale (float scale)
+	public void SetTimeScale (float scale)
 	{
+		Debug.Log(scale);
 		Time.timeScale = scale;
+		if(!paused)
+		{
+			currentTimeScale = scale;
+		}
+		
 	}
 	#endregion
 	//sets the right cursor state
@@ -156,9 +168,33 @@ public class UIManager : MonoBehaviour {
 			Cursor.visible = false;
 		}	
 	}
+	private void HotKeys () 
+	{
+		if(paused)
+		{
+			return;
+		}
+		if(Input.GetButtonDown("Pause"))
+		{
+			SetTimeScale(0f);
+		}
+		if(Input.GetButtonDown("Normal Speed"))
+		{
+			SetTimeScale(1f);
+		}
+		if(Input.GetButtonDown("Fast Speed"))
+		{
+			SetTimeScale(1.5f);
+		}
+		if(Input.GetButtonDown("Faster Speed"))
+		{
+			SetTimeScale(2f);
+		}
+	}
 	//makes you pause ingame or unpause
 	private void PressEscape () {
 		
+		Debug.Log("escape");
 		if(Input.GetKeyDown(esc) && _UIState == UIState.Ingame && paused == false) 
 		{
 			paused = true;
