@@ -6,13 +6,14 @@ public class SelectionManager : MonoBehaviour {
 
 	public Camera cam;
 	public GameObject currentSelected;
-	private Color selectedColor;
-	private Color selectedSavedColor;
-	public Color highlightColor;
 
+	//the color/material it should change to
+	public Color highlightColor;
+	public Material highlightMaterial;
+
+	//the material of the selected object and a save of it
 	public Material selectedMaterial;
 	public Material selectedSavedMaterial;
-	public Material highlightMaterial;
 
 	// Use this for initialization
 	void Start () 
@@ -54,29 +55,23 @@ public class SelectionManager : MonoBehaviour {
 		{
             if(hit.collider.tag == "Building")
 			{
+				print("hit something");
 				currentSelected = hit.collider.gameObject;
 
-				SaveObjectMaterials();
-
-				selectedMaterial.color = selectedSavedMaterial.color;
-				selectedMaterial.color = Color.black;
-
-
-				
 
 				//currentselected should be highlighted
+				//highlight should go via object itself
 				//scriptable object.sound should be played
+
+				//show tooltip
 
 			}
 			else
 			{
+				
 				//nothing
 			}
 		}
-	}
-	void SaveObjectMaterials () 
-	{
-		selectedSavedMaterial = currentSelected.GetComponent<Renderer>().material;
-		selectedSavedColor = selectedMaterial.color;
+
 	}
 }
