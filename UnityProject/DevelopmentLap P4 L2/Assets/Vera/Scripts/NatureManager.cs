@@ -7,7 +7,7 @@ public class NatureManager : MonoBehaviour
     public static NatureManager instance;
 
     public float uitstoot;
-
+    public int decOrInc;
     [Header("Start Colors nature")]
     public Color currentHigh;
     public Color currentLow;
@@ -34,7 +34,8 @@ public class NatureManager : MonoBehaviour
 
     public void MyStart () {
         CalculateProcent();
-	}
+        StartCoroutine(UpdateTreesFast());
+    }
 
     public void CalculateProcent()
     {
@@ -81,7 +82,15 @@ public class NatureManager : MonoBehaviour
     IEnumerator UpdateTreesFast()
     {
         yield return new WaitForSeconds(0.1f);
-        uitstoot += 1;
+        uitstoot += decOrInc;
+        if(uitstoot < 0)
+        {
+            uitstoot = 0;
+        }
+        if(uitstoot > 100)
+        {
+            uitstoot = 100;
+        }
         CalculateProcent();
         StartCoroutine(UpdateTreesFast());
     }
@@ -89,7 +98,18 @@ public class NatureManager : MonoBehaviour
     void Update () {
         if (Input.GetKeyDown(KeyCode.M))
         {
-            StartCoroutine(UpdateTreesFast());
+            if(decOrInc == 0)
+            {
+                decOrInc = 1;
+            }
+            else if(decOrInc == 1)
+            {
+                decOrInc = -1;
+            }
+            else if(decOrInc == -1)
+            {
+                decOrInc = 1;
+            }
         }
 	}
 }

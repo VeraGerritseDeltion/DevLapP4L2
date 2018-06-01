@@ -125,8 +125,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 2.0000005, z: 0.22500005}
-  m_Center: {x: 0, y: 0, z: 0.08000002}
+  m_Size: {x: 2, y: 2.0000005, z: 1}
+  m_Center: {x: 0, y: 0, z: 0.5}
 --- !u!114 &114188002570359454
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -150,7 +150,6 @@ MonoBehaviour:
   water: 0
   energy: 0
   co2: 0
-  myAuras: []
 --- !u!114 &114937702764763078
 MonoBehaviour:
   m_ObjectHideFlags: 1
