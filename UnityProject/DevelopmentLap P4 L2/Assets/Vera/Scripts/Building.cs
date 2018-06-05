@@ -101,6 +101,16 @@ public class Building : MonoBehaviour {
         }
     }
 
+    public void HighlightBuilding()
+    {
+        myMat.color = Color.yellow;
+    }
+
+    public void DeHighlightBuilding()
+    {
+        myMat.color = normalColor;
+    }
+
     public Vector3 GetColliderSize()
     {
         return sizeCol;
