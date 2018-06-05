@@ -19,7 +19,6 @@ public class CameraMovement : MonoBehaviour
     {
         screenX = Screen.width;
         screenZ = Screen.height;
-        Time.timeScale = 200;
     }
     private void Update()
     {
@@ -64,7 +63,6 @@ public class CameraMovement : MonoBehaviour
             }
         }
         transform.Rotate(new Vector3(0, rot, 0));
-        print(horizontal);
         horizontal = horizontal * movSpeed * Time.deltaTime / Time.timeScale;
         vertical = vertical * movSpeed * Time.deltaTime / Time.timeScale;
         transform.Translate(new Vector3(horizontal, 0, vertical));

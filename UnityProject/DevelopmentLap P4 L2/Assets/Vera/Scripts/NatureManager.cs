@@ -8,6 +8,7 @@ public class NatureManager : MonoBehaviour
 
     public float uitstoot;
     public int decOrInc;
+    bool onOrOff;
     [Header("Start Colors nature")]
     public Color currentHigh;
     public Color currentLow;
@@ -20,6 +21,11 @@ public class NatureManager : MonoBehaviour
     [Header("End Colors nature")]
     public Color endColorHigh;
     public Color endColorLow;
+
+    [Header("forest fire")]
+    public Color burnColorLow;
+    public Color burnColorHigh;
+
 
     [Header("Vegetation")]
     public List<GameObject> allTrees = new List<GameObject>();
@@ -69,7 +75,7 @@ public class NatureManager : MonoBehaviour
         for (int i = 0; i < allTrees.Count; i++)
         {
             float rand = allTrees[i].GetComponent<Trees>().myRand;
-            Color newColor = Color.Lerp(currentHigh, currentLow, rand);
+            Color newColor = Color.Lerp(currentLow, currentHigh, rand);
             allTrees[i].GetComponent<Trees>().ChangeColor(newColor);
         }
     }
@@ -77,6 +83,12 @@ public class NatureManager : MonoBehaviour
     void UpdatesTrees()
     {
 
+    }
+
+    public void StartFire()
+    {
+        int rand = Random.Range(0, allTrees.Count);
+        allTrees[rand].GetComponentInChildren<Trees>().StartFire();
     }
 
     IEnumerator UpdateTreesFast()
@@ -92,7 +104,10 @@ public class NatureManager : MonoBehaviour
             uitstoot = 100;
         }
         CalculateProcent();
-        StartCoroutine(UpdateTreesFast());
+        if (onOrOff)
+        {
+            StartCoroutine(UpdateTreesFast());
+        }
     }
 
     void Update () {
@@ -110,6 +125,21 @@ public class NatureManager : MonoBehaviour
             {
                 decOrInc = 1;
             }
+            print(onOrOff);
+        }
+
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            print(onOrOff);
+            onOrOff = !onOrOff;
+            if (onOrOff)
+            {
+                StartCoroutine(UpdateTreesFast());
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            StartFire();
         }
 	}
 }
