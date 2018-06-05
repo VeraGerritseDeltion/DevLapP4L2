@@ -1,0 +1,106 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1585451363204046}
+  m_IsPrefabParent: 1
+--- !u!1 &1585451363204046
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4169942418779682}
+  - component: {fileID: 114131513042407414}
+  - component: {fileID: 114626109008052246}
+  - component: {fileID: 114797263348972080}
+  m_Layer: 0
+  m_Name: _Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4169942418779682
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1585451363204046}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114131513042407414
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1585451363204046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 323723f90c5802a4aa6cedf44414e4ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  addWood: 0
+  addStone: 0
+  addMoney: 0
+  addFood: 0
+  addMinerals: 0
+  addHappiness: 0
+  addWater: 0
+  addEnergy: 0
+  addCo2: 0
+  wood: 0
+  stone: 0
+  money: 0
+  food: 0
+  minerals: 0
+  happiness: 0
+  water: 0
+  energy: 0
+  co2: 0
+--- !u!114 &114626109008052246
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1585451363204046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c58a0c53e999d74b992936f7fbe0ea5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114797263348972080
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1585451363204046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec051e2331074a54cad461d5f3d99dbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uitstoot: 0
+  decOrInc: 0
+  currentHigh: {r: 0, g: 0, b: 0, a: 0}
+  currentLow: {r: 0, g: 0, b: 0, a: 0}
+  startColorHigh: {r: 0.10998263, g: 0.735849, b: 0.010412939, a: 0}
+  startColorLow: {r: 0.06285365, g: 0.3584906, b: 0.049038816, a: 0}
+  midColorHigh: {r: 0.3283254, g: 0.3962264, b: 0.08784264, a: 0}
+  midColorLow: {r: 0.20754719, g: 0.2034189, b: 0.036222856, a: 0}
+  endColorHigh: {r: 0.4433962, g: 0.24156727, b: 0.039738327, a: 0}
+  endColorLow: {r: 0.16981131, g: 0.06781835, b: 0, a: 0}
+  allTrees: []
