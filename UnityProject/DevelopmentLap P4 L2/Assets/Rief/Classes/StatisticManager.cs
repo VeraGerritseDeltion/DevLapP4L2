@@ -6,6 +6,7 @@ public class StatisticManager : MonoBehaviour {
     public static StatisticManager instance;
 
     private float statTimer = 1f;
+    public int age;
 
     [Header ("Adding")]
     public int addWood;

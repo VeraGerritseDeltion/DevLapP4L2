@@ -26,7 +26,7 @@ public class BuildPlacement : MonoBehaviour {
     bool notFirstFrame;
     bool continuePlacing;
 
-
+    public int ageLock;
 
     void Start () {
         lineMat = line.material;
@@ -214,17 +214,19 @@ public class BuildPlacement : MonoBehaviour {
 
     public void NewBuilding(int whichBuilding)
     {
-        bool newRoad = false;
-        Building newBuilding = allBuildings[whichBuilding].GetComponent<Building>();
-        newBuilding = allBuildings[whichBuilding].GetComponentInChildren<Building>();
-        if(newBuilding.GetType() == typeof(Road))
-        {
-            newRoad = true;
-        }
-        placingRoad = newRoad;
-        if(whichBuilding < allBuildings.Count)
-        {
-            PlaceBuilding(allBuildings[whichBuilding],whichBuilding,newRoad);
+        if(ageLock >= StatisticManager.instance.age){
+            bool newRoad = false;
+            Building newBuilding = allBuildings[whichBuilding].GetComponent<Building>();
+            newBuilding = allBuildings[whichBuilding].GetComponentInChildren<Building>();
+            if(newBuilding.GetType() == typeof(Road))
+            {
+                newRoad = true;
+            }
+            placingRoad = newRoad;
+            if(whichBuilding < allBuildings.Count)
+            {
+                PlaceBuilding(allBuildings[whichBuilding],whichBuilding,newRoad);
+            }
         }
     }
 

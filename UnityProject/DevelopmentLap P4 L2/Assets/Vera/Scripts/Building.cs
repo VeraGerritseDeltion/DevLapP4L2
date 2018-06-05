@@ -16,6 +16,11 @@ public class Building : MonoBehaviour {
     BoxCollider myCol;
     Vector3 sizeCol;
 
+    public int woodCost;
+    public int stoneCost;
+    public int moneyCost;
+    bool purchaseAble;
+
 
     public bool hasAura;
 
@@ -57,6 +62,9 @@ public class Building : MonoBehaviour {
 
         }
         isPlaced = true;
+        StatisticManager.instance.wood -= woodCost;
+        StatisticManager.instance.stone -= stoneCost;
+        StatisticManager.instance.money -= moneyCost;
     }
     
     public void DestroyBuilding()
@@ -89,7 +97,7 @@ public class Building : MonoBehaviour {
         float offSet = 0.05f;
         Vector3 size = new Vector3(sizeCol.x - offSet, sizeCol.y - offSet, sizeCol.z - offSet);
         Collider[] buildings = Physics.OverlapBox(transform.position,size,Quaternion.identity,obstacles);
-        if (buildings.Length != 0)
+        if (buildings.Length != 0 || !canPurchase())
         {
             myMat.color = Color.red;
             inOtherBuilding = true;
@@ -114,5 +122,17 @@ public class Building : MonoBehaviour {
     public Vector3 GetColliderSize()
     {
         return sizeCol;
+    }
+
+    public bool canPurchase(){
+        if(StatisticManager.instance.wood >= woodCost && StatisticManager.instance.stone >= stoneCost && StatisticManager.instance.money >= moneyCost)
+        {
+            purchaseAble = true;
+        }
+        else
+        {
+            purchaseAble = false;
+        }
+        return purchaseAble;
     }
 }
