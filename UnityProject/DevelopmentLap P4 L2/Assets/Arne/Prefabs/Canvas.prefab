@@ -3817,6 +3817,9 @@ MonoBehaviour:
   paused: 0
   settingsActive: 0
   creditsActive: 0
+  animList: []
+  reverse: 0
+  buildingbars: []
   esc: 27
 --- !u!114 &114759291040196396
 MonoBehaviour:

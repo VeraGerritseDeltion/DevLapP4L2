@@ -21,7 +21,13 @@ public class UIManager : MonoBehaviour {
 
 	private float currentTimeScale;
 
+	public List<Animation> animList = new List<Animation>(); 
+	public List<Animator> animRList = new List<Animator>(); 
+	public List<bool> animationActive = new List<bool>();
 
+	public List<RectTransform> buildingbars = new List<RectTransform>();
+
+	public bool reverse;
 
 	public KeyCode esc; //NEEDS TO BE CHANGED
 
@@ -43,7 +49,7 @@ public class UIManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		PressEscape();
+		//PressEscape();
 
 		HotKeys();
 	}
@@ -134,7 +140,7 @@ public class UIManager : MonoBehaviour {
 		pauseMenu.gameObject.SetActive(false);
 		SetTimeScale(currentTimeScale);
 		Debug.Log(currentTimeScale + "resume");
-		SwitchCursorState(true);
+		//SwitchCursorState(true);
 	}
 	//button function
 	public void QuitGame () {
@@ -152,6 +158,7 @@ public class UIManager : MonoBehaviour {
 		
 	}
 	#endregion
+	/* 
 	//sets the right cursor state
 	private void SwitchCursorState (bool state) {
 
@@ -168,6 +175,8 @@ public class UIManager : MonoBehaviour {
 			Cursor.visible = false;
 		}	
 	}
+	*/
+	//hotkeys for time speed
 	private void HotKeys () 
 	{
 		if(paused)
@@ -191,6 +200,7 @@ public class UIManager : MonoBehaviour {
 			SetTimeScale(2f);
 		}
 	}
+	/* 
 	//makes you pause ingame or unpause
 	private void PressEscape () {
 		
@@ -215,5 +225,44 @@ public class UIManager : MonoBehaviour {
 		{
 			Resume();
 		}		
+	}
+	*/
+	public void Buildingbar (int number) //when going down it resets  before the animation can play which causes it to disappear
+	{
+		foreach (var item in buildingbars)
+		{
+			item.gameObject.SetActive(false);
+		}
+		buildingbars[number].gameObject.SetActive(true);
+		PlayAnimation(number);
+	}
+	void PlayAnimation (int number)
+	{
+		Animator anim = animRList[number];
+		var stuff = anim.GetComponent<Animator>();
+
+		if(anim == true)
+		{
+
+		}
+/* 
+		if(reverse)
+		{
+			print("up");
+			//anim.GetClip("Up");
+			anim["Up"].speed = 1f;
+			//anim. = anim["Up"];
+			
+		}
+		if(!reverse)
+		{
+			print("Down");
+			anim["Up"].speed = -0.5f;
+		}
+		*/
+		//anim.Play();
+		//if animation is down go up
+		//if animation is already up go down
+		print("animation");
 	}
 }

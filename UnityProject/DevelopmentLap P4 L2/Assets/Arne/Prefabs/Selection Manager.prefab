@@ -54,6 +54,6 @@ MonoBehaviour:
   cam: {fileID: 0}
   currentSelected: {fileID: 0}
   highlightColor: {r: 0, g: 0, b: 0, a: 0}
+  highlightMaterial: {fileID: 0}
   selectedMaterial: {fileID: 0}
   selectedSavedMaterial: {fileID: 0}
-  highlightMaterial: {fileID: 0}
