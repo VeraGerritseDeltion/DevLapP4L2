@@ -5,7 +5,7 @@ using UnityEngine;
 public class NatureManager : MonoBehaviour
 {
     public static NatureManager instance;
-
+    public LayerMask ground;
     public float uitstoot;
     public int decOrInc;
     bool onOrOff;

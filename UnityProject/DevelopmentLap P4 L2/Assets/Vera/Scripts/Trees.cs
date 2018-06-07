@@ -28,6 +28,15 @@ public class Trees : MonoBehaviour {
         float rand = Random.Range(0, 100);
         myRand = rand / 100;
         burnSpeed = 0.1f;
+        transform.position = new Vector3(transform.position.x, transform.position.y + 5, transform.position.z);
+        transform.position = Ground();
+    }
+
+    public Vector3 Ground()
+    {
+        RaycastHit hit;
+        Physics.Raycast(gameObject.transform.position, Vector3.down, out hit,NatureManager.instance.ground);
+        return hit.point;
     }
 
     public void ChangeColor(Color myNewColor)
@@ -47,6 +56,7 @@ public class Trees : MonoBehaviour {
         {
             EndFire();
         }
+        Debug.DrawRay(gameObject.transform.position, Vector3.down, Color.red);
     }
     public void StartFire()
     {
@@ -102,9 +112,7 @@ public class Trees : MonoBehaviour {
     {
         float rand = Random.Range(minTime, maxTime);
         yield return new WaitForSeconds(rand / 10);
-        int pros = Random.Range(0, 100);
-        print(pros);
-        if (Random.Range(0, 100) < 75)
+        if (Random.Range(0, 100) < 50)
         {
             Collider[] facinity = Physics.OverlapSphere(transform.position, radius, trees);
             print(facinity.Length);

@@ -53,6 +53,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 323723f90c5802a4aa6cedf44414e4ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  age: 0
   addWood: 0
   addStone: 0
   addMoney: 0
@@ -62,7 +63,7 @@ MonoBehaviour:
   addWater: 0
   addEnergy: 0
   addCo2: 0
-  wood: 0
+  wood: 3000
   stone: 0
   money: 0
   food: 0
@@ -103,4 +104,6 @@ MonoBehaviour:
   midColorLow: {r: 0.20754719, g: 0.2034189, b: 0.036222856, a: 0}
   endColorHigh: {r: 0.4433962, g: 0.24156727, b: 0.039738327, a: 0}
   endColorLow: {r: 0.16981131, g: 0.06781835, b: 0, a: 0}
+  burnColorLow: {r: 0.1509434, g: 0.1509434, b: 0.1509434, a: 0}
+  burnColorHigh: {r: 0, g: 0, b: 0, a: 0}
   allTrees: []

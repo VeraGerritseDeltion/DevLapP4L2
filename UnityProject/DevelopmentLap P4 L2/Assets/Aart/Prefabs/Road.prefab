@@ -52,7 +52,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1188033035332688}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.1874661, y: -0.3654576, z: 4.3164654}
+  m_LocalPosition: {x: 295.6959, y: 19.996338, z: 77.45002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4438876239338856}
@@ -66,7 +66,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1951192170152732}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 1.2730596, y: 0.3654576, z: -4.106485}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4425515749524976}
@@ -137,9 +137,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 757996b75aff68f43a49c70ae4f6a481, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myBuilding: {fileID: 0}
   isPlaced: 0
   myMat: {fileID: 0}
   inOtherBuilding: 0
+  startedPlacing: 0
   obstacles:
     serializedVersion: 2
     m_Bits: 0
+  woodCost: 0
+  stoneCost: 0
+  moneyCost: 0
+  hasAura: 0

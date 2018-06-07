@@ -63,6 +63,7 @@ MonoBehaviour:
   - {fileID: 1635785376754190, guid: 1b2c43d4f123be7428c251c0e4e0aa6b, type: 2}
   - {fileID: 1715962789484906, guid: 26519527f7e57d94faf2972d7e954751, type: 2}
   line: {fileID: 120042395839089808}
+  ageLock: 0
 --- !u!120 &120042395839089808
 LineRenderer:
   m_ObjectHideFlags: 1
