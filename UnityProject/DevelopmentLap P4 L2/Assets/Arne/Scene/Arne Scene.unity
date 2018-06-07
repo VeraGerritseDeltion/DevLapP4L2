@@ -1631,6 +1631,7 @@ GameObject:
   - component: {fileID: 168607272}
   - component: {fileID: 168607274}
   - component: {fileID: 168607273}
+  - component: {fileID: 168607275}
   m_Layer: 5
   m_Name: BuildingBar Town
   m_TagString: Untagged
@@ -1703,6 +1704,24 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 168607271}
+--- !u!95 &168607275
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 168607271}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f4a2778f4d9a72c4a814e06015a15442, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &168668454
 GameObject:
   m_ObjectHideFlags: 0
@@ -2611,7 +2630,7 @@ GameObject:
   - component: {fileID: 249850186}
   - component: {fileID: 249850185}
   m_Layer: 5
-  m_Name: Entertainment Button (4)
+  m_Name: Open Menu Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2630,7 +2649,7 @@ RectTransform:
   m_Children:
   - {fileID: 2144385931}
   m_Father: {fileID: 1751821941}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5251,7 +5270,6 @@ GameObject:
   - component: {fileID: 520862858}
   - component: {fileID: 520862860}
   - component: {fileID: 520862859}
-  - component: {fileID: 520862861}
   m_Layer: 5
   m_Name: Building Bars
   m_TagString: Untagged
@@ -5314,22 +5332,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 520862857}
---- !u!111 &520862861
-Animation:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 520862857}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 1fd0b1ea59ac7f74baf8b01d3faff44c, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: 1fd0b1ea59ac7f74baf8b01d3faff44c, type: 2}
-  - {fileID: 7400000, guid: d51f35c13de118447994c343b842bd61, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!1 &520988445
 GameObject:
   m_ObjectHideFlags: 0
@@ -8238,7 +8240,7 @@ GameObject:
   - component: {fileID: 884820784}
   - component: {fileID: 884820783}
   m_Layer: 5
-  m_Name: Entertainment Button (1)
+  m_Name: Industry Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8257,7 +8259,7 @@ RectTransform:
   m_Children:
   - {fileID: 1075745860}
   m_Father: {fileID: 1751821941}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -10985,22 +10987,21 @@ MonoBehaviour:
   settingsActive: 0
   creditsActive: 0
   animList:
-  - {fileID: 520862861}
-  - {fileID: 520862861}
-  - {fileID: 520862861}
-  - {fileID: 520862861}
+  - {fileID: 168607275}
+  - {fileID: 2070109232}
+  - {fileID: 2055952415}
+  - {fileID: 1579281103}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  animRList: []
-  animationActive: 
   buildingbars:
   - {fileID: 168607272}
   - {fileID: 2070109229}
   - {fileID: 2055952412}
   - {fileID: 1579281100}
   reverse: 0
+  oldNumber: 0
   esc: 27
 --- !u!114 &1204863809
 MonoBehaviour:
@@ -11970,7 +11971,7 @@ RectTransform:
   m_Children:
   - {fileID: 1696612347}
   m_Father: {fileID: 1751821941}
-  m_RootOrder: 0
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -13030,7 +13031,7 @@ GameObject:
   - component: {fileID: 1469343856}
   - component: {fileID: 1469343855}
   m_Layer: 5
-  m_Name: Entertainment Button (3)
+  m_Name: Town Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13049,7 +13050,7 @@ RectTransform:
   m_Children:
   - {fileID: 958512607}
   m_Father: {fileID: 1751821941}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -14316,6 +14317,7 @@ GameObject:
   - component: {fileID: 1579281100}
   - component: {fileID: 1579281102}
   - component: {fileID: 1579281101}
+  - component: {fileID: 1579281103}
   m_Layer: 5
   m_Name: BuildingBar Entertainment
   m_TagString: Untagged
@@ -14388,6 +14390,24 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1579281099}
+--- !u!95 &1579281103
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1579281099}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 763d0392360e2ea4bab8dcdb67e451b5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1579684345
 GameObject:
   m_ObjectHideFlags: 0
@@ -15617,11 +15637,11 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1300891234}
-  - {fileID: 884820782}
-  - {fileID: 1952778333}
-  - {fileID: 1469343854}
   - {fileID: 249850184}
+  - {fileID: 1469343854}
+  - {fileID: 1952778333}
+  - {fileID: 884820782}
+  - {fileID: 1300891234}
   m_Father: {fileID: 51495610}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -16299,7 +16319,7 @@ GameObject:
   - component: {fileID: 1952778335}
   - component: {fileID: 1952778334}
   m_Layer: 5
-  m_Name: Entertainment Button (2)
+  m_Name: Food Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17142,6 +17162,7 @@ GameObject:
   - component: {fileID: 2055952412}
   - component: {fileID: 2055952414}
   - component: {fileID: 2055952413}
+  - component: {fileID: 2055952415}
   m_Layer: 5
   m_Name: BuildingBar Industry
   m_TagString: Untagged
@@ -17214,6 +17235,24 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2055952411}
+--- !u!95 &2055952415
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2055952411}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0aa907b1e1eedaa4a9e1a7b8dc83a8b0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2056295167
 GameObject:
   m_ObjectHideFlags: 0
@@ -17447,6 +17486,7 @@ GameObject:
   - component: {fileID: 2070109229}
   - component: {fileID: 2070109231}
   - component: {fileID: 2070109230}
+  - component: {fileID: 2070109232}
   m_Layer: 5
   m_Name: BuildingBar Food
   m_TagString: Untagged
@@ -17519,6 +17559,24 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2070109228}
+--- !u!95 &2070109232
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2070109228}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 72a88c6a1fd812f4585a9db121d4d0f0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2074602993
 GameObject:
   m_ObjectHideFlags: 0

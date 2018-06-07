@@ -20,14 +20,14 @@ public class UIManager : MonoBehaviour {
 	private bool cursorActive;
 
 	private float currentTimeScale;
-
-	public List<Animation> animList = new List<Animation>(); 
-	public List<Animator> animRList = new List<Animator>(); 
-	public List<bool> animationActive = new List<bool>();
+ 
+	public List<Animator> animList = new List<Animator>(); 
+	//public List<bool> animationActive = new List<bool>();
 
 	public List<RectTransform> buildingbars = new List<RectTransform>();
 
 	public bool reverse;
+	public int oldNumber;
 
 	public KeyCode esc; //NEEDS TO BE CHANGED
 
@@ -237,14 +237,31 @@ public class UIManager : MonoBehaviour {
 		PlayAnimation(number);
 	}
 	void PlayAnimation (int number)
-	{
+	{	
+		Animator anim = animList[number];
+
+		if(!anim.GetBool("Up") )
+		{
+			print("set true");
+			anim.SetBool("Up", true);
+			return;
+		}
+		if(anim.GetBool("Up"))
+		{
+			print("set false");
+			anim.SetBool("Up", false);
+			return;
+		}
+
+
+		/* 
 		Animator anim = animRList[number];
 		var stuff = anim.GetComponent<Animator>();
 
 		if(anim == true)
 		{
 
-		}
+		}*/
 /* 
 		if(reverse)
 		{
