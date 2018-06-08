@@ -1,21 +1,19 @@
 fileFormatVersion: 2
-guid: 923a05e816b3c83438a06c4021755646
+guid: 262b0eb24f152d04eaee3c752d45aef4
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
-    100002: Windmill_farm
-    100004: Wings_Farm
+    100002: Wings
     400000: //RootNode
-    400002: Windmill_farm
-    400004: Wings_Farm
+    400002: Wings
     2100000: No Name
-    2300000: Windmill_farm
-    2300002: Wings_Farm
-    3300000: Windmill_farm
-    3300002: Wings_Farm
+    2300000: //RootNode
+    2300002: Wings
+    3300000: //RootNode
+    3300002: Wings
     4300000: Windmill_farm
-    4300002: Wings_Farm
+    4300002: Wings
   externalObjects: {}
   materials:
     importMaterials: 1
