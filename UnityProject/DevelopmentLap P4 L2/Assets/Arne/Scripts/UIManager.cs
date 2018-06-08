@@ -87,12 +87,12 @@ public class UIManager : MonoBehaviour {
         foreach(RectTransform rT in allMenuItems)
 		{
             rT.gameObject.SetActive(false);
-			Debug.Log("deactivate");
+			//Debug.Log("deactivate");
 		}
         foreach(RectTransform rT in items)
 		{
             rT.gameObject.SetActive(true);
-			Debug.Log("true");
+			//Debug.Log("true");
 		}
     }
 	#region ButtonFunctions
@@ -108,7 +108,7 @@ public class UIManager : MonoBehaviour {
 			creditsActive = !creditsActive;
 		}
 		Submenus(subMenus[number]);
-		Debug.Log(number);
+		//Debug.Log(number);
 	}
 	//Switches between the on and off of a RectTransform
 	private void Submenus (RectTransform element)
@@ -116,7 +116,7 @@ public class UIManager : MonoBehaviour {
 		bool active = element.gameObject.activeSelf;
 		active = !active;
 		element.gameObject.SetActive(active);
-		Debug.Log(element.gameObject.activeSelf);
+		//Debug.Log(element.gameObject.activeSelf);
 	}
 	//button function
 	public void MainMenu () {
@@ -137,7 +137,7 @@ public class UIManager : MonoBehaviour {
 		paused = false;
 		pauseMenu.gameObject.SetActive(false);
 		SetTimeScale(currentTimeScale);
-		Debug.Log(currentTimeScale + "resume");
+		//Debug.Log(currentTimeScale + "resume");
 		//SwitchCursorState(true);
 	}
 	//button function
@@ -147,7 +147,7 @@ public class UIManager : MonoBehaviour {
 	}
 	public void SetTimeScale (float scale)
 	{
-		Debug.Log(scale);
+		//Debug.Log(scale);
 		Time.timeScale = scale;
 		if(!paused)
 		{
@@ -202,7 +202,7 @@ public class UIManager : MonoBehaviour {
 	//makes you pause ingame or unpause
 	private void PressEscape () {
 		
-		Debug.Log("escape");
+		//Debug.Log("escape");
 		if(Input.GetKeyDown(esc) && _UIState == UIState.Ingame && paused == false) 
 		{
 			paused = true;
@@ -237,12 +237,12 @@ public class UIManager : MonoBehaviour {
 		{
 			if(i == number)
 			{
-				Debug.Log("same as number");
+				//Debug.Log("same as number");
 				animationActive[number] = !animationActive[number];
 			}
 			else if(i != number)
 			{
-				Debug.Log("false");
+				//Debug.Log("false");
 				animationActive[i] = false;	
 			}
 		}
@@ -256,16 +256,16 @@ public class UIManager : MonoBehaviour {
 
 		if(animationActive[number] && !anim.GetCurrentAnimatorStateInfo(0).IsName("Up"))
         {
-			print("up true");
+			//print("up true");
             anim.SetBool("Up", true);
 			return;
         }
         if(!animationActive[number] && anim.GetCurrentAnimatorStateInfo(0).IsName("Up"))
         {
-			print("up false");
+			//print("up false");
             anim.SetBool("Up", false);
 			return;
         }
-		print("animation");
+		//print("animation");
 	}
 }
