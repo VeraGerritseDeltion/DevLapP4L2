@@ -26,8 +26,6 @@ public class UIManager : MonoBehaviour {
 
 	public List<RectTransform> buildingbars = new List<RectTransform>();
 
-	public bool reverse;
-	public int oldNumber;
 
 	public KeyCode esc; //NEEDS TO BE CHANGED
 
@@ -49,7 +47,7 @@ public class UIManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		//PressEscape();
+		PressEscape();
 
 		HotKeys();
 	}
@@ -200,7 +198,7 @@ public class UIManager : MonoBehaviour {
 			SetTimeScale(2f);
 		}
 	}
-	/* 
+	
 	//makes you pause ingame or unpause
 	private void PressEscape () {
 		
@@ -211,7 +209,7 @@ public class UIManager : MonoBehaviour {
 			SetTimeScale(0f);
 			pauseMenu.gameObject.SetActive(true);
 
-			SwitchCursorState(false);
+			//SwitchCursorState(false);
 		}		
 		else if(Input.GetKeyDown(esc) && settingsActive) 
 		{
@@ -226,7 +224,7 @@ public class UIManager : MonoBehaviour {
 			Resume();
 		}		
 	}
-	*/
+	
 	public void Buildingbar (int number) //when going down it resets  before the animation can play which causes it to disappear
 	{
 		foreach (var item in buildingbars)
@@ -234,88 +232,40 @@ public class UIManager : MonoBehaviour {
 			item.gameObject.SetActive(false);
 		}
 		buildingbars[number].gameObject.SetActive(true);
+
+		for (int i = 0; i < animationActive.Count; i++)
+		{
+			if(i == number)
+			{
+				Debug.Log("same as number");
+				animationActive[number] = !animationActive[number];
+			}
+			else if(i != number)
+			{
+				Debug.Log("false");
+				animationActive[i] = false;	
+			}
+		}
 		PlayAnimation(number);
 	}
 	void PlayAnimation (int number)
 	{	
 		Animator anim = animList[number];
-		
-		int numberCount = number;
+
 		//everything is false except number
-		for (int i = 0; i < animationActive.Count; i++)
-		{
-			animationActive[i] = false;	
 
-			animationActive[number] = animationActive[number];
-		}
-		if(animationActive[number])
-		{
-
-		}
-		animationActive[number] = !animationActive[number];
-
-
-		if (animationActive[number] && !anim.GetCurrentAnimatorStateInfo(0).IsName("Up"))
+		if(animationActive[number] && !anim.GetCurrentAnimatorStateInfo(0).IsName("Up"))
         {
+			print("up true");
             anim.SetBool("Up", true);
 			return;
         }
-        if (!animationActive[number] && anim.GetCurrentAnimatorStateInfo(0).IsName("Up"))
+        if(!animationActive[number] && anim.GetCurrentAnimatorStateInfo(0).IsName("Up"))
         {
+			print("up false");
             anim.SetBool("Up", false);
 			return;
         }
-/* 
-		print(anim.GetBool("Up"));
-
-		if(!animationActive[number])
-		{
-			anim.SetBool("Up", false);
-		}
-		animationActive[number] = !animationActive[number];*/
-		//anim.SetBool("Up", animationActive[number]);
-		/* 
-		if(anim.GetBool("Up"))
-		{
-			print("set false");
-			
-			//return;
-		}*/
-		/* 
-		else if(!anim.GetBool("Up"))
-		{
-			print("set true");
-			anim.SetBool("Up", true);
-			//return;
-		}*/
-		
-
-		/* 
-		Animator anim = animRList[number];
-		var stuff = anim.GetComponent<Animator>();
-
-		if(anim == true)
-		{
-
-		}*/
-/* 
-		if(reverse)
-		{
-			print("up");
-			//anim.GetClip("Up");
-			anim["Up"].speed = 1f;
-			//anim. = anim["Up"];
-			
-		}
-		if(!reverse)
-		{
-			print("Down");
-			anim["Up"].speed = -0.5f;
-		}
-		*/
-		//anim.Play();
-		//if animation is down go up
-		//if animation is already up go down
 		print("animation");
 	}
 }
