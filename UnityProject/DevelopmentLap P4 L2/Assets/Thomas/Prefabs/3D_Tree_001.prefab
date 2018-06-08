@@ -73,6 +73,7 @@ GameObject:
   - component: {fileID: 136820583018044626}
   - component: {fileID: 114296049292116740}
   - component: {fileID: 114235667055469350}
+  - component: {fileID: 111716491943110670}
   m_Layer: 12
   m_Name: 3D_Tree_001
   m_TagString: Obstacle
@@ -144,7 +145,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1387645582401792}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.394, y: 0, z: 0}
+  m_LocalPosition: {x: 9.91, y: 0, z: 2.02}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4800475963231718}
@@ -250,6 +251,22 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1054228391988870}
   m_Mesh: {fileID: 4300002, guid: 60f429d49b0053440954431203c03cc3, type: 3}
+--- !u!111 &111716491943110670
+Animation:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1387645582401792}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: c9cd69d57c84b444fbe9db8d074bf3e2, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: c9cd69d57c84b444fbe9db8d074bf3e2, type: 2}
+  - {fileID: 7400000, guid: c70b0870ab06a1a4aa15da13770d1d1f, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!114 &114235667055469350
 MonoBehaviour:
   m_ObjectHideFlags: 1
