@@ -29,12 +29,25 @@ public class Building : MonoBehaviour {
     public void MyStart ()
     {
         myBuildingStats = transform.GetComponent<BuildingStats> ();
-        myMat = GetComponent<Renderer>().material;
+        Renderer myRend = GetComponent<Renderer>();
+        if(myRend == null)
+        {
+            myRend = GetComponentInChildren<Renderer>();
+        }
+        myMat = myRend.material;
+        if(myMat == null)
+        {
+            isPlaced = true;
+        }
         normalColor = myMat.color;
         myCol = GetComponentInChildren<BoxCollider>();
+        if (myRend == null)
+        {
+            myCol = GetComponent<BoxCollider>();
+        }
         sizeCol = new Vector3(myCol.size.x, myCol.size.z, myCol.size.y)/2;
+        print("Start");
         StartCoroutine(EnablePlacement());
-
     }
 
     IEnumerator EnablePlacement()
@@ -94,6 +107,7 @@ public class Building : MonoBehaviour {
 
     void CollisionStay()
     {
+        print(isPlaced);
         float offSet = 0.05f;
         Vector3 size = new Vector3(sizeCol.x - offSet, sizeCol.y - offSet, sizeCol.z - offSet);
         Collider[] buildings = Physics.OverlapBox(transform.position,size,Quaternion.identity,obstacles);

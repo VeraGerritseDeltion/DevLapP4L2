@@ -235,6 +235,10 @@ public class BuildPlacement : MonoBehaviour {
         line.enabled = true;
         bool obstructed = false;
         BoxCollider myRoad = toBePlaced.GetComponent<BoxCollider>();
+        if(myRoad == null)
+        {
+            myRoad = toBePlaced.GetComponent<BoxCollider>();
+        }
         Vector3 colSize = new Vector3(myRoad.size.x,myRoad.size.y,myRoad.size.z);
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
@@ -265,7 +269,7 @@ public class BuildPlacement : MonoBehaviour {
             float iets = line.GetPosition(1).x;
             float midpoint = (startPos.x + iets) / 2;
             Vector3 lenght = new Vector3(colSize.x * xBlock - 0.01f, colSize.y, colSize.z - 0.01f) / 2;
-            Vector3 newPos = new Vector3(startPos.x - (colSize.x * xBlock) - colSize.x / 2, 0.01f, startPos.z);
+            Vector3 newPos = new Vector3(startPos.x - (colSize.x * xBlock) - colSize.x / 2, mouse3DPos.y, startPos.z);
             float hight = colSize.y / 2 + startPos.y;
             if (disX > 0)
             {
@@ -286,7 +290,7 @@ public class BuildPlacement : MonoBehaviour {
             }
             else
             {
-                newPos = new Vector3(startPos.x + (colSize.x * xBlock) + (colSize.x / 2), 0.01f, startPos.z);
+                newPos = new Vector3(startPos.x + (colSize.x * xBlock) + (colSize.x / 2), mouse3DPos.y, startPos.z);
                 line.SetPosition(0, new Vector3(startPos.x + colSize.x / 2, startPos.y + 0.01f, startPos.z));
                 line.SetPosition(1, newPos);
                 Collider[] notObscured = Physics.OverlapBox(new Vector3(midpoint, hight, startPos.z), lenght, Quaternion.identity, obstacleLayer);
@@ -312,7 +316,7 @@ public class BuildPlacement : MonoBehaviour {
             float iets = line.GetPosition(1).z;
             float midpoint = (startPos.z + iets) / 2;
             Vector3 lenght = new Vector3(colSize.x - 0.01f, colSize.y, colSize.z * zBlock - 0.01f) / 2;
-            Vector3 newPos = new Vector3(startPos.x, 0.01f, startPos.z - (colSize.z * zBlock) - (colSize.z / 2));
+            Vector3 newPos = new Vector3(startPos.x, mouse3DPos.y, startPos.z - (colSize.z * zBlock) - (colSize.z / 2));
             float hight = colSize.y / 2 + startPos.y;
             if (disZ > 0)
             {
@@ -333,7 +337,7 @@ public class BuildPlacement : MonoBehaviour {
             }
             else
             {
-                newPos = new Vector3(startPos.x, 0.01f, startPos.z + (colSize.z * zBlock) + (colSize.z / 2));
+                newPos = new Vector3(startPos.x, mouse3DPos.y+0.01f, startPos.z + (colSize.z * zBlock) + (colSize.z / 2));
                 line.SetPosition(0, new Vector3(startPos.x, startPos.y + 0.01f, startPos.z + colSize.z / 2));
                 line.SetPosition(1, newPos);
                 Collider[] notObscured = Physics.OverlapBox(new Vector3(startPos.x, hight, midpoint), lenght, Quaternion.identity, obstacleLayer);
@@ -407,11 +411,11 @@ public class BuildPlacement : MonoBehaviour {
             {
                 if(i != 0)
                 {
-                    allRoadsToPlace[i].GetComponent<Building>().MyStart();
+                    allRoadsToPlace[i].GetComponentInChildren<Building>().MyStart();
                 }
                 if(i < allRoadsToPlace.Count - 1)
                 {
-                    allRoadsToPlace[i].GetComponent<Building>().Place();
+                    allRoadsToPlace[i].GetComponentInChildren<Building>().Place();
                 }
             }
             GameObject lastOne = allRoadsToPlace[allRoadsToPlace.Count - 1];
@@ -429,7 +433,7 @@ public class BuildPlacement : MonoBehaviour {
             {
                 if(continuePlacing && i == 0)
                 {
-                    allRoadsToPlace[i].GetComponent<Building>().Place();
+                    allRoadsToPlace[i].GetComponentInChildren<Building>().Place();
                 }
                 else if (allRoadsToPlace[i] != null)
                 {

@@ -31,7 +31,7 @@ public class CameraMovement : MonoBehaviour
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
 
-        rot = Input.GetAxis("HorizontalRotation") * rotSpeed * Time.deltaTime / Time.timeScale;
+        rot = -Input.GetAxis("HorizontalRotation") * rotSpeed * Time.deltaTime / Time.timeScale;
         if (Input.GetButton("Fire3"))
         {
             rot = Input.GetAxis("Mouse X") * rotSpeed * Time.deltaTime / Time.timeScale;

@@ -38,6 +38,7 @@ GameObject:
   - component: {fileID: 23666975129435508}
   - component: {fileID: 114748880984391326}
   - component: {fileID: 114445739409813698}
+  - component: {fileID: 65814113919934708}
   m_Layer: 0
   m_Name: 3D_Well
   m_TagString: Obstacle
@@ -114,6 +115,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1233469005904484}
   m_Mesh: {fileID: 4300000, guid: 69c7494bf296e74489620810412533a8, type: 3}
+--- !u!65 &65814113919934708
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1233469005904484}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.44, y: 1.37, z: 1.8292625}
+  m_Center: {x: -0.067499936, y: -0.00000002980233, z: 0.9096539}
 --- !u!114 &114445739409813698
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -38,6 +38,7 @@ GameObject:
   - component: {fileID: 23177554583897970}
   - component: {fileID: 114451871404973202}
   - component: {fileID: 114265232565130616}
+  - component: {fileID: 65913480806111332}
   m_Layer: 0
   m_Name: 3D_StockPile
   m_TagString: Obstacle
@@ -114,6 +115,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1393511096172698}
   m_Mesh: {fileID: 4300000, guid: eb8fbc8c86e5e8c4bba57714bd59f2b5, type: 3}
+--- !u!65 &65913480806111332
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1393511096172698}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.5, y: 2.5000005, z: 2.2611442}
+  m_Center: {x: 0, y: 0.19622992, z: 1.1194284}
 --- !u!114 &114265232565130616
 MonoBehaviour:
   m_ObjectHideFlags: 1
