@@ -26,6 +26,10 @@ public class Building : MonoBehaviour {
 
     private BuildingStats myBuildingStats;
 
+
+    //Tooltip Stuff
+    public GameObject tooltip;
+
     public void MyStart ()
     {
         myBuildingStats = transform.GetComponent<BuildingStats> ();
@@ -148,5 +152,9 @@ public class Building : MonoBehaviour {
             purchaseAble = false;
         }
         return purchaseAble;
+    }
+    public void Tooltip (bool active)
+    {
+        tooltip.SetActive(active);
     }
 }

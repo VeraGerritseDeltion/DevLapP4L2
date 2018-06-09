@@ -53,25 +53,30 @@ public class SelectionManager : MonoBehaviour {
         
         if(Physics.Raycast(ray, out hit)) //maybe hit with layermask to avoid any unnecesary stuff
 		{
-            if(hit.collider.tag == "Building")
+            if(hit.collider.tag == "Building" || hit.collider.tag == "Obstacle")
 			{
 				print("hit something");
 				currentSelected = hit.collider.gameObject;
 
+				Building build = currentSelected.GetComponent<Building>();
+				//build.contact = true
+				build.HighlightBuilding();
 
 				//currentselected should be highlighted
 				//highlight should go via object itself
 				//scriptable object.sound should be played
 
 				//show tooltip
-
+				
+				//build.Tooltip(true);
 			}
 			else
 			{
-				
+				print("else");
 				//nothing
 			}
 		}
-
+		print("run");
 	}
+
 }

@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class TooltipLookAt : MonoBehaviour {
 
+    private Transform camTransform;
+    	
 	// Use this for initialization
-	void Start () {
-		
+	void Start () 
+	{	
+		camTransform = Camera.main.transform;
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		
+	void FixedUpdate () 
+	{
+		transform.LookAt(2 * transform.position - camTransform.transform.position);
 	}
 }
