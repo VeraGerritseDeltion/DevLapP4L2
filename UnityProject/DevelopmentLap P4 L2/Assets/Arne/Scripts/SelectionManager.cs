@@ -81,6 +81,7 @@ public class SelectionManager : MonoBehaviour {
 				if(tree != null)
 				{
 					tree.Tooltip(true);
+					Debug.Log("turn on tree tt");
 					//tree.Highlight(true);
 				}
 				

@@ -133,6 +133,14 @@ public class Trees : MonoBehaviour {
             allRoutines.Add(StartCoroutine(BurnTreeInFacainity()));
         }
     }
+    public void Chop () 
+    {
+        //chop tree and plus 1 wood
+        print("cut wood");
+        //play animation
+        //after animation Destroy
+        Destroy(this.gameObject);
+    }
     public void Tooltip (bool active)
     {
         tooltip.SetActive(active);

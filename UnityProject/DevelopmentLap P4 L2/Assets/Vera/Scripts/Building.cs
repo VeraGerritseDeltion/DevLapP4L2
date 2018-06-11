@@ -155,6 +155,10 @@ public class Building : MonoBehaviour {
         }
         return purchaseAble;
     }
+    public void Upgrade () 
+    {
+        //upgrades building
+    }
     public void Tooltip (bool active)
     {
         tooltip.SetActive(active);
