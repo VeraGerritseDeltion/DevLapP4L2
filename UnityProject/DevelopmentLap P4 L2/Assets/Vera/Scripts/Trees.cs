@@ -19,6 +19,9 @@ public class Trees : MonoBehaviour {
     public LayerMask trees;
     List<Coroutine> allRoutines = new List<Coroutine>();
 
+    //tooltip Stuff
+    public GameObject tooltip;
+
     int burning;
 	void Start () {
         NatureManager.instance.allTrees.Add(gameObject);
@@ -129,5 +132,10 @@ public class Trees : MonoBehaviour {
         {
             allRoutines.Add(StartCoroutine(BurnTreeInFacainity()));
         }
+    }
+    public void Tooltip (bool active)
+    {
+        tooltip.SetActive(active);
+        Debug.Log(active);
     }
 }

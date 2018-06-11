@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class SelectionManager : MonoBehaviour {
 
@@ -14,6 +15,10 @@ public class SelectionManager : MonoBehaviour {
 	//the material of the selected object and a save of it
 	public Material selectedMaterial;
 	public Material selectedSavedMaterial;
+
+	public List<Building> allBuildings = new List<Building>();
+	public List<Trees> allTree = new List<Trees>();
+
 
 	// Use this for initialization
 	void Start () 
@@ -41,6 +46,8 @@ public class SelectionManager : MonoBehaviour {
 			}
 			if(currentSelected != null)
 			{
+				BuildingStuff();
+				TreeStuff();
 				currentSelected = null;
 			}
 		}
@@ -57,10 +64,28 @@ public class SelectionManager : MonoBehaviour {
 			{
 				print("hit something");
 				currentSelected = hit.collider.gameObject;
-
+				
+				Trees tree = currentSelected.GetComponent<Trees>();
 				Building build = currentSelected.GetComponent<Building>();
-				//build.contact = true
-				build.HighlightBuilding();
+				CheckBuildingList(build);
+				CheckTreeList(tree);
+
+
+				BuildingStuff();
+				TreeStuff();
+				if(build != null)
+				{
+					build.Tooltip(true);
+					build.HighlightBuilding(true);
+				}
+				if(tree != null)
+				{
+					tree.Tooltip(true);
+					//tree.Highlight(true);
+				}
+				
+					
+				
 
 				//currentselected should be highlighted
 				//highlight should go via object itself
@@ -68,15 +93,55 @@ public class SelectionManager : MonoBehaviour {
 
 				//show tooltip
 				
-				//build.Tooltip(true);
 			}
 			else
 			{
-				print("else");
+				//print("else");
 				//nothing
 			}
 		}
-		print("run");
+		//print("run");
 	}
+	public void TooltipStuff () 
+	{
 
+	}
+	public void BuildingStuff () 
+	{
+		foreach (var item in allBuildings)
+		{
+			if(item == null)
+			{
+				//return;
+			}
+			if(item != null)
+			{
+				item.Tooltip(false);
+			}
+		}
+	}
+	public void TreeStuff () 
+	{
+		foreach (var item in allTree)
+		{
+			if(item == null)
+			{
+				//return;
+			}
+			if(item != null)
+			{
+				item.Tooltip(false);
+			}
+		}
+	}
+	public void CheckBuildingList (Building building) 
+	{
+		allBuildings.Add(building);
+	 	allBuildings = allBuildings.Distinct().ToList();
+	}
+	public void CheckTreeList (Trees tree)
+	{
+		allTree.Add(tree);
+	 	allTree = allTree.Distinct().ToList();
+	}
 }
