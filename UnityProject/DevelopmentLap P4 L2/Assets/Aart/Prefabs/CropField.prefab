@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 23328479239228878}
   - component: {fileID: 65751995101843408}
   - component: {fileID: 114402831231261488}
-  - component: {fileID: 114011650133549284}
+  - component: {fileID: 114622206730413968}
   m_Layer: 0
   m_Name: 3D_CropField_001
   m_TagString: Obstacle
@@ -66,7 +66,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1577316683617098}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 15.666636, y: 0.7890787, z: 2.0009003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4126127296537250}
@@ -127,29 +127,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: 2.0000005, z: 0.22500005}
   m_Center: {x: 0, y: -0.0000000023841835, z: 0.08000002}
---- !u!114 &114011650133549284
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1209168730532564}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88f6735c727159848884e6c693a2d4a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  aura:
-    serializedVersion: 2
-    m_Bits: 0
-  myRadius: 0
-  reqHappiness: 0
-  reqWater: 0
-  reqEnergy: 0
-  reqCo2: 0
-  happiness: 0
-  water: 0
-  energy: 0
-  co2: 0
 --- !u!114 &114402831231261488
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -163,7 +140,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myBuilding: {fileID: 0}
   isPlaced: 0
-  myMat: {fileID: 0}
+  myMat: {fileID: 2100000, guid: accda489f0678aa4fbf6ece097542d8d, type: 2}
   inOtherBuilding: 0
   startedPlacing: 0
   obstacles:
@@ -173,3 +150,20 @@ MonoBehaviour:
   stoneCost: 0
   moneyCost: 0
   hasAura: 0
+  tooltip: {fileID: 0}
+--- !u!114 &114622206730413968
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1209168730532564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5db2ede83843e8b4797b5a8611047af9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wheatBool: 0
+  wheat: {fileID: 1116851274455404, guid: 065144f088d6a34448c2cc3f67ce4abe, type: 2}
+  carrot: {fileID: 1136895838895334, guid: 27dcfada4c1f6204bbbbfdc83d42d053, type: 2}
+  growSpeed: 0.2
+  harvestAmount: 3

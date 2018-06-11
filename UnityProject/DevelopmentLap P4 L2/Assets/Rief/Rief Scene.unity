@@ -160,6 +160,10 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1387645582401792, guid: 53f607b49e2e3d041bbf32413b9a4a8f, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53f607b49e2e3d041bbf32413b9a4a8f, type: 2}
   m_IsPrefabParent: 0
@@ -316,13 +320,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 114402831231261488, guid: 8bd4810c5c7ad9940b5e9fec2ba5bc8b,
+    - target: {fileID: 114622206730413968, guid: 8bd4810c5c7ad9940b5e9fec2ba5bc8b,
         type: 2}
-      propertyPath: myMat
-      value: 
-      objectReference: {fileID: 2100000, guid: accda489f0678aa4fbf6ece097542d8d, type: 2}
-    m_RemovedComponents:
-    - {fileID: 114011650133549284, guid: 8bd4810c5c7ad9940b5e9fec2ba5bc8b, type: 2}
+      propertyPath: wheatBool
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8bd4810c5c7ad9940b5e9fec2ba5bc8b, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &282877091
@@ -962,6 +965,10 @@ Prefab:
       propertyPath: m_Name
       value: 3D_Tree_001 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1387645582401792, guid: 53f607b49e2e3d041bbf32413b9a4a8f, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53f607b49e2e3d041bbf32413b9a4a8f, type: 2}
   m_IsPrefabParent: 0
@@ -1078,28 +1085,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114561739834156228, guid: 27dcfada4c1f6204bbbbfdc83d42d053, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 27dcfada4c1f6204bbbbfdc83d42d053, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &833456657 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1209168730532564, guid: 8bd4810c5c7ad9940b5e9fec2ba5bc8b,
-    type: 2}
-  m_PrefabInternal: {fileID: 175550909}
---- !u!114 &833456659
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 833456657}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5db2ede83843e8b4797b5a8611047af9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wheatBool: 0
-  wheat: {fileID: 1116851274455404, guid: 065144f088d6a34448c2cc3f67ce4abe, type: 2}
-  carrot: {fileID: 1136895838895334, guid: 27dcfada4c1f6204bbbbfdc83d42d053, type: 2}
 --- !u!1 &898709049
 GameObject:
   m_ObjectHideFlags: 0
@@ -1232,6 +1221,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 1387645582401792, guid: 53f607b49e2e3d041bbf32413b9a4a8f, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53f607b49e2e3d041bbf32413b9a4a8f, type: 2}
   m_IsPrefabParent: 0
@@ -1351,6 +1344,10 @@ Prefab:
     - target: {fileID: 1387645582401792, guid: 53f607b49e2e3d041bbf32413b9a4a8f, type: 2}
       propertyPath: m_Name
       value: 3D_Tree_001 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1387645582401792, guid: 53f607b49e2e3d041bbf32413b9a4a8f, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53f607b49e2e3d041bbf32413b9a4a8f, type: 2}
@@ -1599,7 +1596,8 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114719221060434960, guid: 065144f088d6a34448c2cc3f67ce4abe, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 065144f088d6a34448c2cc3f67ce4abe, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1603600080
