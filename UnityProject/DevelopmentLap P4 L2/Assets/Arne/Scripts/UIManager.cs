@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour {
 
@@ -57,6 +58,8 @@ public class UIManager : MonoBehaviour {
 		{
 			case UIState.MainMenu:
 
+				//main scene
+				LoadScene("Scene 0");
 				List<RectTransform> mainMenuList = new List<RectTransform>() {mainMenu};
 			    EnableMenuItems(mainMenuList); 
 
@@ -64,10 +67,23 @@ public class UIManager : MonoBehaviour {
 
 			case UIState.Ingame:
 
+				//ingame scene
+				LoadScene("Scene 1");
 				List<RectTransform> ingameList = new List<RectTransform>() {ingame};
 			    EnableMenuItems(ingameList); 
 
 			break;
+		}
+	}
+	void LoadScene (string name)
+	{
+		if(SceneManager.GetActiveScene().name == name)
+		{
+			return;
+		}
+		else
+		{
+			SceneManager.LoadScene(name);
 		}
 	}
 	void SetState (UIState state)
