@@ -23,7 +23,7 @@ public class SelectionManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-		cam = GameObject.Find("Main Camera").GetComponent<Camera>();
+        cam = Camera.main;
 	}
 	// Update is called once per frame
 	void Update () 
