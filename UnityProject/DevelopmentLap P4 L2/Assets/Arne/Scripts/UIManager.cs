@@ -10,13 +10,13 @@ public class UIManager : MonoBehaviour {
 	public static UIManager instance;
 
 	//UIState
-	public enum UIState {MainMenu, Ingame};
+	public enum UIState {MainMenu, LoadingScreen, Ingame};
 	public UIState _UIState;
 
 	//ui elements lists
 	public List <RectTransform> allMenuItems = new List<RectTransform>(); 
 	public List <RectTransform> subMenus = new List<RectTransform>();
-	public RectTransform mainMenu, ingame, settings, pauseMenu, buildingsbar, eventlog, statistics;
+	public RectTransform mainMenu, ingame, settings, pauseMenu, buildingsbar, eventlog, statistics, loadingScreen;
 	public bool paused, settingsActive, creditsActive;
 	private bool cursorActive;
 
@@ -65,6 +65,14 @@ public class UIManager : MonoBehaviour {
 
 			break;
 
+			case UIState.LoadingScreen:
+
+				//loading screen
+				//load one of the scenes
+				List<RectTransform> loadingscreen = new List<RectTransform>() {loadingScreen};
+				EnableMenuItems(loadingscreen);
+
+			break;
 			case UIState.Ingame:
 
 				//ingame scene
@@ -146,6 +154,10 @@ public class UIManager : MonoBehaviour {
 
 		SetState(UIState.Ingame);
 		SetTimeScale(1f);
+	}
+	public void LoadingScreen ()
+	{
+		//do the loading stuff
 	}
 	//button function
 	public void Resume () {
@@ -268,6 +280,7 @@ public class UIManager : MonoBehaviour {
 	{	
 		Animator anim = animList[number];
 
+		anim.speed = anim.speed / currentTimeScale;
 		//everything is false except number
 
 		if(animationActive[number] && !anim.GetCurrentAnimatorStateInfo(0).IsName("Up"))
