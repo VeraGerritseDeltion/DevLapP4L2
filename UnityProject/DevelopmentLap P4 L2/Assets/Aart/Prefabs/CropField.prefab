@@ -165,5 +165,6 @@ MonoBehaviour:
   wheatBool: 0
   wheat: {fileID: 1116851274455404, guid: 065144f088d6a34448c2cc3f67ce4abe, type: 2}
   carrot: {fileID: 1136895838895334, guid: 27dcfada4c1f6204bbbbfdc83d42d053, type: 2}
-  growSpeed: 0.2
+  fastSpeed: 0.2
   harvestAmount: 3
+  moneyCost: 0

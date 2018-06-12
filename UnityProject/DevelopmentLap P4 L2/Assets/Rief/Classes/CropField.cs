@@ -9,17 +9,31 @@ public class CropField : MonoBehaviour {
 //moet nog UI links hebben.
 
 
+	public LayerMask windmill;
+
 	public bool wheatBool;
 	public GameObject wheat;
 	public GameObject carrot;
 
 	GameObject spawned;
 	bool isGrowing = false;
-	public float growSpeed;
+	float growSpeed;
+	public float fastSpeed;
 	public int harvestAmount;
 	public int moneyCost;
 
+	int myRadius = 5;
 
+	void Start()
+	{
+		Collider[] myWindMills = Physics.OverlapSphere(transform.position, myRadius, windmill);
+		for(int i = 0; i < myWindMills.Length-1; i++)
+		{
+			myWindMills[i].GetComponent<FarmWindMill>().myCropFields.Add(GetComponent<Collider>());
+		}
+		
+		Spawning();
+	}
 	void Update()
 	{
 		Growing();
@@ -27,6 +41,16 @@ public class CropField : MonoBehaviour {
 
 	public void Spawning()
 	{
+		if(!wheatBool)
+		{
+			growSpeed = fastSpeed;
+			growSpeed /= 2;
+		}
+		else
+		{
+			growSpeed = fastSpeed;
+		}
+
 		isGrowing = false;
 		StatisticManager.instance.money -= moneyCost * harvestAmount;
 
@@ -49,7 +73,8 @@ public class CropField : MonoBehaviour {
 
 	void Growing()
 	{		
-		if(spawned != null){
+		if(spawned != null)
+		{
 			Vector3 targetLoc = new Vector3(spawned.transform.position.x, 1, spawned.transform.position.z);
 			spawned.transform.position = Vector3.MoveTowards(spawned.transform.position, targetLoc, growSpeed * Time.deltaTime);
 

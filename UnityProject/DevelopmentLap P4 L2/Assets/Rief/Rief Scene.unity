@@ -320,11 +320,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 114622206730413968, guid: 8bd4810c5c7ad9940b5e9fec2ba5bc8b,
-        type: 2}
-      propertyPath: wheatBool
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8bd4810c5c7ad9940b5e9fec2ba5bc8b, type: 2}
   m_IsPrefabParent: 0
@@ -1916,6 +1911,10 @@ MonoBehaviour:
   water: 0
   energy: 0
   co2: 0
+  woodStorage: 0
+  stoneStorage: 0
+  moneyStorage: 0
+  foodStorage: 0
 --- !u!4 &1860768460
 Transform:
   m_ObjectHideFlags: 0

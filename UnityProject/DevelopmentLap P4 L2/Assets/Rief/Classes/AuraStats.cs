@@ -37,7 +37,7 @@ public class AuraStats : MonoBehaviour {
             myBuilding.co2 -= co2Points;
         }
     }
-void RemoveBuilding(){
+void RemoveAura(){
     for (int i = 0; i < myHouses.Count; i++){
         BuildingStats myBuilding = myHouses[i].GetComponent<BuildingStats>();
         myBuilding.happiness -= happyPoints;
