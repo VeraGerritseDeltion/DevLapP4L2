@@ -39,6 +39,7 @@ public class Building : MonoBehaviour {
             myRend = GetComponentInChildren<Renderer>();
         }
         myMat = myRend.material;
+        print(myMat);
         if(myMat == null)
         {
             isPlaced = true;

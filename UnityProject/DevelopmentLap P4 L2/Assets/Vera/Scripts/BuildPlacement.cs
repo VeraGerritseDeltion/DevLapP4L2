@@ -269,12 +269,12 @@ public class BuildPlacement : MonoBehaviour {
             float iets = line.GetPosition(1).x;
             float midpoint = (startPos.x + iets) / 2;
             Vector3 lenght = new Vector3(colSize.x * xBlock - 0.01f, colSize.y, colSize.z - 0.01f) / 2;
-            Vector3 newPos = new Vector3(startPos.x - (colSize.x * xBlock) - colSize.x / 2, mouse3DPos.y + 0.01f, startPos.z);
+            Vector3 newPos = new Vector3(startPos.x - (colSize.x * xBlock) - colSize.x / 2, mouse3DPos.y + 0.05f, startPos.z);
             float hight = colSize.y / 2 + startPos.y;
             if (disX > 0)
             {
                 horPos = true;
-                line.SetPosition(0, new Vector3(startPos.x - colSize.x / 2, startPos.y + 0.01f, startPos.z));
+                line.SetPosition(0, new Vector3(startPos.x - colSize.x / 2, startPos.y + 0.05f, startPos.z));
                 line.SetPosition(1, newPos);
                 Collider[] notObscured = Physics.OverlapBox(new Vector3(midpoint, hight, startPos.z), lenght, Quaternion.identity, obstacleLayer);
                 if (notObscured.Length > 0)
@@ -290,8 +290,8 @@ public class BuildPlacement : MonoBehaviour {
             }
             else
             {
-                newPos = new Vector3(startPos.x + (colSize.x * xBlock) + (colSize.x / 2), mouse3DPos.y + 0.01f, startPos.z);
-                line.SetPosition(0, new Vector3(startPos.x + colSize.x / 2, startPos.y + 0.01f, startPos.z));
+                newPos = new Vector3(startPos.x + (colSize.x * xBlock) + (colSize.x / 2), mouse3DPos.y + 0.05f, startPos.z);
+                line.SetPosition(0, new Vector3(startPos.x + colSize.x / 2, startPos.y + 0.05f, startPos.z));
                 line.SetPosition(1, newPos);
                 Collider[] notObscured = Physics.OverlapBox(new Vector3(midpoint, hight, startPos.z), lenght, Quaternion.identity, obstacleLayer);
                 if (notObscured.Length > 0)
@@ -316,12 +316,12 @@ public class BuildPlacement : MonoBehaviour {
             float iets = line.GetPosition(1).z;
             float midpoint = (startPos.z + iets) / 2;
             Vector3 lenght = new Vector3(colSize.x - 0.01f, colSize.y, colSize.z * zBlock - 0.01f) / 2;
-            Vector3 newPos = new Vector3(startPos.x, mouse3DPos.y + 0.01f, startPos.z - (colSize.z * zBlock) - (colSize.z / 2));
+            Vector3 newPos = new Vector3(startPos.x, mouse3DPos.y + 0.05f, startPos.z - (colSize.z * zBlock) - (colSize.z / 2));
             float hight = colSize.y / 2 + startPos.y;
             if (disZ > 0)
             {
                 vertPos = true;
-                line.SetPosition(0, new Vector3(startPos.x, startPos.y + 0.01f, startPos.z - colSize.z / 2));
+                line.SetPosition(0, new Vector3(startPos.x, startPos.y + 0.05f, startPos.z - colSize.z / 2));
                 line.SetPosition(1, newPos);
                 Collider[] notObscured = Physics.OverlapBox(new Vector3(startPos.x, hight, midpoint), lenght, Quaternion.identity, obstacleLayer);
                 if (notObscured.Length > 0)
@@ -337,8 +337,8 @@ public class BuildPlacement : MonoBehaviour {
             }
             else
             {
-                newPos = new Vector3(startPos.x, mouse3DPos.y+0.01f, startPos.z + (colSize.z * zBlock) + (colSize.z / 2));
-                line.SetPosition(0, new Vector3(startPos.x, startPos.y + 0.01f, startPos.z + colSize.z / 2));
+                newPos = new Vector3(startPos.x, mouse3DPos.y+0.05f, startPos.z + (colSize.z * zBlock) + (colSize.z / 2));
+                line.SetPosition(0, new Vector3(startPos.x, startPos.y + 0.05f, startPos.z + colSize.z / 2));
                 line.SetPosition(1, newPos);
                 Collider[] notObscured = Physics.OverlapBox(new Vector3(startPos.x, hight, midpoint), lenght, Quaternion.identity, obstacleLayer);
                 if (notObscured.Length > 0)

@@ -59,9 +59,34 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   allBuildings:
-  - {fileID: 1899159255925704, guid: a725560e939addf43a4bb659297c4316, type: 2}
-  - {fileID: 1635785376754190, guid: 1b2c43d4f123be7428c251c0e4e0aa6b, type: 2}
+  - {fileID: 1698939765038124, guid: ff42759d36687d2498a699c35e7cfa25, type: 2}
+  - {fileID: 1792171278597346, guid: 7b60237096c4ae1468f84b4dd60516af, type: 2}
   - {fileID: 1715962789484906, guid: 26519527f7e57d94faf2972d7e954751, type: 2}
+  - {fileID: 1181433483239902, guid: 6f1890ce06ab66141835d1fc34fa0777, type: 2}
+  - {fileID: 1008923386991258, guid: 1622a389aef5db049814ea25d0ac56b2, type: 2}
+  - {fileID: 1384376026832294, guid: 0b9c6706ac0785142ba2b498fd8bac7c, type: 2}
+  - {fileID: 0}
+  - {fileID: 1577316683617098, guid: 8bd4810c5c7ad9940b5e9fec2ba5bc8b, type: 2}
+  - {fileID: 1345560561425640, guid: ee99b3afd68186d4aa2674da0981d12b, type: 2}
+  - {fileID: 1355014020681326, guid: 92124e96d589d0745bc4b5b0a0eb3d36, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 1944972772920128, guid: b82d7f5ebd3893b4cb39311e17a162be, type: 2}
+  - {fileID: 1716826316442076, guid: 0fe76cfd543e50f4d968e8f80560e52b, type: 2}
+  - {fileID: 0}
+  - {fileID: 1533425735614656, guid: c579fef120931294ab509dfde599919e, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 1961771909802958, guid: d26ec6510d8cee64c93f897f784d8730, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 1548627139601266, guid: 7eb8b1ca86e815e49abb8f73515ada1c, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 1523723042527150, guid: 2396ea9e7f1a6624f91e8de7f889abaa, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   line: {fileID: 120042395839089808}
   ageLock: 0
 --- !u!120 &120042395839089808
