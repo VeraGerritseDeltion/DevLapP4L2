@@ -9,17 +9,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e367c0c0ceb91b6468488af1f666801a, type: 3}
-  m_Name: Farm
+  m_Name: Stable
   m_EditorClassIdentifier: 
-  name: Farm
-  description: Issa farm
+  name: Stable
+  description: Kill animals to get food
   buildingSprite: {fileID: 0}
   wood: 0
   stone: 0
-  money: -2
+  money: 0
   minerals: 0
-  food: 10
-  happiness: 0
-  co2: 0
-  water: -1
-  energy: 0
+  food: 0
+  woodStorage: 0
+  stoneStorage: 0
+  moneyStorage: 0
+  foodStorage: 0
