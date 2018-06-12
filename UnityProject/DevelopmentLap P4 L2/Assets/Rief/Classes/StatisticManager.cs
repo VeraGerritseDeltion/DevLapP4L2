@@ -31,6 +31,12 @@ public class StatisticManager : MonoBehaviour {
     public int energy;
     public int co2;
 
+    [Header ("Storage")]
+    public int woodStorage;
+    public int stoneStorage;
+    public int moneyStorage;
+    public int foodStorage;
+
     void Awake() 
     {
 		if(instance == null) {
@@ -44,8 +50,6 @@ public class StatisticManager : MonoBehaviour {
     }
     void StartCo ()
     {
-
-
         StartCoroutine (AddStats ());
     }
 

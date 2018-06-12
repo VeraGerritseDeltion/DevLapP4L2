@@ -16,9 +16,11 @@ public class BuildingTemplate : ScriptableObject {
     public int money;
     public int minerals;
     public int food;
-    public int happiness;
-    public int co2;
-    public int water;
-    public int energy;
+
+    [Header("Storage")]
+    public int woodStorage;
+    public int stoneStorage;
+    public int moneyStorage;
+    public int foodStorage;
 
 }
