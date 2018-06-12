@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
 
     void ManagerStartUp()
     {
-        //UIManager.instance.MyStart();
+        UIManager.instance.MyStart();
         NatureManager.instance.MyStart();
         StatisticManager.instance.MyStart();
     }

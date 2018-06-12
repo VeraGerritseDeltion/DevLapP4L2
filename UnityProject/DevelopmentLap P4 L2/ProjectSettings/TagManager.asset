@@ -43,3 +43,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Tooltip
+    uniqueID: 2916377415
+    locked: 0
+  - name: Main Canvas
+    uniqueID: 2390449779
+    locked: 0

@@ -39,7 +39,7 @@ public class UIManager : MonoBehaviour {
 		}
 	}
 	// Use this for initialization
-	void MyStart () 
+	public void MyStart () 
 	{
 		CheckState();
 	}
