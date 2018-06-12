@@ -91,18 +91,28 @@ public class Building : MonoBehaviour {
         Destroy(gameObject);
     }
 
-
     void AddStats () 
     {
-        StatisticManager.instance.addWood += myBuilding.wood;
-        StatisticManager.instance.addStone += myBuilding.stone;
-        StatisticManager.instance.addMoney += myBuilding.money;
-        StatisticManager.instance.addMinerals += myBuilding.minerals;
-        StatisticManager.instance.addFood += myBuilding.food;
-        StatisticManager.instance.woodStorage += myBuilding.woodStorage;
-        StatisticManager.instance.stoneStorage += myBuilding.stoneStorage;
-        StatisticManager.instance.moneyStorage += myBuilding.moneyStorage;
-        StatisticManager.instance.foodStorage += myBuilding.foodStorage;
+        StatisticManager myStatisticManager = StatisticManager.instance;
+
+        if(myStatisticManager.wood < myStatisticManager.woodStorage){
+            myStatisticManager.addWood += myBuilding.wood;
+        }
+        if(myStatisticManager.stone < myStatisticManager.stoneStorage){  
+            myStatisticManager.addStone += myBuilding.stone;
+        }
+        if(myStatisticManager.money < myStatisticManager.moneyStorage){
+            myStatisticManager.addMoney += myBuilding.money;
+        }
+        if(myStatisticManager.food < myStatisticManager.foodStorage){
+            myStatisticManager.addFood += myBuilding.food;
+        }
+        myStatisticManager.addMinerals += myBuilding.minerals;
+
+        myStatisticManager.woodStorage += myBuilding.woodStorage;
+        myStatisticManager.stoneStorage += myBuilding.stoneStorage;
+        myStatisticManager.moneyStorage += myBuilding.moneyStorage;
+        myStatisticManager.foodStorage += myBuilding.foodStorage;
     }
 
     void MinStats () 
@@ -112,6 +122,7 @@ public class Building : MonoBehaviour {
         StatisticManager.instance.addMoney -= myBuilding.money;
         StatisticManager.instance.addMinerals -= myBuilding.minerals;
         StatisticManager.instance.addFood -= myBuilding.food;
+
         StatisticManager.instance.woodStorage -= myBuilding.woodStorage;
         StatisticManager.instance.stoneStorage -= myBuilding.stoneStorage;
         StatisticManager.instance.moneyStorage -= myBuilding.moneyStorage;
