@@ -9,22 +9,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e367c0c0ceb91b6468488af1f666801a, type: 3}
-  m_Name: WoodChop
+  m_Name: Granary
   m_EditorClassIdentifier: 
-  name: Wood Chop
-  description: Chops Wood for you!
+  name: Granary
+  description: More storage for food
   buildingSprite: {fileID: 0}
-  plusWood: 0
-  plusStone: 0
-  plusMoney: 0
-  plusHappiness: 0
-  plusCo2: 0
-  plusWater: 0
-  plusEnergy: 0
-  minWood: 0
-  minStone: 0
-  minMoney: 0
-  minHappiness: 0
-  minCo2: 0
-  minWater: 0
-  minEnergy: 0
+  wood: 0
+  stone: 0
+  money: 0
+  minerals: 0
+  food: 0
+  woodStorage: 0
+  stoneStorage: 0
+  moneyStorage: 0
+  foodStorage: 0

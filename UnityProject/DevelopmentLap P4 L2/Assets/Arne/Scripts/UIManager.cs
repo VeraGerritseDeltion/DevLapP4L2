@@ -59,7 +59,7 @@ public class UIManager : MonoBehaviour {
 			case UIState.MainMenu:
 
 				//main scene
-				LoadScene("Scene 0");
+				LoadScene("Main menu");
 				List<RectTransform> mainMenuList = new List<RectTransform>() {mainMenu};
 			    EnableMenuItems(mainMenuList); 
 
@@ -76,7 +76,7 @@ public class UIManager : MonoBehaviour {
 			case UIState.Ingame:
 
 				//ingame scene
-				LoadScene("Scene 1");
+				LoadScene("Level");
 				List<RectTransform> ingameList = new List<RectTransform>() {ingame};
 			    EnableMenuItems(ingameList); 
 

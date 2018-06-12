@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4343420782430000}
   - component: {fileID: 33499756221189106}
   - component: {fileID: 23265242978414442}
-  - component: {fileID: 114719221060434960}
   m_Layer: 0
   m_Name: Wheat
   m_TagString: Untagged
@@ -84,16 +83,3 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1116851274455404}
   m_Mesh: {fileID: 4300000, guid: 106a0f2497d43e340afdb5fe13417057, type: 3}
---- !u!114 &114719221060434960
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1116851274455404}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80029de013e1c9f4584d7b14ccbf27b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  growSpeed: 0.2
-  harvest: 0
