@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 114131513042407414}
   - component: {fileID: 114626109008052246}
   - component: {fileID: 114797263348972080}
+  - component: {fileID: 114910191855343256}
   m_Layer: 0
   m_Name: _Manager
   m_TagString: Untagged
@@ -65,13 +66,17 @@ MonoBehaviour:
   addCo2: 0
   wood: 3000
   stone: 0
-  money: 0
+  money: 3000
   food: 0
   minerals: 0
   happiness: 0
   water: 0
   energy: 0
   co2: 0
+  woodStorage: 0
+  stoneStorage: 0
+  moneyStorage: 0
+  foodStorage: 0
 --- !u!114 &114626109008052246
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -94,6 +99,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec051e2331074a54cad461d5f3d99dbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ground:
+    serializedVersion: 2
+    m_Bits: 512
   uitstoot: 0
   decOrInc: 0
   currentHigh: {r: 0, g: 0, b: 0, a: 0}
@@ -107,3 +115,18 @@ MonoBehaviour:
   burnColorLow: {r: 0.1509434, g: 0.1509434, b: 0.1509434, a: 0}
   burnColorHigh: {r: 0, g: 0, b: 0, a: 0}
   allTrees: []
+--- !u!114 &114910191855343256
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1585451363204046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2c573e865efe3e4d87ebba5ebf33c1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  treeLoc: []
+  treeKinds:
+  - {fileID: 1387645582401792, guid: 53f607b49e2e3d041bbf32413b9a4a8f, type: 2}
+  - {fileID: 1264101361843056, guid: c0e953838834e1b4289d912896828559, type: 2}

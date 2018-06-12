@@ -24,6 +24,11 @@ public class Trees : MonoBehaviour {
 
     int burning;
 	void Start () {
+        StartCoroutine(Timer());
+    }
+    IEnumerator Timer()
+    {
+        yield return new WaitForSeconds(0.1f);
         NatureManager.instance.allTrees.Add(gameObject);
         myRend = GetComponentInChildren<Renderer>();
         myMat = myRend.material;
@@ -34,7 +39,6 @@ public class Trees : MonoBehaviour {
         transform.position = new Vector3(transform.position.x, transform.position.y + 5, transform.position.z);
         transform.position = Ground();
     }
-
     public Vector3 Ground()
     {
         RaycastHit hit;

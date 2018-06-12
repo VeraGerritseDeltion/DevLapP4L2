@@ -22,8 +22,12 @@ public class GameManager : MonoBehaviour
 
     void ManagerStartUp()
     {
-        UIManager.instance.MyStart();
+        if(UIManager.instance != null)
+        {
+            UIManager.instance.MyStart();
+        }
         NatureManager.instance.MyStart();
         StatisticManager.instance.MyStart();
+        TreeInstantiationManager.instance.MyStart();
     }
 }
