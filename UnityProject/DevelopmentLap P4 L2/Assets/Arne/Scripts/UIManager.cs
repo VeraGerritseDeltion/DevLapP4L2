@@ -27,10 +27,7 @@ public class UIManager : MonoBehaviour {
 
 	public List<RectTransform> buildingbars = new List<RectTransform>();
 
-
-	public KeyCode esc; //NEEDS TO BE CHANGED
-
-
+	public bool blockState; //for testing
 
 	void Awake () 
 	{
@@ -42,7 +39,14 @@ public class UIManager : MonoBehaviour {
 	// Use this for initialization
 	public void MyStart () 
 	{
-		CheckState();
+		if(blockState)
+		{
+			return;
+		}
+		else
+		{
+			CheckState();
+		}
 	}
 	
 	// Update is called once per frame
@@ -231,7 +235,7 @@ public class UIManager : MonoBehaviour {
 	private void PressEscape () {
 		
 		//Debug.Log("escape");
-		if(Input.GetKeyDown(esc) && _UIState == UIState.Ingame && paused == false) 
+		if(Input.GetButtonDown("Escape") && _UIState == UIState.Ingame && paused == false) 
 		{
 			paused = true;
 			SetTimeScale(0f);
@@ -239,15 +243,15 @@ public class UIManager : MonoBehaviour {
 
 			//SwitchCursorState(false);
 		}		
-		else if(Input.GetKeyDown(esc) && settingsActive) 
+		else if(Input.GetButtonDown("Escape") && settingsActive) 
 		{
 			SubMenuConverter(4);
 		}
-		else if(Input.GetKeyDown(esc) && creditsActive)
+		else if(Input.GetButtonDown("Escape") && creditsActive)
 		{
 			SubMenuConverter(5);
 		}
-		else if(Input.GetKeyDown(esc) && _UIState == UIState.Ingame && paused) 
+		else if(Input.GetButtonDown("Escape") && _UIState == UIState.Ingame && paused) 
 		{
 			Resume();
 		}		
