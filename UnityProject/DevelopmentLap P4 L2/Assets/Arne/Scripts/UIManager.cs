@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class UIManager : MonoBehaviour {
 
@@ -18,16 +19,29 @@ public class UIManager : MonoBehaviour {
 	public List <RectTransform> subMenus = new List<RectTransform>();
 	public RectTransform mainMenu, ingame, settings, pauseMenu, buildingsbar, eventlog, statistics, loadingScreen;
 	public bool paused, settingsActive, creditsActive;
+
+	//cursor
 	private bool cursorActive;
 
+	//timescale
 	private float currentTimeScale;
- 
+
+	//animation
 	public List<Animator> animList = new List<Animator>(); 
 	public List<bool> animationActive = new List<bool>();
-
 	public List<RectTransform> buildingbars = new List<RectTransform>();
 
 	public bool blockState; //for testing
+
+	//eventlog
+	public TextMeshProUGUI eventButtonText;
+	public List<TextMeshProUGUI> newsMessage = new List<TextMeshProUGUI>();
+	private List<TextMeshProUGUI> newsMessageReverse = new List<TextMeshProUGUI>();
+
+
+	public string texttest;
+	public bool go;
+
 
 	void Awake () 
 	{
@@ -39,6 +53,7 @@ public class UIManager : MonoBehaviour {
 	// Use this for initialization
 	public void MyStart () 
 	{
+		ResetEvents();
 		if(blockState)
 		{
 			return;
@@ -55,6 +70,17 @@ public class UIManager : MonoBehaviour {
 		PressEscape();
 
 		HotKeys();
+		if(go)
+		{
+			MakeEvents();
+			go = false;
+			texttest = "";
+		}
+		
+	}
+	public void MakeEvents ()
+	{
+		Eventlog(texttest);
 	}
 	void CheckState ()
 	{
@@ -256,7 +282,131 @@ public class UIManager : MonoBehaviour {
 			Resume();
 		}		
 	}
-	
+	public void Eventlog (string events)
+	{
+		eventButtonText.text = "Events: " + events;
+
+/* 
+		for(int i = 0; i <= newsMessage.Count; i++)
+		{
+			if(newsMessage[i+1].text != "" && i != newsMessage.Count)
+			{
+				newsMessage[i+1].text = newsMessage[i].text;
+			}
+		}
+		int x = newsMessage.Count;
+		if(x == newsMessage.Count)
+		{
+			newsMessage[x].text = events;
+		}*/
+		
+		
+		//look at list and do them all plus one message higher, so the new message has an empty spot
+		for (int i = 0; i < newsMessage.Count; i++)
+		{
+			int x = i+1;
+			print(x);
+			/*if(x >= newsMessage.Count)
+			{
+				print("set event button");
+				//newsMessage[0].text = events;
+			}*/
+			if(newsMessage[newsMessage.Count].text == "")
+			{
+				newsMessage[0].text = events;
+			}
+			if(newsMessage[x].text != "") //not the right condition
+			{
+				print("replace");
+				//newsMessage[i].text = newsMessage[x].text; 	//BREAKS
+			}
+
+			//if(newsMessage[])
+			/*if(i == newsMessage.Count)
+			{
+				//newsMessage[0].text = events;
+				print("reached limit");
+			}*/
+			/*if(i < newsMessage.Count)
+			{
+				print("lower than");
+				
+				int x = i++;
+				newsMessage[x].text = newsMessage[i].text;
+				print(newsMessage[i].text);
+				
+			}	*/
+			/*if(newsMessage[i+1].text == "")
+			{
+
+			}*/
+		}
+		//newsMessage[0].text = events;
+/* 
+		foreach (var item in newsMessage)
+		{
+			for (int i = 0; i < newsMessage.Count; i++)
+			{
+				newsMessage[(i +1)].text = newsMessage[i].text;	
+			}
+		}
+
+*/
+		/* 
+		for (int i = newsMessage.Count; i < 0; i--)
+		{
+			if(newsMessage[i].text != "")
+			{
+				
+			}
+			if(newsMessage[i].text == "")
+			{
+				newsMessage[i].text = newsMessage[(i -1)].text;
+			}
+			else 
+			{
+
+			}
+		}*/
+		//begin with newest or begin with last message
+		
+
+		//NEWEST
+
+		//foreach that isnt null, starts at last in list
+
+		//LAST
+
+		//newsmessage.last-1.text = newsmessage.last.text
+
+		//check all until the text is null
+		//if all arent null delete last message and put the previous message before the last in there 
+		/* 
+		for (int i = 0; i < newsMessage.Count; i++)
+		{
+			if(newsMessage[i].text != "")
+			{
+				
+			}
+			if(newsMessage[i].text == "")
+			{
+				newsMessage[i].text = newsMessage[(i -1)].text;
+			}
+			else 
+			{
+
+			}
+		}*/
+	}
+	//resets all events from list
+	private void ResetEvents () 
+	{
+		for (int i = 0; i < newsMessage.Count; i++)
+		{
+			newsMessage[i].text = "";
+		}
+		eventButtonText.text = "Events: ";
+	}
 	public void Buildingbar (int number) //when going down it resets  before the animation can play which causes it to disappear
 	{
 		foreach (var item in buildingbars)
