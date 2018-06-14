@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -178,7 +178,6 @@ GameObject:
   - component: {fileID: 91836387}
   - component: {fileID: 91836386}
   - component: {fileID: 91836385}
-  - component: {fileID: 91836384}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -186,17 +185,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &91836384
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 91836383}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78babb4a8546081458dfb3bc023e6b06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &91836385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -614,6 +602,7 @@ MonoBehaviour:
   obstacles:
     serializedVersion: 2
     m_Bits: 0
+  ageLock: 0
   woodCost: 0
   stoneCost: 0
   moneyCost: 0
@@ -748,6 +737,7 @@ MonoBehaviour:
   obstacles:
     serializedVersion: 2
     m_Bits: 0
+  ageLock: 0
   woodCost: 0
   stoneCost: 0
   moneyCost: 0
@@ -1095,7 +1085,6 @@ GameObject:
   - component: {fileID: 898709052}
   - component: {fileID: 898709051}
   - component: {fileID: 898709050}
-  - component: {fileID: 898709054}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1166,17 +1155,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &898709054
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 898709049}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78babb4a8546081458dfb3bc023e6b06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &990076861
 Prefab:
   m_ObjectHideFlags: 0
@@ -1386,6 +1364,7 @@ MonoBehaviour:
   obstacles:
     serializedVersion: 2
     m_Bits: 0
+  ageLock: 0
   woodCost: 0
   stoneCost: 0
   moneyCost: 0
@@ -1773,6 +1752,7 @@ MonoBehaviour:
   obstacles:
     serializedVersion: 2
     m_Bits: 0
+  ageLock: 0
   woodCost: 0
   stoneCost: 0
   moneyCost: 0
@@ -1893,6 +1873,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   age: 0
+  timeForAge: 240
   addWood: 0
   addStone: 0
   addMoney: 0
@@ -1967,6 +1948,7 @@ MonoBehaviour:
   obstacles:
     serializedVersion: 2
     m_Bits: 0
+  ageLock: 0
   woodCost: 0
   stoneCost: 0
   moneyCost: 0

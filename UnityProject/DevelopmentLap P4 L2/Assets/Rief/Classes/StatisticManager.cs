@@ -7,6 +7,7 @@ public class StatisticManager : MonoBehaviour {
 
     private float statTimer = 1f;
     public int age;
+    public float timeForAge;
 
     [Header ("Adding")]
     public int addWood;
@@ -48,6 +49,12 @@ public class StatisticManager : MonoBehaviour {
     {
         StartCo();
     }
+
+    void Update()
+    {
+        AgeIncrease();
+    }
+
     void StartCo ()
     {
         StartCoroutine (AddStats ());
@@ -68,5 +75,15 @@ public class StatisticManager : MonoBehaviour {
         energy += addEnergy;
         co2 += addCo2;
         StartCo ();
+    }
+
+    void AgeIncrease()
+    {
+        timeForAge -= 1 * Time.deltaTime;
+
+        if(timeForAge <= 0)
+        {
+            age++;
+        }
     }
 }

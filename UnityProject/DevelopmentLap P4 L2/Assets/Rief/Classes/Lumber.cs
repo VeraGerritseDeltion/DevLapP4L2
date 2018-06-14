@@ -11,8 +11,6 @@ public class Lumber : MonoBehaviour {
 
 	public bool cutting;
 
-	int rotateSpeed = 1;
-
 	void Start()
 	{
 		AddTrees();

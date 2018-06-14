@@ -16,6 +16,8 @@ public class Building : MonoBehaviour {
     BoxCollider myCol;
     Vector3 sizeCol;
 
+    public int ageLock;
+
     public int woodCost;
     public int stoneCost;
     public int moneyCost;
@@ -132,7 +134,7 @@ public class Building : MonoBehaviour {
 
     void CollisionStay()
     {
-        print(isPlaced);
+        //print(isPlaced);
         float offSet = 0.05f;
         Vector3 size = new Vector3(sizeCol.x - offSet, sizeCol.y - offSet, sizeCol.z - offSet);
         Collider[] buildings = Physics.OverlapBox(transform.position,size,Quaternion.identity,obstacles);
@@ -166,7 +168,7 @@ public class Building : MonoBehaviour {
     }
 
     public bool canPurchase(){
-        if(StatisticManager.instance.wood >= woodCost && StatisticManager.instance.stone >= stoneCost && StatisticManager.instance.money >= moneyCost)
+        if(ageLock < StatisticManager.instance.age && StatisticManager.instance.wood >= woodCost && StatisticManager.instance.stone >= stoneCost && StatisticManager.instance.money >= moneyCost)
         {
             purchaseAble = true;
         }
