@@ -58,6 +58,7 @@ public class StatisticManager : MonoBehaviour {
     void StartCo ()
     {
         StartCoroutine (AddStats ());
+        StartCoroutine (AgeIncrease ());
     }
 
     IEnumerator AddStats ()
@@ -77,13 +78,10 @@ public class StatisticManager : MonoBehaviour {
         StartCo ();
     }
 
-    void AgeIncrease()
+    IEnumerator AgeIncrease()
     {
-        timeForAge -= 1 * Time.deltaTime;
-
-        if(timeForAge <= 0)
-        {
-            age++;
-        }
+        yield return new WaitForSeconds(timeForAge);
+        age++;
+        StartCoroutine(AgeIncrease());
     }
 }
