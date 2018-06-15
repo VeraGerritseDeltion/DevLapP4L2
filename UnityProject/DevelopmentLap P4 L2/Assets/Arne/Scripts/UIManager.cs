@@ -35,13 +35,13 @@ public class UIManager : MonoBehaviour {
 
 	//eventlog
 	public TextMeshProUGUI eventButtonText;
-	public List<TextMeshProUGUI> newsMessage = new List<TextMeshProUGUI>();
-	private List<TextMeshProUGUI> newsMessageReverse = new List<TextMeshProUGUI>();
+	//public List<TextMeshProUGUI> newsMessage = new List<TextMeshProUGUI>();
 
-
-	public string texttest;
-	public bool go;
-
+	public string texttest; //testing
+	public bool go; //testing
+	public Queue<string> queue = new Queue<string>();
+	public TextMeshProUGUI eventText;
+	public int textLimit;
 
 	void Awake () 
 	{
@@ -53,7 +53,6 @@ public class UIManager : MonoBehaviour {
 	// Use this for initialization
 	public void MyStart () 
 	{
-		ResetEvents();
 		if(blockState)
 		{
 			return;
@@ -70,7 +69,7 @@ public class UIManager : MonoBehaviour {
 		PressEscape();
 
 		HotKeys();
-		if(go)
+		if(go)	//TESTING 
 		{
 			MakeEvents();
 			go = false;
@@ -78,9 +77,26 @@ public class UIManager : MonoBehaviour {
 		}
 		
 	}
+	//Testing
 	public void MakeEvents ()
 	{
-		Eventlog(texttest);
+		EventLog(texttest);
+	}
+	//has a string queue which puts a string on one line and foreach string in the queue it remembers the newest input
+	public void EventLog (string events)
+	{
+		eventButtonText.text = "Events: " + events;
+		if (queue.Count >= textLimit)
+        {
+			queue.Dequeue();
+		}	
+     	queue.Enqueue(events);
+     
+     	eventText.text = "";
+     	foreach(string st in queue)
+        {
+			eventText.text = eventText.text + st + "\n";
+		} 	
 	}
 	void CheckState ()
 	{
@@ -282,11 +298,11 @@ public class UIManager : MonoBehaviour {
 			Resume();
 		}		
 	}
+	/* 
 	public void Eventlog (string events)
 	{
 		eventButtonText.text = "Events: " + events;
 
-/* 
 		for(int i = 0; i <= newsMessage.Count; i++)
 		{
 			if(newsMessage[i+1].text != "" && i != newsMessage.Count)
@@ -298,7 +314,7 @@ public class UIManager : MonoBehaviour {
 		if(x == newsMessage.Count)
 		{
 			newsMessage[x].text = events;
-		}*/
+		}
 		
 		
 		//look at list and do them all plus one message higher, so the new message has an empty spot
@@ -306,11 +322,11 @@ public class UIManager : MonoBehaviour {
 		{
 			int x = i+1;
 			print(x);
-			/*if(x >= newsMessage.Count)
+			if(x >= newsMessage.Count)
 			{
 				print("set event button");
 				//newsMessage[0].text = events;
-			}*/
+			}
 			if(newsMessage[newsMessage.Count].text == "")
 			{
 				newsMessage[0].text = events;
@@ -322,12 +338,12 @@ public class UIManager : MonoBehaviour {
 			}
 
 			//if(newsMessage[])
-			/*if(i == newsMessage.Count)
+			if(i == newsMessage.Count)
 			{
 				//newsMessage[0].text = events;
 				print("reached limit");
-			}*/
-			/*if(i < newsMessage.Count)
+			}
+			if(i < newsMessage.Count)
 			{
 				print("lower than");
 				
@@ -335,24 +351,20 @@ public class UIManager : MonoBehaviour {
 				newsMessage[x].text = newsMessage[i].text;
 				print(newsMessage[i].text);
 				
-			}	*/
+			}	
 			/*if(newsMessage[i+1].text == "")
 			{
 
-			}*/
+			}
 		}
-		//newsMessage[0].text = events;
-/* 
+		//newsMessage[0].text = events; 
 		foreach (var item in newsMessage)
 		{
 			for (int i = 0; i < newsMessage.Count; i++)
 			{
 				newsMessage[(i +1)].text = newsMessage[i].text;	
 			}
-		}
-
-*/
-		/* 
+		} 
 		for (int i = newsMessage.Count; i < 0; i--)
 		{
 			if(newsMessage[i].text != "")
@@ -367,7 +379,7 @@ public class UIManager : MonoBehaviour {
 			{
 
 			}
-		}*/
+		}
 		//begin with newest or begin with last message
 		
 
@@ -381,7 +393,6 @@ public class UIManager : MonoBehaviour {
 
 		//check all until the text is null
 		//if all arent null delete last message and put the previous message before the last in there 
-		/* 
 		for (int i = 0; i < newsMessage.Count; i++)
 		{
 			if(newsMessage[i].text != "")
@@ -396,9 +407,9 @@ public class UIManager : MonoBehaviour {
 			{
 
 			}
-		}*/
+		}
 	}
-	//resets all events from list
+	//resets all events from list	NOT NEEDED
 	private void ResetEvents () 
 	{
 		for (int i = 0; i < newsMessage.Count; i++)
@@ -406,7 +417,7 @@ public class UIManager : MonoBehaviour {
 			newsMessage[i].text = "";
 		}
 		eventButtonText.text = "Events: ";
-	}
+	}*/
 	public void Buildingbar (int number) //when going down it resets  before the animation can play which causes it to disappear
 	{
 		foreach (var item in buildingbars)
