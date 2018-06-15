@@ -23,11 +23,11 @@ public class TreeInstantiationManager : MonoBehaviour {
         yield return new WaitForSeconds(0.5f);
         if(treeLoc.Count != 0)
         {
+            print(treeLoc.Count);
             for (int i = 0; i < treeLoc.Count; i++)
             {
-                yield return new WaitForSeconds(0.1f);
+                yield return new WaitForSeconds(0.01f);
                 int rand = Random.Range(0, treeKinds.Count);
-                print(treeLoc[i].position);
                 Instantiate(treeKinds[rand], treeLoc[i].position, Quaternion.identity);
             }
         }
