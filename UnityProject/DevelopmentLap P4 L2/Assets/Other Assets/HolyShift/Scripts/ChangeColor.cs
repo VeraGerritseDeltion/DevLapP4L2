@@ -9,15 +9,16 @@ public class ChangeColor : MonoBehaviour {
     public Color currColor;
 
     void Start () {
-        ChangingColor();
+        NatureManager.instance.waterColors.add(this);
+        ChangingColor(0);
         
     }
 	
 	void Update () {
 		
 	}
-    void ChangingColor(){
-        currColor = Color.Lerp(startColor, endColor, NatureManager.instance.uitstoot / 100);
+    public void ChangingColor(float percentage){
+        currColor = Color.Lerp(startColor, endColor, percentage);
 		GetComponent<Renderer>().material.SetColor("_BaseColor", currColor);
     }
 }

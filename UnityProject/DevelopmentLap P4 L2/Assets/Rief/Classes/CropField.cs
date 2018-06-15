@@ -61,11 +61,11 @@ public class CropField : MonoBehaviour {
 				isGrowing = true;
 				if(wheatBool)
 				{
-					spawned = Instantiate(wheat, new Vector3(transform.position.x, transform.position.y-0.6f, transform.position.z), Quaternion.Euler(-90, transform.rotation.y, transform.rotation.z));
+					spawned = Instantiate(wheat, new Vector3(transform.position.x, transform.position.y-0.6f, transform.position.z), Quaternion.identity);
 				} 
 				else
 				{
-					spawned = Instantiate(carrot, new Vector3(transform.position.x, transform.position.y-0.2f, transform.position.z), Quaternion.Euler(-90, transform.rotation.y, transform.rotation.z));
+					spawned = Instantiate(carrot, new Vector3(transform.position.x, transform.position.y-0.2f, transform.position.z), Quaternion.identity);
 				}
 			}
 		}
@@ -75,7 +75,7 @@ public class CropField : MonoBehaviour {
 	{		
 		if(spawned != null)
 		{
-			Vector3 targetLoc = new Vector3(spawned.transform.position.x, 1, spawned.transform.position.z);
+			Vector3 targetLoc = new Vector3(spawned.transform.position.x, transform.position.y+1, spawned.transform.position.z);
 			spawned.transform.position = Vector3.MoveTowards(spawned.transform.position, targetLoc, growSpeed * Time.deltaTime);
 
 			if(spawned.transform.position == targetLoc)
