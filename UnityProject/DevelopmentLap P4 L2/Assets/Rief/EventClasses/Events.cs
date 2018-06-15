@@ -8,4 +8,9 @@ public class Events : MonoBehaviour {
     {
 
     }
+
+    public bool Posibility()
+    {
+        return true;
+    }
 }

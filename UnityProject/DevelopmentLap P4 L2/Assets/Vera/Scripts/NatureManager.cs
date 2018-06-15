@@ -59,6 +59,10 @@ public class NatureManager : MonoBehaviour
         {
             procent = uitstoot/ 50;
         }
+        for (int i = 0; i < waterColors.Count; i++)
+        {
+            waterColors[i].ChangingColor(uitstoot / 100);
+        }
         ChangeNature(LowerOrHigher, procent);
     }
 

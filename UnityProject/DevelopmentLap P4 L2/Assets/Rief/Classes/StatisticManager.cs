@@ -7,6 +7,7 @@ public class StatisticManager : MonoBehaviour {
 
     private float statTimer = 1f;
     public int age;
+    public int eventForAge;
     public float timeForAge;
 
     [Header ("Adding")]
@@ -47,6 +48,7 @@ public class StatisticManager : MonoBehaviour {
 
     public void MyStart()
     {
+        eventForAge = Random.Range(5, 10);
         StartCo();
     }
 
@@ -82,6 +84,16 @@ public class StatisticManager : MonoBehaviour {
     {
         yield return new WaitForSeconds(timeForAge);
         age++;
+        if(age == eventForAge)
+        {
+            Event();
+        }
         StartCoroutine(AgeIncrease());
+    }
+
+    void Event()
+    {
+        EventManager.instance.StartEvent();
+        eventForAge += Random.Range(2, 10);
     }
 }

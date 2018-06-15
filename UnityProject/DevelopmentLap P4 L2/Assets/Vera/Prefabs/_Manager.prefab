@@ -105,6 +105,7 @@ MonoBehaviour:
     m_Bits: 512
   uitstoot: 0
   decOrInc: 0
+  waterColors: []
   currentHigh: {r: 0, g: 0, b: 0, a: 0}
   currentLow: {r: 0, g: 0, b: 0, a: 0}
   startColorHigh: {r: 0.10998263, g: 0.735849, b: 0.010412939, a: 0}
@@ -129,5 +130,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   treeLoc: []
   treeKinds:
-  - {fileID: 100000, guid: 60f429d49b0053440954431203c03cc3, type: 3}
-  - {fileID: 100000, guid: 2212deba0d87e2749bf6f8ceced47933, type: 3}
+  - {fileID: 1632366874207860, guid: 6f6599b6abf84b8458b4fe2793718015, type: 2}
+  - {fileID: 1264101361843056, guid: c0e953838834e1b4289d912896828559, type: 2}
