@@ -9,6 +9,8 @@ public class NatureManager : MonoBehaviour
     public float uitstoot;
     public int decOrInc;
     bool onOrOff;
+
+    public List<ChangeColor> waterColors = new List<ChangeColor>();
     [Header("Start Colors nature")]
     public Color currentHigh;
     public Color currentLow;
