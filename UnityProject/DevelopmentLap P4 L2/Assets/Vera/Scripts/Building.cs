@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Building : MonoBehaviour {
+public class Building : MonoBehaviour{
 
     public BuildingTemplate myBuilding;
 
@@ -32,17 +32,17 @@ public class Building : MonoBehaviour {
     //Tooltip Stuff
     public GameObject tooltip;
 
-    public void MyStart ()
+    public void MyStart()
     {
-        myBuildingStats = transform.GetComponent<BuildingStats> ();
+        myBuildingStats = transform.GetComponent<BuildingStats>();
         Renderer myRend = GetComponent<Renderer>();
-        if(myRend == null)
+        if (myRend == null)
         {
             myRend = GetComponentInChildren<Renderer>();
         }
         myMat = myRend.material;
         print(myMat);
-        if(myMat == null)
+        if (myMat == null)
         {
             isPlaced = true;
         }
@@ -52,7 +52,7 @@ public class Building : MonoBehaviour {
         {
             myCol = GetComponent<BoxCollider>();
         }
-        sizeCol = new Vector3(myCol.size.x, myCol.size.z, myCol.size.y)/2;
+        sizeCol = new Vector3(myCol.size.x, myCol.size.z, myCol.size.y) / 2;
         print("Start");
         StartCoroutine(EnablePlacement());
     }
@@ -60,22 +60,23 @@ public class Building : MonoBehaviour {
     IEnumerator EnablePlacement()
     {
         yield return new WaitForSeconds(0.01f);
-        startedPlacing = true;       
+        startedPlacing = true;
     }
-	
-	void Update ()
+
+    void Update()
     {
         if (!isPlaced)
         {
             CollisionStay();
         }
-	}
+    }
 
     public void Place()
     {
+        BuildingManager.instance.allBuildings.Add(gameObject);
         myMat.color = normalColor;
         gameObject.layer = 8;
-        if(myBuilding != null)
+        if (myBuilding != null)
         {
             AddStats();
             GetComponent<BuildingStats>().AddToAura();
@@ -86,27 +87,44 @@ public class Building : MonoBehaviour {
         StatisticManager.instance.stone -= stoneCost;
         StatisticManager.instance.money -= moneyCost;
     }
+
+    public void EventDestroy()
+    {
+        StartCoroutine(GoDown());
+    }
     
+    IEnumerator GoDown()
+    {
+        transform.position = new Vector3(transform.position.x, transform.position.y - 1.5f, transform.position.z) * Time.deltaTime;
+        yield return new WaitForSeconds(2);
+        DestroyBuilding();
+    }
+
     public void DestroyBuilding()
     {
+        BuildingManager.instance.allBuildings.Remove(gameObject);
         MinStats();
         Destroy(gameObject);
     }
 
-    void AddStats () 
+    void AddStats()
     {
         StatisticManager myStatisticManager = StatisticManager.instance;
 
-        if(myStatisticManager.wood < myStatisticManager.woodStorage){
+        if (myStatisticManager.wood < myStatisticManager.woodStorage)
+        {
             myStatisticManager.addWood += myBuilding.wood;
         }
-        if(myStatisticManager.stone < myStatisticManager.stoneStorage){  
+        if (myStatisticManager.stone < myStatisticManager.stoneStorage)
+        {
             myStatisticManager.addStone += myBuilding.stone;
         }
-        if(myStatisticManager.money < myStatisticManager.moneyStorage){
+        if (myStatisticManager.money < myStatisticManager.moneyStorage)
+        {
             myStatisticManager.addMoney += myBuilding.money;
         }
-        if(myStatisticManager.food < myStatisticManager.foodStorage){
+        if (myStatisticManager.food < myStatisticManager.foodStorage)
+        {
             myStatisticManager.addFood += myBuilding.food;
         }
         myStatisticManager.addMinerals += myBuilding.minerals;
@@ -117,7 +135,7 @@ public class Building : MonoBehaviour {
         myStatisticManager.foodStorage += myBuilding.foodStorage;
     }
 
-    void MinStats () 
+    void MinStats()
     {
         StatisticManager.instance.addWood -= myBuilding.wood;
         StatisticManager.instance.addStone -= myBuilding.stone;
@@ -129,7 +147,7 @@ public class Building : MonoBehaviour {
         StatisticManager.instance.stoneStorage -= myBuilding.stoneStorage;
         StatisticManager.instance.moneyStorage -= myBuilding.moneyStorage;
         StatisticManager.instance.foodStorage -= myBuilding.foodStorage;
-        
+
     }
 
     void CollisionStay()
@@ -137,7 +155,7 @@ public class Building : MonoBehaviour {
         //print(isPlaced);
         float offSet = 0.05f;
         Vector3 size = new Vector3(sizeCol.x - offSet, sizeCol.y - offSet, sizeCol.z - offSet);
-        Collider[] buildings = Physics.OverlapBox(transform.position,size,Quaternion.identity,obstacles);
+        Collider[] buildings = Physics.OverlapBox(transform.position, size, Quaternion.identity, obstacles);
         if (buildings.Length != 0 || !canPurchase())
         {
             myMat.color = Color.red;
@@ -152,11 +170,11 @@ public class Building : MonoBehaviour {
 
     public void HighlightBuilding(bool active)
     {
-        if(!active)
+        if (!active)
         {
             myMat.color = normalColor;
         }
-        if(active)
+        if (active)
         {
             myMat.color = Color.yellow;
         }
@@ -167,8 +185,9 @@ public class Building : MonoBehaviour {
         return sizeCol;
     }
 
-    public bool canPurchase(){
-        if(ageLock < StatisticManager.instance.age && StatisticManager.instance.wood >= woodCost && StatisticManager.instance.stone >= stoneCost && StatisticManager.instance.money >= moneyCost)
+    public bool canPurchase()
+    {
+        if (ageLock < StatisticManager.instance.age && StatisticManager.instance.wood >= woodCost && StatisticManager.instance.stone >= stoneCost && StatisticManager.instance.money >= moneyCost)
         {
             purchaseAble = true;
         }
@@ -178,11 +197,11 @@ public class Building : MonoBehaviour {
         }
         return purchaseAble;
     }
-    public void Upgrade () 
+    public void Upgrade()
     {
         //upgrades building
     }
-    public void Tooltip (bool active)
+    public void Tooltip(bool active)
     {
         tooltip.SetActive(active);
     }

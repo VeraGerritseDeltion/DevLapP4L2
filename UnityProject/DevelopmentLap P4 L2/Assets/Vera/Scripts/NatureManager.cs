@@ -9,6 +9,8 @@ public class NatureManager : MonoBehaviour
     public float uitstoot;
     public int decOrInc;
     bool onOrOff;
+
+    public List<ChangeColor> waterColors = new List<ChangeColor>();
     [Header("Start Colors nature")]
     public Color currentHigh;
     public Color currentLow;
@@ -56,6 +58,10 @@ public class NatureManager : MonoBehaviour
         else
         {
             procent = uitstoot/ 50;
+        }
+        for (int i = 0; i < waterColors.Count; i++)
+        {
+            waterColors[i].ChangingColor(uitstoot / 100);
         }
         ChangeNature(LowerOrHigher, procent);
     }

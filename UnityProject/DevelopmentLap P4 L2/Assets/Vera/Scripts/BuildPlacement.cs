@@ -256,7 +256,6 @@ public class BuildPlacement : MonoBehaviour {
 
         float disX = startPos.x - mouse3DPos.x;
         float disZ = startPos.z - mouse3DPos.z;
-        Vector3 snappedPos = new Vector3(0, 0, 0);
         float disx = Mathf.Abs(disX);
         float disz = Mathf.Abs(disZ);
 
@@ -355,8 +354,6 @@ public class BuildPlacement : MonoBehaviour {
         }
         if (!obstructed && Input.GetButtonDown("Fire1") && notFirstFrame)
         {
-
-            Vector3 startPoint = new Vector3(0, 0, 0);
             float hori = 0;
             if (hor)
             {
