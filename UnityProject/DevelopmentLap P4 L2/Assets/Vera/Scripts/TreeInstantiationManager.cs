@@ -31,6 +31,8 @@ public class TreeInstantiationManager : MonoBehaviour {
                 Instantiate(treeKinds[rand], treeLoc[i].position, Quaternion.identity);
             }
         }
+        yield return new WaitForSeconds(0.1f);
+        NatureManager.instance.MyStart();
     }
 	
 	void Update () {
