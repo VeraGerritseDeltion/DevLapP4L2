@@ -43,6 +43,7 @@ public class UIManager : MonoBehaviour {
 	public TextMeshProUGUI eventText;
 	public int textLimit;
 
+
 	void Awake () 
 	{
 		if(instance == null)
@@ -53,6 +54,7 @@ public class UIManager : MonoBehaviour {
 	// Use this for initialization
 	public void MyStart () 
 	{
+		currentTimeScale = 1f;
 		if(blockState)
 		{
 			return;
@@ -93,6 +95,7 @@ public class UIManager : MonoBehaviour {
      	queue.Enqueue(events);
      
      	eventText.text = "";
+
      	foreach(string st in queue)
         {
 			eventText.text = eventText.text + st + "\n";
@@ -461,5 +464,16 @@ public class UIManager : MonoBehaviour {
 			return;
         }
 		//print("animation");
+	}
+	public void SelectedButtonColor (bool active)
+	{
+		if(active)
+		{
+			//change color to dark
+		}
+		else
+		{
+			//change to normal color
+		}
 	}
 }
