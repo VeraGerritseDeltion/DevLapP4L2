@@ -50,17 +50,16 @@ public class StatisticManager : MonoBehaviour {
     {
         eventForAge = Random.Range(5, 10);
         StartCo();
+        StartCoroutine(AgeIncrease());
     }
 
     void Update()
     {
-        AgeIncrease();
     }
 
     void StartCo ()
     {
         StartCoroutine (AddStats ());
-        StartCoroutine (AgeIncrease ());
     }
 
     IEnumerator AddStats ()

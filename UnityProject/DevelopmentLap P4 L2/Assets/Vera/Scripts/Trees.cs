@@ -122,7 +122,6 @@ public class Trees : MonoBehaviour {
         if (Random.Range(0, 100) < 50)
         {
             Collider[] facinity = Physics.OverlapSphere(transform.position, radius, trees);
-            print(facinity.Length);
             int randa = Random.Range(0, facinity.Length);
             if(facinity.Length != 0)
             {
