@@ -9,31 +9,31 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1387645582401792}
+  m_RootGameObject: {fileID: 1264046517371728}
   m_IsPrefabParent: 1
---- !u!1 &1387645582401792
+--- !u!1 &1264046517371728
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4412751389943728}
-  m_Layer: 12
+  - component: {fileID: 4021462134400772}
+  m_Layer: 0
   m_Name: 3D_CleanTree_001
-  m_TagString: Obstacle
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4412751389943728
+--- !u!4 &4021462134400772
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1387645582401792}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -142.11314, y: 102.959015, z: 221.59534}
+  m_GameObject: {fileID: 1264046517371728}
+  m_LocalRotation: {x: -0.2476274, y: 0.28806466, z: -0.046646304, w: 0.9238634}
+  m_LocalPosition: {x: -40.17353, y: -12.951784, z: 78.16173}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
