@@ -9,7 +9,7 @@ public class ChangeColor : MonoBehaviour {
     public Color currColor;
 
     void Start () {
-        NatureManager.instance.waterColors.add(this);
+        NatureManager.instance.waterColors.Add(this);
         ChangingColor(0);
         
     }
