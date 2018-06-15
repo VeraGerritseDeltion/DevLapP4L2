@@ -73,6 +73,7 @@ public class Building : MonoBehaviour {
 
     public void Place()
     {
+        BuildingManager.instance.allBuildings.Add(gameObject);
         myMat.color = normalColor;
         gameObject.layer = 8;
         if(myBuilding != null)
@@ -89,6 +90,7 @@ public class Building : MonoBehaviour {
     
     public void DestroyBuilding()
     {
+        BuildingManager.instance.allBuildings.Remove(gameObject);
         MinStats();
         Destroy(gameObject);
     }
