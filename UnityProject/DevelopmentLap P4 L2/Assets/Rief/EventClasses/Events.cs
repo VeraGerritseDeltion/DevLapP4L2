@@ -4,5 +4,8 @@ using UnityEngine;
 
 public class Events : MonoBehaviour {
 
+    public virtual void Occur()
+    {
 
+    }
 }
