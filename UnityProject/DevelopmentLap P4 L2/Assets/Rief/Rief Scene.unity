@@ -215,7 +215,7 @@ Terrain:
   m_GameObject: {fileID: 73419830}
   m_Enabled: 1
   serializedVersion: 3
-  m_TerrainData: {fileID: 15600000, guid: f038766cad54af14782e25a45e09533f, type: 2}
+  m_TerrainData: {fileID: 0}
   m_TreeDistance: 5000
   m_TreeBillboardDistance: 50
   m_TreeCrossFadeLength: 5
@@ -586,6 +586,7 @@ GameObject:
   m_Component:
   - component: {fileID: 549517996}
   - component: {fileID: 549517995}
+  - component: {fileID: 549517997}
   m_Layer: 0
   m_Name: WaterReflectionMain Camera
   m_TagString: Untagged
@@ -642,6 +643,14 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!45 &549517997
+Skybox:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 549517994}
+  m_Enabled: 1
+  m_CustomSkybox: {fileID: 0}
 --- !u!1 &643328828
 GameObject:
   m_ObjectHideFlags: 0
@@ -1296,6 +1305,7 @@ GameObject:
   - component: {fileID: 898709052}
   - component: {fileID: 898709051}
   - component: {fileID: 898709050}
+  - component: {fileID: 898709054}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1366,6 +1376,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &898709054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 898709049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d84fa06a2a9b51942ac0731c8cd22fd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  power: 0.1
+  duration: 1
+  myCamera: {fileID: 0}
+  shouldShake: 0
 --- !u!1001 &899310244
 Prefab:
   m_ObjectHideFlags: 0

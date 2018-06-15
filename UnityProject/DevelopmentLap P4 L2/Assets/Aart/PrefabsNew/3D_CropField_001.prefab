@@ -112,9 +112,9 @@ MonoBehaviour:
   windmill:
     serializedVersion: 2
     m_Bits: 0
-  wheatBool: 1
+  wheatBool: 0
   wheat: {fileID: 1932795657738314, guid: 836e0ea0de56e0b4ca0a9f195ef6207b, type: 2}
-  carrot: {fileID: 1136895838895334, guid: 27dcfada4c1f6204bbbbfdc83d42d053, type: 2}
+  carrot: {fileID: 1995347343606108, guid: 080b4be056eef84468a1b203b7108213, type: 2}
   fastSpeed: 0.2
   harvestAmount: 2
   moneyCost: 0
