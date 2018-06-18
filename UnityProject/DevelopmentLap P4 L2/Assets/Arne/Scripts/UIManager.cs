@@ -19,6 +19,9 @@ public class UIManager : MonoBehaviour {
 	public List <RectTransform> subMenus = new List<RectTransform>();
 	public RectTransform mainMenu, ingame, settings, pauseMenu, buildingsbar, eventlog, statistics, loadingScreen;
 	public bool paused, settingsActive, creditsActive;
+	public List <Image> time = new List<Image>();
+	public List <Image> buildingCategory = new List<Image>();
+	public Color pressedButton, normalButton;
 
 	//cursor
 	private bool cursorActive;
@@ -260,18 +263,22 @@ public class UIManager : MonoBehaviour {
 		}
 		if(Input.GetButtonDown("Pause"))
 		{
+			SelectedTimeColor(0);
 			SetTimeScale(0f);
 		}
 		if(Input.GetButtonDown("Normal Speed"))
 		{
+			SelectedTimeColor(1);
 			SetTimeScale(1f);
 		}
 		if(Input.GetButtonDown("Fast Speed"))
 		{
+			SelectedTimeColor(2);
 			SetTimeScale(1.5f);
 		}
 		if(Input.GetButtonDown("Faster Speed"))
 		{
+			SelectedTimeColor(3);
 			SetTimeScale(2f);
 		}
 	}
@@ -423,12 +430,23 @@ public class UIManager : MonoBehaviour {
 	}*/
 	public void Buildingbar (int number) //when going down it resets  before the animation can play which causes it to disappear
 	{
+		//sets other bars false
 		foreach (var item in buildingbars)
 		{
 			item.gameObject.SetActive(false);
 		}
 		buildingbars[number].gameObject.SetActive(true);
+		
+		
+		//set button color 		CRASHES
+		foreach (var item in buildingCategory)
+		{
+			var image = item.GetComponent<Image>();
+			image.color = normalButton;
+		}
+		buildingCategory[number].GetComponent<Image>().color = pressedButton;
 
+		//does the correct animation value
 		for (int i = 0; i < animationActive.Count; i++)
 		{
 			if(i == number)
@@ -449,31 +467,25 @@ public class UIManager : MonoBehaviour {
 		Animator anim = animList[number];
 
 		anim.speed = anim.speed / currentTimeScale;
-		//everything is false except number
 
 		if(animationActive[number] && !anim.GetCurrentAnimatorStateInfo(0).IsName("Up"))
         {
-			//print("up true");
             anim.SetBool("Up", true);
 			return;
         }
         if(!animationActive[number] && anim.GetCurrentAnimatorStateInfo(0).IsName("Up"))
         {
-			//print("up false");
             anim.SetBool("Up", false);
 			return;
         }
-		//print("animation");
 	}
-	public void SelectedButtonColor (bool active)
+	public void SelectedTimeColor (int number)
 	{
-		if(active)
+		foreach (var item in time)
 		{
-			//change color to dark
+			var image = item.GetComponent<Image>();
+			image.color = normalButton;
 		}
-		else
-		{
-			//change to normal color
-		}
+		time[number].color = pressedButton;
 	}
 }
