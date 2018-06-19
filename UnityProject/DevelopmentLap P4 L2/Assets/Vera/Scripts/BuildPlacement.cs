@@ -32,7 +32,7 @@ public class BuildPlacement : MonoBehaviour {
     public int ageLock;
 
     void Start () {
-        lineMat = line.material;
+        lineMat = line.sharedMaterial;
 	}
 	
 

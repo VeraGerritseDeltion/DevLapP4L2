@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Obstacle
   - Building
+  - Tree
   layers:
   - Default
   - TransparentFX

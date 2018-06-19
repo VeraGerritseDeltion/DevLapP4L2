@@ -19,6 +19,8 @@ public class Trees : MonoBehaviour {
     public LayerMask trees;
     List<Coroutine> allRoutines = new List<Coroutine>();
 
+    bool notToeBePlaced;
+
     //tooltip Stuff
     public GameObject tooltip;
 
@@ -38,11 +40,20 @@ public class Trees : MonoBehaviour {
         burnSpeed = 0.1f;
         transform.position = new Vector3(transform.position.x, transform.position.y + 5, transform.position.z);
         transform.position = Ground();
+        if (notToeBePlaced)
+        {
+            NatureManager.instance.allTrees.Remove(gameObject);
+            Destroy(gameObject);
+        }
     }
     public Vector3 Ground()
     {
         RaycastHit hit;
         Physics.Raycast(gameObject.transform.position, Vector3.down, out hit,NatureManager.instance.ground);
+        if(hit.collider.tag == "Tree")
+        {
+            //notToeBePlaced = true;
+        }
         return hit.point;
     }
 
