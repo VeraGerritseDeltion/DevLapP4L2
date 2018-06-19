@@ -5,6 +5,7 @@ using UnityEngine;
 public class BuildingManager : MonoBehaviour {
 
     public static BuildingManager instance;
+    public BuildPlacement bp;
     public GameObject myTownHall;
     public List<GameObject> allBuildings;
 

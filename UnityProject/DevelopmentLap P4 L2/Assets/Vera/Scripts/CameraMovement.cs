@@ -37,6 +37,7 @@ public class CameraMovement : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         {
             Vector3 newPos = BuildingManager.instance.myTownHall.transform.position;
+            
             newPos.y = 0;
             transform.position = newPos;
         }

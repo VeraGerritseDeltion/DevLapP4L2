@@ -26,7 +26,7 @@ public class BuildPlacement : MonoBehaviour {
     Material lineMat;
     bool notFirstFrame;
     bool continuePlacing;
-    bool townhallPlaced;
+    public bool townhallPlaced;
     bool placingTownHall;
 
     public int ageLock;

@@ -24,10 +24,11 @@ public class Aardbeving : Events{
             if(Random.Range(0,100) < percentage){
                 //particle
                 //BuildingManager.instance.allBuildings.Remove(BuildingManager.instance.allBuildings[i]);
+                BuildingManager.instance.allBuildings[i].GetComponent<Building>().EventDestroy();
                 beenHit++;
             }
         }
         GameManager.instance.myCamera.GetComponent<CameraShake>().shouldShake = false;
-        UIManager.instance.EventLog("The Earthquake destroyed " + beenHit + " Buildings!");
+        UIManager.instance.EventLog(beenHit.ToString() + " buildings destroyed.");
     }
 }

@@ -35,7 +35,6 @@ public class Building : MonoBehaviour{
     //Tooltip Stuff
     public GameObject tooltip;
     public TextMeshProUGUI myName;
-    public TextMeshProUGUI stats;
 
     public List<string> myStrings;
     public List<TextMeshProUGUI> myText;
@@ -43,23 +42,28 @@ public class Building : MonoBehaviour{
     void Start()
     {
         TextTooltip();
-        myName.text = myBuilding.name;
+        if(myName != null)
+        {
+            myName.text = myBuilding.name;
+        }
     }
 
-    public List<int> varList()
+    public List<int> VarList()
     {
         List<int> myVarList = new List<int>();
-        myVarList.Add(myBuilding.money);
-        myVarList.Add(myBuilding.wood);
-        myVarList.Add(myBuilding.stone);
-        myVarList.Add(myBuilding.food);
-
+        if(myBuilding!= null)
+        {
+            myVarList.Add(myBuilding.money);
+            myVarList.Add(myBuilding.wood);
+            myVarList.Add(myBuilding.stone);
+            myVarList.Add(myBuilding.food);
+        }
         return myVarList;
     }
 
     void TextTooltip()
     {
-        List<int> amounts = varList();
+        List<int> amounts = VarList();
         int checkZero = 0;
         for (int i = 0; i < myText.Count; i++)
         {
@@ -122,14 +126,16 @@ public class Building : MonoBehaviour{
 
     public void Place()
     {
-        BuildingManager.instance.allBuildings.Add(gameObject);
+        if (GetType() != typeof(TownHall))
+        {
+            BuildingManager.instance.allBuildings.Add(gameObject);
+        }
         myMat.color = normalColor;
         gameObject.layer = 8;
         if (myBuilding != null)
         {
             AddStats();
             GetComponent<BuildingStats>().AddToAura();
-
         }
         isPlaced = true;
         StatisticManager.instance.wood -= woodCost;
@@ -144,14 +150,28 @@ public class Building : MonoBehaviour{
 
     IEnumerator GoDown()
     {
-        transform.position = new Vector3(transform.position.x, transform.position.y - 1.5f, transform.position.z) * Time.deltaTime;
-        yield return new WaitForSeconds(2);
+        float time = 0;
+        for (int i = 0; i < 100; i++)
+        {
+            yield return new WaitForSeconds(0.05f);
+            time += 0.1f;
+            transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x, transform.position.y - 3f, transform.position.z), 0.1f);
+        }
+        yield return new WaitForSeconds(1);
         DestroyBuilding();
     }
 
     public void DestroyBuilding()
     {
-        BuildingManager.instance.allBuildings.Remove(gameObject);
+        if(GetType() == typeof(TownHall))
+        {
+            BuildingManager.instance.myTownHall = null;
+            BuildingManager.instance.bp.townhallPlaced = false; 
+        }
+        else
+        {
+            BuildingManager.instance.allBuildings.Remove(gameObject);
+        }
         MinStats();
         Destroy(gameObject);
     }
@@ -186,17 +206,19 @@ public class Building : MonoBehaviour{
 
     void MinStats()
     {
-        StatisticManager.instance.addWood -= myBuilding.wood;
-        StatisticManager.instance.addStone -= myBuilding.stone;
-        StatisticManager.instance.addMoney -= myBuilding.money;
-        StatisticManager.instance.addMinerals -= myBuilding.minerals;
-        StatisticManager.instance.addFood -= myBuilding.food;
+        if(myBuilding != null)
+        {
+            StatisticManager.instance.addWood -= myBuilding.wood;
+            StatisticManager.instance.addStone -= myBuilding.stone;
+            StatisticManager.instance.addMoney -= myBuilding.money;
+            StatisticManager.instance.addMinerals -= myBuilding.minerals;
+            StatisticManager.instance.addFood -= myBuilding.food;
 
-        StatisticManager.instance.woodStorage -= myBuilding.woodStorage;
-        StatisticManager.instance.stoneStorage -= myBuilding.stoneStorage;
-        StatisticManager.instance.moneyStorage -= myBuilding.moneyStorage;
-        StatisticManager.instance.foodStorage -= myBuilding.foodStorage;
-
+            StatisticManager.instance.woodStorage -= myBuilding.woodStorage;
+            StatisticManager.instance.stoneStorage -= myBuilding.stoneStorage;
+            StatisticManager.instance.moneyStorage -= myBuilding.moneyStorage;
+            StatisticManager.instance.foodStorage -= myBuilding.foodStorage;
+        }
     }
 
     void CollisionStay()
