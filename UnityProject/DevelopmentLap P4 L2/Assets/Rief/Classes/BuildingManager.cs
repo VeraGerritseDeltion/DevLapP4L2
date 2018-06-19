@@ -5,7 +5,7 @@ using UnityEngine;
 public class BuildingManager : MonoBehaviour {
 
     public static BuildingManager instance;
-
+    public GameObject myTownHall;
     public List<GameObject> allBuildings;
 
     void Awake()

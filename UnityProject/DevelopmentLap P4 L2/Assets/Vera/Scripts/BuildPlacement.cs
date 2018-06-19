@@ -5,7 +5,6 @@ using UnityEngine;
 public class BuildPlacement : MonoBehaviour {
 
     [Header("testVar")]
-    //public GameObject testBuilding;
     public LayerMask obstacleLayer;
     public LayerMask groundLayer;
     bool startedPlacing;
@@ -14,6 +13,8 @@ public class BuildPlacement : MonoBehaviour {
     Building placing;
     int index;
     public List<GameObject> allBuildings = new List<GameObject>();
+
+    Vector3 rotation;
 
     [Header ("Road Var")]
     List<GameObject> allRoadsToPlace = new List<GameObject>();
@@ -25,6 +26,8 @@ public class BuildPlacement : MonoBehaviour {
     Material lineMat;
     bool notFirstFrame;
     bool continuePlacing;
+    bool townhallPlaced;
+    bool placingTownHall;
 
     public int ageLock;
 
@@ -36,7 +39,7 @@ public class BuildPlacement : MonoBehaviour {
 	void Update () {
         if (startedPlacing)
         {
-            PlaceBuilding(null,index,placingRoad);
+            PlaceBuilding(null,index,placingRoad,placingTownHall);
         }
         if (road)
         {
@@ -44,7 +47,7 @@ public class BuildPlacement : MonoBehaviour {
         }
 	}
 
-    void PlaceBuilding(GameObject toBePlaced,int inndex,bool myRoad)
+    void PlaceBuilding(GameObject toBePlaced,int inndex,bool myRoad,bool townHall)
     {
         index = inndex;
         if (Input.GetButtonDown("Fire2"))
@@ -85,20 +88,18 @@ public class BuildPlacement : MonoBehaviour {
             {              
                 placing = isPlacing.GetComponentInChildren<Building>();
             }
-            //placing.MyStart();
             placing.obstacles = obstacleLayer;
         }
-        
+        isPlacing.transform.rotation = Quaternion.Euler(rotation);
         if(isPlacing != null && startedPlacing)
         {
             if (Input.GetButtonDown("Rotate"))
             {
-                Vector3 rotation = new Vector3(isPlacing.transform.rotation.x, isPlacing.transform.rotation.y + 90, isPlacing.transform.rotation.z);
+                rotation.y = rotation.y + 90;
                 isPlacing.transform.rotation = Quaternion.Euler(rotation);
             }
             if (Input.GetButton("LeftShift") || Input.GetButton("LeftControl"))
-            {
-                print("test");  
+            { 
                 SnapTo(mouse3DPos);
             }
             else
@@ -108,7 +109,11 @@ public class BuildPlacement : MonoBehaviour {
             if(Input.GetButtonDown("Fire1") && !placing.inOtherBuilding && placing.startedPlacing)
             {
                 startedPlacing = false;
-
+                if (placingTownHall)
+                {
+                    townhallPlaced = true;
+                    BuildingManager.instance.myTownHall = isPlacing;
+                }
                 if (myRoad)
                 {
                     startRoad = isPlacing.transform.position;
@@ -122,7 +127,7 @@ public class BuildPlacement : MonoBehaviour {
                 placing.Place();
                 isPlacing = null;
                 placing = null;
-                PlaceBuilding(allBuildings[inndex],inndex,placingRoad);
+                PlaceBuilding(allBuildings[inndex],inndex,placingRoad,placingTownHall);
             }
         }
     }
@@ -223,6 +228,19 @@ public class BuildPlacement : MonoBehaviour {
             bool newRoad = false;
             Building newBuilding = allBuildings[whichBuilding].GetComponent<Building>();
             newBuilding = allBuildings[whichBuilding].GetComponentInChildren<Building>();
+            rotation = new Vector3(0, 0, 0);
+            if (newBuilding.GetType() == typeof(TownHall))
+            {
+                placingTownHall = true;
+                if (townhallPlaced)
+                {
+                    return;
+                }
+            }
+            else
+            {
+                placingTownHall = false;
+            }
             if(newBuilding.GetType() == typeof(Road))
             {
                 newRoad = true;
@@ -230,7 +248,7 @@ public class BuildPlacement : MonoBehaviour {
             placingRoad = newRoad;
             if(whichBuilding < allBuildings.Count)
             {
-                PlaceBuilding(allBuildings[whichBuilding],whichBuilding,newRoad);
+                PlaceBuilding(allBuildings[whichBuilding],whichBuilding,newRoad,placingTownHall);
             }
         }
     }

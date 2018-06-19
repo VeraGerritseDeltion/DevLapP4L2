@@ -8,6 +8,7 @@ public class CameraMovement : MonoBehaviour
     public float rotSpeed;
     public float movSpeed;
 
+    public bool autoPanning = true;
     float screenX;
     float screenZ;
 
@@ -32,19 +33,20 @@ public class CameraMovement : MonoBehaviour
         vertical = Input.GetAxis("Vertical");
 
         rot = -Input.GetAxis("HorizontalRotation") * rotSpeed * Time.deltaTime / Time.timeScale;
+
+        if (Input.GetButtonDown("Jump"))
+        {
+            Vector3 newPos = BuildingManager.instance.myTownHall.transform.position;
+            newPos.y = 0;
+            transform.position = newPos;
+        }
         if (Input.GetButton("Fire3"))
         {
             rot = Input.GetAxis("Mouse X") * rotSpeed * Time.deltaTime / Time.timeScale;
         }
-        else
+        else if(autoPanning)
         {
            // if(Input.GetButton("Fire2"))
-
-
-
-
-
-
             if (Input.mousePosition.x < boundary)
             {
                 horizontal = -1;

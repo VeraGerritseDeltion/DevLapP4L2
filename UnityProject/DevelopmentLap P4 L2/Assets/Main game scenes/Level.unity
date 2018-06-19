@@ -313,6 +313,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31f02478e40fa9244a67e8454abcfe57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myTownHall: {fileID: 0}
   allBuildings: []
 --- !u!1 &833909347
 GameObject:
@@ -955,7 +956,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4072273577377512, guid: 47abaea31466f124c8b6f1f10d84e3a6, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4072273577377512, guid: 47abaea31466f124c8b6f1f10d84e3a6, type: 2}
       propertyPath: m_LocalPosition.z
@@ -980,6 +981,10 @@ Prefab:
     - target: {fileID: 4072273577377512, guid: 47abaea31466f124c8b6f1f10d84e3a6, type: 2}
       propertyPath: m_RootOrder
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4320461850201898, guid: 47abaea31466f124c8b6f1f10d84e3a6, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 47abaea31466f124c8b6f1f10d84e3a6, type: 2}
