@@ -124,5 +124,13 @@ MonoBehaviour:
   tooltip: {fileID: 1309497305928836, guid: 20c92e212c4736644b18090d143537a9, type: 2}
   myName: {fileID: 0}
   stats: {fileID: 0}
-  myStrings: []
-  myText: []
+  myStrings:
+  - 'Money: '
+  - 'Wood: '
+  - 'Stone: '
+  - 'Food: '
+  myText:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
