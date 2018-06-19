@@ -465,7 +465,7 @@ public class UIManager : MonoBehaviour {
 	void PlayAnimation (int number)
 	{	
 		Animator anim = animList[number];
-
+		anim.speed = 1f;
 		anim.speed = anim.speed / currentTimeScale;
 
 		if(animationActive[number] && !anim.GetCurrentAnimatorStateInfo(0).IsName("Up"))
@@ -486,6 +486,7 @@ public class UIManager : MonoBehaviour {
 			var image = item.GetComponent<Image>();
 			image.color = normalButton;
 		}
+		if()
 		time[number].color = pressedButton;
 	}
 }
