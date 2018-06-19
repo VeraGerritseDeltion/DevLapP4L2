@@ -91,6 +91,11 @@ public class BuildPlacement : MonoBehaviour {
         
         if(isPlacing != null && startedPlacing)
         {
+            if (Input.GetButtonDown("Rotate"))
+            {
+                Vector3 rotation = new Vector3(isPlacing.transform.rotation.x, isPlacing.transform.rotation.y + 90, isPlacing.transform.rotation.z);
+                isPlacing.transform.rotation = Quaternion.Euler(rotation);
+            }
             if (Input.GetButton("LeftShift") || Input.GetButton("LeftControl"))
             {
                 print("test");  

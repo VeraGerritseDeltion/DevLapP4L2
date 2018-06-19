@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 114626109008052246}
   - component: {fileID: 114797263348972080}
   - component: {fileID: 114910191855343256}
+  - component: {fileID: 114883794782560880}
   m_Layer: 0
   m_Name: _Manager
   m_TagString: Untagged
@@ -55,6 +56,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   age: 0
+  eventForAge: 0
   timeForAge: 0
   addWood: 0
   addStone: 0
@@ -89,6 +91,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c58a0c53e999d74b992936f7fbe0ea5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myCamera: {fileID: 0}
 --- !u!114 &114797263348972080
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -117,6 +120,20 @@ MonoBehaviour:
   burnColorLow: {r: 0.1509434, g: 0.1509434, b: 0.1509434, a: 0}
   burnColorHigh: {r: 0, g: 0, b: 0, a: 0}
   allTrees: []
+--- !u!114 &114883794782560880
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1585451363204046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d139798b183b1643b32246be7201e0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allEvents:
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &114910191855343256
 MonoBehaviour:
   m_ObjectHideFlags: 1
