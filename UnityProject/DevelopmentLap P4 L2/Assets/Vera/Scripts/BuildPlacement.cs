@@ -219,7 +219,7 @@ public class BuildPlacement : MonoBehaviour {
 
     public void NewBuilding(int whichBuilding)
     {
-        if(ageLock >= StatisticManager.instance.age){
+        if(ageLock <= StatisticManager.instance.age){
             bool newRoad = false;
             Building newBuilding = allBuildings[whichBuilding].GetComponent<Building>();
             newBuilding = allBuildings[whichBuilding].GetComponentInChildren<Building>();
