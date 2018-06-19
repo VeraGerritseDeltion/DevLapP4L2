@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class Building : MonoBehaviour{
 
@@ -29,8 +31,21 @@ public class Building : MonoBehaviour{
     private BuildingStats myBuildingStats;
 
 
+
     //Tooltip Stuff
     public GameObject tooltip;
+    public TextMeshProUGUI myName;
+    public TextMeshProUGUI stats;
+
+    public string woodText;
+    public string stoneText;
+    public string moneyText;
+    public string foodText;
+
+    void Start()
+    {
+        myName.text = myBuilding.name;
+    }
 
     public void MyStart()
     {
@@ -52,8 +67,8 @@ public class Building : MonoBehaviour{
         {
             myCol = GetComponent<BoxCollider>();
         }
+        
         sizeCol = new Vector3(myCol.size.x, myCol.size.z, myCol.size.y) / 2;
-        print("Start");
         StartCoroutine(EnablePlacement());
     }
 
