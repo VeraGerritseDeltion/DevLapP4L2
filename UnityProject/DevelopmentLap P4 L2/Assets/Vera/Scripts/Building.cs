@@ -37,14 +37,48 @@ public class Building : MonoBehaviour{
     public TextMeshProUGUI myName;
     public TextMeshProUGUI stats;
 
-    public string woodText;
-    public string stoneText;
-    public string moneyText;
-    public string foodText;
+    public List<string> myStrings;
+    public List<TextMeshProUGUI> myText;
 
     void Start()
     {
+        TextTooltip();
         myName.text = myBuilding.name;
+    }
+
+    public List<int> varList()
+    {
+        List<int> myVarList = new List<int>();
+        myVarList.Add(myBuilding.money);
+        myVarList.Add(myBuilding.wood);
+        myVarList.Add(myBuilding.stone);
+        myVarList.Add(myBuilding.food);
+
+        return myVarList;
+    }
+
+    void TextTooltip()
+    {
+        List<int> amounts = varList();
+        int checkZero = 0;
+        for (int i = 0; i < myText.Count; i++)
+        {
+            for (int o = 0; checkZero < amounts.Count; checkZero++)
+            {
+                o++;
+                if (amounts[checkZero] != 0)
+                {
+                    myText[i].enabled = true;
+                    myText[i].text = myStrings[checkZero] + amounts[checkZero];
+                    checkZero++;
+                    break;
+                }
+            }
+            if (checkZero > amounts.Count)
+            {
+                myText[i].enabled = false;
+            }
+        }
     }
 
     public void MyStart()
@@ -67,7 +101,7 @@ public class Building : MonoBehaviour{
         {
             myCol = GetComponent<BoxCollider>();
         }
-        
+
         sizeCol = new Vector3(myCol.size.x, myCol.size.z, myCol.size.y) / 2;
         StartCoroutine(EnablePlacement());
     }
@@ -107,7 +141,7 @@ public class Building : MonoBehaviour{
     {
         StartCoroutine(GoDown());
     }
-    
+
     IEnumerator GoDown()
     {
         transform.position = new Vector3(transform.position.x, transform.position.y - 1.5f, transform.position.z) * Time.deltaTime;

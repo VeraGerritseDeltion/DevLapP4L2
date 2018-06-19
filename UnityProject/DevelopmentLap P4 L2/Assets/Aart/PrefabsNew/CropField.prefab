@@ -9,46 +9,47 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1216996684685184}
+  m_RootGameObject: {fileID: 1057488824419564}
   m_IsPrefabParent: 1
---- !u!1 &1216996684685184
+--- !u!1 &1057488824419564
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4170009162098230}
-  - component: {fileID: 33443414342926700}
-  - component: {fileID: 23456871991852408}
-  - component: {fileID: 114217989082940202}
-  - component: {fileID: 65844771389747444}
+  - component: {fileID: 4823071420665096}
+  - component: {fileID: 33594952950092838}
+  - component: {fileID: 23289658956993322}
+  - component: {fileID: 114561924006977924}
+  - component: {fileID: 114057351989788044}
+  - component: {fileID: 65128576175223852}
   m_Layer: 0
-  m_Name: 3D_Carpenter
+  m_Name: CropField
   m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4170009162098230
+--- !u!4 &4823071420665096
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1216996684685184}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.156892, y: -0.27269042, z: 7.151428}
+  m_GameObject: {fileID: 1057488824419564}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 177.83913, y: 83.93557, z: 74.98549}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23456871991852408
+--- !u!23 &23289658956993322
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1216996684685184}
+  m_GameObject: {fileID: 1057488824419564}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -58,7 +59,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 63deaac0685774448bc206a72caa63e7, type: 3}
+  - {fileID: 2100000, guid: f35b9313d6e0e834c83c33738283fde5, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -78,39 +79,59 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33443414342926700
+--- !u!33 &33594952950092838
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1216996684685184}
-  m_Mesh: {fileID: 4300000, guid: 63deaac0685774448bc206a72caa63e7, type: 3}
---- !u!65 &65844771389747444
+  m_GameObject: {fileID: 1057488824419564}
+  m_Mesh: {fileID: 4300000, guid: f35b9313d6e0e834c83c33738283fde5, type: 3}
+--- !u!65 &65128576175223852
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1216996684685184}
+  m_GameObject: {fileID: 1057488824419564}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.85, y: 3.4, z: 6.5}
-  m_Center: {x: 0.37074417, y: 1.621462, z: 0.69833195}
---- !u!114 &114217989082940202
+  m_Size: {x: 2, y: 0.225, z: 2}
+  m_Center: {x: 0, y: 0.08, z: 0}
+--- !u!114 &114057351989788044
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1216996684685184}
+  m_GameObject: {fileID: 1057488824419564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5db2ede83843e8b4797b5a8611047af9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  windmill:
+    serializedVersion: 2
+    m_Bits: 0
+  wheatBool: 0
+  wheat: {fileID: 1932795657738314, guid: 836e0ea0de56e0b4ca0a9f195ef6207b, type: 2}
+  carrot: {fileID: 1995347343606108, guid: 080b4be056eef84468a1b203b7108213, type: 2}
+  fastSpeed: 0.2
+  harvestAmount: 2
+  moneyCost: 0
+--- !u!114 &114561924006977924
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1057488824419564}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 757996b75aff68f43a49c70ae4f6a481, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myBuilding: {fileID: 11400000, guid: ea337956a50984d41b00046c639eba0c, type: 2}
+  myBuilding: {fileID: 11400000, guid: 71a7dd2a1a9d07949b8621bfe4378f8c, type: 2}
   isPlaced: 0
-  myMat: {fileID: 2100000, guid: 8ae62d85762951648971c629821c91df, type: 2}
+  myMat: {fileID: 2100000, guid: ddc88735d57bd274a891c01c3133be27, type: 2}
   inOtherBuilding: 0
   startedPlacing: 0
   obstacles:
@@ -121,4 +142,8 @@ MonoBehaviour:
   stoneCost: 0
   moneyCost: 0
   hasAura: 0
-  tooltip: {fileID: 1309497305928836, guid: 20c92e212c4736644b18090d143537a9, type: 2}
+  tooltip: {fileID: 1699243655335306, guid: b7c475d20ef51c14e8cb72cb20498c40, type: 2}
+  myName: {fileID: 0}
+  stats: {fileID: 0}
+  myStrings: []
+  myText: []

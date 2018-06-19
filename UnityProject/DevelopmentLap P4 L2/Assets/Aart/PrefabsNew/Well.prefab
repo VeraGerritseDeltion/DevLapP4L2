@@ -9,46 +9,46 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1832294617742380}
+  m_RootGameObject: {fileID: 1678509618917240}
   m_IsPrefabParent: 1
---- !u!1 &1832294617742380
+--- !u!1 &1678509618917240
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4276196596118238}
-  - component: {fileID: 33950807070579608}
-  - component: {fileID: 23109260550513412}
-  - component: {fileID: 65321250071169776}
-  - component: {fileID: 114743095352485052}
+  - component: {fileID: 4236271895527394}
+  - component: {fileID: 33580852970721702}
+  - component: {fileID: 23859448021517294}
+  - component: {fileID: 65675045104973726}
+  - component: {fileID: 114036098506655842}
   m_Layer: 0
-  m_Name: 3D_GreenHouse
+  m_Name: Well
   m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4276196596118238
+--- !u!4 &4236271895527394
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1832294617742380}
+  m_GameObject: {fileID: 1678509618917240}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.45, y: 0, z: 0}
+  m_LocalPosition: {x: 15.402783, y: -1.3768449, z: 10.817696}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23109260550513412
+--- !u!23 &23859448021517294
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1832294617742380}
+  m_GameObject: {fileID: 1678509618917240}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -58,7 +58,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: f68692eacd235904f9594dd608ddb8f4, type: 3}
+  - {fileID: 2100000, guid: c0ca325eded3f2b48ac9d52528ff4913, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -78,39 +78,39 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33950807070579608
+--- !u!33 &33580852970721702
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1832294617742380}
-  m_Mesh: {fileID: 4300000, guid: f68692eacd235904f9594dd608ddb8f4, type: 3}
---- !u!65 &65321250071169776
+  m_GameObject: {fileID: 1678509618917240}
+  m_Mesh: {fileID: 4300000, guid: c0ca325eded3f2b48ac9d52528ff4913, type: 3}
+--- !u!65 &65675045104973726
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1832294617742380}
+  m_GameObject: {fileID: 1678509618917240}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 2.4776392, z: 2}
-  m_Center: {x: 0, y: 1.2388196, z: 0}
---- !u!114 &114743095352485052
+  m_Size: {x: 1.1, y: 1.829262, z: 1.1}
+  m_Center: {x: 0, y: 0.90965366, z: 0}
+--- !u!114 &114036098506655842
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1832294617742380}
+  m_GameObject: {fileID: 1678509618917240}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 757996b75aff68f43a49c70ae4f6a481, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myBuilding: {fileID: 11400000, guid: fec90e9553f42f34ab9ee8600ff30c1e, type: 2}
+  myBuilding: {fileID: 11400000, guid: 423390843bb3fe84394f18e14b9428ce, type: 2}
   isPlaced: 0
-  myMat: {fileID: 2100000, guid: 3e6b928dc6a59694c8797a3282433113, type: 2}
+  myMat: {fileID: 2100000, guid: 9877472d139589a41a3d6b5b1f82dfa5, type: 2}
   inOtherBuilding: 0
   startedPlacing: 0
   obstacles:
@@ -122,3 +122,7 @@ MonoBehaviour:
   moneyCost: 0
   hasAura: 0
   tooltip: {fileID: 1309497305928836, guid: 20c92e212c4736644b18090d143537a9, type: 2}
+  myName: {fileID: 0}
+  stats: {fileID: 0}
+  myStrings: []
+  myText: []

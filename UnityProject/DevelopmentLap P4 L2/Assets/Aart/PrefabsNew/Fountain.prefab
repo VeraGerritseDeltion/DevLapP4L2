@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114276453341840656}
   - component: {fileID: 65151893327737678}
   m_Layer: 0
-  m_Name: 3D_Fountain
+  m_Name: Fountain
   m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -122,3 +122,7 @@ MonoBehaviour:
   moneyCost: 0
   hasAura: 0
   tooltip: {fileID: 1309497305928836, guid: 20c92e212c4736644b18090d143537a9, type: 2}
+  myName: {fileID: 0}
+  stats: {fileID: 0}
+  myStrings: []
+  myText: []

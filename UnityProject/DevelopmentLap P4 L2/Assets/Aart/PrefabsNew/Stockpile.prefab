@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 65678451227483280}
   - component: {fileID: 114591993479450958}
   m_Layer: 0
-  m_Name: 3D_StockPile
+  m_Name: Stockpile
   m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -141,3 +141,7 @@ MonoBehaviour:
   moneyCost: 0
   hasAura: 0
   tooltip: {fileID: 1309497305928836, guid: 20c92e212c4736644b18090d143537a9, type: 2}
+  myName: {fileID: 0}
+  stats: {fileID: 0}
+  myStrings: []
+  myText: []
