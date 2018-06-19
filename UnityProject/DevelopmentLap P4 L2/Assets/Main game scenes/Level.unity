@@ -113,37 +113,9 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &3684047
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 3684048}
-  m_Layer: 0
-  m_Name: ZoomOut
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3684048
+--- !u!4 &3684048 stripped
 Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 3684047}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 25, z: -10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 807169180}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &12742758 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1297971903689206, guid: 47abaea31466f124c8b6f1f10d84e3a6,
+  m_PrefabParentObject: {fileID: 4213129688932978, guid: 47abaea31466f124c8b6f1f10d84e3a6,
     type: 2}
   m_PrefabInternal: {fileID: 2003707442}
 --- !u!20 &12742763 stripped
@@ -151,21 +123,6 @@ Camera:
   m_PrefabParentObject: {fileID: 20920886158741928, guid: 47abaea31466f124c8b6f1f10d84e3a6,
     type: 2}
   m_PrefabInternal: {fileID: 2003707442}
---- !u!114 &12742764
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 12742758}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d84fa06a2a9b51942ac0731c8cd22fd3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  power: 0.3
-  duration: 5
-  myCamera: {fileID: 0}
-  shouldShake: 0
 --- !u!1 &322773308
 GameObject:
   m_ObjectHideFlags: 0
@@ -517,14 +474,14 @@ Prefab:
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 224744558502205970, guid: 0355d1ef5459609409e5746a66ea5286,
+        type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0355d1ef5459609409e5746a66ea5286, type: 2}
   m_IsPrefabParent: 0
---- !u!4 &807169180 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4072273577377512, guid: 47abaea31466f124c8b6f1f10d84e3a6,
-    type: 2}
-  m_PrefabInternal: {fileID: 2003707442}
 --- !u!1 &813693506 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1585451363204046, guid: 4d1152ee36dd58a4ca2b8f6c96a47bea,
@@ -777,34 +734,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f40d16c2f0f718741b76574517814c31, type: 3}
   m_IsPrefabParent: 0
---- !u!1 &1538822142
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1538822143}
-  m_Layer: 0
-  m_Name: ZoomIn
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1538822143
+--- !u!4 &1538822143 stripped
 Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1538822142}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 80, z: -50}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 807169180}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_PrefabParentObject: {fileID: 4779360477344290, guid: 47abaea31466f124c8b6f1f10d84e3a6,
+    type: 2}
+  m_PrefabInternal: {fileID: 2003707442}
 --- !u!1001 &1542085081
 Prefab:
   m_ObjectHideFlags: 0
@@ -906,26 +840,37 @@ Prefab:
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: 4320461850201898, guid: 47abaea31466f124c8b6f1f10d84e3a6, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 4072273577377512, guid: 47abaea31466f124c8b6f1f10d84e3a6, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 336.294
-      objectReference: {fileID: 0}
-    - target: {fileID: 4320461850201898, guid: 47abaea31466f124c8b6f1f10d84e3a6, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -10
-      objectReference: {fileID: 0}
-    - target: {fileID: 114733513867842794, guid: 47abaea31466f124c8b6f1f10d84e3a6,
+    - target: {fileID: 114952147098809656, guid: 47abaea31466f124c8b6f1f10d84e3a6,
         type: 2}
-      propertyPath: m_Enabled
-      value: 0
+      propertyPath: zoomIn
+      value: 
+      objectReference: {fileID: 3684048}
+    - target: {fileID: 114952147098809656, guid: 47abaea31466f124c8b6f1f10d84e3a6,
+        type: 2}
+      propertyPath: zoomOut
+      value: 
+      objectReference: {fileID: 1538822143}
+    - target: {fileID: 114952147098809656, guid: 47abaea31466f124c8b6f1f10d84e3a6,
+        type: 2}
+      propertyPath: myCam
+      value: 
+      objectReference: {fileID: 12742763}
+    - target: {fileID: 114952147098809656, guid: 47abaea31466f124c8b6f1f10d84e3a6,
+        type: 2}
+      propertyPath: zoomSpeed
+      value: 50
       objectReference: {fileID: 0}
-    - target: {fileID: 1270192298909622, guid: 47abaea31466f124c8b6f1f10d84e3a6, type: 2}
+    - target: {fileID: 1539348022102602, guid: 47abaea31466f124c8b6f1f10d84e3a6, type: 2}
       propertyPath: m_Name
-      value: Camera
+      value: ZoomOut
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956994702063204, guid: 47abaea31466f124c8b6f1f10d84e3a6, type: 2}
+      propertyPath: m_Name
+      value: ZoomIn
+      objectReference: {fileID: 0}
+    - target: {fileID: 4779360477344290, guid: 47abaea31466f124c8b6f1f10d84e3a6, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -70
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 47abaea31466f124c8b6f1f10d84e3a6, type: 2}
