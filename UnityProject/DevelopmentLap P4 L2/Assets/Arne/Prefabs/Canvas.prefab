@@ -10572,7 +10572,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58b765737c107ca48ac81e360816375c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _UIState: 0
+  _UIState: 1
   allMenuItems:
   - {fileID: 224529231504408778}
   - {fileID: 224722187661178576}
@@ -10625,6 +10625,10 @@ MonoBehaviour:
   go: 0
   eventText: {fileID: 114173848250963284}
   textLimit: 10
+  woodText: {fileID: 114440013962399958}
+  stoneText: {fileID: 114130207563995592}
+  moneyText: {fileID: 114799384169159350}
+  yearText: {fileID: 114300717019473056}
 --- !u!114 &114758804366314568
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -13863,7 +13867,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -14.128937}
+  m_AnchoredPosition: {x: 0, y: -14.128906}
   m_SizeDelta: {x: 0, y: -28.259003}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224023727494815470
@@ -14623,7 +14627,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000061035156, y: 26.9}
+  m_AnchoredPosition: {x: 0.000061035156, y: 26.900024}
   m_SizeDelta: {x: -163.38, y: -271.17}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224335063093637454
@@ -15442,7 +15446,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -10.100006}
+  m_AnchoredPosition: {x: 0, y: -10.099976}
   m_SizeDelta: {x: -163.38, y: -271.17}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224565097377665368
@@ -16707,7 +16711,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.0000038147}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -608.6, y: -260}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224930682824893644

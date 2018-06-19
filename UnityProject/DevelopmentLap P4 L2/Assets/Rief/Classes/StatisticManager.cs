@@ -76,6 +76,7 @@ public class StatisticManager : MonoBehaviour {
         water += addWater;
         energy += addEnergy;
         co2 += addCo2;
+        UIManager.instance.TextUpdate();
         StartCo ();
     }
 

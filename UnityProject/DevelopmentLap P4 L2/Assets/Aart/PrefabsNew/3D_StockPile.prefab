@@ -135,8 +135,9 @@ MonoBehaviour:
   obstacles:
     serializedVersion: 2
     m_Bits: 0
+  ageLock: 0
   woodCost: 0
   stoneCost: 0
   moneyCost: 0
   hasAura: 0
-  tooltip: {fileID: 0}
+  tooltip: {fileID: 1309497305928836, guid: 20c92e212c4736644b18090d143537a9, type: 2}

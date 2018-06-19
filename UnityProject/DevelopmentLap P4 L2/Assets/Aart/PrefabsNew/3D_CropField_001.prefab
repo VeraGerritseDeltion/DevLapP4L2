@@ -142,4 +142,4 @@ MonoBehaviour:
   stoneCost: 0
   moneyCost: 0
   hasAura: 0
-  tooltip: {fileID: 0}
+  tooltip: {fileID: 1699243655335306, guid: b7c475d20ef51c14e8cb72cb20498c40, type: 2}

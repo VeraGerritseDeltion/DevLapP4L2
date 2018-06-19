@@ -55,9 +55,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 323723f90c5802a4aa6cedf44414e4ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  age: 0
+  age: 1
   eventForAge: 0
-  timeForAge: 0
+  timeForAge: 60
   addWood: 0
   addStone: 0
   addMoney: 0
@@ -67,9 +67,9 @@ MonoBehaviour:
   addWater: 0
   addEnergy: 0
   addCo2: 0
-  wood: 3000
-  stone: 0
-  money: 3000
+  wood: 9999
+  stone: 9999
+  money: 9999
   food: 0
   minerals: 0
   happiness: 0

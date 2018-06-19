@@ -46,7 +46,21 @@ public class UIManager : MonoBehaviour {
 	public TextMeshProUGUI eventText;
 	public int textLimit;
 
+	//statistics
+	public TextMeshProUGUI woodText;
+	public TextMeshProUGUI stoneText;
+	public TextMeshProUGUI moneyText;
+	public TextMeshProUGUI yearText;
 
+
+	public void TextUpdate()
+	{
+        woodText.text = StatisticManager.instance.wood.ToString();
+		stoneText.text = StatisticManager.instance.stone.ToString();
+		moneyText.text = StatisticManager.instance.money.ToString();
+        yearText.text = "Year: " +StatisticManager.instance.age.ToString();
+
+    }
 	void Awake () 
 	{
 		if(instance == null)
