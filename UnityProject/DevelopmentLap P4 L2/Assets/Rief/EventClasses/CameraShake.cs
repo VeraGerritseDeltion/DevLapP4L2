@@ -11,6 +11,7 @@ public class CameraShake : MonoBehaviour{
 
     Vector3 startPosition;
     float initialDuration;
+    List<Coroutine> allTimers = new List<Coroutine>();
 
     void Start()
     {
@@ -23,14 +24,19 @@ public class CameraShake : MonoBehaviour{
     {
         if (shouldShake)
         {
-            StartCoroutine(IsShaking());
+           allTimers.Add(StartCoroutine(IsShaking()));
         }
     }
     IEnumerator IsShaking()
     {
+        startPosition = myCamera.localPosition;
         myCamera.localPosition = startPosition + Random.insideUnitSphere * power;
         yield return new WaitForSeconds(duration);
         shouldShake = false;
+        for (int i = 0; i < allTimers.Count; i++)
+        {
+            StopCoroutine(allTimers[i]);
+        }
         duration = initialDuration;
         myCamera.localPosition = startPosition;
     }

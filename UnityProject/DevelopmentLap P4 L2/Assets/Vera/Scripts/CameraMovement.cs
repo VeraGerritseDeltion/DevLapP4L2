@@ -14,12 +14,19 @@ public class CameraMovement : MonoBehaviour
 
     float horizontal;
     float vertical;
+    float scroll;
     float rot;
+
+    public float zoomSpeed;
+    public Transform zoomIn;
+    public Transform zoomOut;
+    public Camera myCam;
 
     private void Start()
     {
         screenX = Screen.width;
         screenZ = Screen.height;
+        myCam.transform.position = Vector3.Lerp(zoomIn.position, zoomOut.position, 0.25f);
     }
     private void Update()
     {
@@ -31,7 +38,16 @@ public class CameraMovement : MonoBehaviour
     {
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
-
+        scroll = Input.GetAxis("Mouse ScrollWheel");
+        float speed = zoomSpeed * Time.deltaTime;
+        if(scroll > 0)
+        {
+            myCam.transform.position = Vector3.MoveTowards(myCam.transform.position, zoomIn.position, speed);
+        }
+        else if(scroll < 0)
+        {
+            myCam.transform.position = Vector3.MoveTowards(myCam.transform.position, zoomOut.position, speed);
+        }
         rot = -Input.GetAxis("HorizontalRotation") * rotSpeed * Time.deltaTime / Time.timeScale;
 
         if (Input.GetButtonDown("Jump"))
