@@ -486,7 +486,7 @@ public class UIManager : MonoBehaviour {
 			var image = item.GetComponent<Image>();
 			image.color = normalButton;
 		}
-		if()
+		//if()
 		time[number].color = pressedButton;
 	}
 }
