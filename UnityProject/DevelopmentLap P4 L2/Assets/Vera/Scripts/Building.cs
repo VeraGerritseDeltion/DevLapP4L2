@@ -134,7 +134,10 @@ public class Building : MonoBehaviour{
         if (myBuilding != null)
         {
             AddStats();
-            GetComponent<BuildingStats>().AddToAura();
+            if (GetComponent<BuildingStats>())
+            {
+                GetComponent<BuildingStats>().AddToAura();
+            }
         }
         isPlaced = true;
         StatisticManager.instance.wood -= woodCost;

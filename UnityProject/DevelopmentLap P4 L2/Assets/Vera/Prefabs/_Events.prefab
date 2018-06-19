@@ -112,7 +112,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventWord: Aartbeving
   percentage: 50
-  timer: 0
+  timer: 5
 --- !u!114 &114536270683279306
 MonoBehaviour:
   m_ObjectHideFlags: 1

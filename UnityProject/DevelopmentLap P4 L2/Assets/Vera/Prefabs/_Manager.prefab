@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 114797263348972080}
   - component: {fileID: 114910191855343256}
   - component: {fileID: 114883794782560880}
+  - component: {fileID: 114294384375881848}
   m_Layer: 0
   m_Name: _Manager
   m_TagString: Untagged
@@ -57,7 +58,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   age: 1
   eventForAge: 0
-  timeForAge: 60
+  timeForAge: 3
   addWood: 0
   addStone: 0
   addMoney: 0
@@ -80,6 +81,20 @@ MonoBehaviour:
   stoneStorage: 0
   moneyStorage: 0
   foodStorage: 0
+--- !u!114 &114294384375881848
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1585451363204046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31f02478e40fa9244a67e8454abcfe57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bp: {fileID: 0}
+  myTownHall: {fileID: 0}
+  allBuildings: []
 --- !u!114 &114626109008052246
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -148,4 +163,3 @@ MonoBehaviour:
   treeLoc: []
   treeKinds:
   - {fileID: 1632366874207860, guid: 6f6599b6abf84b8458b4fe2793718015, type: 2}
-  - {fileID: 1264101361843056, guid: c0e953838834e1b4289d912896828559, type: 2}
