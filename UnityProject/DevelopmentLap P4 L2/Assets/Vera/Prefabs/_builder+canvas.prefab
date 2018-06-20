@@ -110,7 +110,7 @@ GameObject:
   - component: {fileID: 114516116192575486}
   - component: {fileID: 114140873498126838}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: House
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -150,7 +150,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1094655676370886
 GameObject:
   m_ObjectHideFlags: 1
@@ -302,7 +302,7 @@ GameObject:
   - component: {fileID: 114889952006807904}
   - component: {fileID: 114858420304704778}
   m_Layer: 5
-  m_Name: Button (3)
+  m_Name: Well
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -493,7 +493,7 @@ GameObject:
   - component: {fileID: 114637177279212906}
   - component: {fileID: 114842904171215280}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: HunterLodge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -960,12 +960,12 @@ GameObject:
   - component: {fileID: 114703575953034724}
   - component: {fileID: 114041952687918566}
   m_Layer: 5
-  m_Name: Button (6)
+  m_Name: Watermill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1337417579698436
 GameObject:
   m_ObjectHideFlags: 1
@@ -978,7 +978,7 @@ GameObject:
   - component: {fileID: 114369269767711506}
   - component: {fileID: 114540901572237476}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: Dirt Road
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1183,7 +1183,7 @@ GameObject:
   - component: {fileID: 114089653324458512}
   - component: {fileID: 114844914351412486}
   m_Layer: 5
-  m_Name: Button (4)
+  m_Name: Stockpile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1289,7 +1289,7 @@ GameObject:
   - component: {fileID: 114280218222111382}
   - component: {fileID: 114308864799308928}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: Carpenter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1463,7 +1463,7 @@ GameObject:
   - component: {fileID: 114572932280558358}
   - component: {fileID: 114056571508949820}
   m_Layer: 5
-  m_Name: Button
+  m_Name: CropField
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1584,7 +1584,7 @@ GameObject:
   - component: {fileID: 114297521531025922}
   - component: {fileID: 114573202494944074}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Townhall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1654,7 +1654,7 @@ GameObject:
   - component: {fileID: 114061488550974160}
   - component: {fileID: 114405683018727300}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Mine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1689,7 +1689,7 @@ GameObject:
   - component: {fileID: 114248001451843802}
   - component: {fileID: 114609673287553470}
   m_Layer: 5
-  m_Name: Button (5)
+  m_Name: Park
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1759,7 +1759,7 @@ GameObject:
   - component: {fileID: 114623569386337084}
   - component: {fileID: 114248817779690518}
   m_Layer: 5
-  m_Name: Button (5)
+  m_Name: Newspaper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1777,7 +1777,7 @@ GameObject:
   - component: {fileID: 114762482313584386}
   - component: {fileID: 114253073531159662}
   m_Layer: 5
-  m_Name: Button (8)
+  m_Name: WindmillPower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2246,7 +2246,7 @@ GameObject:
   - component: {fileID: 114759157647204996}
   - component: {fileID: 114751273587609610}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: Forester
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2299,7 +2299,7 @@ GameObject:
   - component: {fileID: 114579319804509412}
   - component: {fileID: 114217920594255702}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: Granary
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2368,7 +2368,7 @@ GameObject:
   - component: {fileID: 114091862479369852}
   - component: {fileID: 114671097578142098}
   m_Layer: 5
-  m_Name: Button (5)
+  m_Name: Hospital
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2560,7 +2560,7 @@ GameObject:
   - component: {fileID: 114028198920680664}
   - component: {fileID: 114133750891022922}
   m_Layer: 5
-  m_Name: Button (5)
+  m_Name: WindmillFarm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2851,7 +2851,7 @@ GameObject:
   - component: {fileID: 114282221411758944}
   - component: {fileID: 114447401343648094}
   m_Layer: 5
-  m_Name: Button (4)
+  m_Name: ChickenCoop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2904,7 +2904,7 @@ GameObject:
   - component: {fileID: 114489989434744234}
   - component: {fileID: 114261930337446024}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Fountain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2922,7 +2922,7 @@ GameObject:
   - component: {fileID: 114517967116243072}
   - component: {fileID: 114313598110118878}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: Church
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3314,15 +3314,15 @@ MonoBehaviour:
   - {fileID: 1678509618917240, guid: 7b392e559e3525a4a9998567252f957c, type: 2}
   - {fileID: 1584873395597966, guid: d296f7a408189d34896d53aa43a620e5, type: 2}
   - {fileID: 1691395658093426, guid: 2fd696023c2a2ce45b7f5bf376b685d9, type: 2}
-  - {fileID: 1961771909802958, guid: d26ec6510d8cee64c93f897f784d8730, type: 2}
+  - {fileID: 1373474879282258, guid: 96c89c0d00e40ce48986e57e5315335c, type: 2}
   - {fileID: 1355014020681326, guid: 92124e96d589d0745bc4b5b0a0eb3d36, type: 2}
   - {fileID: 1384376026832294, guid: 0b9c6706ac0785142ba2b498fd8bac7c, type: 2}
   - {fileID: 1023285757715970, guid: e3ecce0ffb116b04095fda54785a6b62, type: 2}
   - {fileID: 1523723042527150, guid: 2396ea9e7f1a6624f91e8de7f889abaa, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1068435203853422, guid: 3f95bd93305aacc4eb5eb741ae66388e, type: 2}
+  - {fileID: 1283698600621630, guid: e82e92e1e4abd1d4eb5470ffbc530b54, type: 2}
+  - {fileID: 1753231986946862, guid: a40ca2ed8dd1b2143b8e79d302279238, type: 2}
+  - {fileID: 1794870276814120, guid: 2a1eda11e4ea5a146bfa670dd9db13d0, type: 2}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -5282,7 +5282,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 28
+          m_IntArgument: 18
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -5435,6 +5435,7 @@ MonoBehaviour:
   woodText: {fileID: 114627583780616234}
   stoneText: {fileID: 114607743101159962}
   moneyText: {fileID: 114157288509943058}
+  foodText: {fileID: 114466579805278952}
   yearText: {fileID: 114905761076426246}
 --- !u!114 &114261930337446024
 MonoBehaviour:
@@ -7282,7 +7283,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 633b2ab308de85b47a03b24a0334c1d5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cdedcb03c945eb345bf658bd8f3004c2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7368,7 +7369,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 11
+          m_IntArgument: 16
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -7620,7 +7621,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: 'Wood: 0'
+  m_text: 'Food: 0'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 715b80e429c437e40867928a4e1fc975, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 715b80e429c437e40867928a4e1fc975, type: 2}
@@ -10451,7 +10452,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 14
+          m_IntArgument: 17
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -12266,7 +12267,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: Year 1
+  m_text: 'Year: 1'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 715b80e429c437e40867928a4e1fc975, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 715b80e429c437e40867928a4e1fc975, type: 2}
@@ -12334,7 +12335,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 114905761076426246}
-    characterCount: 6
+    characterCount: 7
     spriteCount: 0
     spaceCount: 1
     wordCount: 2
@@ -14624,7 +14625,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -35, y: -2}
+  m_AnchoredPosition: {x: 0, y: -2}
   m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224173609848535530
@@ -14906,7 +14907,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -105, y: -2}
+  m_AnchoredPosition: {x: -70, y: -2}
   m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224234284455777272
@@ -15229,7 +15230,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 35, y: -2}
+  m_AnchoredPosition: {x: 70, y: -2}
   m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224355795618863192
@@ -15320,7 +15321,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000061035156, y: 0.000061035156}
+  m_AnchoredPosition: {x: 0, y: 0.000061035156}
   m_SizeDelta: {x: 608.5999, y: 174.09995}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224393438981115976
@@ -15397,7 +15398,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 175, y: -2}
+  m_AnchoredPosition: {x: 140, y: -2}
   m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224429504450251518
@@ -15510,7 +15511,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000061035156, y: 0.00024414062}
+  m_AnchoredPosition: {x: 0, y: 0.00024414062}
   m_SizeDelta: {x: 0, y: 0.00048828125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224466585420812946
@@ -16142,7 +16143,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000061035156, y: 26.900024}
+  m_AnchoredPosition: {x: 0, y: 26.900024}
   m_SizeDelta: {x: -163.38, y: -271.17}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224617276953587238
@@ -16301,7 +16302,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -0.000061035156, y: 74.3}
+  m_AnchoredPosition: {x: 0, y: 74.29999}
   m_SizeDelta: {x: -10, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224672726883553320
@@ -16320,7 +16321,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -46.5, y: -0.50006104}
+  m_AnchoredPosition: {x: -48, y: -0.50000095}
   m_SizeDelta: {x: -719.2, y: -19}
   m_Pivot: {x: 0.49999997, y: 0.5}
 --- !u!224 &224678383892153156
@@ -16602,7 +16603,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -0.000061035156, y: 74.3}
+  m_AnchoredPosition: {x: 0, y: 74.29999}
   m_SizeDelta: {x: -10, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224795791657326904
@@ -17012,7 +17013,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -175, y: -2}
+  m_AnchoredPosition: {x: -140, y: -2}
   m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224920897330694160
@@ -17146,7 +17147,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000061035156, y: -47.100037}
+  m_AnchoredPosition: {x: 0, y: -47.100037}
   m_SizeDelta: {x: -163.38, y: -271.17}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224945879639621760
@@ -17266,7 +17267,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -0.000061035156, y: 74.3}
+  m_AnchoredPosition: {x: 0, y: 74.29999}
   m_SizeDelta: {x: -10, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224979809116929726

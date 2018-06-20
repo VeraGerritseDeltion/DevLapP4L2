@@ -125,6 +125,9 @@ public class Building : MonoBehaviour{
 
     public void Place()
     {
+        StatisticManager.instance.wood -= woodCost;
+        StatisticManager.instance.stone -= stoneCost;
+        StatisticManager.instance.money -= moneyCost;
         if (GetType() != typeof(TownHall))
         {
             BuildingManager.instance.allBuildings.Add(gameObject);
@@ -140,9 +143,7 @@ public class Building : MonoBehaviour{
             }
         }
         isPlaced = true;
-        StatisticManager.instance.wood -= woodCost;
-        StatisticManager.instance.stone -= stoneCost;
-        StatisticManager.instance.money -= moneyCost;
+
     }
 
     public void EventDestroy()

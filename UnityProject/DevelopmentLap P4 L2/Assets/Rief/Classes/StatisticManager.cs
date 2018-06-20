@@ -49,22 +49,12 @@ public class StatisticManager : MonoBehaviour {
     public void MyStart()
     {
         eventForAge = Random.Range(5, 10);
-        StartCo();
+        StartCoroutine(AddStats());
         StartCoroutine(AgeIncrease());
-    }
-
-    void Update()
-    {
-    }
-
-    void StartCo ()
-    {
-        StartCoroutine (AddStats ());
     }
 
     IEnumerator AddStats ()
     {
-
         yield return new WaitForSeconds (statTimer);
         wood += addWood;
         stone += addStone;
@@ -77,7 +67,7 @@ public class StatisticManager : MonoBehaviour {
         energy += addEnergy;
         co2 += addCo2;
         UIManager.instance.TextUpdate();
-        StartCo ();
+        StartCoroutine(AddStats());
     }
 
     IEnumerator AgeIncrease()

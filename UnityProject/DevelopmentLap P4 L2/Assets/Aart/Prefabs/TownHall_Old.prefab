@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 114742178528636724}
   - component: {fileID: 114751321885354266}
   m_Layer: 0
-  m_Name: TownHall
+  m_Name: TownHall_Old
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -442,3 +442,6 @@ MonoBehaviour:
   moneyCost: 0
   hasAura: 0
   tooltip: {fileID: 0}
+  myName: {fileID: 0}
+  myStrings: []
+  myText: []

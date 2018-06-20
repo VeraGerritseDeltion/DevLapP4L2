@@ -33,7 +33,7 @@ public class CropField : MonoBehaviour {
 		{
 			myWindMills[i].GetComponent<FarmWindMill>().myCropFields.Add(GetComponent<Collider>());
 		}
-		Spawning();
+		//Spawning();
 	}
 	void Update()
 	{

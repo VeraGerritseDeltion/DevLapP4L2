@@ -68,19 +68,19 @@ MonoBehaviour:
   addWater: 0
   addEnergy: 0
   addCo2: 0
-  wood: 9999
-  stone: 9999
-  money: 9999
+  wood: 25
+  stone: 0
+  money: 100
   food: 0
   minerals: 0
   happiness: 0
   water: 0
   energy: 0
   co2: 0
-  woodStorage: 0
-  stoneStorage: 0
-  moneyStorage: 0
-  foodStorage: 0
+  woodStorage: 500
+  stoneStorage: 500
+  moneyStorage: 500
+  foodStorage: 500
 --- !u!114 &114294384375881848
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -126,8 +126,8 @@ MonoBehaviour:
   waterColors: []
   currentHigh: {r: 0, g: 0, b: 0, a: 0}
   currentLow: {r: 0, g: 0, b: 0, a: 0}
-  startColorHigh: {r: 0.10998263, g: 0.735849, b: 0.010412939, a: 0}
-  startColorLow: {r: 0.06285365, g: 0.3584906, b: 0.049038816, a: 0}
+  startColorHigh: {r: 0.15963171, g: 0.8867924, b: 0.04601282, a: 0}
+  startColorLow: {r: 0.09628906, g: 0.5377358, b: 0.07863118, a: 0}
   midColorHigh: {r: 0.3283254, g: 0.3962264, b: 0.08784264, a: 0}
   midColorLow: {r: 0.20754719, g: 0.2034189, b: 0.036222856, a: 0}
   endColorHigh: {r: 0.4433962, g: 0.24156727, b: 0.039738327, a: 0}

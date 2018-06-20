@@ -50,15 +50,17 @@ public class UIManager : MonoBehaviour {
 	public TextMeshProUGUI woodText;
 	public TextMeshProUGUI stoneText;
 	public TextMeshProUGUI moneyText;
+	public TextMeshProUGUI foodText;
 	public TextMeshProUGUI yearText;
 
 
 	public void TextUpdate()
 	{
-        woodText.text = StatisticManager.instance.wood.ToString();
-		stoneText.text = StatisticManager.instance.stone.ToString();
-		moneyText.text = StatisticManager.instance.money.ToString();
-        yearText.text = "Year: " +StatisticManager.instance.age.ToString();
+        woodText.text = StatisticManager.instance.wood + " / " + StatisticManager.instance.woodStorage;
+		stoneText.text = StatisticManager.instance.stone + " / " + StatisticManager.instance.stoneStorage;
+		moneyText.text = StatisticManager.instance.money + " / " + StatisticManager.instance.moneyStorage;
+		foodText.text = StatisticManager.instance.food + " / " + StatisticManager.instance.foodStorage;
+        yearText.text = "Year: " + StatisticManager.instance.age;
 
     }
 	void Awake () 
@@ -71,6 +73,7 @@ public class UIManager : MonoBehaviour {
 	// Use this for initialization
 	public void MyStart () 
 	{
+		TextUpdate();
 		currentTimeScale = 1f;
 		if(blockState)
 		{
