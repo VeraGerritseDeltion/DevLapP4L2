@@ -23,7 +23,7 @@ public class Aardbeving : Events{
         {
             if(Random.Range(0,100) < percentage){
                 //particle
-                //BuildingManager.instance.allBuildings.Remove(BuildingManager.instance.allBuildings[i]);
+                BuildingManager.instance.allBuildings.Remove(BuildingManager.instance.allBuildings[i]);
                 BuildingManager.instance.allBuildings[i].GetComponent<Building>().EventDestroy();
                 beenHit++;
             }

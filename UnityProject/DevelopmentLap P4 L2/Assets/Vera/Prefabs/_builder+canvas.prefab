@@ -109,6 +109,8 @@ GameObject:
   - component: {fileID: 222892882651423910}
   - component: {fileID: 114516116192575486}
   - component: {fileID: 114140873498126838}
+  - component: {fileID: 114022124099310970}
+  - component: {fileID: 114700340202312156}
   m_Layer: 5
   m_Name: House
   m_TagString: Untagged
@@ -150,7 +152,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1094655676370886
 GameObject:
   m_ObjectHideFlags: 1
@@ -301,6 +303,7 @@ GameObject:
   - component: {fileID: 222699827241996320}
   - component: {fileID: 114889952006807904}
   - component: {fileID: 114858420304704778}
+  - component: {fileID: 114549486131854270}
   m_Layer: 5
   m_Name: Well
   m_TagString: Untagged
@@ -977,6 +980,7 @@ GameObject:
   - component: {fileID: 222760464257125128}
   - component: {fileID: 114369269767711506}
   - component: {fileID: 114540901572237476}
+  - component: {fileID: 114235702309567470}
   m_Layer: 5
   m_Name: Dirt Road
   m_TagString: Untagged
@@ -1182,6 +1186,7 @@ GameObject:
   - component: {fileID: 222544086954690418}
   - component: {fileID: 114089653324458512}
   - component: {fileID: 114844914351412486}
+  - component: {fileID: 114794008582502546}
   m_Layer: 5
   m_Name: Stockpile
   m_TagString: Untagged
@@ -1583,6 +1588,7 @@ GameObject:
   - component: {fileID: 222762964469468368}
   - component: {fileID: 114297521531025922}
   - component: {fileID: 114573202494944074}
+  - component: {fileID: 114046611350291944}
   m_Layer: 5
   m_Name: Townhall
   m_TagString: Untagged
@@ -1688,6 +1694,7 @@ GameObject:
   - component: {fileID: 222374579774364218}
   - component: {fileID: 114248001451843802}
   - component: {fileID: 114609673287553470}
+  - component: {fileID: 114962613140494556}
   m_Layer: 5
   m_Name: Park
   m_TagString: Untagged
@@ -3258,6 +3265,20 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114022124099310970
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1069440787256588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b9f6b4dc5089264bbd6108bb731edd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  building: {fileID: 114918738922143410, guid: 0695bf2cff7f06f40b472ea1c750c334, type: 2}
+  viewTooltip: {fileID: 114700340202312156}
+  thisGO: {fileID: 0}
 --- !u!114 &114028198920680664
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3415,6 +3436,20 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114046611350291944
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1528282741988876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b9f6b4dc5089264bbd6108bb731edd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  building: {fileID: 0}
+  viewTooltip: {fileID: 0}
+  thisGO: {fileID: 0}
 --- !u!114 &114048065755552706
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5150,6 +5185,20 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Hospital
+--- !u!114 &114235702309567470
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1337417579698436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b9f6b4dc5089264bbd6108bb731edd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  building: {fileID: 0}
+  viewTooltip: {fileID: 0}
+  thisGO: {fileID: 0}
 --- !u!114 &114241253760359894
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8446,6 +8495,20 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114549486131854270
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1131606855355768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b9f6b4dc5089264bbd6108bb731edd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  building: {fileID: 0}
+  viewTooltip: {fileID: 0}
+  thisGO: {fileID: 0}
 --- !u!114 &114572932280558358
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10081,6 +10144,22 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114700340202312156
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1069440787256588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d85caaefe40dd4a429058726238a2c59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  costText: {fileID: 114275986342569290, guid: 03140722387dab44599b8ea9a0068e47, type: 2}
+  woodCost: 0
+  stoneCost: 0
+  moneyCost: 0
+  tooltip: {fileID: 224059027256520326, guid: 03140722387dab44599b8ea9a0068e47, type: 2}
 --- !u!114 &114701644572654358
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11041,6 +11120,20 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Water Tower
+--- !u!114 &114794008582502546
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1400118082774082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b9f6b4dc5089264bbd6108bb731edd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  building: {fileID: 0}
+  viewTooltip: {fileID: 0}
+  thisGO: {fileID: 0}
 --- !u!114 &114794389881893018
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12696,6 +12789,20 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114962613140494556
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1564272880791234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b9f6b4dc5089264bbd6108bb731edd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  building: {fileID: 0}
+  viewTooltip: {fileID: 0}
+  thisGO: {fileID: 0}
 --- !u!114 &114965774535476850
 MonoBehaviour:
   m_ObjectHideFlags: 1
