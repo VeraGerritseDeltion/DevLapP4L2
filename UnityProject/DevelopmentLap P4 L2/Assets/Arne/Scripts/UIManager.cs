@@ -75,6 +75,8 @@ public class UIManager : MonoBehaviour {
 	{
 		TextUpdate();
 		currentTimeScale = 1f;
+		SetTimeScale(1f);
+		SelectedTimeColor(1);
 		if(blockState)
 		{
 			return;
@@ -128,7 +130,7 @@ public class UIManager : MonoBehaviour {
 			case UIState.MainMenu:
 
 				//main scene
-				LoadScene("Main menu");
+				//LoadScene("Main menu");
 				List<RectTransform> mainMenuList = new List<RectTransform>() {mainMenu};
 			    EnableMenuItems(mainMenuList); 
 
@@ -145,7 +147,7 @@ public class UIManager : MonoBehaviour {
 			case UIState.Ingame:
 
 				//ingame scene
-				LoadScene("Level");
+				//LoadScene("Level");
 				List<RectTransform> ingameList = new List<RectTransform>() {ingame};
 			    EnableMenuItems(ingameList); 
 
@@ -325,126 +327,6 @@ public class UIManager : MonoBehaviour {
 			Resume();
 		}		
 	}
-	/* 
-	public void Eventlog (string events)
-	{
-		eventButtonText.text = "Events: " + events;
-
-		for(int i = 0; i <= newsMessage.Count; i++)
-		{
-			if(newsMessage[i+1].text != "" && i != newsMessage.Count)
-			{
-				newsMessage[i+1].text = newsMessage[i].text;
-			}
-		}
-		int x = newsMessage.Count;
-		if(x == newsMessage.Count)
-		{
-			newsMessage[x].text = events;
-		}
-		
-		
-		//look at list and do them all plus one message higher, so the new message has an empty spot
-		for (int i = 0; i < newsMessage.Count; i++)
-		{
-			int x = i+1;
-			print(x);
-			if(x >= newsMessage.Count)
-			{
-				print("set event button");
-				//newsMessage[0].text = events;
-			}
-			if(newsMessage[newsMessage.Count].text == "")
-			{
-				newsMessage[0].text = events;
-			}
-			if(newsMessage[x].text != "") //not the right condition
-			{
-				print("replace");
-				//newsMessage[i].text = newsMessage[x].text; 	//BREAKS
-			}
-
-			//if(newsMessage[])
-			if(i == newsMessage.Count)
-			{
-				//newsMessage[0].text = events;
-				print("reached limit");
-			}
-			if(i < newsMessage.Count)
-			{
-				print("lower than");
-				
-				int x = i++;
-				newsMessage[x].text = newsMessage[i].text;
-				print(newsMessage[i].text);
-				
-			}	
-			/*if(newsMessage[i+1].text == "")
-			{
-
-			}
-		}
-		//newsMessage[0].text = events; 
-		foreach (var item in newsMessage)
-		{
-			for (int i = 0; i < newsMessage.Count; i++)
-			{
-				newsMessage[(i +1)].text = newsMessage[i].text;	
-			}
-		} 
-		for (int i = newsMessage.Count; i < 0; i--)
-		{
-			if(newsMessage[i].text != "")
-			{
-				
-			}
-			if(newsMessage[i].text == "")
-			{
-				newsMessage[i].text = newsMessage[(i -1)].text;
-			}
-			else 
-			{
-
-			}
-		}
-		//begin with newest or begin with last message
-		
-
-		//NEWEST
-
-		//foreach that isnt null, starts at last in list
-
-		//LAST
-
-		//newsmessage.last-1.text = newsmessage.last.text
-
-		//check all until the text is null
-		//if all arent null delete last message and put the previous message before the last in there 
-		for (int i = 0; i < newsMessage.Count; i++)
-		{
-			if(newsMessage[i].text != "")
-			{
-				
-			}
-			if(newsMessage[i].text == "")
-			{
-				newsMessage[i].text = newsMessage[(i -1)].text;
-			}
-			else 
-			{
-
-			}
-		}
-	}
-	//resets all events from list	NOT NEEDED
-	private void ResetEvents () 
-	{
-		for (int i = 0; i < newsMessage.Count; i++)
-		{
-			newsMessage[i].text = "";
-		}
-		eventButtonText.text = "Events: ";
-	}*/
 	public void Buildingbar (int number) //when going down it resets  before the animation can play which causes it to disappear
 	{
 		//sets other bars false
@@ -453,15 +335,6 @@ public class UIManager : MonoBehaviour {
 			item.gameObject.SetActive(false);
 		}
 		buildingbars[number].gameObject.SetActive(true);
-		
-		
-		//set button color 		CRASHES
-		foreach (var item in buildingCategory)
-		{
-			var image = item.GetComponent<Image>();
-			image.color = normalButton;
-		}
-		buildingCategory[number].GetComponent<Image>().color = pressedButton;
 
 		//does the correct animation value
 		for (int i = 0; i < animationActive.Count; i++)
@@ -485,17 +358,32 @@ public class UIManager : MonoBehaviour {
 		anim.speed = 1f;
 		anim.speed = anim.speed / currentTimeScale;
 
+
+		//set button color 		
+		foreach (var item in buildingCategory)
+		{
+			var image = item.GetComponent<Image>();
+			image.color = normalButton;
+		}
+		//sets right animation and button color
 		if(animationActive[number] && !anim.GetCurrentAnimatorStateInfo(0).IsName("Up"))
         {
             anim.SetBool("Up", true);
+
+			buildingCategory[number].GetComponent<Image>().color = pressedButton;
+
 			return;
         }
         if(!animationActive[number] && anim.GetCurrentAnimatorStateInfo(0).IsName("Up"))
         {
             anim.SetBool("Up", false);
+
+			buildingCategory[number].GetComponent<Image>().color = normalButton;
+			
 			return;
         }
 	}
+	//hotkeys and timescale feedback
 	public void SelectedTimeColor (int number)
 	{
 		foreach (var item in time)
@@ -503,7 +391,6 @@ public class UIManager : MonoBehaviour {
 			var image = item.GetComponent<Image>();
 			image.color = normalButton;
 		}
-		//if()
 		time[number].color = pressedButton;
 	}
 }
