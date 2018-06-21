@@ -53,7 +53,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   currentSelected: {fileID: 0}
-  highlightColor: {r: 0, g: 0, b: 0, a: 0}
-  highlightMaterial: {fileID: 0}
+  highlightColor: {r: 0.9283198, g: 1, b: 0, a: 1}
+  highlightMaterial: {fileID: 2100000, guid: 3aeb084bd73685f4cb0ab4d18f11b885, type: 2}
   selectedMaterial: {fileID: 0}
   selectedSavedMaterial: {fileID: 0}
+  allBuildings: []
+  allTree: []
