@@ -653,9 +653,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 2048
   myRadius: 0
-  reqHappiness: 0
-  reqWater: 0
-  reqEnergy: 0
+  reqHappiness: 50
+  reqWater: 50
+  reqEnergy: 50
   reqCo2: 0
   happiness: 0
   water: 0

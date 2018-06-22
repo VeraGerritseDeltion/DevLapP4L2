@@ -11,14 +11,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e367c0c0ceb91b6468488af1f666801a, type: 3}
   m_Name: House_Stone
   m_EditorClassIdentifier: 
-  name: 
+  name: House made of Stone
   description: 
   buildingSprite: {fileID: 0}
+  citizens: 6
   wood: 0
   stone: 0
   money: 0
   minerals: 0
   food: 0
+  co2: 0
   woodStorage: 0
   stoneStorage: 0
   moneyStorage: 0

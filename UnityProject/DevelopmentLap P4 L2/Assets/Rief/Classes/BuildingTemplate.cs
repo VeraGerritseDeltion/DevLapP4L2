@@ -10,7 +10,8 @@ public class BuildingTemplate : ScriptableObject {
     public string description;
 
     public Sprite buildingSprite;
-    
+
+    public int citizens;
     public int wood;
     public int stone;
     public int money;

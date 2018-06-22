@@ -32,6 +32,8 @@ public class StatisticManager : MonoBehaviour {
     public int water;
     public int energy;
     public int co2;
+    public int citizens;
+    public int allCitizens;
 
     [Header ("Storage")]
     public int woodStorage;

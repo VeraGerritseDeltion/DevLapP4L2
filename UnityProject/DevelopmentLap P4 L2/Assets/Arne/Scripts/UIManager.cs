@@ -52,15 +52,17 @@ public class UIManager : MonoBehaviour {
 	public TextMeshProUGUI moneyText;
 	public TextMeshProUGUI foodText;
 	public TextMeshProUGUI yearText;
+    public TextMeshProUGUI citizenText;
 
 
-	public void TextUpdate()
+    public void TextUpdate()
 	{
         woodText.text = StatisticManager.instance.wood + " / " + StatisticManager.instance.woodStorage;
 		stoneText.text = StatisticManager.instance.stone + " / " + StatisticManager.instance.stoneStorage;
 		moneyText.text = StatisticManager.instance.money + " / " + StatisticManager.instance.moneyStorage;
 		foodText.text = StatisticManager.instance.food + " / " + StatisticManager.instance.foodStorage;
         yearText.text = "Year: " + StatisticManager.instance.age;
+        citizenText.text = StatisticManager.instance.citizens + " / " + StatisticManager.instance.allCitizens;
 
     }
 	void Awake () 
