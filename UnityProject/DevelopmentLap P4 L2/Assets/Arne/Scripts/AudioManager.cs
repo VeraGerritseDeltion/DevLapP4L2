@@ -11,11 +11,13 @@ public class AudioManager : MonoBehaviour {
 	public bool muteBool;
 
 	//audio source
-	AudioSource thisAudio;
+	public AudioSource thisAudio;
 
 	void Start () 
 	{
 		thisAudio = GetComponentInChildren<AudioSource>();
+		//thisAudio.audio = audioclip[0];
+		thisAudio.clip = audioclip[0];
 	}
 
 	public void ListConverter (int number) 

@@ -1249,10 +1249,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioclip:
-  - {fileID: 0}
-  - {fileID: 0}
-  vol: 0
+  - {fileID: 8300000, guid: 9b600591278e45444b8a6eecd9f96f9e, type: 3}
+  - {fileID: 8300000, guid: 2eb157e4bdf9b0442b28c68872248469, type: 3}
+  vol: 100
   muteBool: 0
+  thisAudio: {fileID: 840696824}
 --- !u!1 &1585735577
 GameObject:
   m_ObjectHideFlags: 0
