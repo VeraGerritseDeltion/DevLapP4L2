@@ -49,6 +49,12 @@ public class BuildPlacement : MonoBehaviour {
 
     void PlaceBuilding(GameObject toBePlaced,int inndex,bool myRoad,bool townHall)
     {
+        Building newBuilding = allBuildings[inndex].GetComponent<Building>();
+        if(newBuilding == null)
+        {
+            newBuilding = allBuildings[inndex].GetComponentInChildren<Building>();
+        }
+        if(newBuilding.GetType() == typeof(TownHall) && townhallPlaced == false)
         index = inndex;
         if (Input.GetButtonDown("Fire2"))
         {
@@ -227,7 +233,10 @@ public class BuildPlacement : MonoBehaviour {
         if(ageLock <= StatisticManager.instance.age){
             bool newRoad = false;
             Building newBuilding = allBuildings[whichBuilding].GetComponent<Building>();
-            newBuilding = allBuildings[whichBuilding].GetComponentInChildren<Building>();
+            if(newBuilding == null)
+            {
+                newBuilding = allBuildings[whichBuilding].GetComponentInChildren<Building>();
+            }
             rotation = new Vector3(0, 0, 0);
             if (newBuilding.GetType() == typeof(TownHall))
             {
