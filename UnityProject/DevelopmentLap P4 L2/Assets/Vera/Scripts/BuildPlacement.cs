@@ -7,7 +7,7 @@ public class BuildPlacement : MonoBehaviour {
     [Header("testVar")]
     public LayerMask obstacleLayer;
     public LayerMask groundLayer;
-    bool startedPlacing;
+    public bool startedPlacing;
 
     GameObject isPlacing;
     Building placing;

@@ -36,6 +36,7 @@ public class NatureManager : MonoBehaviour
     Color currentGrass;
     public GameObject grass;
 
+    Coroutine currentCo;
     float timer;
 
     [Header("Vegetation")]
@@ -58,11 +59,12 @@ public class NatureManager : MonoBehaviour
     {
         bool LowerOrHigher = false;
         float procent = 0;
-        if(exhaust != currentExhaust)
+        if(exhaust != currentExhaust && currentCo == null)
         {
-            StartCoroutine(SlowTimer(exhaust));
+            currentCo =  StartCoroutine(SlowTimer(exhaust));
         }
         uitstoot = (currentExhaust / maxExhaust) * 100;
+        ChangeGround(uitstoot / 100);
         if (uitstoot > 50)
         {
             float mid = uitstoot - 50;
@@ -82,9 +84,18 @@ public class NatureManager : MonoBehaviour
 
     IEnumerator SlowTimer(float exhaust)
     {
-        yield return new WaitForSeconds(0.5f);
-        timer += 0.1f;
-        currentExhaust = Mathf.Lerp(currentExhaust, exhaust, timer);
+        yield return new WaitForSeconds(0.01f);
+        print("testing for me");
+        if(exhaust < currentExhaust)
+        {
+            currentExhaust--;
+        }
+        else
+        {
+            currentExhaust++;
+        }
+        //currentExhaust = Mathf.Lerp(currentExhaust, exhaust, timer);
+        currentCo = null;
         CalculateProcent(exhaust);
     }
 

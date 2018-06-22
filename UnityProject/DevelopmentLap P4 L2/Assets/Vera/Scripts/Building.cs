@@ -206,6 +206,7 @@ public class Building : MonoBehaviour{
         myStatisticManager.stoneStorage += myBuilding.stoneStorage;
         myStatisticManager.moneyStorage += myBuilding.moneyStorage;
         myStatisticManager.foodStorage += myBuilding.foodStorage;
+        StatisticManager.instance.addCo2 += myBuilding.co2;
     }
 
     void MinStats()

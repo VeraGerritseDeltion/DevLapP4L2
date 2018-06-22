@@ -55,9 +55,12 @@ public class Settings : MonoBehaviour {
 	//decides how hard the sound is
 	public void SoundVolume (float number)
 	{
-		float num = number * 1f;
-		soundVol.text = ((int)num).ToString();
-		sound.vol = num;		
+        if(sound != null)
+        {
+            float num = number * 1f;
+            soundVol.text = ((int)num).ToString();
+            sound.vol = num;
+        }		
 	}
 	//how fast zoom speed is 
 	public void ZoomSpeed (float number)

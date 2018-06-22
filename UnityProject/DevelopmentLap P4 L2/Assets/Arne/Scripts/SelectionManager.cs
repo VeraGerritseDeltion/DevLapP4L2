@@ -19,6 +19,8 @@ public class SelectionManager : MonoBehaviour {
 	public List<Building> allBuildings = new List<Building>();
 	public List<Trees> allTree = new List<Trees>();
 
+    public Building currentBuilding;
+    public Building lastBuilding;
 
 	// Use this for initialization
 	void Start () 
@@ -40,6 +42,12 @@ public class SelectionManager : MonoBehaviour {
 		}
 		if(Input.GetButtonDown("Fire2"))
 		{
+            lastBuilding = currentBuilding;
+            if(lastBuilding != null)
+            {
+                lastBuilding.HighlightBuilding(false);
+            }
+            currentBuilding = null;
 			if(currentSelected == null)
 			{
 				//extra options or something?
@@ -63,14 +71,23 @@ public class SelectionManager : MonoBehaviour {
             if(hit.collider.tag == "Building" || hit.collider.tag == "Obstacle")
 			{
 				print("hit something");
+                lastBuilding = currentBuilding;
 				currentSelected = hit.collider.gameObject;
 				
 				Trees tree = currentSelected.GetComponent<Trees>();
 				Building build = currentSelected.GetComponent<Building>();
+                if (!build.isPlaced || BuildingManager.instance.bp.startedPlacing)
+                {
+                    return;
+                }
+                currentBuilding = build;
 				CheckBuildingList(build);
 				CheckTreeList(tree);
 
-
+                if(lastBuilding != null)
+                {
+                    lastBuilding.HighlightBuilding(false);
+                }
 				BuildingStuff();
 				TreeStuff();
 				if(build != null)

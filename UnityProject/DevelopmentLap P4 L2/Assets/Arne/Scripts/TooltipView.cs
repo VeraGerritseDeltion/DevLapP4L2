@@ -15,7 +15,10 @@ public class TooltipView : MonoBehaviour {
 	public void SetPosition (Vector3 position, Building building) 
 	{
 		tooltip.transform.position = position;
-		ShowCost(building);
+        if(building != null)
+        {
+            ShowCost(building);
+        }
 	}
 	//sets the cost
 	public void ShowCost (Building building) 
