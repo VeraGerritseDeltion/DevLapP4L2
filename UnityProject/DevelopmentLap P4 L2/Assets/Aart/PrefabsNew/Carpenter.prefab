@@ -266,7 +266,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 63deaac0685774448bc206a72caa63e7, type: 3}
+  - {fileID: 2100000, guid: c5778339cb05d4a4fb7d4e5f8805dee1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -425,6 +425,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myBuilding: {fileID: 11400000, guid: ea337956a50984d41b00046c639eba0c, type: 2}
+  needsWorkers: 0
   isPlaced: 0
   myMat: {fileID: 2100000, guid: 8ae62d85762951648971c629821c91df, type: 2}
   inOtherBuilding: 0
@@ -437,6 +438,7 @@ MonoBehaviour:
   stoneCost: 0
   moneyCost: 0
   hasAura: 0
+  radius: 0
   tooltip: {fileID: 1376690045515368}
   myName: {fileID: 114537315729719426}
   myStrings:

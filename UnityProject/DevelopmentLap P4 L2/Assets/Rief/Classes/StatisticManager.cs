@@ -10,6 +10,9 @@ public class StatisticManager : MonoBehaviour {
     public int eventForAge;
     public float timeForAge;
 
+    public List<GameObject> workBuildings = new List<GameObject>();
+    public int usedCitizens;
+
     [Header ("Adding")]
     public int addWood;
     public int addStone;

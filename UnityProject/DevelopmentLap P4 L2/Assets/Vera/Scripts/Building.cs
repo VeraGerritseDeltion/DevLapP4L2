@@ -8,6 +8,7 @@ public class Building : MonoBehaviour{
 
     public BuildingTemplate myBuilding;
 
+    public bool needsWorkers;
     public bool isPlaced;
     public Material myMat;
     public bool inOtherBuilding;
@@ -137,6 +138,10 @@ public class Building : MonoBehaviour{
         if (GetType() != typeof(TownHall) || GetType() != typeof(Road))
         {
             BuildingManager.instance.allBuildings.Add(gameObject);
+            if(needsWorkers)
+            {
+                StatisticManager.instance.workBuildings.Add(gameObject);
+            }
         }
         myMat.color = normalColor;
         gameObject.layer = 8;
@@ -213,6 +218,7 @@ public class Building : MonoBehaviour{
         myStatisticManager.moneyStorage += myBuilding.moneyStorage;
         myStatisticManager.foodStorage += myBuilding.foodStorage;
         StatisticManager.instance.addCo2 += myBuilding.co2;
+        StatisticManager.instance.allCitizens += myBuilding.citizens;
     }
 
     void MinStats()
