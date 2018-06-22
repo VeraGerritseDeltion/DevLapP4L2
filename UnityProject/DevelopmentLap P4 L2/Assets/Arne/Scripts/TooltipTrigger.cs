@@ -8,6 +8,8 @@ public class TooltipTrigger : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 	public Building building;
 	public TooltipView viewTooltip;
 	public GameObject thisGO;
+	public bool stats;
+	public string desc;
 
 	void Start () 
 	{
@@ -16,8 +18,15 @@ public class TooltipTrigger : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 	public void OnPointerEnter(PointerEventData eventData)
     {
         Debug.Log("The cursor entered the selectable UI element.");
-
-		viewTooltip.SetPosition(new Vector3(thisGO.transform.position.x, thisGO.transform.position.y +105f), building); //eventData.position.x, eventData.position.y - -100f, 0f
+		if(stats)
+		{
+			viewTooltip.SetPosition(new Vector3(thisGO.transform.position.x, thisGO.transform.position.y -60f), building, desc);
+		}
+		if(!stats)
+		{
+			viewTooltip.SetPosition(new Vector3(thisGO.transform.position.x, thisGO.transform.position.y +105f), building, desc);
+		}
+		//viewTooltip.SetPosition(new Vector3(thisGO.transform.position.x, thisGO.transform.position.y +105f), building, desc); //eventData.position.x, eventData.position.y - -100f, 0f
 		viewTooltip.Show(true);
     }
 	public void OnPointerExit(PointerEventData eventData)

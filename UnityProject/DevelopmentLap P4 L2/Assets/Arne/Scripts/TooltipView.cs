@@ -10,15 +10,31 @@ public class TooltipView : MonoBehaviour {
 	public TextMeshProUGUI costText;
 	public int woodCost, stoneCost, moneyCost;
 	public RectTransform tooltip;
+	public bool stats;
 	
 	//sets position to value it receives and will show correct cost
-	public void SetPosition (Vector3 position, Building building) 
+	public void SetPosition (Vector3 position, Building building, string desc) 
 	{
 		tooltip.transform.position = position;
         if(building != null)
         {
-            ShowCost(building);
+			if(!stats)
+			{
+				ShowCost(building);
+				print("cost");
+			}
         }
+		if(stats)
+		{
+			ShowStats(desc);
+			print("stats");
+		}
+	}
+	//sets the stats
+	public void ShowStats (string desc) 
+	{			
+
+		costText.text = "Stats: " + "\n" + desc;
 	}
 	//sets the cost
 	public void ShowCost (Building building) 
