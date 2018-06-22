@@ -214,7 +214,6 @@ GameObject:
   - component: {fileID: 136504624207316608}
   - component: {fileID: 114173789255710130}
   - component: {fileID: 114675818774628082}
-  - component: {fileID: 114779626746848464}
   m_Layer: 12
   m_Name: 3D_Tree_001
   m_TagString: Tree
@@ -964,34 +963,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114779626746848464
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1632366874207860}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 757996b75aff68f43a49c70ae4f6a481, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myBuilding: {fileID: 0}
-  isPlaced: 1
-  myMat: {fileID: 2100000, guid: 4d3d323394a1ed84983f31f532b4bbf4, type: 2}
-  inOtherBuilding: 0
-  startedPlacing: 0
-  obstacles:
-    serializedVersion: 2
-    m_Bits: 0
-  ageLock: 0
-  woodCost: 0
-  stoneCost: 0
-  moneyCost: 0
-  hasAura: 0
-  tooltip: {fileID: 1123448068156638}
-  myName: {fileID: 0}
-  myStrings: []
-  myText: []
 --- !u!114 &114862230777015474
 MonoBehaviour:
   m_ObjectHideFlags: 1
