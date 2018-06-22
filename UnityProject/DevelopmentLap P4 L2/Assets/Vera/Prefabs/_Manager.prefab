@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 114910191855343256}
   - component: {fileID: 114883794782560880}
   - component: {fileID: 114294384375881848}
+  - component: {fileID: 114630733301149150}
   m_Layer: 0
   m_Name: _Manager
   m_TagString: Untagged
@@ -107,6 +108,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myCamera: {fileID: 0}
+--- !u!114 &114630733301149150
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1585451363204046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c527f75130cc7c4b92f7e58a4204379, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 0}
+  currentSelected: {fileID: 0}
+  highlightColor: {r: 0.9283198, g: 1, b: 0, a: 1}
+  highlightMaterial: {fileID: 2100000, guid: 3aeb084bd73685f4cb0ab4d18f11b885, type: 2}
+  selectedMaterial: {fileID: 0}
+  selectedSavedMaterial: {fileID: 0}
+  allBuildings: []
+  allTree: []
 --- !u!114 &114797263348972080
 MonoBehaviour:
   m_ObjectHideFlags: 1
