@@ -105,7 +105,7 @@ public class Building : MonoBehaviour{
             myCol = GetComponent<BoxCollider>();
         }
 
-        sizeCol = new Vector3(myCol.size.x, myCol.size.z, myCol.size.y) / 2;
+        sizeCol = new Vector3(myCol.size.x, myCol.size.y, myCol.size.z) / 2;
         StartCoroutine(EnablePlacement());
     }
 
