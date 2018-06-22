@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!241 &24100000
+AudioMixerController:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: MyAudio
+  m_OutputGroup: {fileID: 0}
+  m_MasterGroup: {fileID: 24300002}
+  m_Snapshots:
+  - {fileID: 24500006}
+  m_StartSnapshot: {fileID: 24500006}
+  m_SuspendThreshold: 1.3
+  m_EnableSuspend: 1
+  m_UpdateMode: 1
+  m_ExposedParameters: []
+  m_AudioMixerGroupViews: []
+  m_CurrentViewIndex: 0
+  m_TargetSnapshot: {fileID: 24500006}
+--- !u!243 &24300002
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Master
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: c1177bbe7514f8f4892aa64c392f9d37
+  m_Children: []
+  m_Volume: 511b29f42db156349be28ff5d25f1149
+  m_Pitch: d784bd66952ad2f459daa7bc98c209d8
+  m_Effects:
+  - {fileID: 24400004}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!244 &24400004
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_EffectID: 7849953943fac7c4899ff931482543e7
+  m_EffectName: Attenuation
+  m_MixLevel: fa5eae5a1a76d3a46a2945f65bb8ce5b
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!245 &24500006
+AudioMixerSnapshotController:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Snapshot
+  m_AudioMixer: {fileID: 24100000}
+  m_SnapshotID: 028afaaffbf2c824c9a9c3521ce5a13d
+  m_FloatValues:
+    ae597e8105540c245aad1a5420f36d55: 16
+    24f28b048f98efb4f863de64bfc01d5b: 32
+    511b29f42db156349be28ff5d25f1149: 0.1
+    d784bd66952ad2f459daa7bc98c209d8: 1
+    03cb1207071519a499f79bac8515f92b: 5000
+    58945a573ebe48c4986b2c0f63a5eecb: 0.42099997
+    731cfa88c547c4a469f7418f744035b2: 1.562
+    0ce9503940e115d4fad455473406ead6: 16
+    d2d4f8894c0a54d4a846bec0cc88d6c2: 1
+    42223eff919136e4e9abf0ed5bad1fd2: 4096
+  m_TransitionOverrides: {}

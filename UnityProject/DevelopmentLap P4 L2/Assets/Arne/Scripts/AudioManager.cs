@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour {
 
-	//soundtracks
+	//soundtracks	BGM
 	public List<AudioClip> audioclip = new List<AudioClip>();
+	
 	//volume
 	public float vol;
 	public bool muteBool;
@@ -13,20 +14,35 @@ public class AudioManager : MonoBehaviour {
 	//audio source
 	public AudioSource thisAudio;
 
+	//test
+	public int num;
+	public bool go;
+
 	void Start () 
 	{
 		thisAudio = GetComponentInChildren<AudioSource>();
-		//thisAudio.audio = audioclip[0];
-		thisAudio.clip = audioclip[0];
 	}
-
+	void Update () 
+	{
+		if(go)
+		{
+			NewAudio();
+			go = false;
+		}
+	}
+	void NewAudio ()
+	{
+		thisAudio.clip = audioclip[num];
+		PlayMusic(audioclip[num]);
+	}
 	public void ListConverter (int number) 
 	{
-
+		thisAudio.clip = audioclip[number];
+		PlayMusic(audioclip[number]);
 	}
 	public void PlayMusic (AudioClip music)
 	{
-
+		thisAudio.Play();
 	}
 	public void Mute (bool active) 
 	{
