@@ -78,7 +78,7 @@ public class SelectionManager : MonoBehaviour {
 				Building build = currentSelected.GetComponent<Building>();
                 if (!build.isPlaced || BuildingManager.instance.bp.startedPlacing)
                 {
-                    return;
+                    //return;
                 }
                 currentBuilding = build;
 				CheckBuildingList(build);

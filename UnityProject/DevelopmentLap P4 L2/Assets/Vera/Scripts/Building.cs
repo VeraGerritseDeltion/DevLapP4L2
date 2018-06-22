@@ -284,6 +284,17 @@ public class Building : MonoBehaviour{
     }
     public void Tooltip(bool active)
     {
+        Vector3 pos = transform.position;
+
+        //float ttHeight = 800/0.03f;
+        //ttHeight = ttHeight/2;
+        //print(pos);
+
+        pos.y += sizeCol.y + 12f;
+
+        //pos.x = Mathf.Abs(pos.x);
+        tooltip.transform.position = pos;
         tooltip.SetActive(active);
+        print(pos);
     }
 }
