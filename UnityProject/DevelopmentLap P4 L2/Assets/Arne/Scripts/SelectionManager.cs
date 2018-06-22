@@ -76,7 +76,7 @@ public class SelectionManager : MonoBehaviour {
 				
 				Trees tree = currentSelected.GetComponent<Trees>();
 				Building build = currentSelected.GetComponent<Building>();
-                if (!build.isPlaced || BuildingManager.instance.bp.startedPlacing)
+                if (BuildingManager.instance.bp.startedPlacing)
                 {
                     //return;
                 }
