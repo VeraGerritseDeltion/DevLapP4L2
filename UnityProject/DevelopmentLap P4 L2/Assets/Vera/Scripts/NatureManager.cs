@@ -7,6 +7,8 @@ public class NatureManager : MonoBehaviour
     public static NatureManager instance;
     public LayerMask ground;
     public float uitstoot;
+    public float maxExhaust;
+    float currentExhaust;
     public int decOrInc;
     bool onOrOff;
 
@@ -28,6 +30,13 @@ public class NatureManager : MonoBehaviour
     public Color burnColorLow;
     public Color burnColorHigh;
 
+    [Header("GrassColor")]
+    public Color startGrass;
+    public Color endGrass;
+    Color currentGrass;
+    public GameObject grass;
+
+    float timer;
 
     [Header("Vegetation")]
     public List<GameObject> allTrees = new List<GameObject>();
@@ -41,14 +50,19 @@ public class NatureManager : MonoBehaviour
     }
 
     public void MyStart () {
-        CalculateProcent();
+        CalculateProcent(0);
         StartCoroutine(UpdateTreesFast());
     }
 
-    public void CalculateProcent()
+    public void CalculateProcent(float exhaust)
     {
         bool LowerOrHigher = false;
         float procent = 0;
+        if(exhaust != currentExhaust)
+        {
+            StartCoroutine(SlowTimer(exhaust));
+        }
+        uitstoot = (currentExhaust / maxExhaust) * 100;
         if (uitstoot > 50)
         {
             float mid = uitstoot - 50;
@@ -66,6 +80,19 @@ public class NatureManager : MonoBehaviour
         ChangeNature(LowerOrHigher, procent);
     }
 
+    IEnumerator SlowTimer(float exhaust)
+    {
+        yield return new WaitForSeconds(0.5f);
+        timer += 0.1f;
+        currentExhaust = Mathf.Lerp(currentExhaust, exhaust, timer);
+        CalculateProcent(exhaust);
+    }
+
+    void ChangeGround(float procent)
+    {
+        currentGrass = Color.Lerp(startGrass, endGrass, procent);
+        grass.GetComponent<Renderer>().material.color = currentGrass;
+    }
     void ChangeNature(bool lower, float procent)
     {
         if (!lower)
@@ -109,7 +136,7 @@ public class NatureManager : MonoBehaviour
         {
             uitstoot = 100;
         }
-        CalculateProcent();
+        CalculateProcent(uitstoot);
         if (onOrOff)
         {
             StartCoroutine(UpdateTreesFast());

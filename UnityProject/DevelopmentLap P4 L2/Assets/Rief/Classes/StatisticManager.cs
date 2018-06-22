@@ -65,7 +65,7 @@ public class StatisticManager : MonoBehaviour {
         happiness += addHappiness;
         water += addWater;
         energy += addEnergy;
-        co2 += addCo2;
+        co2 = addCo2;
         UIManager.instance.TextUpdate();
         StartCoroutine(AddStats());
     }
@@ -79,6 +79,11 @@ public class StatisticManager : MonoBehaviour {
             Event();
         }
         StartCoroutine(AgeIncrease());
+    }
+
+    public void StatsChanged()
+    {
+        NatureManager.instance.CalculateProcent(co2);
     }
 
     void Event()

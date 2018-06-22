@@ -128,7 +128,7 @@ public class Building : MonoBehaviour{
         StatisticManager.instance.wood -= woodCost;
         StatisticManager.instance.stone -= stoneCost;
         StatisticManager.instance.money -= moneyCost;
-        if (GetType() != typeof(TownHall))
+        if (GetType() != typeof(TownHall) || GetType() != typeof(Road))
         {
             BuildingManager.instance.allBuildings.Add(gameObject);
         }
@@ -137,6 +137,7 @@ public class Building : MonoBehaviour{
         if (myBuilding != null)
         {
             AddStats();
+            StatisticManager.instance.StatsChanged();
             if (GetComponent<BuildingStats>())
             {
                 GetComponent<BuildingStats>().AddToAura();
