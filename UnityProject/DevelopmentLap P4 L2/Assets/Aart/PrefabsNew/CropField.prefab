@@ -1188,7 +1188,7 @@ MonoBehaviour:
   stoneCost: 10
   moneyCost: 100
   hasAura: 0
-  tooltip: {fileID: 1699243655335306, guid: b7c475d20ef51c14e8cb72cb20498c40, type: 2}
+  tooltip: {fileID: 1005862987440006}
   myName: {fileID: 114799510793195920}
   myStrings:
   - 'Money: '
