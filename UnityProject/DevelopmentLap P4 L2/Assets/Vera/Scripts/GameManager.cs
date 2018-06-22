@@ -29,7 +29,12 @@ public class GameManager : MonoBehaviour
             UIManager.instance.MyStart();
         }
         NatureManager.instance.MyStart();
-        StatisticManager.instance.MyStart();
         TreeInstantiationManager.instance.MyStart();
+        LoadingScreenManager.instance.MyStart();
+    }
+
+    public void StartGame()
+    {
+        StatisticManager.instance.MyStart();
     }
 }

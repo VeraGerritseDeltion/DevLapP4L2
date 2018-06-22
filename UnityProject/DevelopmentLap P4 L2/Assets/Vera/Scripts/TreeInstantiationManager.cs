@@ -27,12 +27,14 @@ public class TreeInstantiationManager : MonoBehaviour {
             for (int i = 0; i < treeLoc.Count; i++)
             {
                 yield return new WaitForSeconds(0.01f);
+                LoadingScreenManager.instance.UpdateMe();
                 int rand = Random.Range(0, treeKinds.Count);
                 Instantiate(treeKinds[rand], treeLoc[i].position, Quaternion.identity);
             }
         }
         yield return new WaitForSeconds(0.1f);
         NatureManager.instance.MyStart();
+        LoadingScreenManager.instance.Done();
     }
 	
 	void Update () {
