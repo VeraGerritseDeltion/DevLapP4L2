@@ -30,7 +30,7 @@ public class Building : MonoBehaviour{
 
     private BuildingStats myBuildingStats;
 
-
+    public float radius;
 
     //Tooltip Stuff
     public GameObject tooltip;
@@ -93,6 +93,7 @@ public class Building : MonoBehaviour{
     public void MyStart()
     {
         myBuildingStats = transform.GetComponent<BuildingStats>();
+        radius = 10;
         Renderer myRend = GetComponent<Renderer>();
         if (myRend == null)
         {
@@ -236,8 +237,16 @@ public class Building : MonoBehaviour{
         //print(isPlaced);
         float offSet = 0.05f;
         Vector3 size = new Vector3(sizeCol.x - offSet, sizeCol.y - offSet, sizeCol.z - offSet);
+        Collider[] buildingsCloseBy = Physics.OverlapSphere(transform.position, radius, BuildingManager.instance.bp.buildingLayer);
         Collider[] buildings = Physics.OverlapBox(transform.position, size, Quaternion.identity, obstacles);
-        if (buildings.Length != 0 || !canPurchase())
+        print(this.GetType());
+        if (buildingsCloseBy.Length == 0 && this.GetType() != typeof(TownHall)) 
+        {
+            print(buildingsCloseBy.Length);
+            myMat.color = Color.red;
+            inOtherBuilding = true;
+        }
+        else if (buildings.Length != 0 || !canPurchase())
         {
             myMat.color = Color.red;
             inOtherBuilding = true;
@@ -295,6 +304,5 @@ public class Building : MonoBehaviour{
         //pos.x = Mathf.Abs(pos.x);
         tooltip.transform.position = pos;
         tooltip.SetActive(active);
-        print(pos);
     }
 }

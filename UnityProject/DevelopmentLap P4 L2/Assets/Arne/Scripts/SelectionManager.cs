@@ -8,6 +8,7 @@ public class SelectionManager : MonoBehaviour {
 	public Camera cam;
 	public GameObject currentSelected;
 
+    public LayerMask uiAndObstacles;
 	//the color/material it should change to
 	public Color highlightColor;
 	public Material highlightMaterial;
@@ -66,7 +67,7 @@ public class SelectionManager : MonoBehaviour {
 		RaycastHit hit;
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
         
-        if(Physics.Raycast(ray, out hit)) //maybe hit with layermask to avoid any unnecesary stuff
+        if(Physics.Raycast(ray, out hit))
 		{
             if(hit.collider.tag == "Building" || hit.collider.tag == "Obstacle" || hit.collider.tag == "Tree")
 			{
@@ -78,7 +79,7 @@ public class SelectionManager : MonoBehaviour {
 				Building build = currentSelected.GetComponent<Building>();
                 if (BuildingManager.instance.bp.startedPlacing)
                 {
-                    //return;
+                    return;
                 }
                 currentBuilding = build;
 				CheckBuildingList(build);

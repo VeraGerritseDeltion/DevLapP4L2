@@ -7,6 +7,7 @@ public class BuildPlacement : MonoBehaviour {
     [Header("testVar")]
     public LayerMask obstacleLayer;
     public LayerMask groundLayer;
+    public LayerMask buildingLayer;
     public bool startedPlacing;
 
     GameObject isPlacing;
@@ -54,7 +55,10 @@ public class BuildPlacement : MonoBehaviour {
         {
             newBuilding = allBuildings[inndex].GetComponentInChildren<Building>();
         }
-        if(newBuilding.GetType() == typeof(TownHall) && townhallPlaced == false)
+        if(newBuilding.GetType() == typeof(TownHall) && townhallPlaced == true)
+        {
+            return;
+        }
         index = inndex;
         if (Input.GetButtonDown("Fire2"))
         {
