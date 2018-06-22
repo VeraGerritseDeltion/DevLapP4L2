@@ -7453,10 +7453,10 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 114673338658965624}
         m_MethodName: CameraPanning
-        m_Mode: 6
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 114340375691447476}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Toggle, UnityEngine.UI
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -7696,9 +7696,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 224082246210826730}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 100
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: 100
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -11321,12 +11321,12 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1475151611864436}
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 114673338658965624}
+        m_MethodName: MuteSound
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgument: {fileID: 114649007990466624}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Toggle, UnityEngine.UI
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -11334,7 +11334,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_IsOn: 1
+  m_IsOn: 0
 --- !u!114 &114668038768895398
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11402,11 +11402,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camMove: {fileID: 0}
   soundVol: {fileID: 114472049043879014}
-  scrollSpd: {fileID: 114772511945500770}
+  zoomSpd: {fileID: 114772511945500770}
   camEffects: {fileID: 1168010015805170}
-  camPan: {fileID: 0}
-  camEffect: {fileID: 0}
-  muteSound: {fileID: 0}
+  camPan: {fileID: 114340375691447476}
+  camEffect: {fileID: 114534476926457318}
+  muteSound: {fileID: 114649007990466624}
+  sliderlist: []
 --- !u!114 &114674286803870514
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -13167,15 +13168,15 @@ MonoBehaviour:
   m_FillRect: {fileID: 224766585088595946}
   m_HandleRect: {fileID: 224266121878415980}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
+  m_MinValue: 50
+  m_MaxValue: 150
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: 100
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 114673338658965624}
-        m_MethodName: ScrollSpeed
+        m_MethodName: ZoomSpeed
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -17607,7 +17608,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.010002136, y: 0}
+  m_AnchoredPosition: {x: 0.010009766, y: 0}
   m_SizeDelta: {x: 9.98, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224131554924369090

@@ -6,14 +6,33 @@ using TMPro;
 
 public class Settings : MonoBehaviour {
 
-	public CameraMovement camMove;			
-	//public SoundThing Sound;			PSEUDO
+	//camera movement
+	public CameraMovement camMove;
+
+	//sound			
+	public AudioManager sound;
+
+	//text next to sliders
 	public TextMeshProUGUI soundVol;
-	public TextMeshProUGUI scrollSpd;
+	public TextMeshProUGUI zoomSpd;
+
+	//camera effects
 	public GameObject camEffects;
+
+	//toggles
 	public Toggle camPan;
 	public Toggle camEffect;
 	public Toggle muteSound;
+
+	//sliders
+	public List<Slider> sliderlist = new List<Slider>();
+
+
+	void Start () 
+	{	
+		ZoomSpeed(camMove.zoomSpeed);
+		SoundVolume(100f);
+	}
 
 	//sets campanning to state of toggle it receives
 	public void CameraPanning (Toggle tog)
@@ -31,20 +50,20 @@ public class Settings : MonoBehaviour {
 	public void MuteSound (Toggle tog)
 	{
 		bool active = tog.isOn;
-		//MuteSound.stop();
+		sound.Mute(active);
 	}
 	//decides how hard the sound is
 	public void SoundVolume (float number)
 	{
-		float num = number * 100f;
+		float num = number * 1f;
 		soundVol.text = ((int)num).ToString();
-		//Sound.Volume = soundvol		PSEUDO
+		sound.vol = num;		
 	}
-	//how fast scroll speed is 
-	public void ScrollSpeed (float number)
+	//how fast zoom speed is 
+	public void ZoomSpeed (float number)
 	{
-		float num = number * 50f;
-		scrollSpd.text = ((int)num).ToString();
-		//camMove.zoomSpeed *= number;	//needs to be tested in maingame scene and tweaked
+		float num = number * 1f;
+		zoomSpd.text = ((int)num).ToString();
+		camMove.zoomSpeed = num;	//needs to be tested in maingame scene and tweaked
 	}
 }

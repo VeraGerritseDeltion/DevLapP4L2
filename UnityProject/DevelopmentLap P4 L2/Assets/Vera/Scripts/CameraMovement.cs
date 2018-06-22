@@ -18,12 +18,14 @@ public class CameraMovement : MonoBehaviour
     float rot;
 
     public float zoomSpeed;
+    float normalZoomSpeed;
     public Transform zoomIn;
     public Transform zoomOut;
     public Camera myCam;
 
     private void Start()
     {
+        normalZoomSpeed = zoomSpeed;
         screenX = Screen.width;
         screenZ = Screen.height;
         myCam.transform.position = Vector3.Lerp(zoomIn.position, zoomOut.position, 0.25f);
