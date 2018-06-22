@@ -68,7 +68,7 @@ public class SelectionManager : MonoBehaviour {
         
         if(Physics.Raycast(ray, out hit)) //maybe hit with layermask to avoid any unnecesary stuff
 		{
-            if(hit.collider.tag == "Building" || hit.collider.tag == "Obstacle")
+            if(hit.collider.tag == "Building" || hit.collider.tag == "Obstacle" || hit.collider.tag == "Tree")
 			{
 				print("hit something");
                 lastBuilding = currentBuilding;

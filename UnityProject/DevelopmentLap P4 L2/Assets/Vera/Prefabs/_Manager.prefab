@@ -59,7 +59,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   age: 1
   eventForAge: 0
-  timeForAge: 3
+  timeForAge: 60
   addWood: 0
   addStone: 0
   addMoney: 0
@@ -127,6 +127,8 @@ MonoBehaviour:
   selectedSavedMaterial: {fileID: 0}
   allBuildings: []
   allTree: []
+  currentBuilding: {fileID: 0}
+  lastBuilding: {fileID: 0}
 --- !u!114 &114797263348972080
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -142,6 +144,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   uitstoot: 0
+  maxExhaust: 1000
   decOrInc: 0
   waterColors: []
   currentHigh: {r: 0, g: 0, b: 0, a: 0}
@@ -154,6 +157,9 @@ MonoBehaviour:
   endColorLow: {r: 0.16981131, g: 0.06781835, b: 0, a: 0}
   burnColorLow: {r: 0.1509434, g: 0.1509434, b: 0.1509434, a: 0}
   burnColorHigh: {r: 0, g: 0, b: 0, a: 0}
+  startGrass: {r: 0.3254902, g: 0.79607844, b: 0.22352941, a: 0}
+  endGrass: {r: 0.70980394, g: 0.50980395, b: 0.21176471, a: 0}
+  grass: {fileID: 0}
   allTrees: []
 --- !u!114 &114883794782560880
 MonoBehaviour:

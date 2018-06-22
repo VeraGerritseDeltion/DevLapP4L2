@@ -57,6 +57,11 @@ public class Building : MonoBehaviour{
             myVarList.Add(myBuilding.wood);
             myVarList.Add(myBuilding.stone);
             myVarList.Add(myBuilding.food);
+            myVarList.Add(myBuilding.co2);
+            myVarList.Add(myBuilding.moneyStorage);
+            myVarList.Add(myBuilding.woodStorage);
+            myVarList.Add(myBuilding.stoneStorage);
+            myVarList.Add(myBuilding.foodStorage);
         }
         return myVarList;
     }
