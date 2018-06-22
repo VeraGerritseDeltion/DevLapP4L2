@@ -106,6 +106,7 @@ public class BuildPlacement : MonoBehaviour {
             if (Input.GetButtonDown("Rotate"))
             {
                 rotation.y = rotation.y + 90;
+                isPlacing.GetComponent<Building>().TurnCol();
                 isPlacing.transform.rotation = Quaternion.Euler(rotation);
             }
             if (Input.GetButton("LeftShift") || Input.GetButton("LeftControl"))
@@ -150,7 +151,6 @@ public class BuildPlacement : MonoBehaviour {
 
         Collider[] inRange = Physics.OverlapBox(mousePos, sizeSearchBox, Quaternion.identity, obstacleLayer);
         GameObject closest = null;
-        print(inRange.Length);
         if(inRange.Length != 0)
         {
             float lowestRange = 0;

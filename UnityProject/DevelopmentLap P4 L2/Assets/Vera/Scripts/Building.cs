@@ -239,7 +239,6 @@ public class Building : MonoBehaviour{
         Vector3 size = new Vector3(sizeCol.x - offSet, sizeCol.y - offSet, sizeCol.z - offSet);
         Collider[] buildingsCloseBy = Physics.OverlapSphere(transform.position, radius, BuildingManager.instance.bp.buildingLayer);
         Collider[] buildings = Physics.OverlapBox(transform.position, size, Quaternion.identity, obstacles);
-        print(this.GetType());
         if (buildingsCloseBy.Length == 0 && this.GetType() != typeof(TownHall)) 
         {
             print(buildingsCloseBy.Length);
@@ -258,6 +257,14 @@ public class Building : MonoBehaviour{
         }
     }
 
+    public void TurnCol()
+    {
+        float oldX = sizeCol.x;
+        float oldZ = sizeCol.z;
+
+        sizeCol.x = oldZ;
+        sizeCol.z = oldX;
+    }
     public void HighlightBuilding(bool active)
     {
         if (!active)
