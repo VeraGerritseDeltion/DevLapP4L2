@@ -5642,6 +5642,7 @@ MonoBehaviour:
   foodText: {fileID: 114054926545898856}
   yearText: {fileID: 114852941442660636}
   citizenText: {fileID: 114061510683715998}
+  loading: 1
 --- !u!114 &114133424156703280
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12564,7 +12565,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 28
+          m_IntArgument: 17
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -14531,7 +14532,7 @@ MonoBehaviour:
   - {fileID: 1023285757715970, guid: e3ecce0ffb116b04095fda54785a6b62, type: 2}
   - {fileID: 1523723042527150, guid: 2396ea9e7f1a6624f91e8de7f889abaa, type: 2}
   - {fileID: 1068435203853422, guid: 3f95bd93305aacc4eb5eb741ae66388e, type: 2}
-  - {fileID: 0}
+  - {fileID: 1753231986946862, guid: a40ca2ed8dd1b2143b8e79d302279238, type: 2}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}

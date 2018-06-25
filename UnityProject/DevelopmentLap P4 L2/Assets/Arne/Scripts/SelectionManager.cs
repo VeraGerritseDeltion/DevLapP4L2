@@ -74,7 +74,9 @@ public class SelectionManager : MonoBehaviour {
 				print("hit something");
                 lastBuilding = currentBuilding;
 				currentSelected = hit.collider.gameObject;
-				
+				if(currentSelected.GetComponent<AudioSource>() != null && currentSelected.GetComponent<Building>().isPlaced){
+					currentSelected.GetComponent<AudioSource>().Play();
+				}
 				Trees tree = currentSelected.GetComponent<Trees>();
 				Building build = currentSelected.GetComponent<Building>();
                 if (BuildingManager.instance.bp.startedPlacing)
