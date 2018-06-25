@@ -113,6 +113,7 @@ MonoBehaviour:
   eventWord: Aartbeving
   percentage: 50
   timer: 5
+  dust: {fileID: 1639765829223298, guid: 2e168e149ba93a34ba152c8cc88be5f1, type: 2}
 --- !u!114 &114536270683279306
 MonoBehaviour:
   m_ObjectHideFlags: 1

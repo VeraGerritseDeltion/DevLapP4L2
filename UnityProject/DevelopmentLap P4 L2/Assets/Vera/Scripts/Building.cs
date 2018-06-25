@@ -39,6 +39,7 @@ public class Building : MonoBehaviour{
 
     public List<string> myStrings;
     public List<TextMeshProUGUI> myText;
+    public GameObject dust;
 
     void Start()
     {
@@ -178,6 +179,7 @@ public class Building : MonoBehaviour{
 
     public void DestroyBuilding()
     {
+        
         if(GetType() == typeof(TownHall))
         {
             BuildingManager.instance.myTownHall = null;
@@ -189,6 +191,7 @@ public class Building : MonoBehaviour{
         }
         MinStats();
         Destroy(gameObject);
+        
     }
 
     void AddStats()

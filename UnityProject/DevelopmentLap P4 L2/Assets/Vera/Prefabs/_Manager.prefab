@@ -59,7 +59,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   age: 1
   eventForAge: 0
-  timeForAge: 60
+  timeForAge: 2
+  workBuildings: []
+  usedCitizens: 0
   addWood: 0
   addStone: 0
   addMoney: 0
@@ -78,6 +80,8 @@ MonoBehaviour:
   water: 0
   energy: 0
   co2: 0
+  citizens: 0
+  allCitizens: 0
   woodStorage: 500
   stoneStorage: 500
   moneyStorage: 500
@@ -121,6 +125,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   currentSelected: {fileID: 0}
+  uiAndObstacles:
+    serializedVersion: 2
+    m_Bits: 5920
   highlightColor: {r: 0.9283198, g: 1, b: 0, a: 1}
   highlightMaterial: {fileID: 2100000, guid: 3aeb084bd73685f4cb0ab4d18f11b885, type: 2}
   selectedMaterial: {fileID: 0}
