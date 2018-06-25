@@ -10,6 +10,7 @@ public class Aardbeving : Events{
 
     public override void Occur()
     {
+        
         base.Occur();
         GameManager.instance.myCamera.GetComponent<CameraShake>().shouldShake = true;
         StartCoroutine(Happening());
@@ -18,6 +19,8 @@ public class Aardbeving : Events{
     IEnumerator Happening()
     {
         int beenHit = 0;
+
+        yield return new WaitForSeconds(1);
         for (int i = 0; i < BuildingManager.instance.allBuildings.Count; i++)
         {
             if(Random.Range(0,100) < percentage){

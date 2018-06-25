@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 114751321885354266}
   m_Layer: 0
   m_Name: TownHall_Old
-  m_TagString: Obstacle
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -428,7 +428,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42da8c483fa914949935d727e5741d9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myBuilding: {fileID: 0}
+  myBuilding: {fileID: 11400000, guid: 28bd89ca7661e98469c4fe58dbb67c7e, type: 2}
+  needsWorkers: 0
   isPlaced: 0
   myMat: {fileID: 0}
   inOtherBuilding: 0
@@ -441,7 +442,9 @@ MonoBehaviour:
   stoneCost: 0
   moneyCost: 0
   hasAura: 0
+  radius: 0
   tooltip: {fileID: 1699243655335306, guid: b7c475d20ef51c14e8cb72cb20498c40, type: 2}
   myName: {fileID: 0}
   myStrings: []
   myText: []
+  dust: {fileID: 0}

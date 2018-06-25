@@ -139,10 +139,6 @@ public class Building : MonoBehaviour{
         if (GetType() != typeof(TownHall) || GetType() != typeof(Road))
         {
             BuildingManager.instance.allBuildings.Add(gameObject);
-            if(needsWorkers)
-            {
-                StatisticManager.instance.workBuildings.Add(gameObject);
-            }
         }
         myMat.color = normalColor;
         gameObject.layer = 8;
