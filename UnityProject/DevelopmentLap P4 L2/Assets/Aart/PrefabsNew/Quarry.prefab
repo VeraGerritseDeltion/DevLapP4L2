@@ -966,6 +966,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myBuilding: {fileID: 11400000, guid: 09e2b29812f8abf47859482f7a4b072a, type: 2}
+  needsWorkers: 0
   isPlaced: 0
   myMat: {fileID: 2100000, guid: 531170e8f9695f24abb5789b1e9cdb5f, type: 2}
   inOtherBuilding: 0
@@ -978,6 +979,7 @@ MonoBehaviour:
   stoneCost: 0
   moneyCost: 0
   hasAura: 0
+  radius: 0
   tooltip: {fileID: 1709697734551764}
   myName: {fileID: 114289948284333482}
   myStrings:
@@ -985,6 +987,11 @@ MonoBehaviour:
   - 'Wood: '
   - 'Stone: '
   - 'Food: '
+  - 'CO2: '
+  - 'Money Storage: '
+  - 'Wood Storage: '
+  - 'Stone Storage: '
+  - 'Food Storage: '
   myText:
   - {fileID: 114980931968434726}
   - {fileID: 114046554467534052}

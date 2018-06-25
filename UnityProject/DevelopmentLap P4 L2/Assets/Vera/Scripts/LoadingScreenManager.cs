@@ -39,6 +39,7 @@ public class LoadingScreenManager : MonoBehaviour {
     public void Done()
     {
         loadingScreen.enabled = false;
+        UIManager.instance.loading = false;
         GameManager.instance.StartGame();
     }
 }

@@ -14,11 +14,13 @@ MonoBehaviour:
   name: Garden
   description: Gives people a way to get some fresh air in a nice Garden
   buildingSprite: {fileID: 0}
+  citizens: 0
   wood: 0
   stone: 0
   money: 0
   minerals: 0
   food: 0
+  co2: -20
   woodStorage: 0
   stoneStorage: 0
   moneyStorage: 0

@@ -38,6 +38,7 @@ public class CameraMovement : MonoBehaviour
 
     void Movement()
     {
+        if(UIManager.instance.paused == false){
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
         scroll = Input.GetAxis("Mouse ScrollWheel");
@@ -88,6 +89,6 @@ public class CameraMovement : MonoBehaviour
         vertical = vertical * movSpeed * Time.deltaTime / Time.timeScale;
         transform.Translate(new Vector3(horizontal, 0, vertical));
     }
-
+    }
 }
 

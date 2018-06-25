@@ -54,6 +54,8 @@ public class UIManager : MonoBehaviour {
 	public TextMeshProUGUI yearText;
     public TextMeshProUGUI citizenText;
 
+	public bool loading = true;
+
 
     public void TextUpdate()
 	{
@@ -278,37 +280,37 @@ public class UIManager : MonoBehaviour {
 	//hotkeys for time speed
 	private void HotKeys () 
 	{
-		if(paused)
-		{
-			return;
-		}
-		if(Input.GetButtonDown("Pause"))
-		{
-			SelectedTimeColor(0);
-			SetTimeScale(0f);
-		}
-		if(Input.GetButtonDown("Normal Speed"))
-		{
-			SelectedTimeColor(1);
-			SetTimeScale(1f);
-		}
-		if(Input.GetButtonDown("Fast Speed"))
-		{
-			SelectedTimeColor(2);
-			SetTimeScale(1.5f);
-		}
-		if(Input.GetButtonDown("Faster Speed"))
-		{
-			SelectedTimeColor(3);
-			SetTimeScale(2f);
-		}
+			if(paused)
+			{
+				return;
+			}
+			if(Input.GetButtonDown("Pause"))
+			{
+				SelectedTimeColor(0);
+				SetTimeScale(0f);
+			}
+			if(Input.GetButtonDown("Normal Speed"))
+			{
+				SelectedTimeColor(1);
+				SetTimeScale(1f);
+			}
+			if(Input.GetButtonDown("Fast Speed"))
+			{
+				SelectedTimeColor(2);
+				SetTimeScale(1.5f);
+			}
+			if(Input.GetButtonDown("Faster Speed"))
+			{
+				SelectedTimeColor(3);
+				SetTimeScale(2f);
+			}
 	}
 	
 	//makes you pause ingame or unpause
 	private void PressEscape () {
 		
 		//Debug.Log("escape");
-		if(Input.GetButtonDown("Escape") && _UIState == UIState.Ingame && paused == false) 
+		if(Input.GetButtonDown("Escape") && _UIState == UIState.Ingame && paused == false && loading == false) 
 		{
 			paused = true;
 			SetTimeScale(0f);

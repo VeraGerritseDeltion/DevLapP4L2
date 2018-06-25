@@ -29,7 +29,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1057488824419564
 GameObject:
   m_ObjectHideFlags: 0
@@ -1176,6 +1176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myBuilding: {fileID: 11400000, guid: 71a7dd2a1a9d07949b8621bfe4378f8c, type: 2}
+  needsWorkers: 0
   isPlaced: 0
   myMat: {fileID: 2100000, guid: ddc88735d57bd274a891c01c3133be27, type: 2}
   inOtherBuilding: 0
@@ -1188,6 +1189,7 @@ MonoBehaviour:
   stoneCost: 10
   moneyCost: 100
   hasAura: 0
+  radius: 0
   tooltip: {fileID: 1005862987440006}
   myName: {fileID: 114799510793195920}
   myStrings:
@@ -1818,7 +1820,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1005862987440006}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -74.98549}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.03, y: 0.03, z: 0.1}
   m_Children:
   - {fileID: 224913303806219578}
@@ -1829,7 +1831,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -210.23914, y: -97.23557}
+  m_AnchoredPosition: {x: 0, y: 15}
   m_SizeDelta: {x: 600, y: 800}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224243247773461120

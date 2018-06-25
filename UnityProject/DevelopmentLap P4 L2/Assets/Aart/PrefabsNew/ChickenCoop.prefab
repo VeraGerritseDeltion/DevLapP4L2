@@ -1221,6 +1221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myBuilding: {fileID: 11400000, guid: fce94bb44c15b984c8057d67f1292268, type: 2}
+  needsWorkers: 0
   isPlaced: 0
   myMat: {fileID: 0}
   inOtherBuilding: 0
@@ -1233,10 +1234,19 @@ MonoBehaviour:
   stoneCost: 0
   moneyCost: 0
   hasAura: 0
+  radius: 0
   tooltip: {fileID: 1616171347862690}
-  myName: {fileID: 0}
-  myStrings: []
-  myText: []
+  myName: {fileID: 114167878650270162}
+  myStrings:
+  - 'Money: '
+  - 'Wood: '
+  - 'Stone: '
+  - 'Food: '
+  myText:
+  - {fileID: 114648818131137158}
+  - {fileID: 114402024551347000}
+  - {fileID: 114675375721352188}
+  - {fileID: 114150322773196584}
 --- !u!222 &222225687847189534
 CanvasRenderer:
   m_ObjectHideFlags: 1

@@ -30,7 +30,7 @@ public class Settings : MonoBehaviour {
 
 	void Start () 
 	{	
-		ZoomSpeed(camMove.zoomSpeed);
+		//ZoomSpeed(camMove.zoomSpeed);
 		SoundVolume(100f);
 	}
 
