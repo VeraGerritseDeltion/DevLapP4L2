@@ -19,7 +19,7 @@ public class Trees : MonoBehaviour {
     public LayerMask trees;
     List<Coroutine> allRoutines = new List<Coroutine>();
 
-    bool notToeBePlaced;
+    bool notToBePlaced;
 
     //tooltip Stuff
     public GameObject tooltip;
@@ -40,7 +40,7 @@ public class Trees : MonoBehaviour {
         burnSpeed = 0.1f;
         transform.position = new Vector3(transform.position.x, transform.position.y + 5, transform.position.z);
         transform.position = Ground();
-        if (notToeBePlaced)
+        if (notToBePlaced)
         {
             NatureManager.instance.allTrees.Remove(gameObject);
             Destroy(gameObject);
@@ -149,9 +149,14 @@ public class Trees : MonoBehaviour {
     }
     public void Chop () 
     {
-        //chop tree and plus 1 wood
-        //play animation
-        //after animation Destroy
+        tooltip.SetActive(false);
+        StartCoroutine(Chopping());
+        StatisticManager.instance.wood += 5;
+    }
+    IEnumerator Chopping()
+    {
+        GetComponent<Animation>().Play("Cutting");
+        yield return new WaitForSeconds(GetComponent<Animation>().clip.length);
         Destroy(this.gameObject);
     }
     public void Tooltip (bool active)

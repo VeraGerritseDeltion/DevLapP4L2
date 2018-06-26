@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class LoadingScreenManager : MonoBehaviour {
     public static LoadingScreenManager instance;
-    public Canvas loadingScreen;
+    public RectTransform loadingScreen;
     public float currentStatus;
     float maxStatus;
 
@@ -18,7 +18,7 @@ public class LoadingScreenManager : MonoBehaviour {
         {
             instance = this;
         }
-        loadingScreen.enabled = true;
+        loadingScreen.gameObject.SetActive(true);
     }
 
     public void MyStart()
@@ -37,7 +37,7 @@ public class LoadingScreenManager : MonoBehaviour {
 
     public void Done()
     {
-        loadingScreen.enabled = false;
+        loadingScreen.gameObject.SetActive(false);
         UIManager.instance.loading = false;
         GameManager.instance.StartGame();
     }

@@ -73,9 +73,10 @@ GameObject:
   - component: {fileID: 136561861617141886}
   - component: {fileID: 114985043099939876}
   - component: {fileID: 114299217352754178}
+  - component: {fileID: 111299250535118364}
   m_Layer: 12
   m_Name: 3D_Tree_002
-  m_TagString: Obstacle
+  m_TagString: Tree
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -392,6 +393,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1580424806629828}
   m_Mesh: {fileID: 4300000, guid: de70e72b3aca94448b7d9c9d562802be, type: 3}
+--- !u!111 &111299250535118364
+Animation:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1264101361843056}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: c9cd69d57c84b444fbe9db8d074bf3e2, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: c9cd69d57c84b444fbe9db8d074bf3e2, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!114 &114092460433968296
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -863,7 +879,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114846686740285628}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 114299217352754178}
+        m_MethodName: Chop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &114964381829695568
@@ -10365,7 +10392,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 15}
+  m_AnchoredPosition: {x: 0, y: 13}
   m_SizeDelta: {x: 600, y: 498.234}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224860825892321216
