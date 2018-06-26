@@ -14515,7 +14515,7 @@ MonoBehaviour:
     m_Bits: 256
   startedPlacing: 0
   allBuildings:
-  - {fileID: 1698939765038124, guid: ff42759d36687d2498a699c35e7cfa25, type: 2}
+  - {fileID: 1549638156869640, guid: e362e35aa81a71c43a75311475a98e7c, type: 2}
   - {fileID: 1216996684685184, guid: f13d0a5c7b6ac1248bef6f728fc3f771, type: 2}
   - {fileID: 1057488824419564, guid: 0a0952ff6ac352749a0692d31f7b5926, type: 2}
   - {fileID: 1983305789807406, guid: af652d9dfb2ec9346b9fe5dadb9617b6, type: 2}
