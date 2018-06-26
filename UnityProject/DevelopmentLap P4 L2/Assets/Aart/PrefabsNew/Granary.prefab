@@ -37,7 +37,7 @@ GameObject:
   - component: {fileID: 33272295663412302}
   - component: {fileID: 23091783575296692}
   - component: {fileID: 95513003326239154}
-  - component: {fileID: 114356263478522342}
+  - component: {fileID: 114647703153762360}
   - component: {fileID: 65376169796521600}
   m_Layer: 0
   m_Name: Granary
@@ -711,50 +711,6 @@ MonoBehaviour:
   - {fileID: 0}
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &114356263478522342
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1023285757715970}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 757996b75aff68f43a49c70ae4f6a481, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myBuilding: {fileID: 11400000, guid: ae406f5849744754692f4f8c621d7402, type: 2}
-  needsWorkers: 0
-  isPlaced: 0
-  myMat: {fileID: 0}
-  inOtherBuilding: 0
-  startedPlacing: 0
-  obstacles:
-    serializedVersion: 2
-    m_Bits: 0
-  ageLock: 0
-  woodCost: 0
-  stoneCost: 0
-  moneyCost: 0
-  hasAura: 0
-  radius: 0
-  tooltip: {fileID: 1114613917621534}
-  myName: {fileID: 114998392888495602}
-  myStrings:
-  - 'Money: '
-  - 'Wood: '
-  - 'Stone: '
-  - 'Food: '
-  - 'CO2: '
-  - 'Money Storage: '
-  - 'Wood Storage: '
-  - 'Stone Storage: '
-  - 'Food Storage: '
-  myText:
-  - {fileID: 114308460377238942}
-  - {fileID: 114947554160323694}
-  - {fileID: 114987104934757982}
-  - {fileID: 114274890534230978}
-  dust: {fileID: 1014273010514538}
 --- !u!114 &114362371709801894
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -857,6 +813,50 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+--- !u!114 &114647703153762360
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1023285757715970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b38badb0e09a7c4eb22a6af1d303f2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myBuilding: {fileID: 11400000, guid: ae406f5849744754692f4f8c621d7402, type: 2}
+  needsWorkers: 0
+  isPlaced: 0
+  myMat: {fileID: 0}
+  inOtherBuilding: 0
+  startedPlacing: 0
+  obstacles:
+    serializedVersion: 2
+    m_Bits: 0
+  ageLock: 0
+  woodCost: 0
+  stoneCost: 0
+  moneyCost: 0
+  hasAura: 0
+  radius: 0
+  tooltip: {fileID: 1114613917621534}
+  myName: {fileID: 114998392888495602}
+  myStrings:
+  - 'Money: '
+  - 'Wood: '
+  - 'Stone: '
+  - 'Food: '
+  - 'CO2: '
+  - 'MoneyStorage: '
+  - 'WoodStorage: '
+  - 'StoneStorage: '
+  - 'FoodStorage: '
+  myText:
+  - {fileID: 114308460377238942}
+  - {fileID: 114947554160323694}
+  - {fileID: 114987104934757982}
+  - {fileID: 114274890534230978}
+  dust: {fileID: 1014273010514538}
 --- !u!114 &114688190587275348
 MonoBehaviour:
   m_ObjectHideFlags: 1
