@@ -48,6 +48,7 @@ public class Building : MonoBehaviour{
         {
             myName.text = myBuilding.name;
         }
+        StartCoroutine(EnablePlacement());
     }
 
     public List<int> VarList()
@@ -114,7 +115,7 @@ public class Building : MonoBehaviour{
         }
 
         sizeCol = new Vector3(myCol.size.x, myCol.size.y, myCol.size.z) / 2;
-        StartCoroutine(EnablePlacement());
+
     }
 
     IEnumerator EnablePlacement()

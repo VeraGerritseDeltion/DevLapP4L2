@@ -73,11 +73,22 @@ public class BuildPlacement : MonoBehaviour {
         Vector3 mouse3DPos = new Vector3(0,0,0);
         if (Physics.Raycast(ray, out hit,1000,groundLayer))
         {
-            mouse3DPos = hit.point;
-            if (isPlacing != null)
+            if(hit.collider.tag != "Sand")
             {
-                isPlacing.SetActive(true);
+                mouse3DPos = hit.point;
+                if (isPlacing != null)
+                {
+                    isPlacing.SetActive(true);
+                }
             }
+            else
+            {
+                if (isPlacing != null)
+                {
+                    isPlacing.SetActive(false);
+                }
+            }
+
         }
         else
         {
