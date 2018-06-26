@@ -22,7 +22,7 @@ public class CameraShake : MonoBehaviour{
 
     void Update()
     {
-        if (shouldShake)
+        if (shouldShake && Time.deltaTime != 0)
         {
            allTimers.Add(StartCoroutine(IsShaking()));
         }

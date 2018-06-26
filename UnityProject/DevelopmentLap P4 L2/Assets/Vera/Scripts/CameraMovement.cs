@@ -60,7 +60,7 @@ public class CameraMovement : MonoBehaviour
             newPos.y = 0;
             transform.position = newPos;
         }
-        if (Input.GetButton("Fire3"))
+        if (Input.GetButton("Fire3") && Time.timeScale != 0)
         {
             rot = Input.GetAxis("Mouse X") * rotSpeed * Time.deltaTime / Time.timeScale;
         }
@@ -84,11 +84,15 @@ public class CameraMovement : MonoBehaviour
                 vertical = 1;
             }
         }
-        transform.Rotate(new Vector3(0, rot, 0));
-        horizontal = horizontal * movSpeed * Time.deltaTime / Time.timeScale;
-        vertical = vertical * movSpeed * Time.deltaTime / Time.timeScale;
-        transform.Translate(new Vector3(horizontal, 0, vertical));
-    }
+
+        if(Time.timeScale != 0)
+            {
+                transform.Rotate(new Vector3(0, rot, 0));
+                horizontal = horizontal * movSpeed * Time.deltaTime / Time.timeScale;
+                vertical = vertical * movSpeed * Time.deltaTime / Time.timeScale;
+                transform.Translate(new Vector3(horizontal, 0, vertical));
+            }
+        }
     }
 }
 
