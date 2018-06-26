@@ -136,10 +136,15 @@ public class Building : MonoBehaviour{
         StatisticManager.instance.wood -= woodCost;
         StatisticManager.instance.stone -= stoneCost;
         StatisticManager.instance.money -= moneyCost;
-        if (GetType() != typeof(TownHall) || GetType() != typeof(Road))
+        if (GetType() == typeof(TownHall) || GetType() == typeof(Road))
+        {
+
+        }
+        else
         {
             BuildingManager.instance.allBuildings.Add(gameObject);
         }
+
         myMat.color = normalColor;
         gameObject.layer = 8;
         if (myBuilding != null)
