@@ -4,11 +4,4 @@ using UnityEngine;
 
 public class Storage : Building {
 
-	void Start () {
-		
-	}
-	
-	void Update () {
-		
-	}
 }

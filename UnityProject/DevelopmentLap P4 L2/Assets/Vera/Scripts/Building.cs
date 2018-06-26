@@ -137,7 +137,7 @@ public class Building : MonoBehaviour{
         StatisticManager.instance.wood -= woodCost;
         StatisticManager.instance.stone -= stoneCost;
         StatisticManager.instance.money -= moneyCost;
-        if (GetType() == typeof(TownHall) || GetType() == typeof(Road))
+        if (GetType() == typeof(TownHall) || GetType() == typeof(Road) || GetType() == typeof(Storage))
         {
 
         }

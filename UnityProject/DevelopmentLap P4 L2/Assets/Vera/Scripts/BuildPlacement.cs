@@ -103,7 +103,10 @@ public class BuildPlacement : MonoBehaviour {
             startedPlacing = true;
             isPlacing = Instantiate(toBePlaced, mouse3DPos, Quaternion.identity);
             placing = isPlacing.GetComponent<Building>();
-            placing = isPlacing.GetComponentInChildren<Building>();
+            if (placing == null)
+            {
+                placing = isPlacing.GetComponentInChildren<Building>();
+            }
             placing.MyStart();
             if (placing == null)
             {              
