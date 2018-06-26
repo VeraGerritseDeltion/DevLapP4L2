@@ -23,7 +23,6 @@ public class TreeInstantiationManager : MonoBehaviour {
         yield return new WaitForSeconds(0.5f);
         if(treeLoc.Count != 0)
         {
-            print(treeLoc.Count);
             for (int i = 0; i < treeLoc.Count; i++)
             {
                 yield return new WaitForEndOfFrame();

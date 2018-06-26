@@ -17,7 +17,6 @@ public class TooltipTrigger : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 	}
 	public void OnPointerEnter(PointerEventData eventData)
     {
-        Debug.Log("The cursor entered the selectable UI element.");
 		if(stats)
 		{
 			viewTooltip.SetPosition(new Vector3(thisGO.transform.position.x, thisGO.transform.position.y -60f), building, desc);
@@ -31,7 +30,6 @@ public class TooltipTrigger : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     }
 	public void OnPointerExit(PointerEventData eventData)
     {
-        Debug.Log("The cursor exited the selectable UI element.");
 		viewTooltip.Show(false);
     }
 }

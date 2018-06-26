@@ -150,7 +150,6 @@ public class Trees : MonoBehaviour {
     public void Chop () 
     {
         //chop tree and plus 1 wood
-        print("cut wood");
         //play animation
         //after animation Destroy
         Destroy(this.gameObject);
@@ -158,6 +157,5 @@ public class Trees : MonoBehaviour {
     public void Tooltip (bool active)
     {
         tooltip.SetActive(active);
-        Debug.Log(active);
     }
 }

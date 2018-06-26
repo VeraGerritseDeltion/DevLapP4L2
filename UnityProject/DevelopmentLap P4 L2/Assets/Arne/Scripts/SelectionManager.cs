@@ -71,7 +71,6 @@ public class SelectionManager : MonoBehaviour {
 		{
             if(hit.collider.tag == "Building" || hit.collider.tag == "Obstacle" || hit.collider.tag == "Tree")
 			{
-				print("hit something");
                 lastBuilding = currentBuilding;
 				currentSelected = hit.collider.gameObject;
 				if(currentSelected.GetComponent<AudioSource>() != null && currentSelected.GetComponent<Building>().isPlaced){
@@ -101,7 +100,6 @@ public class SelectionManager : MonoBehaviour {
 				if(tree != null)
 				{
 					tree.Tooltip(true);
-					Debug.Log("turn on tree tt");
 					//tree.Highlight(true);
 				}
 				

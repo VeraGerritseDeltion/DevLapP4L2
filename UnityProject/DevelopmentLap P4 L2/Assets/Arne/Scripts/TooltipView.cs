@@ -21,13 +21,11 @@ public class TooltipView : MonoBehaviour {
 			if(!stats)
 			{
 				ShowCost(building);
-				print("cost");
 			}
         }
 		if(stats)
 		{
 			ShowStats(desc);
-			print("stats");
 		}
 	}
 	//sets the stats

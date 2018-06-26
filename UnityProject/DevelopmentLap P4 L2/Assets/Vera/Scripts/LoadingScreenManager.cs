@@ -24,7 +24,6 @@ public class LoadingScreenManager : MonoBehaviour {
     public void MyStart()
     {
         maxStatus = TreeInstantiationManager.instance.treeLoc.Count;
-        print(maxStatus + " max");
         currentStatus = -1;
         UpdateMe();
     }
