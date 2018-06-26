@@ -26,7 +26,7 @@ public class TreeInstantiationManager : MonoBehaviour {
             print(treeLoc.Count);
             for (int i = 0; i < treeLoc.Count; i++)
             {
-                yield return new WaitForSeconds(0.01f);
+                yield return new WaitForEndOfFrame();
                 LoadingScreenManager.instance.UpdateMe();
                 int rand = Random.Range(0, treeKinds.Count);
                 Instantiate(treeKinds[rand], treeLoc[i].position, Quaternion.identity);
