@@ -8,6 +8,7 @@ TagManager:
   - Building
   - Tree
   - UI
+  - Sand
   layers:
   - Default
   - TransparentFX

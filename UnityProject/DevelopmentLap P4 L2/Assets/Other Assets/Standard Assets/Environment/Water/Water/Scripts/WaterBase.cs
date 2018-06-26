@@ -16,7 +16,11 @@ namespace UnityStandardAssets.Water
         public Material sharedMaterial;
         public WaterQuality waterQuality = WaterQuality.High;
         public bool edgeBlend = true;
+        public Color Refraction;
 
+        private void Start()
+        {
+        }
 
         public void UpdateShader()
         {
