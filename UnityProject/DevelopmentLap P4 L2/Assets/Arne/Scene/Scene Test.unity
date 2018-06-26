@@ -944,7 +944,7 @@ Prefab:
     - target: {fileID: 224015780133856496, guid: 16fe3649979fbf94ab0e1bc2b477ace5,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -13.774673
+      value: -13.774689
       objectReference: {fileID: 0}
     - target: {fileID: 224433964598354234, guid: 16fe3649979fbf94ab0e1bc2b477ace5,
         type: 2}
@@ -1247,6 +1247,22 @@ Prefab:
         type: 2}
       propertyPath: m_Color.a
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114331874695632506, guid: 16fe3649979fbf94ab0e1bc2b477ace5,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c4dc35ddd515ffe49a97e729d12c9fff,
+        type: 3}
+    - target: {fileID: 114132451413344230, guid: 16fe3649979fbf94ab0e1bc2b477ace5,
+        type: 2}
+      propertyPath: go
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114132451413344230, guid: 16fe3649979fbf94ab0e1bc2b477ace5,
+        type: 2}
+      propertyPath: blockState
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114421322923868488, guid: 16fe3649979fbf94ab0e1bc2b477ace5, type: 2}
