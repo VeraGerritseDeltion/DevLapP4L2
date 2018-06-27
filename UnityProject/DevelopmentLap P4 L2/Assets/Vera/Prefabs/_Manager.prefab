@@ -59,7 +59,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   age: 1
   eventForAge: 0
-  timeForAge: 2
+  timeForAge: 100
   workBuildings: []
   usedCitizens: 0
   addWood: 0
@@ -77,6 +77,7 @@ MonoBehaviour:
   food: 0
   minerals: 0
   happiness: 0
+  avrHappiness: 0
   water: 0
   energy: 0
   co2: 0

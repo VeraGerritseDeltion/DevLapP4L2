@@ -59,7 +59,7 @@ GameObject:
   - component: {fileID: 114978344195795790}
   - component: {fileID: 114587836621460378}
   m_Layer: 0
-  m_Name: New Tooltip Upgradeable Canvas
+  m_Name: Tooltip Townhall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

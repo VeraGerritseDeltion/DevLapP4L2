@@ -23,6 +23,7 @@ public class Trees : MonoBehaviour {
 
     //tooltip Stuff
     public GameObject tooltip;
+    bool cutting;
 
     int burning;
 	void Start () {
@@ -149,6 +150,7 @@ public class Trees : MonoBehaviour {
     }
     public void Chop () 
     {
+        cutting = true;
         tooltip.SetActive(false);
         StartCoroutine(Chopping());
         StatisticManager.instance.wood += 5;
@@ -161,6 +163,9 @@ public class Trees : MonoBehaviour {
     }
     public void Tooltip (bool active)
     {
-        tooltip.SetActive(active);
+        if(!cutting)
+        {
+            tooltip.SetActive(active);
+        }
     }
 }

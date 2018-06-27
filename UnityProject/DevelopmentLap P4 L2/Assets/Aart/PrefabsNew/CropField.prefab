@@ -149,7 +149,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1377990685020994
 GameObject:
   m_ObjectHideFlags: 1
@@ -1221,7 +1221,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114870633064976590}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 114561924006977924}
+        m_MethodName: DestroyBuilding
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &114561924006977924
@@ -1236,6 +1247,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myBuilding: {fileID: 11400000, guid: 71a7dd2a1a9d07949b8621bfe4378f8c, type: 2}
+  upgradeMesh: {fileID: 1832294617742380, guid: c3f68824e62cafd419f50a560ec071e3,
+    type: 2}
   needsWorkers: 0
   isPlaced: 0
   myMat: {fileID: 2100000, guid: ddc88735d57bd274a891c01c3133be27, type: 2}
@@ -1268,6 +1281,7 @@ MonoBehaviour:
   - {fileID: 114154642408607286}
   - {fileID: 114012895724935112}
   dust: {fileID: 1348205288041812}
+  myCitizens: 
 --- !u!114 &114569700036579870
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1360,7 +1374,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114593828525597016}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 114561924006977924}
+        m_MethodName: Upgrade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &114761735399083338

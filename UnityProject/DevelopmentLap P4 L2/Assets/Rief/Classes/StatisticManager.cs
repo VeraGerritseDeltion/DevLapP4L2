@@ -32,6 +32,7 @@ public class StatisticManager : MonoBehaviour {
     public int food;
     public int minerals;
     public int happiness;
+    public int avrHappiness;
     public int water;
     public int energy;
     public int co2;
@@ -44,6 +45,7 @@ public class StatisticManager : MonoBehaviour {
     public int moneyStorage;
     public int foodStorage;
 
+    
     void Awake() 
     {
 		if(instance == null) {
@@ -56,6 +58,14 @@ public class StatisticManager : MonoBehaviour {
         eventForAge = Random.Range(5, 10);
         StartCoroutine(AddStats());
         StartCoroutine(AgeIncrease());
+    }
+
+    public void AverageHappiness()
+    {
+        if(allCitizens >0)
+        {
+            avrHappiness = happiness / allCitizens;
+        }
     }
 
     IEnumerator AddStats ()

@@ -14446,7 +14446,7 @@ MonoBehaviour:
     m_Bits: 256
   startedPlacing: 0
   allBuildings:
-  - {fileID: 1549638156869640, guid: e362e35aa81a71c43a75311475a98e7c, type: 2}
+  - {fileID: 1504684965358844, guid: 461449881dcffd544940debd42650ce1, type: 2}
   - {fileID: 1216996684685184, guid: f13d0a5c7b6ac1248bef6f728fc3f771, type: 2}
   - {fileID: 1057488824419564, guid: 0a0952ff6ac352749a0692d31f7b5926, type: 2}
   - {fileID: 1983305789807406, guid: af652d9dfb2ec9346b9fe5dadb9617b6, type: 2}
@@ -17796,7 +17796,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.11127016}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1.1350098, y: -13.774658}
+  m_AnchoredPosition: {x: -1.1350098, y: -13.774643}
   m_SizeDelta: {x: -2.27001, y: -27.549213}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224016375026989572

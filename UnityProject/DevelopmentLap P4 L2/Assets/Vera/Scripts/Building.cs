@@ -7,7 +7,7 @@ using TMPro;
 public class Building : MonoBehaviour{
 
     public BuildingTemplate myBuilding;
-
+    public GameObject upgradeMesh;
     public bool needsWorkers;
     public bool isPlaced;
     public Material myMat;
@@ -26,7 +26,6 @@ public class Building : MonoBehaviour{
     public int moneyCost;
     bool purchaseAble;
 
-
     public bool hasAura;
 
     private BuildingStats myBuildingStats;
@@ -40,6 +39,8 @@ public class Building : MonoBehaviour{
     public List<string> myStrings;
     public List<TextMeshProUGUI> myText;
     public GameObject dust;
+
+    public List<int> myCitizens;
 
     void Start()
     {
@@ -69,6 +70,18 @@ public class Building : MonoBehaviour{
         return myVarList;
     }
 
+    void AddCitizens()
+    {
+        for(int i = 0; i < myCitizens.Count; i++)
+        {
+            StatisticManager.instance.happiness += myCitizens[i];
+        }
+    }
+    void MinusHappiness()
+    {
+        int destroySad = 10;
+        StatisticManager.instance.happiness -= (myCitizens.Count * destroySad);
+    }
     void TextTooltip()
     {
         List<int> amounts = VarList();
@@ -144,6 +157,7 @@ public class Building : MonoBehaviour{
         else
         {
             BuildingManager.instance.allBuildings.Add(gameObject);
+            AddCitizens();
         }
 
         myMat.color = normalColor;
@@ -158,7 +172,6 @@ public class Building : MonoBehaviour{
             }
         }
         isPlaced = true;
-
     }
 
     public void EventDestroy()
@@ -192,6 +205,7 @@ public class Building : MonoBehaviour{
             BuildingManager.instance.allBuildings.Remove(gameObject);
         }
         MinStats();
+        MinusHappiness();
         Destroy(gameObject);
         
     }
@@ -224,6 +238,7 @@ public class Building : MonoBehaviour{
         myStatisticManager.foodStorage += myBuilding.foodStorage;
         StatisticManager.instance.addCo2 += myBuilding.co2;
         StatisticManager.instance.allCitizens += myBuilding.citizens;
+        StatisticManager.instance.AverageHappiness();
     }
 
     void MinStats()
@@ -240,6 +255,8 @@ public class Building : MonoBehaviour{
             StatisticManager.instance.stoneStorage -= myBuilding.stoneStorage;
             StatisticManager.instance.moneyStorage -= myBuilding.moneyStorage;
             StatisticManager.instance.foodStorage -= myBuilding.foodStorage;
+            StatisticManager.instance.addCo2 -= myBuilding.co2;
+            StatisticManager.instance.AverageHappiness();
         }
     }
 
@@ -307,7 +324,8 @@ public class Building : MonoBehaviour{
     }
     public void Upgrade()
     {
-        //upgrades building
+        Mesh myMesh = upgradeMesh.GetComponent<MeshFilter>().sharedMesh;
+		GetComponent<MeshFilter>().mesh = myMesh;
     }
     public void Tooltip(bool active)
     {

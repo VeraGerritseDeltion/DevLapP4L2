@@ -1,19 +1,14 @@
 fileFormatVersion: 2
-guid: a55f74184a7a0ef4da48b0230741cda7
+guid: 2a25a4831bdc9324dae358acccfbb528
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
-    100002: Wings
     400000: //RootNode
-    400002: Wings
     2100000: No Name
     2300000: //RootNode
-    2300002: Wings
     3300000: //RootNode
-    3300002: Wings
-    4300000: Windmill
-    4300002: Wings
+    4300000: Wings
     7400000: Take 001
     9500000: //RootNode
   externalObjects: {}

@@ -785,6 +785,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myBuilding: {fileID: 11400000, guid: 52b028117fa41154b8ddff7ef0b6ae88, type: 2}
+  upgradeMesh: {fileID: 0}
   needsWorkers: 0
   isPlaced: 0
   myMat: {fileID: 0}
@@ -817,6 +818,7 @@ MonoBehaviour:
   - {fileID: 114309696546368978}
   - {fileID: 114617182810594522}
   dust: {fileID: 1229772036633116}
+  myCitizens: 
 --- !u!114 &114407869780742496
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -876,7 +878,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114976720947240674}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 114331461317789490}
+        m_MethodName: DestroyBuilding
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &114512180427062670
