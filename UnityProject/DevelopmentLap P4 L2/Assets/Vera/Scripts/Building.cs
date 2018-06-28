@@ -170,7 +170,6 @@ public class Building : MonoBehaviour{
         if (myBuilding != null)
         {
             AddStats();
-            StatisticManager.instance.StatsChanged();
             if (GetComponent<BuildingStats>())
             {
                 GetComponent<BuildingStats>().AddToAura();
@@ -211,8 +210,7 @@ public class Building : MonoBehaviour{
         }
         MinStats();
         MinusHappiness();
-        Destroy(gameObject);
-        
+        Destroy(gameObject);     
     }
 
     void AddStats()

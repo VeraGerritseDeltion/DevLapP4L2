@@ -5,20 +5,47 @@ using UnityEngine;
 public class Events : MonoBehaviour {
     public string eventWord;
     public int exhaustNeeded;
-    //public int 
+    public int happynessNeeded;
+    public bool CanAlwaysOccur;
+    public bool goodOrBad;
 
     public virtual void Occur()
     {
         UIManager.instance.EventLog("Year " + StatisticManager.instance.age.ToString() + " : " + eventWord);
     }
-
-    public bool Posibility()
+        
+    public virtual bool Posibility()
     {
         bool canOccur = false;
-        if(exhaustNeeded< NatureManager.instance.SendExhaust())
+        if (CanAlwaysOccur)
         {
             canOccur = true;
         }
-        return true;
+        if (goodOrBad)
+        {
+            //good
+            if (exhaustNeeded >= NatureManager.instance.SendExhaust())
+            {
+                canOccur = true;
+            }
+            if (happynessNeeded <= StatisticManager.instance.avrHappiness)
+            {
+                canOccur = true;
+            }
+        }
+        else
+        {
+            //bad
+            if (exhaustNeeded <= NatureManager.instance.SendExhaust())
+            {
+                canOccur = true;
+            }
+            if (happynessNeeded >= StatisticManager.instance.avrHappiness)
+            {
+                canOccur = true;
+            }
+        }
+
+        return canOccur;
     }
 }

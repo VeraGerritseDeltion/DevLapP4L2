@@ -8,7 +8,7 @@ public class NatureManager : MonoBehaviour
     public LayerMask ground;
     public float uitstoot;
     public float maxExhaust;
-    float currentExhaust;
+    public float currentExhaust;
     public int decOrInc;
     bool onOrOff;
 
@@ -80,6 +80,10 @@ public class NatureManager : MonoBehaviour
             waterColors[i].ChangingColor(uitstoot / 100);
         }
         ChangeNature(LowerOrHigher, procent);
+    }
+    public int SendExhaust()
+    {
+        return Mathf.RoundToInt (uitstoot);
     }
 
     IEnumerator SlowTimer(float exhaust)

@@ -34,6 +34,14 @@ public class EventManager : MonoBehaviour {
         }
         if(posEvents.Count != 0)
         {
+            for (int i = 0; i < posEvents.Count; i++)
+            {
+                print(posEvents[i]);
+            }
+        }
+
+        if(posEvents.Count != 0)
+        {
             int rand = Random.Range(0, posEvents.Count);
             posEvents[rand].Occur();
         }

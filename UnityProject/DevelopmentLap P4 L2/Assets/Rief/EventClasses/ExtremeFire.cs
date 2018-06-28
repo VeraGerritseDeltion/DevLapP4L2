@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BosBrand : Events {
+public class ExtremeFire : Events {
     public int amountTrees;
     public override void Occur()
     {

@@ -7,11 +7,11 @@ public class StatisticManager : MonoBehaviour {
 
     private float statTimer = 1f;
     public int age;
-    public int eventForAge;
     public float timeForAge;
 
     public List<GameObject> workBuildings = new List<GameObject>();
     public int usedCitizens;
+    public List<GameObject> homeless = new List<GameObject>();
 
     [Header ("Adding")]
     public int addWood;
@@ -26,16 +26,16 @@ public class StatisticManager : MonoBehaviour {
 
 
     [Header ("Stats")]
-    public int wood;
-    public int stone;
-    public int money;
-    public int food;
-    public int minerals;
-    public int happiness;
-    public int avrHappiness;
-    public int water;
-    public int energy;
-    public int co2;
+    public float wood;
+    public float stone;
+    public float money;
+    public float food;
+    public float minerals;
+    public float happiness;
+    public float avrHappiness;
+    public float water;
+    public float energy;
+    public float co2;
     public int citizens;
     public int allCitizens;
 
@@ -44,6 +44,16 @@ public class StatisticManager : MonoBehaviour {
     public int stoneStorage;
     public int moneyStorage;
     public int foodStorage;
+
+
+
+    [Header("Event chance")]
+    public float startChanceEvent;
+    float chanceEvent;
+
+    [Header("Production")]
+    public float productionLevel;
+    public float foodEventBasedProductionLevel;
 
     
     void Awake() 
@@ -55,32 +65,36 @@ public class StatisticManager : MonoBehaviour {
 
     public void MyStart()
     {
-        eventForAge = Random.Range(5, 10);
+        foodEventBasedProductionLevel = 1;
+        chanceEvent = startChanceEvent;
         StartCoroutine(AddStats());
         StartCoroutine(AgeIncrease());
     }
 
-    public void AverageHappiness()
+    public float AverageHappiness()
     {
         if(allCitizens >0)
         {
             avrHappiness = happiness / allCitizens;
         }
+        return (avrHappiness + 50) / 100;
     }
 
     IEnumerator AddStats ()
     {
         yield return new WaitForSeconds (statTimer);
-        wood += addWood;
-        stone += addStone;
-        money += addMoney;
-        minerals += addMinerals;
-        food += addFood;
+        productionLevel = AverageHappiness();
+        wood += Mathf.RoundToInt(addWood * productionLevel);
+        stone += Mathf.RoundToInt(addStone * productionLevel);
+        money += Mathf.RoundToInt(addMoney * productionLevel);
+        minerals += Mathf.RoundToInt(addMinerals * productionLevel);
+        food += Mathf.RoundToInt(addFood * productionLevel * foodEventBasedProductionLevel);
 
         happiness += addHappiness;
-        water += addWater;
-        energy += addEnergy;
+        water += Mathf.RoundToInt(addWater * productionLevel);
+        energy += Mathf.RoundToInt(addEnergy * productionLevel);
         co2 = addCo2;
+        StatsChanged();
         UIManager.instance.TextUpdate();
         StartCoroutine(AddStats());
     }
@@ -89,7 +103,7 @@ public class StatisticManager : MonoBehaviour {
     {
         yield return new WaitForSeconds(timeForAge);
         age++;
-        if(age == eventForAge)
+        if(age > 3)
         {
             Event();
         }
@@ -103,7 +117,16 @@ public class StatisticManager : MonoBehaviour {
 
     void Event()
     {
-        EventManager.instance.StartEvent();
-        eventForAge += Random.Range(2, 10);
+        int rand = Random.Range(0, 100);
+        print(rand);
+        if ( rand < chanceEvent)
+        {
+            chanceEvent = startChanceEvent;
+            EventManager.instance.StartEvent();
+        }
+        else
+        {
+            chanceEvent += 10;
+        }
     }
 }

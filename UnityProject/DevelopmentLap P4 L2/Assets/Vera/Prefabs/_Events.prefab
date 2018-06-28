@@ -42,6 +42,70 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1458607383132354
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4807543344108550}
+  - component: {fileID: 114379824878418712}
+  m_Layer: 0
+  m_Name: ExtremeFire
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1576046685615994
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4033041713856892}
+  - component: {fileID: 114830576497208132}
+  m_Layer: 0
+  m_Name: Blight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1631524853201172
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4320329391243978}
+  - component: {fileID: 114492731467112764}
+  m_Layer: 0
+  m_Name: Homeless
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1657379263188354
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4762565062733328}
+  - component: {fileID: 114674583892371470}
+  m_Layer: 0
+  m_Name: GoodYear
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1741782681732212
 GameObject:
   m_ObjectHideFlags: 0
@@ -58,6 +122,35 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1959837220184998
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4126655409106402}
+  - component: {fileID: 114084118624359094}
+  m_Layer: 0
+  m_Name: Happyness
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4033041713856892
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1576046685615994}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4917838894439782}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4046932983005152
 Transform:
   m_ObjectHideFlags: 1
@@ -70,6 +163,32 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4917838894439782}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4126655409106402
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1959837220184998}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4917838894439782}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4320329391243978
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1631524853201172}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4917838894439782}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4697084043344612
 Transform:
@@ -84,6 +203,32 @@ Transform:
   m_Father: {fileID: 4917838894439782}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4762565062733328
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1657379263188354}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4917838894439782}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4807543344108550
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1458607383132354}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4917838894439782}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4917838894439782
 Transform:
   m_ObjectHideFlags: 1
@@ -96,6 +241,11 @@ Transform:
   m_Children:
   - {fileID: 4046932983005152}
   - {fileID: 4697084043344612}
+  - {fileID: 4033041713856892}
+  - {fileID: 4807543344108550}
+  - {fileID: 4762565062733328}
+  - {fileID: 4126655409106402}
+  - {fileID: 4320329391243978}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -111,9 +261,67 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventWord: Aartbeving
-  percentage: 50
+  exhaustNeeded: 40
+  happynessNeeded: 0
+  CanAlwaysOccur: 0
+  goodOrBad: 0
+  percentage: 80
   timer: 4
-  hitBuildings: []
+  started: 0
+--- !u!114 &114084118624359094
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1959837220184998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57e4f59510eaaee4f9d6fc3d01ec8be5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventWord: 
+  exhaustNeeded: 0
+  happynessNeeded: 0
+  CanAlwaysOccur: 1
+  goodOrBad: 0
+  text:
+  - You're people aren't happy!
+  - You're people feel fine.
+  - You're people are happy.
+  - You're people are very happy!
+--- !u!114 &114379824878418712
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1458607383132354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46e5b496d7f37604e8811d21a95e3bec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventWord: There is an extreme fire going!
+  exhaustNeeded: 50
+  happynessNeeded: 0
+  CanAlwaysOccur: 0
+  goodOrBad: 0
+  amountTrees: 10
+--- !u!114 &114492731467112764
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1631524853201172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69beb68d5dfd5b6438ced786bd575d92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventWord: ' Citizens are homeless.'
+  exhaustNeeded: 0
+  happynessNeeded: 0
+  CanAlwaysOccur: 0
+  goodOrBad: 0
 --- !u!114 &114536270683279306
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -126,3 +334,44 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventWord: There is a Forest Fire!
+  exhaustNeeded: 10
+  happynessNeeded: 0
+  CanAlwaysOccur: 0
+  goodOrBad: 0
+  amountTrees: 3
+--- !u!114 &114674583892371470
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1657379263188354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b9aedad6154b9949927db3e46920bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventWord: The crops are growing fast!
+  exhaustNeeded: 25
+  happynessNeeded: 0
+  CanAlwaysOccur: 0
+  goodOrBad: 1
+  duration: 10
+  decreaseFoodPro: 0.2
+--- !u!114 &114830576497208132
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1576046685615994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0e92d3cea748664393f3a32b68a3f7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventWord: a blight struck the food production
+  exhaustNeeded: 30
+  happynessNeeded: 0
+  CanAlwaysOccur: 0
+  goodOrBad: 0
+  duration: 10
+  decreaseFoodPro: 0.2

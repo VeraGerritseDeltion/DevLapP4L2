@@ -58,10 +58,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   age: 1
-  eventForAge: 0
-  timeForAge: 100
+  timeForAge: 30
   workBuildings: []
   usedCitizens: 0
+  homeless: []
   addWood: 0
   addStone: 0
   addMoney: 0
@@ -87,6 +87,9 @@ MonoBehaviour:
   stoneStorage: 500
   moneyStorage: 500
   foodStorage: 500
+  startChanceEvent: 20
+  productionLevel: 1
+  foodEventBasedProductionLevel: 1
 --- !u!114 &114294384375881848
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -181,6 +184,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allEvents:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
 --- !u!114 &114910191855343256
