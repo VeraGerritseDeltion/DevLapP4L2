@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Events : MonoBehaviour {
     public string eventWord;
+    public int exhaustNeeded;
+    //public int 
 
     public virtual void Occur()
     {
@@ -12,6 +14,11 @@ public class Events : MonoBehaviour {
 
     public bool Posibility()
     {
+        bool canOccur = false;
+        if(exhaustNeeded< NatureManager.instance.SendExhaust())
+        {
+            canOccur = true;
+        }
         return true;
     }
 }
