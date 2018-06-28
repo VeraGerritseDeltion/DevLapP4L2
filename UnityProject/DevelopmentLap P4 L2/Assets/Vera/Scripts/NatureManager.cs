@@ -85,7 +85,6 @@ public class NatureManager : MonoBehaviour
     IEnumerator SlowTimer(float exhaust)
     {
         yield return new WaitForSeconds(0.01f);
-        print("testing for me");
         if(exhaust < currentExhaust)
         {
             currentExhaust--;

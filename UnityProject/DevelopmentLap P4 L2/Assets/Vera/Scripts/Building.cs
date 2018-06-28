@@ -269,7 +269,6 @@ public class Building : MonoBehaviour{
         Collider[] buildings = Physics.OverlapBox(transform.position, size, Quaternion.identity, obstacles);
         if (buildingsCloseBy.Length == 0 && this.GetType() != typeof(TownHall)) 
         {
-            print(buildingsCloseBy.Length);
             myMat.color = Color.red;
             inOtherBuilding = true;
         }
