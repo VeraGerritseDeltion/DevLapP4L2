@@ -485,6 +485,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myBuilding: {fileID: 11400000, guid: ea337956a50984d41b00046c639eba0c, type: 2}
+  upgradeMesh: {fileID: 0}
   needsWorkers: 0
   isPlaced: 0
   myMat: {fileID: 2100000, guid: 8ae62d85762951648971c629821c91df, type: 2}
@@ -494,7 +495,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   ageLock: 0
-  woodCost: 0
+  woodCost: 45
   stoneCost: 0
   moneyCost: 0
   hasAura: 0

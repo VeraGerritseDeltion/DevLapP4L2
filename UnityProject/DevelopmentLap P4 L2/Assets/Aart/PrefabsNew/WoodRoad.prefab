@@ -109,6 +109,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myBuilding: {fileID: 0}
+  upgradeMesh: {fileID: 0}
+  needsWorkers: 0
   isPlaced: 0
   myMat: {fileID: 2100000, guid: 9c43aa4edc5a8a54a8927a6d9d032add, type: 2}
   inOtherBuilding: 0
@@ -117,8 +119,14 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   ageLock: 0
-  woodCost: 0
+  woodCost: 5
   stoneCost: 0
   moneyCost: 0
   hasAura: 0
+  radius: 0
   tooltip: {fileID: 1699243655335306, guid: b7c475d20ef51c14e8cb72cb20498c40, type: 2}
+  myName: {fileID: 0}
+  myStrings: []
+  myText: []
+  dust: {fileID: 0}
+  myCitizens: 

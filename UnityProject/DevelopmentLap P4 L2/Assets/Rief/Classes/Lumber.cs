@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Lumber : MonoBehaviour {
+public class Lumber : Building {
 
 	public int myRadius;
 	public List<Collider> treeList;
@@ -11,13 +11,13 @@ public class Lumber : MonoBehaviour {
 
 	public bool cutting;
 
-	void Start()
+	public override void LumberAndCrops()
 	{
-		AddTrees();
-	}
+        AddTrees();
+    }
 	void AddTrees()
 	{
-		Collider[] trees = Physics.OverlapSphere(transform.position,myRadius,tree);
+        Collider[] trees = Physics.OverlapSphere(transform.position,myRadius,tree);
 		treeList = new List<Collider>(trees);
 		
 		StartCoroutine(CutTrees());

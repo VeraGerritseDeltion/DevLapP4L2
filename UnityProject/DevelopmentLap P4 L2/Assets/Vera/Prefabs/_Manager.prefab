@@ -71,10 +71,10 @@ MonoBehaviour:
   addWater: 0
   addEnergy: 0
   addCo2: 0
-  wood: 25
-  stone: 0
-  money: 100
-  food: 0
+  wood: 9999
+  stone: 9999
+  money: 9999
+  food: 9999
   minerals: 0
   happiness: 0
   avrHappiness: 0

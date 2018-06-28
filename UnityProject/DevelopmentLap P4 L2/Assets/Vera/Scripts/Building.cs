@@ -52,6 +52,11 @@ public class Building : MonoBehaviour{
         StartCoroutine(EnablePlacement());
     }
 
+    public virtual void LumberAndCrops()
+    {
+        
+    }
+
     public List<int> VarList()
     {
         List<int> myVarList = new List<int>();

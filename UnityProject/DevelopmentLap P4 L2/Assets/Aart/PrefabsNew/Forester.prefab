@@ -59,6 +59,7 @@ GameObject:
   - component: {fileID: 23726794902256794}
   - component: {fileID: 114098923042679166}
   - component: {fileID: 65027551121454066}
+  - component: {fileID: 114534733202710488}
   m_Layer: 0
   m_Name: Forester
   m_TagString: Building
@@ -500,7 +501,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   ageLock: 0
-  woodCost: 0
+  woodCost: 50
   stoneCost: 0
   moneyCost: 0
   hasAura: 0
@@ -833,6 +834,24 @@ MonoBehaviour:
   - {fileID: 0}
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &114534733202710488
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1283698600621630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44c83cf4c6ccb9944be6c5e57112fdb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myRadius: 15
+  treeList: []
+  usedList: []
+  tree:
+    serializedVersion: 2
+    m_Bits: 4096
+  cutting: 0
 --- !u!114 &114572596239382426
 MonoBehaviour:
   m_ObjectHideFlags: 1

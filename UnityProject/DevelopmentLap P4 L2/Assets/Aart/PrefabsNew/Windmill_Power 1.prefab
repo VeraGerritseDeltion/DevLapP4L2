@@ -1268,9 +1268,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   ageLock: 0
-  woodCost: 0
+  woodCost: 50
   stoneCost: 0
-  moneyCost: 0
+  moneyCost: 75
   hasAura: 0
   radius: 0
   tooltip: {fileID: 1565853931616488}
