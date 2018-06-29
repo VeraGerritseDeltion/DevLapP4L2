@@ -5597,6 +5597,7 @@ MonoBehaviour:
   yearText: {fileID: 114852941442660636}
   citizenText: {fileID: 114061510683715998}
   loading: 0
+  allUIFromBuildings: []
 --- !u!114 &114133424156703280
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7898,7 +7899,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: d1612a2b8d1dd7f40a5c175522c0d3b2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 575c6e3732a3c9f4a9c69ff8ecac5029, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9156,7 +9157,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: d1612a2b8d1dd7f40a5c175522c0d3b2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 575c6e3732a3c9f4a9c69ff8ecac5029, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -11519,14 +11520,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.3764706, g: 0.54901963, b: 0.7058824, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: d1612a2b8d1dd7f40a5c175522c0d3b2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 575c6e3732a3c9f4a9c69ff8ecac5029, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -11743,7 +11744,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b9f6b4dc5089264bbd6108bb731edd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  building: {fileID: 114561924006977924, guid: 0a0952ff6ac352749a0692d31f7b5926, type: 2}
+  building: {fileID: 0}
   viewTooltip: {fileID: 114908588139984776}
   thisGO: {fileID: 0}
   stats: 0
@@ -13053,7 +13054,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: d1612a2b8d1dd7f40a5c175522c0d3b2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 575c6e3732a3c9f4a9c69ff8ecac5029, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
