@@ -1513,7 +1513,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 114918738922143410}
-        m_MethodName: Upgrade
+        m_MethodName: UpgradeHouse
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1591,7 +1591,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myBuilding: {fileID: 11400000, guid: be047474b590ea94f8c90574860d1771, type: 2}
-  upgradeMesh: {fileID: 1857873451130194, guid: 820c1f0e08ef58d49b5918c9099ea65f,
+  upgradeBuild: {fileID: 1857873451130194, guid: 820c1f0e08ef58d49b5918c9099ea65f,
     type: 2}
   needsWorkers: 0
   isPlaced: 0
@@ -1625,7 +1625,7 @@ MonoBehaviour:
   - {fileID: 114492952954103926}
   - {fileID: 114601266463173066}
   dust: {fileID: 1340397436122118}
-  myCitizens: 19000000190000001900000019000000
+  myCitizens: 32000000320000003200000032000000
 --- !u!114 &114962974119626054
 MonoBehaviour:
   m_ObjectHideFlags: 1
