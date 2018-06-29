@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 4126655409106402}
   - component: {fileID: 114084118624359094}
   m_Layer: 0
-  m_Name: Happyness
+  m_Name: Happiness
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -260,7 +260,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66a466deb627c11468313667de32678e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventWord: Aartbeving
+  eventWord: There is an earthquake
   exhaustNeeded: 40
   happynessNeeded: 0
   CanAlwaysOccur: 0
@@ -285,10 +285,10 @@ MonoBehaviour:
   CanAlwaysOccur: 1
   goodOrBad: 0
   text:
-  - You're people aren't happy!
-  - You're people feel fine.
-  - You're people are happy.
-  - You're people are very happy!
+  - Your people aren't happy!
+  - Your people feel fine.
+  - Your people are happy.
+  - Your people are very happy!
 --- !u!114 &114379824878418712
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -300,7 +300,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46e5b496d7f37604e8811d21a95e3bec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventWord: There is an extreme fire going!
+  eventWord: The forest is ablaze!!
   exhaustNeeded: 50
   happynessNeeded: 0
   CanAlwaysOccur: 0
@@ -333,7 +333,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e4a98207e55332469374fc2eefe61ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventWord: There is a Forest Fire!
+  eventWord: There is a Fire!
   exhaustNeeded: 10
   happynessNeeded: 0
   CanAlwaysOccur: 0
@@ -350,9 +350,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b9aedad6154b9949927db3e46920bbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventWord: The crops are growing fast!
+  eventWord: Succesfull harvest.
   exhaustNeeded: 25
-  happynessNeeded: 0
+  happynessNeeded: 100
   CanAlwaysOccur: 0
   goodOrBad: 1
   duration: 10
@@ -368,7 +368,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0e92d3cea748664393f3a32b68a3f7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventWord: a blight struck the food production
+  eventWord: a blight struck.
   exhaustNeeded: 30
   happynessNeeded: 0
   CanAlwaysOccur: 0

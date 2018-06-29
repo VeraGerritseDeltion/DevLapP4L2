@@ -56,6 +56,16 @@ public class UIManager : MonoBehaviour {
 
 	public bool loading = true;
 
+    [Header("allUIScaleBased(vera)")]
+    public List<ResizeUI> allUIFromBuildings = new List<ResizeUI>();
+
+    public void UpdateUi(float procent)
+    {
+        for (int i = 0; i < allUIFromBuildings.Count; i++)
+        {
+            allUIFromBuildings[i].ResizeShiz(procent);
+        }
+    }
 
     public void TextUpdate()
 	{

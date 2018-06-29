@@ -372,7 +372,7 @@ public class Building : MonoBehaviour{
         pos.y += sizeCol.y + 12f;
 
         //pos.x = Mathf.Abs(pos.x);
-        tooltip.transform.position = pos;
+        //tooltip.transform.position = pos;
         tooltip.SetActive(active);
     }
 }

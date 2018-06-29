@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 114415795245089786}
   - component: {fileID: 114334405098039370}
   - component: {fileID: 114550083283574986}
+  - component: {fileID: 114283973153173308}
   m_Layer: 0
   m_Name: Tooltip Upgradeable Canvas
   m_TagString: Untagged
@@ -346,7 +347,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1429954654778954}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 127.85264, y: 32.720108, z: 141.07785}
+  m_LocalPosition: {x: 135.61604, y: 32.720093, z: 268.72388}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224725005588107052}
@@ -865,6 +866,17 @@ MonoBehaviour:
   - {fileID: 0}
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &114283973153173308
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1131943914555740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf2607d69c9619e40afab613b0f6ffad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114307065786119592
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1605,6 +1617,7 @@ MonoBehaviour:
   woodCost: 50
   stoneCost: 0
   moneyCost: 25
+  citizenCost: 0
   hasAura: 0
   radius: 0
   tooltip: {fileID: 1131943914555740}
@@ -11252,9 +11265,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 20}
+  m_AnchoredPosition: {x: 0, y: 3.5}
   m_SizeDelta: {x: 600, y: 800}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0.5, y: 0}
 --- !u!224 &224745689858243586
 RectTransform:
   m_ObjectHideFlags: 1

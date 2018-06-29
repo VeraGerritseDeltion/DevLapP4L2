@@ -23,12 +23,15 @@ public class CameraMovement : MonoBehaviour
     public Transform zoomOut;
     public Camera myCam;
 
+    public float distanceZiZo;
+
     private void Start()
     {
         normalZoomSpeed = zoomSpeed;
         screenX = Screen.width;
         screenZ = Screen.height;
         myCam.transform.position = Vector3.Lerp(zoomIn.position, zoomOut.position, 0.25f);
+        distanceZiZo = Vector3.Distance(zoomIn.position, zoomOut.position);
     }
     private void Update()
     {
@@ -50,6 +53,12 @@ public class CameraMovement : MonoBehaviour
         else if(scroll < 0)
         {
             myCam.transform.position = Vector3.MoveTowards(myCam.transform.position, zoomOut.position, speed);
+        }
+        float procent = (Vector3.Distance(zoomIn.position, myCam.transform.position) / distanceZiZo);
+        if(procent > 0 && procent < 0.85)
+        {
+                GameManager.instance.zoom = procent + 0.15f;
+                UIManager.instance.UpdateUi(procent + 0.15f);
         }
         rot = -Input.GetAxis("HorizontalRotation") * rotSpeed * Time.deltaTime / Time.timeScale;
 
