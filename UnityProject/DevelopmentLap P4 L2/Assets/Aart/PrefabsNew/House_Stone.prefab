@@ -774,7 +774,7 @@ MonoBehaviour:
   - {fileID: 114963123813776126}
   - {fileID: 114854369768921194}
   dust: {fileID: 1480983826136654}
-  myCitizens: 00000000000000000000000000000000
+  myCitizens: 
 --- !u!114 &114614260264442074
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -14,7 +14,7 @@ MonoBehaviour:
   name: House made of Wood
   description: 
   buildingSprite: {fileID: 0}
-  citizens: 0
+  citizens: 4
   wood: 0
   stone: 0
   money: 0

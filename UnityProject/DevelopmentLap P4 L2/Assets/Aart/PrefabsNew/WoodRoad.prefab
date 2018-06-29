@@ -108,8 +108,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 515d6dc91e0cd004ea4a3dc3484f3e5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myBuilding: {fileID: 0}
-  upgradeMesh: {fileID: 0}
+  myBuilding: {fileID: 11400000, guid: a74b507315db380428b40574d7b49cc4, type: 2}
+  upgradeBuild: {fileID: 0}
   needsWorkers: 0
   isPlaced: 0
   myMat: {fileID: 2100000, guid: 9c43aa4edc5a8a54a8927a6d9d032add, type: 2}
@@ -122,6 +122,7 @@ MonoBehaviour:
   woodCost: 5
   stoneCost: 0
   moneyCost: 0
+  citizenCost: 0
   hasAura: 0
   radius: 0
   tooltip: {fileID: 1699243655335306, guid: b7c475d20ef51c14e8cb72cb20498c40, type: 2}

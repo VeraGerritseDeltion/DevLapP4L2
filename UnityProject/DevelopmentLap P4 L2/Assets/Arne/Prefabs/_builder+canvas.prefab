@@ -8317,7 +8317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b9f6b4dc5089264bbd6108bb731edd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  building: {fileID: 114647234267141066, guid: 2fd696023c2a2ce45b7f5bf376b685d9, type: 2}
+  building: {fileID: 114778646080962832, guid: 2fd696023c2a2ce45b7f5bf376b685d9, type: 2}
   viewTooltip: {fileID: 114908588139984776}
   thisGO: {fileID: 0}
   stats: 0
@@ -14470,7 +14470,7 @@ MonoBehaviour:
   - {fileID: 1036048806720548, guid: 4d268b4363e777249b977c6e9b93022d, type: 2}
   - {fileID: 1678509618917240, guid: 7b392e559e3525a4a9998567252f957c, type: 2}
   - {fileID: 1584873395597966, guid: d296f7a408189d34896d53aa43a620e5, type: 2}
-  - {fileID: 1234283995012278, guid: d2d74228b3341ca47b95b76042f2418f, type: 2}
+  - {fileID: 0}
   - {fileID: 1373474879282258, guid: 96c89c0d00e40ce48986e57e5315335c, type: 2}
   - {fileID: 1179106536405254, guid: d0ae71f300475ec4ba5e971a4c6f50ba, type: 2}
   - {fileID: 1794870276814120, guid: 2a1eda11e4ea5a146bfa670dd9db13d0, type: 2}
@@ -17811,7 +17811,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.11127016}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1.1350098, y: -13.774643}
+  m_AnchoredPosition: {x: -1.1350098, y: -13.774658}
   m_SizeDelta: {x: -2.27001, y: -27.549213}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224016375026989572

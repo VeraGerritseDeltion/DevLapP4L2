@@ -2,103 +2,98 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CropField : MonoBehaviour {
+public class CropField : Building
+{
 
 
 
-//moet nog UI links hebben.
+    //moet nog UI links hebben.
 
 
-	public LayerMask windmill;
+    public LayerMask windmill;
 
-	public bool wheatBool;
-	public GameObject wheat;
-	public GameObject carrot;
+    public bool wheatBool;
+    public GameObject wheat;
+    public GameObject carrot;
 
-	GameObject spawned;
-	bool isGrowing = false;
-	float growSpeed;
-	public float fastSpeed;
-	public int harvestAmount;
-	public int moneyCost;
+    GameObject spawned;
+    bool isGrowing = false;
+    float growSpeed;
+    public float fastSpeed;
     Vector3 targetLoc;
 
     int myRadius = 5;
 
-	void Start()
-	{
-		targetLoc = new Vector3(transform.position.x, transform.position.y+0.2f, transform.position.z);
-		Collider[] myWindMills = Physics.OverlapSphere(transform.position, myRadius, windmill);
-		for(int i = 0; i < myWindMills.Length-1; i++)
-		{
-			myWindMills[i].GetComponent<FarmWindMill>().myCropFields.Add(GetComponent<Collider>());
-		}
-		//Spawning();
-	}
-	void Update()
-	{
-		Growing();
-	}
+    public override void LumberAndCrops()
+    {
+        FindWindmill();
+    }
 
-	public void Spawning()
-	{
-		if(!wheatBool)
-		{
-			growSpeed = fastSpeed;
-			growSpeed /= 2;
-		}
-		else
-		{
-			growSpeed = fastSpeed;
-		}
+    void FindWindmill()
+    {
+        targetLoc = new Vector3(transform.position.x, transform.position.y + 0.2f, transform.position.z);
+        Collider[] myWindMills = Physics.OverlapSphere(transform.position, myRadius, windmill);
+        for (int i = 0; i < myWindMills.Length - 1; i++)
+        {
+            myWindMills[i].GetComponent<FarmWindMill>().myCropFields.Add(GetComponent<Collider>());
+        }
+        //Spawning();
+    }
+    void Update()
+    {
+        Growing();
+    }
 
-		isGrowing = false;
-		StatisticManager.instance.money -= moneyCost * harvestAmount;
+    public void Spawning(bool growBool)
+    {
+        wheatBool = growBool;
+        if (!wheatBool)
+        {
+			StatisticManager.instance.money -= myBuilding.money;
+            StatisticManager.instance.food += myBuilding.food;
+            growSpeed = fastSpeed;
+            growSpeed /= 2;
+        }
+        else
+        {
+			StatisticManager.instance.money -= (myBuilding.money * 2);
+            StatisticManager.instance.food += (myBuilding.food * 2);
+            growSpeed = fastSpeed;
+        }
 
-		if(harvestAmount > 0)
-		{	harvestAmount --;
-			if(isGrowing == false)
-			{
-				isGrowing = true;
-				if(wheatBool)
-				{
-					spawned = Instantiate(wheat, new Vector3(transform.position.x, transform.position.y-0.6f, transform.position.z), Quaternion.identity);
-				} 
-				else
-				{
-					spawned = Instantiate(carrot, new Vector3(transform.position.x, transform.position.y-0.2f, transform.position.z), Quaternion.identity);
-				}
-			}
-		}
-	}
+        isGrowing = false;
+        
+        if (isGrowing == false)
+        {
+            isGrowing = true;
+            if (wheatBool)
+            {
+                spawned = Instantiate(wheat, new Vector3(transform.position.x, transform.position.y - 0.6f, transform.position.z), Quaternion.identity);
+            }
+            else
+            {
+                spawned = Instantiate(carrot, new Vector3(transform.position.x, transform.position.y - 0.2f, transform.position.z), Quaternion.identity);
+            }
+        }
+    }
 
-	void Growing()
-	{		
-		if(spawned != null)
-		{
-			
-			spawned.transform.position = Vector3.MoveTowards(spawned.transform.position, targetLoc, growSpeed * Time.deltaTime);
+    void Growing()
+    {
+        if (spawned != null)
+        {
 
-			if(spawned.transform.position == targetLoc)
-			{
-				Harvest();
-			}
-		}
-	}
+            spawned.transform.position = Vector3.MoveTowards(spawned.transform.position, targetLoc, growSpeed * Time.deltaTime);
 
-	public void Harvest()
-	{
-		Destroy(spawned.gameObject);
-		Spawning();
-	}
+            if (spawned.transform.position == targetLoc)
+            {
+                Harvest();
+            }
+        }
+    }
 
-	public void HarvestUp()
-	{
-		harvestAmount++;
-	}
-	
-	public void HarvestDown()
-	{
-		harvestAmount--;
-	}
+    public void Harvest()
+    {
+        Destroy(spawned.gameObject);
+        Spawning(wheatBool);
+    }
 }

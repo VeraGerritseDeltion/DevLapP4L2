@@ -61,7 +61,7 @@ MonoBehaviour:
   timeForAge: 30
   workBuildings: []
   usedCitizens: 0
-  homeless: []
+  homeless: 
   addWood: 0
   addStone: 0
   addMoney: 0
@@ -76,6 +76,7 @@ MonoBehaviour:
   money: 9999
   food: 9999
   minerals: 0
+  startHappiness: 50
   happiness: 0
   avrHappiness: 0
   water: 0
@@ -156,6 +157,7 @@ MonoBehaviour:
     m_Bits: 512
   uitstoot: 0
   maxExhaust: 1000
+  currentExhaust: 0
   decOrInc: 0
   waterColors: []
   currentHigh: {r: 0, g: 0, b: 0, a: 0}

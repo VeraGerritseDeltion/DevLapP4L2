@@ -31,6 +31,8 @@ public class StatisticManager : MonoBehaviour {
     public float money;
     public float food;
     public float minerals;
+    public int startHappiness;
+    public int homelessDecay;
     public float happiness;
     public float avrHappiness;
     public float water;
@@ -103,10 +105,17 @@ public class StatisticManager : MonoBehaviour {
     {
         yield return new WaitForSeconds(timeForAge);
         age++;
-        if(age > 3)
+        for (int i = 0; i < homeless.Count; i++)
         {
-            Event();
+            if (homeless[i] > 0)
+            {
+                homeless[i] -= homelessDecay;
+            }
         }
+            if (age > 3)
+            {
+                Event();
+            }
         StartCoroutine(AgeIncrease());
     }
 

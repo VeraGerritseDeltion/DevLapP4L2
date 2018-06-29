@@ -24,6 +24,7 @@ public class Building : MonoBehaviour{
     public int woodCost;
     public int stoneCost;
     public int moneyCost;
+    public int citizenCost;
     bool purchaseAble;
 
     public bool hasAura;
@@ -41,6 +42,8 @@ public class Building : MonoBehaviour{
     public GameObject dust;
 
     public List<int> myCitizens;
+
+    int spotAvailable;
 
     void Start()
     {
@@ -78,23 +81,21 @@ public class Building : MonoBehaviour{
     void AddCitizens()
     {
         StatisticManager.instance.allCitizens += myCitizens.Count;
+        StatisticManager.instance.citizens += myCitizens.Count;
         for(int i = 0; i < myCitizens.Count; i++)
         {
             StatisticManager.instance.happiness += myCitizens[i];
         }
     }
-    void MinusCitizens()
-    {
-        StatisticManager.instance.allCitizens -= myCitizens.Count;
-        for (int i = 0; i < myCitizens.Count; i++)
-        {
-            StatisticManager.instance.happiness -= myCitizens[i];
-        }
-    }
     void MinusHappiness()
     {
-        int destroySad = 10;
-        StatisticManager.instance.happiness -= (myCitizens.Count * destroySad);
+        int happyMin = 10;
+        StatisticManager.instance.happiness -= (myCitizens.Count * happyMin);
+        for (int i = 0; i < myCitizens.Count; i++)
+        {
+            myCitizens[i] -= happyMin;
+            StatisticManager.instance.homeless.Add(myCitizens[i]);
+        }
     }
     void TextTooltip()
     {
@@ -122,6 +123,7 @@ public class Building : MonoBehaviour{
 
     public void MyStart()
     {
+        spotAvailable = myBuilding.citizens;
         myBuildingStats = transform.GetComponent<BuildingStats>();
         radius = 10;
         Renderer myRend = GetComponent<Renderer>();
@@ -164,6 +166,9 @@ public class Building : MonoBehaviour{
         StatisticManager.instance.wood -= woodCost;
         StatisticManager.instance.stone -= stoneCost;
         StatisticManager.instance.money -= moneyCost;
+        StatisticManager.instance.citizens -= citizenCost;
+        CitizenCheck();
+        LumberAndCrops();
         if (GetType() == typeof(TownHall) || GetType() == typeof(Road) || GetType() == typeof(Storage))
         {
 
@@ -249,7 +254,6 @@ public class Building : MonoBehaviour{
         myStatisticManager.moneyStorage += myBuilding.moneyStorage;
         myStatisticManager.foodStorage += myBuilding.foodStorage;
         StatisticManager.instance.addCo2 += myBuilding.co2;
-        StatisticManager.instance.allCitizens += myBuilding.citizens;
         StatisticManager.instance.AverageHappiness();
     }
 
@@ -323,7 +327,7 @@ public class Building : MonoBehaviour{
 
     public bool canPurchase()
     {
-        if (ageLock < StatisticManager.instance.age && StatisticManager.instance.wood >= woodCost && StatisticManager.instance.stone >= stoneCost && StatisticManager.instance.money >= moneyCost)
+        if (ageLock < StatisticManager.instance.age && StatisticManager.instance.wood >= woodCost && StatisticManager.instance.stone >= stoneCost && StatisticManager.instance.money >= moneyCost && StatisticManager.instance.citizens >= citizenCost)
         {
             purchaseAble = true;
         }
@@ -340,11 +344,22 @@ public class Building : MonoBehaviour{
         spawnedUpgrade.GetComponent<Building>().MyStart();
         spawnedUpgrade.GetComponent<Building>().AddStats();
         spawnedUpgrade.GetComponent<Building>().myCitizens = myCitizens;
-        if(StatisticManager.instance.homeless.Count > 0)
-        {
-            
-        }
+        spawnedUpgrade.GetComponent<Building>().CitizenCheck();
         Destroy(this.gameObject);
+    }
+
+    public void CitizenCheck()
+    {
+        spotAvailable = myBuilding.citizens;
+        while(StatisticManager.instance.homeless.Count > 0 && myCitizens.Count < spotAvailable)
+        {
+            myCitizens.Add(StatisticManager.instance.homeless[0]);
+            StatisticManager.instance.homeless.RemoveAt(0);
+        }
+        while(myCitizens.Count < spotAvailable)
+        {
+            myCitizens.Add(StatisticManager.instance.startHappiness);
+        }
     }
     public void Tooltip(bool active)
     {
