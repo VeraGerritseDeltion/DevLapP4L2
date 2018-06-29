@@ -113,7 +113,7 @@ public class UIManager : MonoBehaviour {
 	//has a string queue which puts a string on one line and foreach string in the queue it remembers the newest input
 	public void EventLog (string events)
 	{
-		eventButtonText.text = "Events: " + events;
+		eventButtonText.text = "Event: " + events;
 		if (queue.Count >= textLimit)
         {
 			queue.Dequeue();

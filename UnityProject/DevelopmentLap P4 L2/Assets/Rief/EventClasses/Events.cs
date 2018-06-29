@@ -11,7 +11,7 @@ public class Events : MonoBehaviour {
 
     public virtual void Occur()
     {
-        UIManager.instance.EventLog("Year " + StatisticManager.instance.age.ToString() + " : " + eventWord);
+        UIManager.instance.EventLog("Year " + StatisticManager.instance.age.ToString() + ": " + eventWord);
     }
         
     public virtual bool Posibility()
@@ -40,7 +40,7 @@ public class Events : MonoBehaviour {
             {
                 canOccur = true;
             }
-            if (happynessNeeded >= StatisticManager.instance.avrHappiness)
+            if (happynessNeeded >= StatisticManager.instance.avrHappiness && StatisticManager.instance.avrHappiness != 0)
             {
                 canOccur = true;
             }

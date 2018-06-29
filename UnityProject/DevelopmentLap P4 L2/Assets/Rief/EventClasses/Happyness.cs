@@ -7,21 +7,21 @@ public class Happyness : Events {
 
     public override void Occur()
     {
-        UIManager.instance.EventLog("Year " + StatisticManager.instance.age.ToString() + " : " + HappynessText());
+        UIManager.instance.EventLog(HappynessText());
     }
 
     public string HappynessText()
     {
         int avrHappyness = Mathf.RoundToInt(StatisticManager.instance.AverageHappiness() * 100 - 50);
-        if (avrHappyness < 25)
+        if (avrHappyness <= 25)
         {
             return text[0];
         }
-        else if (avrHappyness < 50)
+        else if (avrHappyness <= 50)
         {
             return text[1];
         }
-        else if (avrHappyness < 75)
+        else if (avrHappyness <= 75)
         {
             return text[2];
         }
