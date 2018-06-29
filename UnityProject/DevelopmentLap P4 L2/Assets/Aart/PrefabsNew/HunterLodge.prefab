@@ -176,6 +176,7 @@ GameObject:
   - component: {fileID: 114034049626103386}
   - component: {fileID: 114177721382306518}
   - component: {fileID: 114416079245504256}
+  - component: {fileID: 114383876163748018}
   m_Layer: 0
   m_Name: 'Tooltip StandardObject Canvas '
   m_TagString: Untagged
@@ -290,7 +291,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1179106536405254}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 134.52437, y: 32.720097, z: 228.82338}
+  m_LocalPosition: {x: 185.32387, y: 32.720093, z: 228.31143}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224100260727254964}
@@ -613,19 +614,19 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 428.09445}
   m_textInfo:
     textComponent: {fileID: 114123553945461740}
-    characterCount: 32
+    characterCount: 0
     spriteCount: 0
-    spaceCount: 4
-    wordCount: 5
+    spaceCount: 0
+    wordCount: 0
     linkCount: 0
-    lineCount: 1
-    pageCount: 1
+    lineCount: 0
+    pageCount: 0
     materialCount: 1
-  m_havePropertiesChanged: 1
+  m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 1
+  m_isInputParsingRequired: 0
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -709,6 +710,17 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &114383876163748018
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1568384207101478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf2607d69c9619e40afab613b0f6ffad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114416079245504256
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -886,19 +898,19 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 428.09445}
   m_textInfo:
     textComponent: {fileID: 114587354649526944}
-    characterCount: 32
+    characterCount: 0
     spriteCount: 0
-    spaceCount: 4
-    wordCount: 5
+    spaceCount: 0
+    wordCount: 0
     linkCount: 0
-    lineCount: 1
-    pageCount: 1
+    lineCount: 0
+    pageCount: 0
     materialCount: 1
-  m_havePropertiesChanged: 1
+  m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 1
+  m_isInputParsingRequired: 0
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -1039,7 +1051,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myBuilding: {fileID: 11400000, guid: 31999e154dbc20445809fbb7b258c186, type: 2}
-  upgradeMesh: {fileID: 0}
+  upgradeBuild: {fileID: 0}
   needsWorkers: 0
   isPlaced: 0
   myMat: {fileID: 0}
@@ -1052,6 +1064,7 @@ MonoBehaviour:
   woodCost: 25
   stoneCost: 0
   moneyCost: 50
+  citizenCost: 0
   hasAura: 0
   radius: 0
   tooltip: {fileID: 1568384207101478}
@@ -1160,19 +1173,19 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 428.09445}
   m_textInfo:
     textComponent: {fileID: 114843219162337258}
-    characterCount: 32
+    characterCount: 0
     spriteCount: 0
-    spaceCount: 4
-    wordCount: 5
+    spaceCount: 0
+    wordCount: 0
     linkCount: 0
-    lineCount: 1
-    pageCount: 1
+    lineCount: 0
+    pageCount: 0
     materialCount: 1
-  m_havePropertiesChanged: 1
+  m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 1
+  m_isInputParsingRequired: 0
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -1273,19 +1286,19 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 428.09445}
   m_textInfo:
     textComponent: {fileID: 114869554067361082}
-    characterCount: 32
+    characterCount: 0
     spriteCount: 0
-    spaceCount: 4
-    wordCount: 5
+    spaceCount: 0
+    wordCount: 0
     linkCount: 0
-    lineCount: 1
-    pageCount: 1
+    lineCount: 0
+    pageCount: 0
     materialCount: 1
-  m_havePropertiesChanged: 1
+  m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 1
+  m_isInputParsingRequired: 0
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -6084,9 +6097,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 15}
+  m_AnchoredPosition: {x: 0, y: 4}
   m_SizeDelta: {x: 600, y: 800}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0.5, y: 0}
 --- !u!224 &224209834283025762
 RectTransform:
   m_ObjectHideFlags: 1

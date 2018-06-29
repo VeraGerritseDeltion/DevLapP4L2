@@ -182,6 +182,7 @@ GameObject:
   - component: {fileID: 114649476373310916}
   - component: {fileID: 114248343607027238}
   - component: {fileID: 114751949712702780}
+  - component: {fileID: 114697589700089134}
   m_Layer: 0
   m_Name: 'Tooltip StandardObject Canvas '
   m_TagString: Untagged
@@ -271,7 +272,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1995481461494786
 GameObject:
   m_ObjectHideFlags: 1
@@ -323,7 +324,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1059253846685442}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 149.39143, y: 7.5, z: -52.760452}
+  m_LocalPosition: {x: 181.89307, y: 32.720097, z: 209.57675}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4193174654425188}
@@ -1173,6 +1174,17 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114697589700089134
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1780479086065584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf2607d69c9619e40afab613b0f6ffad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114704118462277050
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6338,9 +6350,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 17.5}
+  m_AnchoredPosition: {x: 0, y: 6}
   m_SizeDelta: {x: 600, y: 800}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0.5, y: 0}
 --- !u!224 &224996638597389002
 RectTransform:
   m_ObjectHideFlags: 1

@@ -24,6 +24,14 @@ public class Lumber : Building {
 		StartCoroutine(PlantTrees());
 	}
 
+	public void ToCut()
+	{
+		cutting = true;
+    }
+	public void ToPlant()
+	{
+        cutting = false;
+    }
 	IEnumerator CutTrees()
 	{
 		if(treeList.Count >= 1 && cutting)
