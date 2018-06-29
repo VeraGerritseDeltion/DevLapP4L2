@@ -5886,6 +5886,7 @@ MonoBehaviour:
   moneyCost: 0
   tooltip: {fileID: 224102654109480780}
   stats: 1
+  buildingName: 
 --- !u!114 &114172682173153306
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7241,7 +7242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b9f6b4dc5089264bbd6108bb731edd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  building: {fileID: 0}
+  building: {fileID: 114647703153762360, guid: e3ecce0ffb116b04095fda54785a6b62, type: 2}
   viewTooltip: {fileID: 114908588139984776}
   thisGO: {fileID: 0}
   stats: 0
@@ -10797,7 +10798,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b9f6b4dc5089264bbd6108bb731edd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  building: {fileID: 0}
+  building: {fileID: 114757261774695768, guid: d0ae71f300475ec4ba5e971a4c6f50ba, type: 2}
   viewTooltip: {fileID: 114908588139984776}
   thisGO: {fileID: 0}
   stats: 0
@@ -14469,7 +14470,7 @@ MonoBehaviour:
   - {fileID: 1036048806720548, guid: 4d268b4363e777249b977c6e9b93022d, type: 2}
   - {fileID: 1678509618917240, guid: 7b392e559e3525a4a9998567252f957c, type: 2}
   - {fileID: 1584873395597966, guid: d296f7a408189d34896d53aa43a620e5, type: 2}
-  - {fileID: 1691395658093426, guid: 2fd696023c2a2ce45b7f5bf376b685d9, type: 2}
+  - {fileID: 1234283995012278, guid: d2d74228b3341ca47b95b76042f2418f, type: 2}
   - {fileID: 1373474879282258, guid: 96c89c0d00e40ce48986e57e5315335c, type: 2}
   - {fileID: 1179106536405254, guid: d0ae71f300475ec4ba5e971a4c6f50ba, type: 2}
   - {fileID: 1794870276814120, guid: 2a1eda11e4ea5a146bfa670dd9db13d0, type: 2}
@@ -14935,6 +14936,7 @@ MonoBehaviour:
   moneyCost: 0
   tooltip: {fileID: 224407811807975624}
   stats: 0
+  buildingName: 
 --- !u!114 &114908837236992836
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -16410,7 +16412,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b9f6b4dc5089264bbd6108bb731edd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  building: {fileID: 0}
+  building: {fileID: 114031427875648460, guid: 4d268b4363e777249b977c6e9b93022d, type: 2}
   viewTooltip: {fileID: 114908588139984776}
   thisGO: {fileID: 0}
   stats: 0

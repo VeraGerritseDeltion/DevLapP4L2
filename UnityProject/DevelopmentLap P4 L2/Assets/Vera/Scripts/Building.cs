@@ -7,7 +7,7 @@ using TMPro;
 public class Building : MonoBehaviour{
 
     public BuildingTemplate myBuilding;
-    public GameObject upgradeMesh;
+    public GameObject upgradeBuild;
     public bool needsWorkers;
     public bool isPlaced;
     public Material myMat;
@@ -77,9 +77,18 @@ public class Building : MonoBehaviour{
 
     void AddCitizens()
     {
+        StatisticManager.instance.allCitizens += myCitizens.Count;
         for(int i = 0; i < myCitizens.Count; i++)
         {
             StatisticManager.instance.happiness += myCitizens[i];
+        }
+    }
+    void MinusCitizens()
+    {
+        StatisticManager.instance.allCitizens -= myCitizens.Count;
+        for (int i = 0; i < myCitizens.Count; i++)
+        {
+            StatisticManager.instance.happiness -= myCitizens[i];
         }
     }
     void MinusHappiness()
@@ -324,10 +333,18 @@ public class Building : MonoBehaviour{
         }
         return purchaseAble;
     }
-    public void Upgrade()
+    public void UpgradeHouse()
     {
-        Mesh myMesh = upgradeMesh.GetComponent<MeshFilter>().sharedMesh;
-		GetComponent<MeshFilter>().mesh = myMesh;
+        GameObject spawnedUpgrade =  Instantiate(upgradeBuild, transform.position, transform.rotation);
+        MinStats();
+        spawnedUpgrade.GetComponent<Building>().MyStart();
+        spawnedUpgrade.GetComponent<Building>().AddStats();
+        spawnedUpgrade.GetComponent<Building>().myCitizens = myCitizens;
+        if(StatisticManager.instance.homeless.Count > 0)
+        {
+            
+        }
+        Destroy(this.gameObject);
     }
     public void Tooltip(bool active)
     {

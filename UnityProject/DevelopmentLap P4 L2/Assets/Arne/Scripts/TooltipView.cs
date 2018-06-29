@@ -11,9 +11,10 @@ public class TooltipView : MonoBehaviour {
 	public int woodCost, stoneCost, moneyCost;
 	public RectTransform tooltip;
 	public bool stats;
-	
-	//sets position to value it receives and will show correct cost
-	public void SetPosition (Vector3 position, Building building, string desc) 
+    public string buildingName;
+
+    //sets position to value it receives and will show correct cost
+    public void SetPosition (Vector3 position, Building building, string desc) 
 	{
 		tooltip.transform.position = position;
         if(building != null)
@@ -40,8 +41,9 @@ public class TooltipView : MonoBehaviour {
 		woodCost = building.GetComponent<Building>().woodCost;
 		stoneCost = building.GetComponent<Building>().stoneCost;
 		moneyCost = building.GetComponent<Building>().moneyCost;
+        buildingName = building.GetComponent<Building>().myBuilding.name;
 
-		costText.text = "Cost: " + "\n"  + "Money: " + moneyCost.ToString() + "\n" + "Stone: " + stoneCost.ToString() + "\n" + "Wood: " + woodCost.ToString();
+        costText.text = buildingName + "\n" + "Money: " + moneyCost.ToString() + "\n" + "Stone: " + stoneCost.ToString() + "\n" + "Wood: " + woodCost.ToString();
 	}
 	//will enable/disable the tooltip
 	public void Show(bool active)

@@ -11,7 +11,7 @@ public class StatisticManager : MonoBehaviour {
 
     public List<GameObject> workBuildings = new List<GameObject>();
     public int usedCitizens;
-    public List<GameObject> homeless = new List<GameObject>();
+    public List<int> homeless = new List<int>();
 
     [Header ("Adding")]
     public int addWood;

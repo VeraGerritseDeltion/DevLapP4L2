@@ -209,7 +209,7 @@ GameObject:
   - component: {fileID: 23197863021994024}
   - component: {fileID: 114608576977120774}
   - component: {fileID: 65438874086313776}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: House_Stone
   m_TagString: Building
   m_Icon: {fileID: 0}
@@ -741,10 +741,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myBuilding: {fileID: 11400000, guid: 7970bf5f9527a47429c6caf7fd439789, type: 2}
-  upgradeMesh: {fileID: 0}
+  upgradeBuild: {fileID: 0}
   needsWorkers: 0
-  isPlaced: 0
-  myMat: {fileID: 0}
+  isPlaced: 1
+  myMat: {fileID: 2100000, guid: 6bb1d9ca4ee2f8344a0f5dc26310a258, type: 2}
   inOtherBuilding: 0
   startedPlacing: 0
   obstacles:
@@ -774,7 +774,7 @@ MonoBehaviour:
   - {fileID: 114963123813776126}
   - {fileID: 114854369768921194}
   dust: {fileID: 1480983826136654}
-  myCitizens: 
+  myCitizens: 00000000000000000000000000000000
 --- !u!114 &114614260264442074
 MonoBehaviour:
   m_ObjectHideFlags: 1
