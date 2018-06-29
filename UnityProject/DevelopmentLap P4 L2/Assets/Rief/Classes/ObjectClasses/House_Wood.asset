@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e367c0c0ceb91b6468488af1f666801a, type: 3}
   m_Name: House_Wood
   m_EditorClassIdentifier: 
-  name: House made of Wood
+  name: Wooden House
   description: 
   buildingSprite: {fileID: 0}
   citizens: 4

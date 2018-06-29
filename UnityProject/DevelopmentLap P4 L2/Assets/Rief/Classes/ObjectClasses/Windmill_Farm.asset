@@ -11,14 +11,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e367c0c0ceb91b6468488af1f666801a, type: 3}
   m_Name: Windmill_Farm
   m_EditorClassIdentifier: 
-  name: Farm Windmill
+  name: Windmill Farm
   description: Allows your crops to give a better harvest!
   buildingSprite: {fileID: 0}
+  citizens: 0
   wood: 0
   stone: 0
   money: 0
   minerals: 0
   food: 0
+  co2: 0
   woodStorage: 0
   stoneStorage: 0
   moneyStorage: 0

@@ -9,16 +9,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e367c0c0ceb91b6468488af1f666801a, type: 3}
-  m_Name: Townhall_Stone
+  m_Name: Townhall
   m_EditorClassIdentifier: 
-  name: Stone Townhall
-  description: An upgraded version of the Wooden Townhall
+  name: The Townhall
+  description: 
   buildingSprite: {fileID: 0}
+  citizens: 0
   wood: 0
   stone: 0
   money: 0
   minerals: 0
   food: 0
+  co2: 0
   woodStorage: 0
   stoneStorage: 0
   moneyStorage: 0

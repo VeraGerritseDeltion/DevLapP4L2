@@ -124,7 +124,7 @@ public class Building : MonoBehaviour{
     public void MyStart()
     {
         spotAvailable = myBuilding.citizens;
-        myBuildingStats = transform.GetComponent<BuildingStats>();
+        //myBuildingStats = transform.GetComponent<BuildingStats>();
         radius = 10;
         Renderer myRend = GetComponent<Renderer>();
         if (myRend == null)

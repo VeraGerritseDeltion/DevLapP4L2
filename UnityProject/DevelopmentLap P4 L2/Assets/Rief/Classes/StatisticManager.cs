@@ -127,7 +127,6 @@ public class StatisticManager : MonoBehaviour {
     void Event()
     {
         int rand = Random.Range(0, 100);
-        print(rand);
         if ( rand < chanceEvent)
         {
             chanceEvent = startChanceEvent;

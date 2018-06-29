@@ -43,7 +43,7 @@ public class TooltipView : MonoBehaviour {
 		moneyCost = building.GetComponent<Building>().moneyCost;
         buildingName = building.GetComponent<Building>().myBuilding.name;
 
-        costText.text = buildingName + "\n" + "Money: " + moneyCost.ToString() + "\n" + "Stone: " + stoneCost.ToString() + "\n" + "Wood: " + woodCost.ToString();
+        costText.text = "<b>" + buildingName + "</b>" + "\n" + "Money: " + moneyCost.ToString() + "\n" + "Stone: " + stoneCost.ToString() + "\n" + "Wood: " + woodCost.ToString();
 	}
 	//will enable/disable the tooltip
 	public void Show(bool active)

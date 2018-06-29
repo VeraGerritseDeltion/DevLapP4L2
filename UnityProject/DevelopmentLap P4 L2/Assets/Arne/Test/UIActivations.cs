@@ -49,14 +49,14 @@ public class UIActivations : MonoBehaviour {
 		{
 			case UIState.MainMenu:
 
-				List<RectTransform> mainMenuList = new List<RectTransform>() {mainMenu};
+				//List<RectTransform> mainMenuList = new List<RectTransform>() {mainMenu};
 			    //EnableMenuItems(mainMenuList); 
 
 				break;
 
 			case UIState.Ingame:
 
-				List<RectTransform> ingameList = new List<RectTransform>() {ingame};
+				//List<RectTransform> ingameList = new List<RectTransform>() {ingame};
 			    //EnableMenuItems(ingameList); 
 
 				break;
