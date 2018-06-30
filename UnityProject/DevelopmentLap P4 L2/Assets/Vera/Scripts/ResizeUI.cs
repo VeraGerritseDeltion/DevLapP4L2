@@ -17,7 +17,10 @@ public class ResizeUI : MonoBehaviour {
 
     public void ResizeShiz(float procent)
     {
-        transform.localScale = scale * procent;
+        if (this != null)
+        {
+            transform.localScale = scale * procent;
+        }
     }
 	void Update () {
 		

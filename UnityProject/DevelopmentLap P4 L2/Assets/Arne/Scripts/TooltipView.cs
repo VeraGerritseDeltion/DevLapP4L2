@@ -8,7 +8,7 @@ public class TooltipView : MonoBehaviour {
 
 	//public GameObject thisbuilding;
 	public TextMeshProUGUI costText;
-	public int woodCost, stoneCost, moneyCost;
+	public int woodCost, stoneCost, moneyCost, citizenCost;
 	public RectTransform tooltip;
 	public bool stats;
     public string buildingName;
@@ -41,9 +41,10 @@ public class TooltipView : MonoBehaviour {
 		woodCost = building.GetComponent<Building>().woodCost;
 		stoneCost = building.GetComponent<Building>().stoneCost;
 		moneyCost = building.GetComponent<Building>().moneyCost;
+        citizenCost = building.GetComponent<Building>().citizenCost;
         buildingName = building.GetComponent<Building>().myBuilding.name;
 
-        costText.text = "<b>" + buildingName + "</b>" + "\n" + "Money: " + moneyCost.ToString() + "\n" + "Stone: " + stoneCost.ToString() + "\n" + "Wood: " + woodCost.ToString();
+        costText.text = "<b>" + buildingName + "</b>" + "\n" + "Money: " + moneyCost.ToString() + "\n" + "Stone: " + stoneCost.ToString() + "\n" + "Wood: " + woodCost.ToString() + "\n Citizens: " + citizenCost;
 	}
 	//will enable/disable the tooltip
 	public void Show(bool active)

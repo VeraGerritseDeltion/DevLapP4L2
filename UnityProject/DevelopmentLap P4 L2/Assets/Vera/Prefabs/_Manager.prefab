@@ -71,10 +71,10 @@ MonoBehaviour:
   addWater: 0
   addEnergy: 0
   addCo2: 0
-  wood: 9999
-  stone: 9999
-  money: 9999
-  food: 9999
+  wood: 400
+  stone: 400
+  money: 400
+  food: 400
   minerals: 0
   startHappiness: 50
   homelessDecay: 5

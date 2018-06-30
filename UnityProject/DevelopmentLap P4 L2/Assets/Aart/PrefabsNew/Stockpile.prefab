@@ -927,7 +927,7 @@ MonoBehaviour:
   woodCost: 200
   stoneCost: 200
   moneyCost: 250
-  citizenCost: 0
+  citizenCost: 1
   hasAura: 0
   radius: 0
   tooltip: {fileID: 1012058632614118}

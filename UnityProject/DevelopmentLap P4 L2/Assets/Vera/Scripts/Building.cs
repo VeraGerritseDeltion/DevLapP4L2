@@ -63,17 +63,20 @@ public class Building : MonoBehaviour{
     public List<int> VarList()
     {
         List<int> myVarList = new List<int>();
-        if(myBuilding!= null)
+        if (myBuilding != null)
         {
-            myVarList.Add(myBuilding.money);
-            myVarList.Add(myBuilding.wood);
-            myVarList.Add(myBuilding.stone);
-            myVarList.Add(myBuilding.food);
-            myVarList.Add(myBuilding.co2);
-            myVarList.Add(myBuilding.moneyStorage);
-            myVarList.Add(myBuilding.woodStorage);
-            myVarList.Add(myBuilding.stoneStorage);
-            myVarList.Add(myBuilding.foodStorage);
+            if (GetType() != typeof(TownHall))
+            {
+                myVarList.Add(myBuilding.money);
+                myVarList.Add(myBuilding.wood);
+                myVarList.Add(myBuilding.stone);
+                myVarList.Add(myBuilding.food);
+                myVarList.Add(myBuilding.co2);
+                myVarList.Add(myBuilding.moneyStorage);
+                myVarList.Add(myBuilding.woodStorage);
+                myVarList.Add(myBuilding.stoneStorage);
+                myVarList.Add(myBuilding.foodStorage);
+            }
         }
         return myVarList;
     }
@@ -82,7 +85,7 @@ public class Building : MonoBehaviour{
     {
         StatisticManager.instance.allCitizens += myCitizens.Count;
         StatisticManager.instance.citizens += myCitizens.Count;
-        for(int i = 0; i < myCitizens.Count; i++)
+        for (int i = 0; i < myCitizens.Count; i++)
         {
             StatisticManager.instance.happiness += myCitizens[i];
         }
@@ -99,26 +102,41 @@ public class Building : MonoBehaviour{
     }
     void TextTooltip()
     {
-        List<int> amounts = VarList();
-        int checkZero = 0;
-        for (int i = 0; i < myText.Count; i++)
+        if (GetType() != typeof(TownHall))
         {
-            for (int o = 0; checkZero < amounts.Count; checkZero++)
+            List<int> amounts = VarList();
+            int checkZero = 0;
+            for (int i = 0; i < myText.Count; i++)
             {
-                o++;
-                if (amounts[checkZero] != 0)
+                for (int o = 0; checkZero < amounts.Count; checkZero++)
                 {
-                    myText[i].enabled = true;
-                    myText[i].text = myStrings[checkZero] + amounts[checkZero];
-                    checkZero++;
-                    break;
+                    o++;
+                    if (amounts[checkZero] != 0)
+                    {
+                        myText[i].enabled = true;
+                        myText[i].text = myStrings[checkZero] + amounts[checkZero];
+                        checkZero++;
+                        break;
+                    }
+                }
+                if (checkZero > amounts.Count)
+                {
+                    myText[i].enabled = false;
                 }
             }
-            if (checkZero > amounts.Count)
-            {
-                myText[i].enabled = false;
-            }
         }
+        else
+        {
+            TownHallText();
+        }
+    }
+    void TownHallText()
+    {
+         myText[0].text = "Citizens: " + StatisticManager.instance.allCitizens
+                            + "\n Average Happiness: " + StatisticManager.instance.avrHappiness
+                            + "\n Wood Increase /s: " + StatisticManager.instance.addWood
+                            + "\n Stone Increase /s: " + StatisticManager.instance.addStone
+                            + "\n Food Increase /s: " + StatisticManager.instance.addFood;
     }
 
     public void MyStart()
@@ -155,6 +173,7 @@ public class Building : MonoBehaviour{
 
     void Update()
     {
+        TownHallText();
         if (!isPlaced)
         {
             CollisionStay();
@@ -353,6 +372,8 @@ public class Building : MonoBehaviour{
         spotAvailable = myBuilding.citizens;
         while(StatisticManager.instance.homeless.Count > 0 && myCitizens.Count < spotAvailable)
         {
+            StatisticManager.instance.allCitizens--;
+            StatisticManager.instance.citizens--;
             myCitizens.Add(StatisticManager.instance.homeless[0]);
             StatisticManager.instance.homeless.RemoveAt(0);
         }
