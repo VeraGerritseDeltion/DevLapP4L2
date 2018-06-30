@@ -14,17 +14,14 @@ MonoBehaviour:
   name: Mine
   description: Mines Stone or Ores for you
   buildingSprite: {fileID: 0}
-  plusWood: 0
-  plusStone: 0
-  plusMoney: 0
-  plusHappiness: 0
-  plusCo2: 0
-  plusWater: 0
-  plusEnergy: 0
-  minWood: 0
-  minStone: 0
-  minMoney: 0
-  minHappiness: 0
-  minCo2: 0
-  minWater: 0
-  minEnergy: 0
+  citizens: 0
+  wood: 0
+  stone: 5
+  money: 0
+  minerals: 0
+  food: 0
+  co2: 7
+  woodStorage: 0
+  stoneStorage: 0
+  moneyStorage: 0
+  foodStorage: 0

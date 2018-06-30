@@ -14,11 +14,13 @@ MonoBehaviour:
   name: Carpenter
   description: 
   buildingSprite: {fileID: 0}
-  wood: 0
+  citizens: 0
+  wood: -2
   stone: 0
-  money: 0
+  money: 2
   minerals: 0
   food: 0
+  co2: 5
   woodStorage: 0
   stoneStorage: 0
   moneyStorage: 0

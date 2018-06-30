@@ -14,12 +14,14 @@ MonoBehaviour:
   name: Stockpile
   description: Stores more resources
   buildingSprite: {fileID: 0}
+  citizens: 0
   wood: 0
   stone: 0
   money: 0
   minerals: 0
   food: 0
-  woodStorage: 0
-  stoneStorage: 0
+  co2: 0
+  woodStorage: 250
+  stoneStorage: 250
   moneyStorage: 0
   foodStorage: 0

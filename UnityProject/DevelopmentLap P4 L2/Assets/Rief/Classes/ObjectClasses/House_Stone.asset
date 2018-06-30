@@ -20,7 +20,7 @@ MonoBehaviour:
   money: 0
   minerals: 0
   food: 0
-  co2: 0
+  co2: 3
   woodStorage: 0
   stoneStorage: 0
   moneyStorage: 0

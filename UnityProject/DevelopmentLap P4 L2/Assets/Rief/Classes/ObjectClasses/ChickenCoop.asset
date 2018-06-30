@@ -14,11 +14,13 @@ MonoBehaviour:
   name: Chicken Coop
   description: Kill chickens for food!
   buildingSprite: {fileID: 0}
+  citizens: 0
   wood: 0
   stone: 0
   money: 0
   minerals: 0
-  food: 0
+  food: 2
+  co2: 5
   woodStorage: 0
   stoneStorage: 0
   moneyStorage: 0

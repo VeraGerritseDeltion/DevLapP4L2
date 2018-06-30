@@ -14,11 +14,13 @@ MonoBehaviour:
   name: Newspaper Stand
   description: More news means happier people!
   buildingSprite: {fileID: 0}
+  citizens: 0
   wood: 0
   stone: 0
-  money: 0
+  money: 5
   minerals: 0
   food: 0
+  co2: 5
   woodStorage: 0
   stoneStorage: 0
   moneyStorage: 0
