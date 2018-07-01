@@ -65,7 +65,11 @@ public class Building : MonoBehaviour{
         List<int> myVarList = new List<int>();
         if (myBuilding != null)
         {
-            if (GetType() != typeof(TownHall))
+            if (GetType() == typeof(TownHall))
+            {
+
+            }
+            else
             {
                 myVarList.Add(myBuilding.money);
                 myVarList.Add(myBuilding.wood);
@@ -102,7 +106,11 @@ public class Building : MonoBehaviour{
     }
     void TextTooltip()
     {
-        if (GetType() != typeof(TownHall))
+        if (GetType() == typeof(TownHall))
+        {
+            TownHallText();
+        }
+        else
         {
             List<int> amounts = VarList();
             int checkZero = 0;
@@ -125,18 +133,14 @@ public class Building : MonoBehaviour{
                 }
             }
         }
-        else
-        {
-            TownHallText();
-        }
     }
     void TownHallText()
     {
          myText[0].text = "Citizens: " + StatisticManager.instance.allCitizens
-                            + "\n Average Happiness: " + StatisticManager.instance.avrHappiness
-                            + "\n Wood Increase /s: " + StatisticManager.instance.addWood
-                            + "\n Stone Increase /s: " + StatisticManager.instance.addStone
-                            + "\n Food Increase /s: " + StatisticManager.instance.addFood;
+                            + "\nAverage Happiness: " + StatisticManager.instance.avrHappiness
+                            + "\nWood Increase /s: " + StatisticManager.instance.addWood
+                            + "\nStone Increase /s: " + StatisticManager.instance.addStone
+                            + "\nFood Increase /s: " + StatisticManager.instance.addFood;
     }
 
     public void MyStart()
@@ -173,7 +177,11 @@ public class Building : MonoBehaviour{
 
     void Update()
     {
-        TownHallText();
+        if(GetType() == typeof(TownHall))
+        {
+            TownHallText();
+        }
+        
         if (!isPlaced)
         {
             CollisionStay();

@@ -79,7 +79,7 @@ public class StatisticManager : MonoBehaviour {
         {
             avrHappiness = happiness / allCitizens;
         }
-        return (avrHappiness + 50) / 100;
+        return (Mathf.CeilToInt(avrHappiness + 50) / 100);
     }
 
     IEnumerator AddStats ()
@@ -112,6 +112,7 @@ public class StatisticManager : MonoBehaviour {
                 homeless[i] -= homelessDecay;
             }
         }
+        happiness -= (homeless.Count * homelessDecay);
             if (age > 3)
             {
                 Event();

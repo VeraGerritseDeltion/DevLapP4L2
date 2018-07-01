@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e367c0c0ceb91b6468488af1f666801a, type: 3}
   m_Name: Newspaper
   m_EditorClassIdentifier: 
-  name: Newspaper Stand
+  name: News Stand
   description: More news means happier people!
   buildingSprite: {fileID: 0}
   citizens: 0

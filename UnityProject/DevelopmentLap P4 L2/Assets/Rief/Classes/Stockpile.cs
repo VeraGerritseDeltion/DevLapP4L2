@@ -5,8 +5,12 @@ using UnityEngine;
 public class Stockpile : MonoBehaviour {
 
 
-    public GameObject woodPile;
-    public GameObject stonePile;
+    public GameObject woodPileOne;
+	public GameObject woodPileTwo;
+    public GameObject stonePileOne;
+	public GameObject stonePileTwo;
+	int woodPerc;
+	int stonePerc;
 	
 	void Update () 
 	{
@@ -14,22 +18,39 @@ public class Stockpile : MonoBehaviour {
     }
 	void SetActive()
 	{
-		if(StatisticManager.instance.wood > 0)
+		
+		if(StatisticManager.instance.wood > 100)
 		{
-            woodPile.SetActive(true);
+            woodPileOne.SetActive(true);
         }
 		else
 		{
-            woodPile.SetActive(false);
+            woodPileOne.SetActive(false);
         }
 
-		if(StatisticManager.instance.stone > 0)
+		if(StatisticManager.instance.stone > 100)
 		{
-            stonePile.SetActive(true);
+            stonePileOne.SetActive(true);
         }
 		else
 		{
-            stonePile.SetActive(false);
+            stonePileOne.SetActive(false);
         }
+		if(StatisticManager.instance.wood > 200)
+		{
+			woodPileTwo.SetActive(true);
+		}
+		else
+		{
+			woodPileTwo.SetActive(false);
+		}
+		if(StatisticManager.instance.stone > 200)
+		{
+			stonePileTwo.SetActive(true);
+		}
+		else
+		{
+			stonePileTwo.SetActive(false);
+		}
 	}
 }
