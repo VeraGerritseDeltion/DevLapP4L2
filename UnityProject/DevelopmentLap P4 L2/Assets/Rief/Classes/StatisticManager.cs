@@ -65,6 +65,57 @@ public class StatisticManager : MonoBehaviour {
         }
 	}
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Keypad1))
+        {
+            money += 500;
+        }
+        if (Input.GetKeyDown(KeyCode.Keypad2))
+        {
+            food += 500;
+        }
+        if (Input.GetKeyDown(KeyCode.Keypad3))
+        {
+            wood += 500;
+        }
+        if (Input.GetKeyDown(KeyCode.Keypad4))
+        {
+            stone += 500;
+        }
+        if (Input.GetKeyDown(KeyCode.Keypad5))
+        {
+            EventManager.instance.StartEvent();
+        }
+        if (Input.GetKeyDown(KeyCode.Keypad6))
+        {
+            co2 += 100;
+            StatsChanged();
+        }
+        if (Input.GetKeyDown(KeyCode.Keypad7))
+        {
+            co2 -= 100;
+            StatsChanged();
+        }
+        if (Input.GetKeyDown(KeyCode.Keypad8))
+        {
+            happiness += 50;
+            AverageHappiness();
+        }
+        if (Input.GetKeyDown(KeyCode.Keypad9))
+        {
+            foodEventBasedProductionLevel += 0.5f;
+        }
+        if (Input.GetKeyDown(KeyCode.Keypad0))
+        {
+            UIManager.instance.EventLog("Fire Started");
+            for (int i = 0; i < 5; i++)
+            {
+                NatureManager.instance.StartFire();
+            }
+        }
+    }
+
     public void MyStart()
     {
         foodEventBasedProductionLevel = 1;

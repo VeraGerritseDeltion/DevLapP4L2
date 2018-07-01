@@ -124,6 +124,7 @@ public class Trees : MonoBehaviour {
     {
         yield return new WaitForSeconds(Random.Range(3, 7));
         burning = 0;
+        StartCoroutine(Chopping());
         fire.Stop();
     }
 

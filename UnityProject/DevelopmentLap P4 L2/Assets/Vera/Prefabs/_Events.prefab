@@ -265,7 +265,7 @@ MonoBehaviour:
   happynessNeeded: 0
   CanAlwaysOccur: 0
   goodOrBad: 0
-  percentage: 80
+  percentage: 20
   timer: 4
   started: 0
 --- !u!114 &114084118624359094
