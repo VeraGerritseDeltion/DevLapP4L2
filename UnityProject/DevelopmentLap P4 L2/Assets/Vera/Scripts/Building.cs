@@ -45,6 +45,8 @@ public class Building : MonoBehaviour{
 
     int spotAvailable;
 
+    public bool clickToStart;
+
     void Start()
     {
         TextTooltip();
@@ -254,37 +256,39 @@ public class Building : MonoBehaviour{
         Destroy(gameObject);     
     }
 
-    void AddStats()
+    public void AddStats()
     {
         StatisticManager myStatisticManager = StatisticManager.instance;
 
-        if (myStatisticManager.wood < myStatisticManager.woodStorage)
-        {
-            myStatisticManager.addWood += myBuilding.wood;
-        }
-        if (myStatisticManager.stone < myStatisticManager.stoneStorage)
-        {
-            myStatisticManager.addStone += myBuilding.stone;
-        }
-        if (myStatisticManager.money < myStatisticManager.moneyStorage)
-        {
-            myStatisticManager.addMoney += myBuilding.money;
-        }
-        if (myStatisticManager.food < myStatisticManager.foodStorage)
-        {
-            myStatisticManager.addFood += myBuilding.food;
-        }
-        myStatisticManager.addMinerals += myBuilding.minerals;
+        if(!clickToStart){
+            if (myStatisticManager.wood < myStatisticManager.woodStorage)
+            {
+                myStatisticManager.addWood += myBuilding.wood;
+            }
+            if (myStatisticManager.stone < myStatisticManager.stoneStorage)
+            {
+                myStatisticManager.addStone += myBuilding.stone;
+            }
+            if (myStatisticManager.money < myStatisticManager.moneyStorage)
+            {
+                myStatisticManager.addMoney += myBuilding.money;
+            }
+            if (myStatisticManager.food < myStatisticManager.foodStorage)
+            {
+                myStatisticManager.addFood += myBuilding.food;
+            }
+            myStatisticManager.addMinerals += myBuilding.minerals;
 
-        myStatisticManager.woodStorage += myBuilding.woodStorage;
-        myStatisticManager.stoneStorage += myBuilding.stoneStorage;
-        myStatisticManager.moneyStorage += myBuilding.moneyStorage;
-        myStatisticManager.foodStorage += myBuilding.foodStorage;
-        StatisticManager.instance.addCo2 += myBuilding.co2;
-        StatisticManager.instance.AverageHappiness();
+            myStatisticManager.woodStorage += myBuilding.woodStorage;
+            myStatisticManager.stoneStorage += myBuilding.stoneStorage;
+            myStatisticManager.moneyStorage += myBuilding.moneyStorage;
+            myStatisticManager.foodStorage += myBuilding.foodStorage;
+            StatisticManager.instance.addCo2 += myBuilding.co2;
+            StatisticManager.instance.AverageHappiness();
+        }
     }
 
-    void MinStats()
+    public void MinStats()
     {
         if(myBuilding != null)
         {

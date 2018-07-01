@@ -34,8 +34,10 @@ public class Lumber : Building {
     }
 	IEnumerator CutTrees()
 	{
+		
 		if(treeList.Count >= 1 && cutting)
 		{
+			StatisticManager.instance.wood+=myBuilding.wood;
 			int random = Random.Range(0, treeList.Count);
 			int randomTransY = Random.Range(0,360);
 
@@ -48,6 +50,7 @@ public class Lumber : Building {
 
 			usedList.Add(treeList[random]);
 			treeList.Remove(treeList[random]);
+			
 		}
 		yield return new WaitForSeconds(0.1f);
 		StartCoroutine(CutTrees());
@@ -55,8 +58,10 @@ public class Lumber : Building {
 
 	IEnumerator PlantTrees()
 	{
+		
 		if(usedList.Count >= 1 && !cutting)
 		{
+			StatisticManager.instance.money+=myBuilding.money;
 			int random = Random.Range(0, usedList.Count);
 
 			usedList[random].GetComponent<Animation>().Play("Growing");
@@ -64,6 +69,7 @@ public class Lumber : Building {
 
 			treeList.Add(usedList[random]);
 			usedList.Remove(usedList[random]);
+			StatisticManager.instance.money-=myBuilding.money;
 		}
 		yield return new WaitForSeconds(0.1f);
 		StartCoroutine(PlantTrees());

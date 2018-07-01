@@ -592,7 +592,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   ageLock: 0
-  woodCost: 45
+  woodCost: 25
   stoneCost: 0
   moneyCost: 0
   citizenCost: 3

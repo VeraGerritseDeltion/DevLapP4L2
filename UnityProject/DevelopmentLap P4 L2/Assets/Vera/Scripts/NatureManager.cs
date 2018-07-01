@@ -121,9 +121,11 @@ public class NatureManager : MonoBehaviour
         }
         for (int i = 0; i < allTrees.Count; i++)
         {
-            float rand = allTrees[i].GetComponent<Trees>().myRand;
-            Color newColor = Color.Lerp(currentLow, currentHigh, rand);
-            allTrees[i].GetComponent<Trees>().ChangeColor(newColor);
+            if(allTrees[i] != null){
+                float rand = allTrees[i].GetComponent<Trees>().myRand;
+                Color newColor = Color.Lerp(currentLow, currentHigh, rand);
+                allTrees[i].GetComponent<Trees>().ChangeColor(newColor);
+            }
         }
     }
 

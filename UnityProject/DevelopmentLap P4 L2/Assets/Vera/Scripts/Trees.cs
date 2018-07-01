@@ -150,10 +150,10 @@ public class Trees : MonoBehaviour {
     }
     public void Chop () 
     {
+        StatisticManager.instance.wood += 5;
         cutting = true;
         tooltip.SetActive(false);
         StartCoroutine(Chopping());
-        StatisticManager.instance.wood += 5;
     }
     IEnumerator Chopping()
     {

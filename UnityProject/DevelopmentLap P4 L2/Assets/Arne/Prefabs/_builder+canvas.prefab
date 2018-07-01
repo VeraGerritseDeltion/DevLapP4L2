@@ -5272,7 +5272,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b9f6b4dc5089264bbd6108bb731edd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  building: {fileID: 0}
+  building: {fileID: 114534733202710488, guid: e82e92e1e4abd1d4eb5470ffbc530b54, type: 2}
   viewTooltip: {fileID: 114908588139984776}
   thisGO: {fileID: 0}
   stats: 0
@@ -14422,11 +14422,11 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -17814,7 +17814,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.11127016}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1.1350098, y: -13.774582}
+  m_AnchoredPosition: {x: -1.1350098, y: -13.774567}
   m_SizeDelta: {x: -2.27001, y: -27.549213}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224016375026989572

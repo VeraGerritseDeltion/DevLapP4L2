@@ -1710,9 +1710,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   ageLock: 0
-  woodCost: 50
+  woodCost: 25
   stoneCost: 0
-  moneyCost: 25
+  moneyCost: 15
   citizenCost: 0
   hasAura: 0
   radius: 0

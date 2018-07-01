@@ -49,14 +49,14 @@ public class CropField : Building
         wheatBool = growBool;
         if (!wheatBool)
         {
-			StatisticManager.instance.money -= myBuilding.money;
+			StatisticManager.instance.money += myBuilding.money;
             StatisticManager.instance.food += myBuilding.food;
             growSpeed = fastSpeed;
             growSpeed /= 2;
         }
         else
         {
-			StatisticManager.instance.money -= (myBuilding.money * 2);
+			StatisticManager.instance.money += (myBuilding.money * 2);
             StatisticManager.instance.food += (myBuilding.food * 2);
             growSpeed = fastSpeed;
         }

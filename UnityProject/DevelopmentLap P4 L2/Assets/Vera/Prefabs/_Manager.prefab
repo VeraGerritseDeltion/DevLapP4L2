@@ -73,7 +73,7 @@ MonoBehaviour:
   addCo2: 0
   wood: 0
   stone: 0
-  money: 0
+  money: 50
   food: 0
   minerals: 0
   startHappiness: 50
@@ -209,3 +209,4 @@ MonoBehaviour:
   treeLoc: []
   treeKinds:
   - {fileID: 1632366874207860, guid: 6f6599b6abf84b8458b4fe2793718015, type: 2}
+  - {fileID: 1264101361843056, guid: c0e953838834e1b4289d912896828559, type: 2}

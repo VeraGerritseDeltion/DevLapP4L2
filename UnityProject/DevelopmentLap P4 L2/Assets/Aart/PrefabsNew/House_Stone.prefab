@@ -849,7 +849,7 @@ MonoBehaviour:
     m_Bits: 0
   ageLock: 0
   woodCost: 0
-  stoneCost: 75
+  stoneCost: 55
   moneyCost: 0
   citizenCost: 0
   hasAura: 0
